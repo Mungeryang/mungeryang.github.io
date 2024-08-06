@@ -1,0 +1,821 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Munger Yang">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="shell编程变量变量的分类：  用户变量：用户自己定义的变量 系统变量：系统已经定义的变量，在整个Linux系统中起作用 特殊变量  变量的类型：  字符串类型 数字类型  变量的分类：  用户变量：用户自己定义的变量 系统变量：系统已经定义的变量，在整个Linux系统中起作用 特殊变量  变量的类型：  字符串类型 数字类型  变量定义的格式： 123456789变量名&#x3D;变量值 #注意&#x3D;左右两">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shell学习笔记">
+<meta property="og:url" content="http://example.com/2024/08/05/%E4%BA%91%E8%AE%A1%E7%AE%97%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="munger写字的地方">
+<meta property="og:description" content="shell编程变量变量的分类：  用户变量：用户自己定义的变量 系统变量：系统已经定义的变量，在整个Linux系统中起作用 特殊变量  变量的类型：  字符串类型 数字类型  变量的分类：  用户变量：用户自己定义的变量 系统变量：系统已经定义的变量，在整个Linux系统中起作用 特殊变量  变量的类型：  字符串类型 数字类型  变量定义的格式： 123456789变量名&#x3D;变量值 #注意&#x3D;左右两">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-05T14:00:45.000Z">
+<meta property="article:modified_time" content="2024-08-06T08:38:36.187Z">
+<meta property="article:author" content="Munger Yang">
+<meta property="article:tag" content="cloud computing">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>shell学习笔记 - munger写字的地方</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":75,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Munger Yang&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about" target="_self">
+                <i class="iconfont icon-addrcard"></i>
+                <span>主页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                <span>博客</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/" target="_self">
+                    <i class="iconfont icon-pen"></i>
+                    <span>文章</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/" target="_self">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>总览</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/" target="_self">
+                    <i class="iconfont icon-category-fill"></i>
+                    <span>分类</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/" target="_self">
+                    <i class="iconfont icon-tags-fill"></i>
+                    <span>标签</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/picture" target="_self">
+                <i class="iconfont icon-image"></i>
+                <span>时刻</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>简历</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/paper.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="shell学习笔记"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-08-05 22:00" pubdate>
+          2024年8月5日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          10 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">shell学习笔记</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="shell编程"><a href="#shell编程" class="headerlink" title="shell编程"></a>shell编程</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>变量的分类：</p>
+<ul>
+<li>用户变量：用户自己定义的变量</li>
+<li>系统变量：系统已经定义的变量，在整个Linux系统中起作用</li>
+<li>特殊变量</li>
+</ul>
+<p>变量的类型：</p>
+<ul>
+<li>字符串类型</li>
+<li>数字类型</li>
+</ul>
+<p>变量的分类：</p>
+<ul>
+<li>用户变量：用户自己定义的变量</li>
+<li>系统变量：系统已经定义的变量，在整个Linux系统中起作用</li>
+<li>特殊变量</li>
+</ul>
+<p>变量的类型：</p>
+<ul>
+<li>字符串类型</li>
+<li>数字类型</li>
+</ul>
+<p>变量定义的格式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell">变量名=变量值 #注意=左右两边不可以有空格<br><span class="hljs-meta prompt_">#</span><span class="language-bash">直接赋值</span><br>username=&quot;ygm&quot;<br><span class="hljs-meta prompt_">#</span><span class="language-bash">键盘赋值</span><br>read username<br><span class="hljs-meta prompt_">#</span><span class="language-bash">执行的命令结果赋值</span><br>str=$(pwd)<br>str=$(ll)<br>str=`ps -ef`<br></code></pre></td></tr></table></figure>
+
+<p>变量的访问</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">!/bin/bash</span><br>echo $name<br>echo $echo&#123;name&#125;<br></code></pre></td></tr></table></figure>
+
+<p>特殊变量</p>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$#</td>
+<td>命令行参数的个数</td>
+</tr>
+<tr>
+<td>$?</td>
+<td>前一个命令或函数的返回码</td>
+</tr>
+<tr>
+<td>$n</td>
+<td>$1表示第一个参数</td>
+</tr>
+<tr>
+<td>$0</td>
+<td>当前程序的名称</td>
+</tr>
+<tr>
+<td>$*</td>
+<td>以“参数1，参数2···”保存所有参数</td>
+</tr>
+</tbody></table>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>结论：推荐编程的时候使用双引号</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell">str=hello<br>str=`hello`<br>str=&quot;hello&quot;<br><br>str2=&#x27;I am $&#123;str&#125;&#x27;	#单引号不会解释字符串里面的变量<br>str2=&quot;I am $&#123;str&#125;&quot;	#双引号可以解释字符串里面的变量<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">输出字符串的长度</span><br>echo $&#123;#name&#125;<br><span class="hljs-meta prompt_">#</span><span class="language-bash">提取子字符串</span><br>echo $&#123;string:a:b&#125;	#从索引(索引从0开始)为a个位置开始截取长度为b的子字符串<br></code></pre></td></tr></table></figure>
+
+<h3 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h3><p>算数运算在shell中要遵守严格的规范格式</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell">echo `expr 2 + 3`	#必须是反引号包裹、加号与数字之间留有空格<br>echo `expr 2 \* 3`	#注意乘法和除法必须使用转义符号\前缀才会起作用<br>echo `expr 2 \% 4`<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">此外，算数运算还可以用$(())和$[]表示-推荐方式</span><br>a=2<br>b=3<br>echo $((a+b))<br>echo $(($a+$b))<br>echo $[a+b]<br>echo $[$a+$b]<br></code></pre></td></tr></table></figure>
+
+<h3 id="比较运算"><a href="#比较运算" class="headerlink" title="比较运算"></a>比较运算</h3><p>数字比较</p>
+<ul>
+<li>-eq：比较两个数是否相等，相等返回true</li>
+<li>-ne：比较两个数是否不想等，不想等返回true</li>
+<li>-gt：检测左边的数是否大于右边，若是返回true</li>
+<li>-lt：检测左边的数是够小于右边，若是返回true</li>
+<li>-ge：检测左边的数是否大于等于右边，若是返回true</li>
+<li>-le：检测左边的数是否小于等于右边，若是返回true</li>
+</ul>
+<p>字符串比较：</p>
+<ul>
+<li>-z STRING：字符串长度为0</li>
+<li>-n STRING：字符串长度不为0</li>
+<li>&#x3D;：判断字符串长度是否相等</li>
+<li>！&#x3D;：判断字符串长度是否不想等</li>
+</ul>
+<p>文件：</p>
+<p>-f：存在且普通的文件</p>
+<p>-e：文件存在</p>
+<p>-d：存在且是目录</p>
+<p>-h：存在且是链接</p>
+<p>-r：存在且是只读</p>
+<p>-w：存在且是可写</p>
+<p>-x：存在且是可执行</p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>数组用小括号表示，中间元素用空格隔开，也可以直接定义数组中的每个元素的值。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell">array=(1 2 &quot;hello&quot; ygm)<br>array[4]=&quot;xyc&quot;<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">读取数组元素</span><br>echo $&#123;array[index]&#125;<br><span class="hljs-meta prompt_">#</span><span class="language-bash">读取整个数组</span><br>echo $&#123;array[*]&#125;<br>echo $&#123;array[@]&#125;<br><span class="hljs-meta prompt_">#</span><span class="language-bash">获取数组长度</span><br>echo $&#123;#array[*]&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="shell命令"><a href="#shell命令" class="headerlink" title="shell命令"></a>shell命令</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">逻辑运算符&amp;&amp;和||<br><br>&amp;&amp; 表示与，|| 表示或<br>二者具有短路原则：<br>expr1 &amp;&amp; expr2：当expr1为假时，直接忽略expr2<br>expr1 || expr2：当expr1为真时，直接忽略expr2<br>表达式的exit code为0，表示真；为非零，表示假。（与C/C++中的定义相反）<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h3><p>if判断语句范式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs shell">if condition<br>then <br>	···<br>else<br>	···<br>fi<br><br>if[ &quot;a&quot; -lt &quot;b&quot; ] &amp;&amp; [ &quot;a&quot; -gt 2]<br>then <br>	echo $&#123;a&#125;在范围内<br>fi<br><br>if[ $a -eq 2]<br>then <br>	echo $&#123;a&#125;等于2<br>elif [ $a -eq 3]<br>then<br>	echo $&#123;a&#125;等于3<br>else<br>	echo 其他<br>fi<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h3><p>for范式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs shell">for v in var1 var2 var3<br>do<br>	echo $v<br>done<br><br>for flie in `ls`<br>do <br>	echo $file<br>done<br><br>for i in $(seq 1 10)<br>do<br>	echo $i<br>done<br><br>for ((i = 1;i&lt;10;i++))<br>do<br>	echo $i<br>done<br></code></pre></td></tr></table></figure>
+
+<p>while循环范式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell">while read name<br>do <br>	echo $name<br>done<br><br>until [&quot;$&#123;word&#125;&quot; == &quot;yes&quot;] || [&quot;$&#123;word&#125;&quot; == &quot;YES&quot;]<br>do <br>	read -p &quot;please input yse or YES to stop this program:&quot; word<br>done<br></code></pre></td></tr></table></figure>
+
+<p>PS3使用方法</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">echo &quot;what is your favourite OS?&quot;<br>PS3=&quot;please enter your chose:&quot;<br>select var in &quot;linux&quot; &quot;windowns&quot; &quot;unix&quot;<br>do<br>	break;<br>done<br>echo &quot;you have selected $var&quot;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="一键安装JDK"><a href="#一键安装JDK" class="headerlink" title="一键安装JDK"></a>一键安装JDK</h2><p>使用shell脚本实现自动化部署</p>
+<p>jdk_install.sh</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">!/bin/bash</span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">提示安装jdk</span><br>echo &quot;开始安装jdk&quot;<br>sleep 1<br><span class="hljs-meta prompt_">#</span><span class="language-bash">删除自带的jdk</span><br>oldjdk=$(rpm -qa | grep jdk)<br>for old in $&#123;oldjdk&#125;<br>do<br><span class="hljs-meta prompt_">	#</span><span class="language-bash"><span class="hljs-built_in">echo</span> <span class="hljs-variable">$old</span></span><br>	rpm -e --nodes $old<br>done<br><span class="hljs-meta prompt_">#</span><span class="language-bash">创建安装目录</span><br>java_path=$(/export/server)<br>if[ !-d $java_path]<br>then<br> mkdir -p $java_path<br>fi<br><span class="hljs-meta prompt_">#</span><span class="language-bash">解压jdk安装包</span><br>tar -zxvf /export/softwore/jdk-8u241-linux-x64.tar.gz -C $java_path<br><span class="hljs-meta prompt_">#</span><span class="language-bash">设置环境变量</span><br>JAVA_HOME=&quot;/export/server/jdk1.8.0_241&quot;<br>grep &quot;JAVA_HOME&quot; /etc/profile<br>if[ #? -ne 0]<br>then<br><span class="hljs-meta prompt_">	#</span><span class="language-bash">JAVA_HOME</span><br>	echo &quot;---------JAVA_HOME-----------&quot;<br>	echo `export JAVA_HOME=/export/server/jdk1.8.0_241` &gt;&gt; /etc/profile<br><span class="hljs-meta prompt_">	#</span><span class="language-bash">PATH</span><br>	echo &quot;----------PATH-----------&quot;<br>	echo `export PATH=:$JAVA_HOME/bin:$PATH` &gt;&gt; /etc/profile<br>fi<br><span class="hljs-meta prompt_">#</span><span class="language-bash">加载环境变量</span><br>sleep 1<br>source /etc/profile<br><span class="hljs-meta prompt_">#</span><span class="language-bash">安装完成提示</span><br>echo &quot;恭喜您jdk安装成功！&quot;<br>java -version<br><br></code></pre></td></tr></table></figure>
+
+
+
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/" class="category-chain-item">云计算</a>
+  
+  
+
+      </span>
+    
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/cloud-computing/" class="print-no-link">#cloud computing</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>shell学习笔记</div>
+      <div>http://example.com/2024/08/05/云计算学习笔记/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Munger Yang</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年8月5日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/08/06/%E6%9C%AC%E7%A7%91%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87%E8%87%B4%E8%B0%A2/" title="本科毕业论文致谢">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">本科毕业论文致谢</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/08/05/hello-world/" title="Hello World">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
