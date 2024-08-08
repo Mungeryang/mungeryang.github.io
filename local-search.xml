@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>和鲸社区 AI夏令营-LLM实训</title>
+    <link href="/2024/08/08/LLM%E5%AE%9E%E8%AE%AD/"/>
+    <url>/2024/08/08/LLM%E5%AE%9E%E8%AE%AD/</url>
+    
+    <content type="html"><![CDATA[<h2 id="day01-baseline搭建"><a href="#day01-baseline搭建" class="headerlink" title="day01-baseline搭建"></a>day01-baseline搭建</h2><div class="note note-success">            <p>首先注册魔塔社区帐号，免费领取魔塔GPU算力资源</p>          </div><p>新建GPU算力环境，下载相关第三方库与拉取镜像资源</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment"># 拉取git镜像</span></span><br>git lfs install<br>git clone https://www.modelscope.cn/datasets/Datawhale/AICamp_yuan_baseline.git<br><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment"># 安装第三方库</span></span><br>pip install streamlit==1.24.0<br><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment"># 启动demo</span></span><br>streamlit run AICamp_yuan_baseline/Task\ 1：零基础玩转源大模型/web_demo_2b.py --server.address 127.0.0.1 --server.port 6006<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>大模型应用开发</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LLM</tag>
+      
+      <tag>部署</tag>
+      
+      <tag>微调技术</tag>
+      
+      <tag>RAG</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>本科毕业论文致谢</title>
     <link href="/2024/08/06/%E6%9C%AC%E7%A7%91%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87%E8%87%B4%E8%B0%A2/"/>
     <url>/2024/08/06/%E6%9C%AC%E7%A7%91%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87%E8%87%B4%E8%B0%A2/</url>
