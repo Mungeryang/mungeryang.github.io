@@ -19,27 +19,35 @@
   <meta name="author" content="Munger Yang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="day01-baseline搭建             首先注册魔塔社区帐号，免费领取魔塔GPU算力资源             新建GPU算力环境，下载相关第三方库与拉取镜像资源 1234567## 拉取git镜像git lfs installgit clone https:&#x2F;&#x2F;www.modelscope.cn&#x2F;datasets&#x2F;Datawhale&#x2F;AICamp_yuan_baseline.">
+    <meta name="description" content="Machine Learning-NotebookAndrew Ng-吴恩达&copy; Standford ONLINE &amp; DeepLearning.AI Mungeryang-杨桂淼总结     Introduction“Field of study that gives computers the ability to learn without being explicitly prog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="和鲸社区 AI夏令营-LLM实训">
-<meta property="og:url" content="http://example.com/2024/08/08/LLM%E5%AE%9E%E8%AE%AD/index.html">
+<meta property="og:title" content="机器学习基础">
+<meta property="og:url" content="http://example.com/2024/08/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="munger写字的地方">
-<meta property="og:description" content="day01-baseline搭建             首先注册魔塔社区帐号，免费领取魔塔GPU算力资源             新建GPU算力环境，下载相关第三方库与拉取镜像资源 1234567## 拉取git镜像git lfs installgit clone https:&#x2F;&#x2F;www.modelscope.cn&#x2F;datasets&#x2F;Datawhale&#x2F;AICamp_yuan_baseline.">
+<meta property="og:description" content="Machine Learning-NotebookAndrew Ng-吴恩达&copy; Standford ONLINE &amp; DeepLearning.AI Mungeryang-杨桂淼总结     Introduction“Field of study that gives computers the ability to learn without being explicitly prog">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-08-08T14:49:43.000Z">
-<meta property="article:modified_time" content="2024-08-08T15:01:06.191Z">
+<meta property="og:image" content="http://example.com/img/fig/1.1.png">
+<meta property="og:image" content="http://example.com/img/fig/1.2.jpg">
+<meta property="og:image" content="http://example.com/img/fig/1.3.png">
+<meta property="og:image" content="http://example.com/img/fig/1.4.png">
+<meta property="og:image" content="http://example.com/img/fig/2.1.jpg">
+<meta property="og:image" content="http://example.com/img/fig/2.2.jpg">
+<meta property="og:image" content="http://example.com/img/fig/2.3.jpg">
+<meta property="og:image" content="http://example.com/img/fig/2.6.jpg">
+<meta property="og:image" content="http://example.com/img/fig/cost1.png">
+<meta property="article:published_time" content="2024-08-09T14:57:55.000Z">
+<meta property="article:modified_time" content="2024-08-09T15:20:40.625Z">
 <meta property="article:author" content="Munger Yang">
-<meta property="article:tag" content="LLM">
-<meta property="article:tag" content="部署">
-<meta property="article:tag" content="微调技术">
-<meta property="article:tag" content="RAG">
+<meta property="article:tag" content="机器学习">
+<meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/fig/1.1.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>和鲸社区 AI夏令营-LLM实训 - munger写字的地方</title>
+  <title>机器学习基础 - munger写字的地方</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -257,7 +265,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="和鲸社区 AI夏令营-LLM实训"></span>
+            <span id="subtitle" data-typed-text="机器学习基础"></span>
           
         </div>
 
@@ -268,8 +276,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-08-08 22:49" pubdate>
-          2024年8月8日 晚上
+        <time datetime="2024-08-09 22:57" pubdate>
+          2024年8月9日 晚上
         </time>
       </span>
     
@@ -280,7 +288,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          92 字
+          388 字
         
       </span>
     
@@ -291,7 +299,7 @@
         
         
         
-          1 分钟
+          4 分钟
         
       </span>
     
@@ -328,18 +336,78 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">和鲸社区 AI夏令营-LLM实训</h1>
+            <h1 id="seo-header">机器学习基础</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="day01-baseline搭建"><a href="#day01-baseline搭建" class="headerlink" title="day01-baseline搭建"></a>day01-baseline搭建</h2><div class="note note-success">
-            <p>首先注册魔塔社区帐号，免费领取魔塔GPU算力资源</p>
-          </div>
+                <h1 id="Machine-Learning-Notebook"><a href="#Machine-Learning-Notebook" class="headerlink" title="Machine Learning-Notebook"></a>Machine Learning-Notebook</h1><center>Andrew Ng-吴恩达&copy;</center>
+<center>Standford ONLINE & DeepLearning.AI</center>
+<center>Mungeryang-杨桂淼总结</center>
 
-<p>新建GPU算力环境，下载相关第三方库与拉取镜像资源</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment"># 拉取git镜像</span></span><br>git lfs install<br>git clone https://www.modelscope.cn/datasets/Datawhale/AICamp_yuan_baseline.git<br><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment"># 安装第三方库</span></span><br>pip install streamlit==1.24.0<br><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment"># 启动demo</span></span><br>streamlit run AICamp_yuan_baseline/Task\ 1：零基础玩转源大模型/web_demo_2b.py --server.address 127.0.0.1 --server.port 6006<br></code></pre></td></tr></table></figure>
 
+
+
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>“Field of study that gives computers the ability to learn without being explicitly programmed.”——Arthur Samuel(1995)</p>
+<p>  Practical advice for applying learning algorithm</p>
+<h2 id="Basic-conception-cookbook"><a href="#Basic-conception-cookbook" class="headerlink" title="Basic conception cookbook"></a>Basic conception cookbook</h2><p>Data set:</p>
+<p>Training set:</p>
+<p>Test set:</p>
+<p>Cost function:</p>
+<p>Gradient:</p>
+<p>Gradient descent:</p>
+<p>Recall:</p>
+<p>Precision:</p>
+<h2 id="Supervised-learning-监督学习"><a href="#Supervised-learning-监督学习" class="headerlink" title="Supervised learning-监督学习"></a>Supervised learning-监督学习</h2><p> Learns from being given “<strong>right answers</strong>(labels)”</p>
+<img src="/img/fig/1.1.png" srcset="/img/loading.gif" lazyload alt="s" style="zoom:60%;" />
+
+
+
+<p>In all of these applications, we will first train our model with examples of inputs <strong>x</strong> and right answers, that is the labels <strong>y</strong>. After the model has learned from these input, output, or x and y pairs, they can take a brand new input x, something it has never seen before, and try to produce the appropriate corresponding output y.  </p>
+<img src="/img/fig/1.2.jpg" srcset="/img/loading.gif" lazyload alt="s" style="zoom:50%;" />
+
+
+
+<p>  The task of the supervised learning algorithm is to produce more of these right answers based on labels.  </p>
+<p>Classification is to predict categories,Regression is to predict a number. </p>
+<img src="/img/fig/1.3.png" srcset="/img/loading.gif" lazyload alt="s" style="zoom:70%;" />
+
+
+
+<h2 id="Unsupervised-learning-无监督学习"><a href="#Unsupervised-learning-无监督学习" class="headerlink" title="Unsupervised learning-无监督学习"></a>Unsupervised learning-无监督学习</h2><p>Learns from being given “<strong>no-right answers</strong>(unlabeled data)”, data only comes with inputs x, but not output labels y. Algorithm has to find structure automatically in the data and automatically figure out whether the major types of individuals.</p>
+<img src="/img/fig/1.4.png" srcset="/img/loading.gif" lazyload style="zoom:75%;" />
+
+
+
+<h2 id="Linear-Regression-with-one-variable"><a href="#Linear-Regression-with-one-variable" class="headerlink" title="Linear Regression with one variable"></a>Linear Regression with one variable</h2><h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>Linear regression means fitting a <code>straight line</code> to the data. -&gt;linear regression  </p>
+<img src="/img/fig/2.1.jpg" srcset="/img/loading.gif" lazyload alt="s" style="zoom:60%;" />
+
+<p>Regression model is to predict numbers</p>
+<p>Classification model is to predicts categories</p>
+<h3 id="Terminology-in-ML"><a href="#Terminology-in-ML" class="headerlink" title="Terminology in ML"></a><strong>Terminology in ML</strong></h3><p><code>Training dataset</code>-&gt;data used to train the model</p>
+<p>$x&#x3D;$“input”variables feature</p>
+<p>$y&#x3D;$“output ”variables or “target”variables</p>
+<p>$(x,y)&#x3D;$single training example</p>
+<p>$(x^{(i)},y^{(i)})&#x3D;i^{th}$ training example not exponent</p>
+<img src="/img/fig/2.2.jpg" srcset="/img/loading.gif" lazyload alt="s" style="zoom:50%;" />
+
+<p>In the linear regression, we instantly believe the function is a linear function as follow:<br>$$<br>f_{w,b}(X)&#x3D;wX+b \<br>f(X)&#x3D;wX+b<br>$$<br>when we give a “x”as a input variable, we can get a “y-hat”variable as a result.</p>
+<h3 id="triangular-ruler-Cost-function"><a href="#triangular-ruler-Cost-function" class="headerlink" title=":triangular_ruler:Cost function"></a>:triangular_ruler:Cost function</h3><p>squared error<br>$$<br>\underset{i&#x3D;1}{\overset{m}{\varSigma}}\left( \hat{y}^{\left( i \right)}-y^{\left( i \right)} \right) ^2<br>$$<br><img src="/img/fig/2.3.jpg" srcset="/img/loading.gif" lazyload alt="s" style="zoom:70%;" /></p>
+<p>Model: $f_{w,b}(X)&#x3D;wX+b$.	$w(slope),b(intersects)$ are parameters.<br>$$<br>J_{\left( w,b \right)}&#x3D;\frac{1}{2m}\underset{i&#x3D;1}{\overset{m}{\varSigma}}\left( \hat{y}^{\left( i \right)}-y^{\left( i \right)} \right) ^2&#x3D;\frac{1}{2m}\underset{i&#x3D;1}{\overset{m}{\varSigma}}\left( f_{w.b}\left( x^{\left( i \right)} \right) -y^{\left( i \right)} \right) ^2 \ \<br>&#x3D;\frac{1}{2m}\underset{i&#x3D;1}{\overset{m}{\varSigma}}\left( wx^{\left( i \right)}+b-y^{\left( i \right)} \right) ^2<br>$$<br>Our goal is to minimize the parameters to fit the model:<br>$$<br>\underset{w.b}{\min}J\left( w,b \right)<br>$$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#define cost function</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">compute_cost</span>(<span class="hljs-params">x,y,w,b</span>):<br>    m = x.shape[<span class="hljs-number">0</span>]<br>    cost_sum = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(m):<br>        f_wb = w * x[i] + b<br>        cost = (f_wb - y[i]) ** <span class="hljs-number">2</span><br>        cost_sum += cost<br>    total_cost = (<span class="hljs-number">1</span>/(<span class="hljs-number">2</span>*m))*cost_sum<br>    <span class="hljs-keyword">return</span> total_cost<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="Gradient-descent-梯度下降"><a href="#Gradient-descent-梯度下降" class="headerlink" title="Gradient descent-梯度下降"></a>Gradient descent-梯度下降</h3><p><strong>Simultaneous update</strong> the parameters w and b until the cost function is <code>convergence</code>:</p>
+<p>Simultaneous update the parameters is significant, we must focus on the order about the algorithm.</p>
+<p>Correct order:<br>$$<br>tmp_w&#x3D;w-\alpha \frac{\partial}{\partial w}J\left( w,b \right)<br>\<br>tmp_b&#x3D;b-\alpha \frac{\partial}{\partial b}J\left( w,b \right)<br>\<br>w&#x3D;tmp_w<br>\<br>b&#x3D;tmp_b<br>$$<br>Incorrect order:<br>$$<br>tmp_w&#x3D;w-\alpha \frac{\partial}{\partial w}J\left( w,b \right) \<br>w&#x3D;tmp_w \<br>tmp_b&#x3D;b-\alpha \frac{\partial}{\partial b}J\left( w,b \right) \<br>b&#x3D;tmp_b \<br>$$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><br><span class="hljs-comment">#compute gradient</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">compute_gradient</span>(<span class="hljs-params">x,y,w,b</span>):<br>    m = x.shape[<span class="hljs-number">0</span>]<br>    dj_dw = <span class="hljs-number">0</span><br>    dj_db = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(m):<br>        f_wb = w * x[i] + b<br>        dj_dw_i = (f_wb - y[i]) * x[i]<br>        dj_db_i = f_wb - y[i]<br>        dj_dw += dj_dw_i<br>        dj_db += dj_db_i<br>    dj_dw = dj_dw / m<br>    dj_db = dj_db / m<br>    <span class="hljs-keyword">return</span> dj_dw, dj_db<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="Learning-Rate"><a href="#Learning-Rate" class="headerlink" title="Learning Rate"></a>Learning Rate</h3><p>The choice of learning rate, alpha($\alpha$) will have a huge impact on the efficiency of our implementation of Gradient descent.<br>$$<br>w-\alpha \frac{\partial}{\partial w}J\left( w,b \right)<br>\<br>b-\alpha \frac{\partial}{\partial b}J\left( w,b \right)<br>$$<br><img src="/img/fig/2.6.jpg" srcset="/img/loading.gif" lazyload alt="s" style="zoom:62%;" /></p>
+<p>If we chose the alpha is too large, the fit efficiency is not very well. We can design the algorithm to decrease the alpha($\alpha$) following by the w and b.</p>
+<img src="/img/fig/cost1.png" srcset="/img/loading.gif" lazyload alt="s" style="zoom:80%;" />
 
                 
               </div>
@@ -358,7 +426,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/" class="category-chain-item">大模型应用开发</a>
+  <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%9F%BA%E7%A1%80/" class="category-chain-item">人工智能基础</a>
   
   
 
@@ -373,13 +441,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/LLM/" class="print-no-link">#LLM</a>
+        <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="print-no-link">#机器学习</a>
       
-        <a href="/tags/%E9%83%A8%E7%BD%B2/" class="print-no-link">#部署</a>
-      
-        <a href="/tags/%E5%BE%AE%E8%B0%83%E6%8A%80%E6%9C%AF/" class="print-no-link">#微调技术</a>
-      
-        <a href="/tags/RAG/" class="print-no-link">#RAG</a>
+        <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="print-no-link">#深度学习</a>
       
     </div>
   
@@ -391,8 +455,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>和鲸社区 AI夏令营-LLM实训</div>
-      <div>http://example.com/2024/08/08/LLM实训/</div>
+      <div>机器学习基础</div>
+      <div>http://example.com/2024/08/09/机器学习基础/</div>
     </div>
     <div class="license-meta">
       
@@ -404,7 +468,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年8月8日</div>
+          <div>2024年8月9日</div>
         </div>
       
       
@@ -437,18 +501,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/08/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" title="机器学习基础">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">机器学习基础</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/08/06/%E6%9C%AC%E7%A7%91%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87%E8%87%B4%E8%B0%A2/" title="本科毕业论文致谢">
-                        <span class="hidden-mobile">本科毕业论文致谢</span>
+                      <a href="/2024/08/08/LLM%E5%AE%9E%E8%AE%AD/" title="和鲸社区 AI夏令营-LLM实训">
+                        <span class="hidden-mobile">和鲸社区 AI夏令营-LLM实训</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -537,6 +595,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -770,6 +834,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
