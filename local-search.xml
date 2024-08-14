@@ -35,6 +35,37 @@
   
   
   <entry>
+    <title>大数据技术学习笔记</title>
+    <link href="/2024/08/11/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <url>/2024/08/11/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    
+    <content type="html"><![CDATA[<h2 id="大数据技术路线总揽"><a href="#大数据技术路线总揽" class="headerlink" title="大数据技术路线总揽"></a>大数据技术路线总揽</h2><h2 id="论文精读"><a href="#论文精读" class="headerlink" title="论文精读"></a>论文精读</h2><p>Google files system</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>数据科学与数据开发</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>big data</tag>
+      
+      <tag>数仓</tag>
+      
+      <tag>分布式计算</tag>
+      
+      <tag>存储</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>机器学习基础</title>
     <link href="/2024/08/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/"/>
     <url>/2024/08/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/</url>
@@ -118,9 +149,34 @@
     <link href="/2024/08/05/hello-world/"/>
     <url>/2024/08/05/hello-world/</url>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! </p><p>值得纪念的日子，今天把之前的博客内容全部成功迁移到了新的平台上面。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>  cout &lt;&lt; welcome to hexo! &lt;&lt; endl;<br>&#125;<br><br></code></pre></td></tr></table></figure>]]></content>
     
     
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>张宇智慧箴言</title>
+    <link href="/2023/10/14/%E5%BC%A0%E5%AE%87%E6%99%BA%E6%85%A7%E7%AE%B4%E8%A8%80/"/>
+    <url>/2023/10/14/%E5%BC%A0%E5%AE%87%E6%99%BA%E6%85%A7%E7%AE%B4%E8%A8%80/</url>
+    
+    <content type="html"><![CDATA[<div class="note note-success">            <p>宝剑锋从磨砺出，梅花香自苦寒来</p>          </div><h2 id="别害怕"><a href="#别害怕" class="headerlink" title="别害怕"></a>别害怕</h2><p>不要试图掌控自己的奋斗过程，完美自己的各项计划，你会失落的，因为事实上它们并不听你的，你越跟它较劲，它越不听话。<br>不过这没什么，每一个成功，都是源于一段不完美的甚至是很狼狈的奋斗。<br>你只要，摈弃杂念，放下功利，全神贯注，尽力就好，学不完又怎样，考的上就行。好孩子，听话。</p><h2 id="拼搏"><a href="#拼搏" class="headerlink" title="拼搏"></a>拼搏</h2><p>年轻的时候，闯一闯，拼一拼，不要怕什么。实在扛不住了，哭一哭，喊一喊。大不了，回家。<br>不要把感情和情绪放在社会上、网络上，真正值得你在乎的，是表面上希望你出人头地，对你百般挑剔，但在心中却只为你祈求平安健康快乐的家人。<br>孩子们，听话，你逼自己的方法，可能不太对。放下包袱，放下功利，带着爱，带着对这个世界的好奇，去拼搏一下。累了，咱们回家就是了。<br><strong>健健康康，内心阳光</strong>，这八个字，可别弄丢了，丢了，会悔恨终身的。</p><h2 id="最大的敌人是自己"><a href="#最大的敌人是自己" class="headerlink" title="最大的敌人是自己"></a>最大的敌人是自己</h2><p>笛卡尔说，征服你自己，而不是征服世界。孩子们，晚安。</p><h2 id="嗜欲深者天机浅天机浅"><a href="#嗜欲深者天机浅天机浅" class="headerlink" title="嗜欲深者天机浅天机浅"></a>嗜欲深者天机浅天机浅</h2><p>古有云，<strong>无欲则刚</strong>。心思繁杂，欲望太多，则易焦虑，徘徊，无己见，恐非做事之正道。孩子们，务必静心，放下功利，用心为之，方可成之。</p><h2 id="基本功"><a href="#基本功" class="headerlink" title="基本功"></a>基本功</h2><p>有人问基础阶段以什么标准来看自己是不是真的懂了，这个问题我前面也回答过，这里详细说几句。我在课上提到一个人，叫做费曼，他是诺贝尔物理学奖获得者，人们试图研究费曼为什么对问题的理解总是透彻深刻，深得其精髓要义，事实上，费曼自己提出过一个观点：把你所学到的理解到的概念性质和方法讲给一个比如小孩子听（这里是为了确保聆听的人对你所讲述的知之甚少），而且让他尽量听懂，这时你无法用那些复杂的专业性的表达来叙述，在寻找简单通俗易懂的语言的时候，你的大脑在不断的深化对于知识的认识，迫使自己在更深层次上理解它们，这样你一定会停滞在很多地方，而这些地方就是你没有理解的地方。通过努力，把你的知识传递给这个孩子并让他听懂，就是你真的懂了，这就是过关。<br>我前面说到，你一定要会复述我课上对知识的讲解，甚至比我讲的还要简要精炼，这是你迅速融入这个学科思维状态的最佳途径。各位，我再写一会书，你们好好思考下我上面这段话，我是真的希望你们能够懂得如何学习，不要再功利的去卷了，真学东西，学真东西，学会怎么学，不仅为了考研，更为了自己的一生。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>读书笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>高等数学</tag>
+      
+    </tags>
     
   </entry>
   
