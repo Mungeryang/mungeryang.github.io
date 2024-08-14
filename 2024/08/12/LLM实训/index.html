@@ -1,0 +1,885 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/ucas.webp">
+  <link rel="icon" href="/img/ucas.webp">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Munger Yang">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="day01-baseline搭建             首先注册魔塔社区帐号，免费领取魔塔GPU算力资源             新建GPU算力环境，下载相关第三方库与拉取镜像资源 1234567## 拉取git镜像git lfs installgit clone https:&#x2F;&#x2F;www.modelscope.cn&#x2F;datasets&#x2F;Datawhale&#x2F;AICamp_yuan_baseline.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DataWhale AI夏令营-LLM实训">
+<meta property="og:url" content="http://example.com/2024/08/12/LLM%E5%AE%9E%E8%AE%AD/index.html">
+<meta property="og:site_name" content="munger写字的地方">
+<meta property="og:description" content="day01-baseline搭建             首先注册魔塔社区帐号，免费领取魔塔GPU算力资源             新建GPU算力环境，下载相关第三方库与拉取镜像资源 1234567## 拉取git镜像git lfs installgit clone https:&#x2F;&#x2F;www.modelscope.cn&#x2F;datasets&#x2F;Datawhale&#x2F;AICamp_yuan_baseline.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/post/rag-buzhou.png">
+<meta property="og:image" content="http://example.com/img/post/lianlu.png">
+<meta property="article:published_time" content="2024-08-12T04:49:43.000Z">
+<meta property="article:modified_time" content="2024-08-14T08:10:54.697Z">
+<meta property="article:author" content="Munger Yang">
+<meta property="article:tag" content="LLM">
+<meta property="article:tag" content="部署">
+<meta property="article:tag" content="微调技术">
+<meta property="article:tag" content="RAG">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/post/rag-buzhou.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>DataWhale AI夏令营-LLM实训 - munger写字的地方</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":75,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Munger Yang&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about" target="_self">
+                <i class="iconfont icon-addrcard"></i>
+                <span>主页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                <span>博客</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/" target="_self">
+                    <i class="iconfont icon-pen"></i>
+                    <span>文章</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/" target="_self">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>总览</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/" target="_self">
+                    <i class="iconfont icon-category-fill"></i>
+                    <span>分类</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/" target="_self">
+                    <i class="iconfont icon-tags-fill"></i>
+                    <span>标签</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/picture" target="_self">
+                <i class="iconfont icon-image"></i>
+                <span>时刻</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/self/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>简历</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/paper.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="DataWhale AI夏令营-LLM实训"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-08-12 12:49" pubdate>
+          2024年8月12日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          29 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">DataWhale AI夏令营-LLM实训</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="day01-baseline搭建"><a href="#day01-baseline搭建" class="headerlink" title="day01-baseline搭建"></a>day01-baseline搭建</h2><div class="note note-success">
+            <p>首先注册魔塔社区帐号，免费领取魔塔GPU算力资源</p>
+          </div>
+
+<p>新建GPU算力环境，下载相关第三方库与拉取镜像资源</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment"># 拉取git镜像</span></span><br>git lfs install<br>git clone https://www.modelscope.cn/datasets/Datawhale/AICamp_yuan_baseline.git<br><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment"># 安装第三方库</span></span><br>pip install streamlit==1.24.0<br><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment"># 启动demo</span></span><br>streamlit run AICamp_yuan_baseline/Task\ 1：零基础玩转源大模型/web_demo_2b.py --server.address 127.0.0.1 --server.port 6006<br></code></pre></td></tr></table></figure>
+
+<h2 id="day02-RAG原理与实践"><a href="#day02-RAG原理与实践" class="headerlink" title="day02-RAG原理与实践"></a>day02-RAG原理与实践</h2><p>检索增强生成 <strong>(Retrieval Augmented Generation,RAG)</strong> 是一种使用来自私有或专用数据源的信息来辅助文本生成的技术。它将检索模型(设计用于搜索大型数据集或知识库)和生成模型(例如大型语言模型 (LLM))，此类模型会使用检 索到的信息生成可供阅读的文本回复)结合在一起。</p>
+<h3 id="LLM局限性"><a href="#LLM局限性" class="headerlink" title="LLM局限性"></a>LLM局限性</h3><p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2005.11401.pdf">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</a></p>
+<p>这篇文章由来自Facebook AI Research、University College London、New York University三大科研教育机构的12名作者 (Patrick Lewis等)共同完成。文章主要介绍了一种新颖的检索增强生成(RAG)模型，该模型旨在解决预训练语言模型 在知识密集型NLP任务中的局限性，RAG技术被首次提出。</p>
+<p>文章中阐述了传统大模型的局限性:传统的大型预训练模型虽然拥有存储大量事实知识的能力，但在 (query accuracy)和更 (knowledge updates)时存在不足。</p>
+<p>同样，在实际业务场景中，通用的基础大模型可能存在无法满足我们需求的情况，主要有以下几方面原因：</p>
+<ul>
+<li><p>知识局限性：大模型的知识来源于训练数据，而这些数据主要来自于互联网上已经公开的资源，对于一些实时性的或者非公开的，由于大模型没有获取到相关数据，这部分知识也就无法被掌握。</p>
+</li>
+<li><p>数据安全性：为了使得大模型能够具备相应的知识，就需要将数据纳入到训练集进行训练。然而，对于企业来说，数据的安全性至关重要，任何形式的数据泄露都可能对企业构成致命的威胁。</p>
+</li>
+<li><p>大模型幻觉：由于大模型是基于概率统计进行构建的，其输出本质上是一系列数值运算。因此，有时会出现模型“一本正经地胡说八道”的情况，尤其是在大模型不具备的知识或不擅长的场景中。</p>
+</li>
+</ul>
+<h3 id="RAG基本步骤"><a href="#RAG基本步骤" class="headerlink" title="RAG基本步骤"></a>RAG基本步骤</h3><p><img src="/img/post/rag-buzhou.png" srcset="/img/loading.gif" lazyload alt="基本步骤"></p>
+<ul>
+<li><p>索引：将文档库分割成较短的 <strong>Chunk</strong>，即文本块或文档片段，然后构建成向量索引。</p>
+</li>
+<li><p>检索：计算问题和 Chunks 的相似度，检索出若干个相关的 Chunk。</p>
+</li>
+<li><p>生成：将检索到的Chunks作为背景信息，生成问题的回答。</p>
+</li>
+</ul>
+<h3 id="RAG完整链路图"><a href="#RAG完整链路图" class="headerlink" title="RAG完整链路图"></a>RAG完整链路图</h3><p><img src="/img/post/lianlu.png" srcset="/img/loading.gif" lazyload alt="RAG执行链路"></p>
+<p>图片来源:(<a target="_blank" rel="noopener" href="https://github.com/netease-youdao/QAnything/blob/master/docs/images/qanything_arch.png">https://github.com/netease-youdao/QAnything/blob/master/docs/images/qanything_arch.png</a>)</p>
+<p>用户进行query查询后，RAG会先进行检索，之后将检索到的 <strong><code>Chunks</code></strong> 和 <strong><code>query</code></strong> 一并输入到大模型，进而回答用户的问题。</p>
+<p>为了完成检索，需要离线将文档（ppt、word、pdf等）经过解析、切割甚至OCR转写，然后进行向量化存入数据库(vector database)中。</p>
+<h3 id="离线计算"><a href="#离线计算" class="headerlink" title="离线计算"></a>离线计算</h3><p>知识库中包含了多种类型的文件，如pdf、word、ppt等，这些 <code>文档</code>（Documents）需要提前被解析，然后切割成若干个较短的 <code>Chunk</code>，并且进行清洗和去重。</p>
+<p>然后，我们会将知识库中的所有 <code>Chunk</code> 都转成向量，这一步也称为 <code>向量化</code>（Vectorization）或者 <code>索引</code>（Indexing）。<code>向量化</code> 需要事先构建一个 <code>向量模型</code>（Embedding Model），它的作用就是将一段 <code>Chunk</code> 转成 <code>向量</code>（Embedding）。</p>
+<p>随着新知识的不断存储，向量的数量也会不断增加。这就需要将这些向量存储到 <code>数据库</code> （DataBase）中进行管理。</p>
+<h3 id="在线计算"><a href="#在线计算" class="headerlink" title="在线计算"></a>在线计算</h3><p>在实际使用RAG系统时，当给定一条用户 <code>查询</code>（Query），需要先从知识库中找到所需的知识，这一步称为 <code>检索</code>（Retrieval）。在 <code>检索</code> 过程中，用户查询首先会经过向量模型得到相应的向量，然后与 <code>数据库</code> 中所有 <code>Chunk</code> 的向量计算相似度，最简单的例如  <code>余弦相似度</code>，然后得到最相近的一系列 <code>Chunk</code> 。</p>
+<p>由于向量相似度的计算过程需要一定的时间，尤其是 <code>数据库</code> 非常大的时候。可以在检索之前进行 <code>召回</code>（Recall），即从 <code>数据库</code> 中快速获得大量大概率相关的 <code>Chunk</code>，然后只有这些 <code>Chunk</code> 会参与计算向量相似度。这样，计算的复杂度就从整个知识库降到了非常低。</p>
+<p>随着知识库的增大，除了检索的速度变慢外，检索的效果也会出现退化。这是由于 <code>向量模型</code> 能力有限，而随着知识库的增大，已经超出了其容量，因此准确性就会下降。在这种情况下，相似度最高的结果可能并不是最优的。</p>
+<p>为了解决这一问题，提升RAG效果，研究者提出增加一个二阶段检索——<code>重排</code> (Rerank)，即利用 <code>重排模型</code>（Reranker），使得越相似的结果排名更靠前。这样就能实现准确率稳定增长，即数据越多，效果越好（如上图中紫线所示）。</p>
+<p>通常，为了与 <code>重排</code> 进行区分，一阶段检索有时也被称为 <code>精排</code> 。而在一些更复杂的系统中，在 <code>召回</code> 和 <code>精排</code> 之间还会添加一个 <code>粗排</code> 步骤，这里不再展开，感兴趣的同学可以自行搜索。综上所述，在整个 <code>检索</code> 过程中，计算量的顺序是 <code>召回</code> &gt; <code>精排</code> &gt; <code>重排</code>，而检索效果的顺序则是 <code>召回</code> &lt; <code>精排</code> &lt; <code>重排</code> 。</p>
+<p>至此，一个完整的RAG链路就构建完毕了。</p>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>[1] Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks </p>
+<p>[2] Gao, Yunfan, et al. “Retrieval-augmented generation for large language models: A survey.” <strong>arXiv preprint arXiv:2312.10997</strong> (2023).</p>
+<p>[3] X. Ma, Y. Gong, P. He, H. Zhao, and N. Duan, “Query rewriting for retrieval-augmented large language models,” <strong>arXiv preprint arXiv:2305.14283</strong>, 2023.</p>
+<p>[4] QAnything: <a target="_blank" rel="noopener" href="https://github.com/netease-youdao/QAnything">https://github.com/netease-youdao/QAnything</a></p>
+<p>[5] When Large Language Models Meet Vector Databases: A Survey <a target="_blank" rel="noopener" href="https://doi.org/10.48550/arXiv.2402.01763">https://doi.org/10.48550/arXiv.2402.01763</a> </p>
+<h2 id="RAG技术实践"><a href="#RAG技术实践" class="headerlink" title="RAG技术实践"></a>RAG技术实践</h2><p>前置条件：使用day01搭建好的baseline环境</p>
+<p>下载环境所需的任务包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git lfs install<br>git <span class="hljs-built_in">clone</span> https://www.modelscope.cn/datasets/Datawhale/AICamp_yuan_baseline.git<br><span class="hljs-built_in">cp</span> AICamp_yuan_baseline/Task\ 3：源大模型RAG实战/* .<br></code></pre></td></tr></table></figure>
+
+<p>双击打开<code>Task 3：源大模型RAG实战.ipynb</code>，然后运行所有单元格。</p>
+<p>在环境中安装<code>streamlit</code>,为了后续进行模型微调以及Demo搭建(day01已经安装完毕)。</p>
+<h3 id="模型下载"><a href="#模型下载" class="headerlink" title="模型下载"></a>模型下载</h3><p>在RAG实战过程中，需要构建一个向量模型。向量模型通常是一个BERT架构，是一个Transformer Encoder。</p>
+<p>在本次学习中，选用基于BERT架构的向量模型 <code>bge-small-zh-v1.5</code>，它是一个4层的BERT模型，最大输入长度512，输出的向量维度也为512。</p>
+<p>向量模型下载：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> modelscope <span class="hljs-keyword">import</span> snapshot_download<br>model_dir = snapshot_download(<span class="hljs-string">&quot;AI-ModelScope/bge-small-zh-v1.5&quot;</span>, cache_dir=<span class="hljs-string">&#x27;.&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>Yuan大模型下载：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> modelscope <span class="hljs-keyword">import</span> snapshot_download<br>model_dir = snapshot_download(<span class="hljs-string">&#x27;IEITYuan/Yuan2-2B-Mars-hf&#x27;</span>, cache_dir=<span class="hljs-string">&#x27;.&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><p>构造向量索引，分装一个向量模型类EmbeddingModel：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 定义向量模型类</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">EmbeddingModel</span>:<br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">    class for EmbeddingModel</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, path: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-literal">None</span>:<br>        <span class="hljs-variable language_">self</span>.tokenizer = AutoTokenizer.from_pretrained(path)<br><br>        <span class="hljs-variable language_">self</span>.model = AutoModel.from_pretrained(path).cuda()<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;Loading EmbeddingModel from <span class="hljs-subst">&#123;path&#125;</span>.&#x27;</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">get_embeddings</span>(<span class="hljs-params">self, texts: <span class="hljs-type">List</span></span>) -&gt; <span class="hljs-type">List</span>[<span class="hljs-built_in">float</span>]:<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">        calculate embedding for text list</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br>        encoded_input = <span class="hljs-variable language_">self</span>.tokenizer(texts, padding=<span class="hljs-literal">True</span>, truncation=<span class="hljs-literal">True</span>, return_tensors=<span class="hljs-string">&#x27;pt&#x27;</span>)<br>        encoded_input = &#123;k: v.cuda() <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> encoded_input.items()&#125;<br>        <span class="hljs-keyword">with</span> torch.no_grad():<br>            model_output = <span class="hljs-variable language_">self</span>.model(**encoded_input)<br>            sentence_embeddings = model_output[<span class="hljs-number">0</span>][:, <span class="hljs-number">0</span>]<br>        sentence_embeddings = torch.nn.functional.normalize(sentence_embeddings, p=<span class="hljs-number">2</span>, dim=<span class="hljs-number">1</span>)<br>        <span class="hljs-keyword">return</span> sentence_embeddings.tolist()<br></code></pre></td></tr></table></figure>
+
+
+
+<p>通过传入模型路径，新建一个 <code>EmbeddingModel</code> 对象 <code>embed_model</code>。初始化时自动加载向量模型的tokenizer和模型参数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&gt; Create embedding model...&quot;</span>)<br>embed_model_path = <span class="hljs-string">&#x27;./AI-ModelScope/bge-small-zh-v1___5&#x27;</span><br>embed_model = EmbeddingModel(embed_model_path)<br></code></pre></td></tr></table></figure>
+
+<p><code>EmbeddingModel</code> 类还有一个 <code>get_embeddings()</code> 函数，它可以获得输入文本的向量表示。</p>
+<h3 id="检索"><a href="#检索" class="headerlink" title="检索"></a>检索</h3><p>为了实现向量检索，定义一个向量库索引类 <code>VectorStoreIndex</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 定义向量库索引类</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">VectorStoreIndex</span>:<br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">    class for VectorStoreIndex</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, doecment_path: <span class="hljs-built_in">str</span>, embed_model: EmbeddingModel</span>) -&gt; <span class="hljs-literal">None</span>:<br>        <span class="hljs-variable language_">self</span>.documents = []<br>        <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> <span class="hljs-built_in">open</span>(doecment_path, <span class="hljs-string">&#x27;r&#x27;</span>, encoding=<span class="hljs-string">&#x27;utf-8&#x27;</span>):<br>            line = line.strip()<br>            <span class="hljs-variable language_">self</span>.documents.append(line)<br><br>        <span class="hljs-variable language_">self</span>.embed_model = embed_model<br>        <span class="hljs-variable language_">self</span>.vectors = <span class="hljs-variable language_">self</span>.embed_model.get_embeddings(<span class="hljs-variable language_">self</span>.documents)<br><br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;Loading <span class="hljs-subst">&#123;<span class="hljs-built_in">len</span>(self.documents)&#125;</span> documents for <span class="hljs-subst">&#123;doecment_path&#125;</span>.&#x27;</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">get_similarity</span>(<span class="hljs-params">self, vector1: <span class="hljs-type">List</span>[<span class="hljs-built_in">float</span>], vector2: <span class="hljs-type">List</span>[<span class="hljs-built_in">float</span>]</span>) -&gt; <span class="hljs-built_in">float</span>:<br>        <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">        calculate cosine similarity between two vectors</span><br><span class="hljs-string">        &quot;&quot;&quot;</span><br>        dot_product = np.dot(vector1, vector2)<br>        magnitude = np.linalg.norm(vector1) * np.linalg.norm(vector2)<br>        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> magnitude:<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">return</span> dot_product / magnitude<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">query</span>(<span class="hljs-params">self, question: <span class="hljs-built_in">str</span>, k: <span class="hljs-built_in">int</span> = <span class="hljs-number">1</span></span>) -&gt; <span class="hljs-type">List</span>[<span class="hljs-built_in">str</span>]:<br>        question_vector = <span class="hljs-variable language_">self</span>.embed_model.get_embeddings([question])[<span class="hljs-number">0</span>]<br>        result = np.array([<span class="hljs-variable language_">self</span>.get_similarity(question_vector, vector) <span class="hljs-keyword">for</span> vector <span class="hljs-keyword">in</span> <span class="hljs-variable language_">self</span>.vectors])<br>        <span class="hljs-keyword">return</span> np.array(<span class="hljs-variable language_">self</span>.documents)[result.argsort()[-k:][::-<span class="hljs-number">1</span>]].tolist() <br></code></pre></td></tr></table></figure>
+
+<p>类似地，通过传入知识库文件路径，新建一个 <code>VectorStoreIndex</code> 对象 <code>index</code>。初始化时会自动读取知识库的内容，然后传入向量模型，获得向量表示。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&gt; Create index...&quot;</span>)<br>doecment_path = <span class="hljs-string">&#x27;./knowledge.txt&#x27;</span><br>index = VectorStoreIndex(doecment_path, embed_model)<br></code></pre></td></tr></table></figure>
+
+<p>上文提到 <code>get_embeddings()</code> 函数支持一次性传入多条文本，但由于GPU的显存有限，输入的文本不宜太多。</p>
+<p>所以，如果知识库很大，需要将知识库切分成多个batch，然后分批次送入向量模型。</p>
+<p><code>VectorStoreIndex</code> 类还有一个 <code>get_similarity()</code> 函数，它用于计算两个向量之间的相似度，这里采用了余弦相似度。<code>VectorStoreIndex</code> 类的入口，即查询函数 <code>query()</code>。传入用户的提问后，首先会送入向量模型获得其向量表示，然后与知识库中的所有向量计算相似度，最后将 <code>k</code> 个最相似的文档按顺序返回，<code>k</code>默认为1。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">question = <span class="hljs-string">&#x27;介绍一下广州&#x27;</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;&gt; Question:&#x27;</span>, question)<br><br>context = index.query(question)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;&gt; Context:&#x27;</span>, context)<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="生成"><a href="#生成" class="headerlink" title="生成"></a>生成</h3><p>为了实现基于RAG的生成，我们还需要定义一个大语言模型类 <code>LLM</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 定义大语言模型类</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">LLM</span>:<br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">    class for Yuan2.0 LLM</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, model_path: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-literal">None</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Creat tokenizer...&quot;</span>)<br>        <span class="hljs-variable language_">self</span>.tokenizer = AutoTokenizer.from_pretrained(model_path, add_eos_token=<span class="hljs-literal">False</span>, add_bos_token=<span class="hljs-literal">False</span>, eos_token=<span class="hljs-string">&#x27;&lt;eod&gt;&#x27;</span>)<br>        <span class="hljs-variable language_">self</span>.tokenizer.add_tokens([<span class="hljs-string">&#x27;&lt;sep&gt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;pad&gt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;mask&gt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;predict&gt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;FIM_SUFFIX&gt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;FIM_PREFIX&gt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;FIM_MIDDLE&gt;&#x27;</span>,<span class="hljs-string">&#x27;&lt;commit_before&gt;&#x27;</span>,<span class="hljs-string">&#x27;&lt;commit_msg&gt;&#x27;</span>,<span class="hljs-string">&#x27;&lt;commit_after&gt;&#x27;</span>,<span class="hljs-string">&#x27;&lt;jupyter_start&gt;&#x27;</span>,<span class="hljs-string">&#x27;&lt;jupyter_text&gt;&#x27;</span>,<span class="hljs-string">&#x27;&lt;jupyter_code&gt;&#x27;</span>,<span class="hljs-string">&#x27;&lt;jupyter_output&gt;&#x27;</span>,<span class="hljs-string">&#x27;&lt;empty_output&gt;&#x27;</span>], special_tokens=<span class="hljs-literal">True</span>)<br><br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Creat model...&quot;</span>)<br>        <span class="hljs-variable language_">self</span>.model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=torch.bfloat16, trust_remote_code=<span class="hljs-literal">True</span>).cuda()<br><br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;Loading Yuan2.0 model from <span class="hljs-subst">&#123;model_path&#125;</span>.&#x27;</span>)<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">generate</span>(<span class="hljs-params">self, question: <span class="hljs-built_in">str</span>, context: <span class="hljs-type">List</span></span>):<br>        <span class="hljs-keyword">if</span> context:<br>            prompt = <span class="hljs-string">f&#x27;背景：<span class="hljs-subst">&#123;context&#125;</span>\n问题：<span class="hljs-subst">&#123;question&#125;</span>\n请基于背景，回答问题。&#x27;</span><br>        <span class="hljs-keyword">else</span>:<br>            prompt = question<br><br>        prompt += <span class="hljs-string">&quot;&lt;sep&gt;&quot;</span><br>        inputs = <span class="hljs-variable language_">self</span>.tokenizer(prompt, return_tensors=<span class="hljs-string">&quot;pt&quot;</span>)[<span class="hljs-string">&quot;input_ids&quot;</span>].cuda()<br>        outputs = <span class="hljs-variable language_">self</span>.model.generate(inputs, do_sample=<span class="hljs-literal">False</span>, max_length=<span class="hljs-number">1024</span>)<br>        output = <span class="hljs-variable language_">self</span>.tokenizer.decode(outputs[<span class="hljs-number">0</span>])<br><br>        <span class="hljs-built_in">print</span>(output.split(<span class="hljs-string">&quot;&lt;sep&gt;&quot;</span>)[-<span class="hljs-number">1</span>])<br></code></pre></td></tr></table></figure>
+
+<p>这里我们传入 <code>Yuan2-2B-Mars</code> 的模型路径，新建一个 <code>LLM</code> 对象 <code>llm</code>。初始化时自动加载源大模型的tokenizer和模型参数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&gt; Create Yuan2.0 LLM...&quot;</span>)<br>model_path = <span class="hljs-string">&#x27;./IEITYuan/Yuan2-2B-Mars-hf&#x27;</span><br>llm = LLM(model_path)<br></code></pre></td></tr></table></figure>
+
+<p><code>LLM</code> 类的入口是生成函数 <code>generate()</code>，它有两个参数：</p>
+<ul>
+<li><code>question</code>: 用户提问，是一个str</li>
+<li><code>context</code>: 检索到的上下文信息，是一个List，默认是[]，代表没有使用RAG</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;&gt; Without RAG:&#x27;</span>)<br>llm.generate(question, [])<br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;&gt; With RAG:&#x27;</span>)<br>llm.generate(question, context)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">&gt;</span> <span class="hljs-string">Without RAG:</span><br><span class="hljs-attr">广州大学（Guangzhou</span> <span class="hljs-string">University）是广东省内一所综合性大学，位于中国广东省广州市。广州大学成立于1952年，前身为广州工学院，是中华人民共和国成立后创建的第一所高等工科院校。</span><br><span class="hljs-attr">广州大学坐落在广州市海珠区，占地面积广阔，校园环境优美。学校拥有多个校区，其中主校区位于广州市番禺区，其他校区分布在广州市的其他地区。学校占地面积约4000亩，拥有现代化的教学、实验和生活设施。</span><br><span class="hljs-attr">广州大学以培养人才为宗旨，注重理论与实践相结合的教学模式。学校开设了多个学院和专业，涵盖了工学、理学、文学、法学、经济学、管理学、艺术学等多个领域。学校现有本科专业近300个，研究生专业涵盖科学、工程、管理、文学、法学、艺术等多个领域。</span><br><span class="hljs-attr">广州大学注重国际交流与合作，积极推进国际化办学。学校与许多国际知名大学建立了合作关系，开展学术交流和合作研究。此外，学校还鼓励学生参与国际交流项目，提供海外实习和留学机会，提升学生的国际视野和能力。</span><br><span class="hljs-attr">广州大学一直以来致力于为学生提供优质的教育环境和丰富的学习资源。学校拥有先进的教学设施和实验室，以及图书馆、体育场馆、艺术工作室等丰富的学生课外活动设施。</span><br><span class="hljs-attr">广州大学以其优秀的教学质量、领先的科研水平和培养优秀学生的能力而闻名。学校致力于培养具有创新精神和社会责任感的高素质人才，为地方经济发展和社会进步做出贡献。&lt;eod&gt;</span><br><span class="hljs-attr">&gt;</span> <span class="hljs-string">With RAG:</span><br><span class="hljs-attr">广州大学是一所位于广东省广州市的全日制普通高等学校，实行省市共建、以市为主的办学体制。学校的办学历史可以追溯到1927年创办的私立广州大学，后来在1951年并入华南联合大学。1984年定名为广州大学。2000年，广州大学经过教育部批准，与广州教育学院、广州师范学院、华南建设学院西院、广州高等师范专科学校合并组建新的广州大学。&lt;eod&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="day03-微调技术原理与实践"><a href="#day03-微调技术原理与实践" class="headerlink" title="day03-微调技术原理与实践"></a>day03-微调技术原理与实践</h2>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/" class="category-chain-item">大模型应用开发</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/LLM/" class="print-no-link">#LLM</a>
+      
+        <a href="/tags/%E9%83%A8%E7%BD%B2/" class="print-no-link">#部署</a>
+      
+        <a href="/tags/%E5%BE%AE%E8%B0%83%E6%8A%80%E6%9C%AF/" class="print-no-link">#微调技术</a>
+      
+        <a href="/tags/RAG/" class="print-no-link">#RAG</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>DataWhale AI夏令营-LLM实训</div>
+      <div>http://example.com/2024/08/12/LLM实训/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Munger Yang</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年8月12日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/08/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" title="机器学习基础">
+                        <span class="hidden-mobile">机器学习基础</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.css')
+      Fluid.utils.createScript('https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://comment.mungeryang.top/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <a target="_blank" rel="noopener" href="https://www.aliyun.com/"> 本网站由<img src="/img/aliyun.png" srcset="/img/loading.gif" lazyload width="65px" />提供CDN加速/云存储服务</a>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+    
+    
+
+  
+</div>
+
+  
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      京ICP证20240808号
+    </a>
+  </span>
+  
+    
+      <span>
+        <a
+          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12345678"
+          rel="nofollow noopener"
+          class="beian-police"
+          target="_blank"
+        >
+          
+            <span style="visibility: hidden; width: 0">|</span>
+            <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
+          
+          <span>京公网安备20240808号</span>
+        </a>
+      </span>
+    
+  
+</div>
+
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/love.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
