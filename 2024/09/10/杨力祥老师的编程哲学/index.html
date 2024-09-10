@@ -19,27 +19,25 @@
   <meta name="author" content="Munger Yang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="大数据技术路线总揽论文精读Google files systemGFS直接以Linux为基础存储层，并且设计模式为单master模式。 另外一方面，GFS 还是采用了 Checkpoints、操作日志（Operation Logs）、影子Master（Shadow Master）等一系列的工程手段，来尽可能地保障整个系统的“可恢复（Recoverable）”，以及读层面的“可用性（Availabi">
+    <meta name="description" content="把程序写成东西感谢今生遇见杨力祥老师！！！活了20多年了，第一次遇到一位将面向对象思想讲解这么透彻的老师。 老师一上来的课程就非常硬核，告诉我们，面向对象就是把程序写成东西 以麦当劳炸薯条的例子，教会我们区分面向过程和面向对象。面向过程就是流程化，第一步做什么第二部做什么。。。最后一步做什么。规则、时间、火候、尺寸必须一点都不能差。 而面向对象是将工作的各个流程打包成几个“东西”，任何人只要学会使">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大数据技术学习笔记">
-<meta property="og:url" content="http://example.com/2024/08/11/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="杨力祥老师的编程哲学-把程序写成东西">
+<meta property="og:url" content="http://example.com/2024/09/10/%E6%9D%A8%E5%8A%9B%E7%A5%A5%E8%80%81%E5%B8%88%E7%9A%84%E7%BC%96%E7%A8%8B%E5%93%B2%E5%AD%A6/index.html">
 <meta property="og:site_name" content="munger写字的地方">
-<meta property="og:description" content="大数据技术路线总揽论文精读Google files systemGFS直接以Linux为基础存储层，并且设计模式为单master模式。 另外一方面，GFS 还是采用了 Checkpoints、操作日志（Operation Logs）、影子Master（Shadow Master）等一系列的工程手段，来尽可能地保障整个系统的“可恢复（Recoverable）”，以及读层面的“可用性（Availabi">
+<meta property="og:description" content="把程序写成东西感谢今生遇见杨力祥老师！！！活了20多年了，第一次遇到一位将面向对象思想讲解这么透彻的老师。 老师一上来的课程就非常硬核，告诉我们，面向对象就是把程序写成东西 以麦当劳炸薯条的例子，教会我们区分面向过程和面向对象。面向过程就是流程化，第一步做什么第二部做什么。。。最后一步做什么。规则、时间、火候、尺寸必须一点都不能差。 而面向对象是将工作的各个流程打包成几个“东西”，任何人只要学会使">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-08-11T14:44:33.000Z">
-<meta property="article:modified_time" content="2024-09-03T11:09:06.094Z">
+<meta property="article:published_time" content="2024-09-10T02:38:51.000Z">
+<meta property="article:modified_time" content="2024-09-10T02:57:44.991Z">
 <meta property="article:author" content="Munger Yang">
-<meta property="article:tag" content="big data">
-<meta property="article:tag" content="数仓">
-<meta property="article:tag" content="分布式计算">
-<meta property="article:tag" content="存储">
+<meta property="article:tag" content="编程思想">
+<meta property="article:tag" content="创新思维">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>大数据技术学习笔记 - munger写字的地方</title>
+  <title>杨力祥老师的编程哲学-把程序写成东西 - munger写字的地方</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -257,7 +255,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="大数据技术学习笔记"></span>
+            <span id="subtitle" data-typed-text="杨力祥老师的编程哲学-把程序写成东西"></span>
           
         </div>
 
@@ -268,8 +266,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-08-11 22:44" pubdate>
-          2024年8月11日 晚上
+        <time datetime="2024-09-10 10:38" pubdate>
+          2024年9月10日 上午
         </time>
       </span>
     
@@ -280,7 +278,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          89 字
+          697 字
         
       </span>
     
@@ -291,7 +289,7 @@
         
         
         
-          1 分钟
+          6 分钟
         
       </span>
     
@@ -328,13 +326,29 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">大数据技术学习笔记</h1>
+            <h1 id="seo-header">杨力祥老师的编程哲学-把程序写成东西</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="大数据技术路线总揽"><a href="#大数据技术路线总揽" class="headerlink" title="大数据技术路线总揽"></a>大数据技术路线总揽</h2><h2 id="论文精读"><a href="#论文精读" class="headerlink" title="论文精读"></a>论文精读</h2><h3 id="Google-files-system"><a href="#Google-files-system" class="headerlink" title="Google files system"></a>Google files system</h3><p>GFS直接以Linux为基础存储层，并且设计模式为单master模式。</p>
-<p>另外一方面，GFS 还是采用了 Checkpoints、操作日志（Operation Logs）、影子Master（Shadow Master）等一系列的工程手段，来尽可能地保障整个系统的“可恢复（Recoverable）”，以及读层面的“可用性（Availability）”。</p>
+                <h2 id="把程序写成东西"><a href="#把程序写成东西" class="headerlink" title="把程序写成东西"></a>把程序写成东西</h2><p>感谢今生遇见杨力祥老师！！！活了20多年了，第一次遇到一位将面向对象思想讲解这么透彻的老师。</p>
+<p>老师一上来的课程就非常硬核，告诉我们，<strong>面向对象就是把程序写成东西</strong></p>
+<p>以麦当劳炸薯条的例子，教会我们区分面向过程和面向对象。面向过程就是流程化，第一步做什么第二部做什么。。。最后一步做什么。规则、时间、火候、尺寸必须一点都不能差。</p>
+<p>而面向对象是将工作的各个流程打包成几个“东西”，任何人只要学会使用这个东西，就可以炸出麦当劳家的高质量薯条。</p>
+<h2 id="复用"><a href="#复用" class="headerlink" title="复用"></a>复用</h2><p>为什么要学面向对象？有什么好处？</p>
+<p>答案就是：<strong>复用</strong>，程序写一次，在不修改的情况下大量拷贝使用。而复用的本质是<strong>共性</strong>，程序只有写成东西才容易找到共性。</p>
+<p>杨老师还从人类思维认知起源给我们讲起，人类最初学会的工作就是<code>分类</code>，引申出类和对象的关系。将分类比做一个多叉树，在实际思考时，是自下而上抽取共性，抽象就是脱离形式提取共性，但写的时候从上到下派生。</p>
+<p>为什么把程序写成东西就容易复用？</p>
+<p>因为人类祖先最早学会的技能就是分类，根据东西的<strong>共性</strong>进行分类，面向对象根本目的是提高复用率。</p>
+<p>程序写成东西的唯一目的就是复用。复用就是自己可以作为贡献者也可以作为创新者。</p>
+<p>不要做“万能工具箱类”，万能工具箱类不可以进行程序的复用，谁都可以拿来用。</p>
+<h2 id="共性与个性"><a href="#共性与个性" class="headerlink" title="共性与个性"></a>共性与个性</h2><p>共性+差异&#x3D;个性</p>
+<p>面向对象提高效率的理论基础与使用依据：<strong>共性远远远远大于差异，但是差异体现价值</strong>，自然界的事物亦如此。</p>
+<p>继承派生的过程中加入了多态的思想，于是产生了个性的差异价值；如果只是单纯的继承派生无法体现出个性的差异价值。</p>
+<p>虚函数是技术、多态是思想。</p>
+<p>越能加入差异反而复用率越多，越能体现差异越能找到共性。</p>
+<h2 id="创新思维"><a href="#创新思维" class="headerlink" title="创新思维"></a>创新思维</h2><p>创新力与创新思维不是天生的，一定是要经过后天大量培训锻炼出来的。分析问题要抓住本质，这句话很空，但是很难做到。</p>
+<p>作为未来的计算机从业者，凡事用数据和计算的思维去思考。</p>
 
                 
               </div>
@@ -353,7 +367,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BC%80%E5%8F%91/" class="category-chain-item">数据科学与数据开发</a>
+  <a href="/categories/cs%E5%9F%BA%E7%A1%80/" class="category-chain-item">cs基础</a>
   
   
 
@@ -368,13 +382,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/big-data/" class="print-no-link">#big data</a>
+        <a href="/tags/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/" class="print-no-link">#编程思想</a>
       
-        <a href="/tags/%E6%95%B0%E4%BB%93/" class="print-no-link">#数仓</a>
-      
-        <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/" class="print-no-link">#分布式计算</a>
-      
-        <a href="/tags/%E5%AD%98%E5%82%A8/" class="print-no-link">#存储</a>
+        <a href="/tags/%E5%88%9B%E6%96%B0%E6%80%9D%E7%BB%B4/" class="print-no-link">#创新思维</a>
       
     </div>
   
@@ -386,8 +396,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>大数据技术学习笔记</div>
-      <div>http://example.com/2024/08/11/大数据技术学习笔记/</div>
+      <div>杨力祥老师的编程哲学-把程序写成东西</div>
+      <div>http://example.com/2024/09/10/杨力祥老师的编程哲学/</div>
     </div>
     <div class="license-meta">
       
@@ -399,7 +409,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年8月11日</div>
+          <div>2024年9月10日</div>
         </div>
       
       
@@ -432,18 +442,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/08/12/LLM%E5%AE%9E%E8%AE%AD/" title="DataWhale AI夏令营-LLM实训">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">DataWhale AI夏令营-LLM实训</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/08/09/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" title="机器学习基础">
-                        <span class="hidden-mobile">机器学习基础</span>
+                      <a href="/2024/08/30/%E9%9B%81%E6%A0%96%E4%B8%80%E5%B9%B4%EF%BC%8C%E7%A7%91%E7%A0%94%E4%B8%89%E5%B9%B4/" title="雁栖一年，科研三年">
+                        <span class="hidden-mobile">雁栖一年，科研三年</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
