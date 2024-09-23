@@ -5,8 +5,8 @@
   
   <entry>
     <title>李沐讲座</title>
-    <link href="/2024/09/21/%E6%9D%8E%E6%B2%90%E8%AE%B2%E5%BA%A7/"/>
-    <url>/2024/09/21/%E6%9D%8E%E6%B2%90%E8%AE%B2%E5%BA%A7/</url>
+    <link href="/2024/09/22/%E6%9D%8E%E6%B2%90%E8%AE%B2%E5%BA%A7/"/>
+    <url>/2024/09/22/%E6%9D%8E%E6%B2%90%E8%AE%B2%E5%BA%A7/</url>
     
     <content type="html"><![CDATA[]]></content>
     
@@ -38,10 +38,10 @@
   
   <entry>
     <title>Google File System</title>
-    <link href="/2024/09/19/Google-File-System/"/>
-    <url>/2024/09/19/Google-File-System/</url>
+    <link href="/2024/09/20/Google-File-System/"/>
+    <url>/2024/09/20/Google-File-System/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="Google-File-System"><a href="#Google-File-System" class="headerlink" title="Google File System"></a>Google File System</h1><p>原文连接：</p><p><a href="https://static.googleusercontent.com/media/research.google.com/zh-CN//archive/gfs-sosp2003.pdf">https://static.googleusercontent.com/media/research.google.com/zh-CN//archive/gfs-sosp2003.pdf</a></p><p>论文翻译：</p><p><a href="https://blog.mrcroxx.com/posts/paper-reading/gfs-sosp2003/">https://blog.mrcroxx.com/posts/paper-reading/gfs-sosp2003/</a></p>]]></content>
     
     
     <categories>
@@ -82,9 +82,9 @@
     
     <tags>
       
-      <tag>RAG</tag>
-      
       <tag>LLM</tag>
+      
+      <tag>RAG</tag>
       
     </tags>
     
@@ -186,13 +186,13 @@
     
     <tags>
       
-      <tag>RAG</tag>
-      
       <tag>LLM</tag>
       
       <tag>部署</tag>
       
       <tag>微调技术</tag>
+      
+      <tag>RAG</tag>
       
     </tags>
     
