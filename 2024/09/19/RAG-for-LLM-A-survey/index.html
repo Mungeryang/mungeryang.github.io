@@ -1,0 +1,913 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/ucas.webp">
+  <link rel="icon" href="/img/ucas.webp">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Munger Yang">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="RAG for  LLM - A survey论文题目： Retrieval-Augmented Generation for Large Language Models: A Survey 论文链接： https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2312.10997 翻译： https:&#x2F;&#x2F;baoyu.io&#x2F;translations&#x2F;ai-paper&#x2F;2312.10997-retrieval-a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RAG for LLM - A survey">
+<meta property="og:url" content="http://example.com/2024/09/19/RAG-for-LLM-A-survey/index.html">
+<meta property="og:site_name" content="munger写字的地方">
+<meta property="og:description" content="RAG for  LLM - A survey论文题目： Retrieval-Augmented Generation for Large Language Models: A Survey 论文链接： https:&#x2F;&#x2F;arxiv.org&#x2F;abs&#x2F;2312.10997 翻译： https:&#x2F;&#x2F;baoyu.io&#x2F;translations&#x2F;ai-paper&#x2F;2312.10997-retrieval-a">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/post/lianlu.png">
+<meta property="article:published_time" content="2024-09-19T02:29:54.000Z">
+<meta property="article:modified_time" content="2024-09-23T08:13:56.422Z">
+<meta property="article:author" content="Munger Yang">
+<meta property="article:tag" content="RAG">
+<meta property="article:tag" content="LLM">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/post/lianlu.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>RAG for LLM - A survey - munger写字的地方</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":75,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Munger Yang&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about" target="_self">
+                <i class="iconfont icon-addrcard"></i>
+                <span>主页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                <span>博客</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/" target="_self">
+                    <i class="iconfont icon-pen"></i>
+                    <span>文章</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/" target="_self">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>总览</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/" target="_self">
+                    <i class="iconfont icon-category-fill"></i>
+                    <span>分类</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/" target="_self">
+                    <i class="iconfont icon-tags-fill"></i>
+                    <span>标签</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/picture" target="_self">
+                <i class="iconfont icon-image"></i>
+                <span>时刻</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/self/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>简历</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/paper.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="RAG for LLM - A survey"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-09-19 10:29" pubdate>
+          2024年9月19日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          38 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">RAG for LLM - A survey</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="RAG-for-LLM-A-survey"><a href="#RAG-for-LLM-A-survey" class="headerlink" title="RAG for  LLM - A survey"></a>RAG for  LLM - A survey</h1><p>论文题目：</p>
+<p>Retrieval-Augmented Generation for Large Language Models: A Survey</p>
+<p>论文链接：</p>
+<p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2312.10997">https://arxiv.org/abs/2312.10997</a></p>
+<p>翻译：</p>
+<p><a target="_blank" rel="noopener" href="https://baoyu.io/translations/ai-paper/2312.10997-retrieval-augmented-generation-for-large-language-models-a-survey">https://baoyu.io/translations/ai-paper/2312.10997-retrieval-augmented-generation-for-large-language-models-a-survey</a></p>
+<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>在LLM得到广泛应用的同时，对于LLM 幻觉、过时知识、不透明&#x2F;不可追踪的推理过程仍然面临巨大挑战。</p>
+<p>可行的解决方式：RAG-检索生成增强</p>
+<p>方式：连接外部数据库- RAG synergistically merges LLMs’ intrinsic knowledge with the vast, dynamic repositories of external databases.</p>
+<p>RAG paradigms（RAG三大范式）：</p>
+<ul>
+<li>Naive RAG</li>
+<li>Advanced RAG</li>
+<li>Modular RAG</li>
+</ul>
+<p>文章重点强调了嵌入在RAG系统中的关键组件，提高了对RAG系统的理解。此外，文章也给出了对于RAG系统的最新评估标准和框架。</p>
+<h2 id="Introduction-RAG在大模型阶段的发展轨迹"><a href="#Introduction-RAG在大模型阶段的发展轨迹" class="headerlink" title="Introduction-RAG在大模型阶段的发展轨迹"></a>Introduction-RAG在大模型阶段的发展轨迹</h2><p>RAG技术最初与Transformer架构相吻合，通过增加外部知识库，在早期阶段用于细化预训练技术（pre-training）。</p>
+<p>随着ChatGPT的兴起，大语言模型在长上下文的理解中展现出了强大能力。</p>
+<p>RAG研究转向在推理阶段为LLM提供更好的信息，以回答更复杂和知识密集型的任务，导致RAG研究的快速发展。</p>
+<p>后续随着研究进一步深入，RAG技术不再局限于推理阶段而是开始更多的和微调技术相结合。</p>
+<p>总结：预训练-推理-微调</p>
+<p>RAG技术本身经历了快速发展，但是目前仍然没有对RAG系统发展的清楚阐述，这篇文章的写作目的之一就是填补这一空白，去为读者绘制RAG发展路径并评估他未来的发展路径。</p>
+<p>文章旨在阐明检索增强技术的演变，评估各种方法在各自上下文中的优点和缺点，并推测即将到来的趋势和创新。</p>
+<p>本文的主要贡献：</p>
+<ul>
+<li>系统性回顾了RAG最新的方法、技术，描述了RAG三大范式的演变，将RAG研究置于LLM前景中</li>
+<li>识别并阐明了RAG的三大核心技术：Retrieval、Generation、Augmentation，阐明了这些组件如何协同形成有效的RAG框架</li>
+<li>总结了RAG的当前评估方法，涵盖了26个任务，近50个数据集，概述了评估目标和指标，以及当前的评估基准和工具。预计RAG的未来方向，强调应对当前挑战的潜在增强。</li>
+</ul>
+<p>通过认真阅读、分析原文后，应该可以对本文的三大贡献进行连贯复述。</p>
+<h2 id="SectionII-RAG三大范式"><a href="#SectionII-RAG三大范式" class="headerlink" title="SectionII-RAG三大范式"></a>SectionII-RAG三大范式</h2><h3 id="Naive-RAG"><a href="#Naive-RAG" class="headerlink" title="Naive RAG"></a>Naive RAG</h3><p>Indexing</p>
+<p>索引编排阶段会将所有类型的文档（PDF、HTML、Word、Markdown）转换为统一的文本格式。之后，为了使用语言模型的文本限制，“格式化”后的文本会被切分成chunks，使用嵌入模型，这些chunks会被转换为向量存储在向量数据库中。</p>
+<p>Retrieval</p>
+<p>RAG系统会将用户请求(query)转换为一个向量表示，然后通过计算查询向量和chunks向量之间的相似度来检索与query最相近的top k个chunks。</p>
+<p>Generation</p>
+<p>将用户提出的查询和所选文档合成为一个连贯的提示，大型语言模型的任务是制定响应。在正在进行的对话情况下，任何现有的历史都会可以集成到提示中，是模型能够有效参与多轮对话交互。</p>
+<p>检索阶段的挑战：准确率和召回率；导致错误或不相关的chunk，以及缺少关键信息。</p>
+<p>生成阶段的困难：出现幻觉</p>
+<p>增强阶段的障碍：检索信息与不同任务结合可能具有挑战性，有时会导致输出不连贯。对于复杂需求，基于最初查询的单一检索并不足以获取足够的上下文信息。</p>
+<h3 id="Advanced-RAG"><a href="#Advanced-RAG" class="headerlink" title="Advanced RAG"></a>Advanced RAG</h3><p>相比于Naive RAG，Advanced RAG专注于提高检索质量，运用了pre-retrieval 和 post-retrieval策略。</p>
+<p>pre-retrieval重点关注优化索引结构和原始查询，优化索引的目标是提高被索引的内容的质量。</p>
+<p>post-retrieval阶段主要是整合有效查询，主要的方法包括chunks重排和上下文压缩。重新排序检索到的信息以将最相关的内容重新定位到提示的边缘是关键策略。</p>
+<h3 id="Modular-RAG"><a href="#Modular-RAG" class="headerlink" title="Modular RAG"></a>Modular RAG</h3><p>相比于前两种范式，模块化RAG的适应性和多功能性得到提高。</p>
+<p>方法：添加一个搜索模块进行相似度搜索，并通过微调细化检索器。重组RAG模块+重排RAG管道来解决目前新的挑战，引入额外组件提高检索和处理能力。</p>
+<p>创新：</p>
+<p>Rewrite-Retrieve-Read Model 利用LLM的能力通过重写模块和LM反馈机制来改进检索查询，以更新重写模型。，提高任务性能。</p>
+<p>Generate-Read 用LLM生成的内容替换传统的检索</p>
+<p>ReciteRead 强调从模型权重中检索，增强了模型处理知识密集型任务的能力</p>
+<p>子查询和假设文档嵌入 (HyDE)旨在通过关注生成答案和真实文档之间的嵌入相似性来提高检索相关性</p>
+<p>调整：Demonstrate-Search-Predict(DSP)框架和迭代的Retrieve-Read-Retrieve-Read流使用增强了模块的协同复杂理解。</p>
+<h3 id="RAG与微调"><a href="#RAG与微调" class="headerlink" title="RAG与微调"></a>RAG与微调</h3><p>RAG通过提供实时知识更新和有效利用具有高可解释性的知识源，在动态环境中表现出色。然而，在检索方面有更高的延迟和伦理考虑。</p>
+<p>RAG 和 微调技术之间的选择取决于应用程序上下文中数据动态、定制和计算能力的具体需求。RAG 和 微调技术不是互斥的，可以相互补充，增强了模型在不同层次上的能力。在某些情况下，它们的组合使用可能会导致最佳性能。涉及RAG和微调技术的优化过程可能需要多次迭代才能获得满意的结果。</p>
+<h2 id="检索-RETTRIEVAL"><a href="#检索-RETTRIEVAL" class="headerlink" title="检索-RETTRIEVAL"></a>检索-RETTRIEVAL</h2><h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><h4 id="Semi-structured-data"><a href="#Semi-structured-data" class="headerlink" title="Semi-structured data"></a>Semi-structured data</h4><p>特别关注对于<strong>半结构化数据</strong>的处理分析。典型的半结构化数据例如PDF包括文本和表信息。</p>
+<p>有两大原因导致传统RAG系统在处理半结构化数据时面临挑战：</p>
+<ol>
+<li>文本的切分会不经意地拆分表格，导致检索过程中的数据损坏</li>
+<li>表与数据的结合会使语义相似度检索变得更加复杂</li>
+</ol>
+<p>目前，处理半结构化数据的方法是<strong>利用LLM的编码能力在数据库表上执行Text-2-SQL</strong>[Zha, Liangyu, et al. TableGPT: Towards Unifying Tables, Nature Language and Commands into One GPT.]查询，或者<strong>将表格转化为文本格式</strong>[Luo, Ziyang, et al. Augmented Large Language Models with Parametric Knowledge Guiding.]，使用基于文本的处理方法进行分析。</p>
+<p>所有的方法目前都不是最优的，该领域还有大量的研究机会。</p>
+<p>关注北航关于Text-2-SQL的最新成果</p>
+<h4 id="Structured-data"><a href="#Structured-data" class="headerlink" title="Structured data"></a>Structured data</h4><p>图检索使GNN神经网络、LLM与RAG相结合，通过LLM的软提示来增强图形理解和问答能力，并使用Prize-Collecting Steiner Tree进行优化图检索的结果。</p>
+<h4 id="LLMs-Generated-Content"><a href="#LLMs-Generated-Content" class="headerlink" title="LLMs-Generated Content"></a>LLMs-Generated Content</h4><p>LLM 生成的上下文通常包含更准确的答案，因为其与因果语言建模的预训练目标能更好地对齐。</p>
+<h3 id="Retrieval-Granularity"><a href="#Retrieval-Granularity" class="headerlink" title="Retrieval Granularity"></a>Retrieval Granularity</h3><p>粗粒度检索单元理论上可以为问题提供更多相关信息，但它们也可能包含冗余内容，这可能会分散下游任务中的检索器和语言模型。</p>
+<p>另一方面，细粒度检索单元粒度增加了检索的负担，不能保证语义完整性并满足所需的知识。</p>
+<p>选择恰当的检索粒度是一个简单的策略用来提高检索和下游任务的表现。</p>
+<p>检索粒度从粗到细包括：Token, Phrase, Sentence, Proposition, Chunks, Document。将Propositions作为检索单元可以提高检索的相关性和精准度。</p>
+<p>知识图谱的检索粒度包括：Entity, Triplet, and sub-Graph.</p>
+<h3 id="索引优化"><a href="#索引优化" class="headerlink" title="索引优化"></a>索引优化</h3><p>在索引阶段，文档将被处理、分割并转换为要存储在向量数据库中的嵌入。索引的构造质量决定了是否可以在检索阶段获取正确的上下文。</p>
+<h4 id="分块策略"><a href="#分块策略" class="headerlink" title="分块策略"></a>分块策略</h4><p>分块常用的方法是将文档分为不同的标记的chunks。</p>
+<p>分块需要在语义完整性和上下文长度之间进行trade-off。更长的块会包含更长的上下文，但是噪声会增加、处理时间也会增加；短块包含的噪声小，但是能包含的上下文信息也更少。</p>
+<p>于是后面提出了以句子作为检索单元，前后句被提供作为LLM的上下文内容。</p>
+<h4 id="元数据附加"><a href="#元数据附加" class="headerlink" title="元数据附加"></a>元数据附加</h4><p>在检索过程中为文档时间戳分配不同的权重可以实现时间感知的RAG，确保知识的新鲜度并避免过时的信息。</p>
+<p>元数据也可以被人工构建(添加段落摘要以及引入假设问题)。具体来说，使用 LLM 生成文档可以回答的问题，然后计算检索过程中原始问题和假设问题之间的相似度，以减少问题和答案之间的语义差距。</p>
+<h4 id="结构化索引"><a href="#结构化索引" class="headerlink" title="结构化索引"></a>结构化索引</h4><p>层次索引结构和知识图谱都可以提高信息检索的准确率。</p>
+<h3 id="查询优化"><a href="#查询优化" class="headerlink" title="查询优化"></a>查询优化</h3><p>问题本身的复杂性、语义模糊性都是查询过程中遇到的困难。</p>
+<p>查询优化的方法主要有三大类：</p>
+<p>1.查询扩展</p>
+<ul>
+<li>多路查询</li>
+<li>子查询</li>
+<li>Chain-of-Verification(CoVe)</li>
+</ul>
+<p>2.查询转换-查询重写</p>
+<p>3.查询路由</p>
+<h3 id="嵌入-Embedding"><a href="#嵌入-Embedding" class="headerlink" title="嵌入-Embedding"></a>嵌入-Embedding</h3><p>怎么理解嵌入？</p>
+<p>Embedding 是将离散的非结构化数据(图片、视频、音频、文本)通过Embedding Model转换为连续的向量表示的技术。</p>
+<p>Embedding 常常用于将文本数据中的单词、句子或文档映射为固定长度的实数向量，使得文本数据能够在计算机中被更好地处理和理解。通过 Embedding，每个单词或句子都可以用一个实数向量来表示，这个向量中包含了该单词或句子的语义信息。</p>
+<p>RAG系统中，检索是通过计算嵌入问题和文档块之间的相似度实现的。</p>
+<p>没有最好的答案去回答“要使用哪一个嵌入模型”，然而，对于不同的问题可以有不同的方法。</p>
+<h3 id="适配器"><a href="#适配器" class="headerlink" title="适配器"></a>适配器</h3><p>Luo, Ziyang, et al. Augmented Large Language Models with Parametric Knowledge Guiding.</p>
+<p>这篇文章介绍了一种通过指令微调将知识集成到白盒模型中的创新方法。检索器模块直接替换为根据查询生成相关文档。这种方法有助于解决微调过程中遇到的困难并提高模型性能。</p>
+<h2 id="增强-AUGMENTATION-PROCESS-IN-RAG"><a href="#增强-AUGMENTATION-PROCESS-IN-RAG" class="headerlink" title="增强-AUGMENTATION PROCESS IN RAG"></a>增强-AUGMENTATION PROCESS IN RAG</h2><p>增强的过程主要侧重于优化检索的过程，这一部分介绍了三大检索增强的过程：迭代式检索、递归式检索、自适应检索。</p>
+<p>迭代检索涉及检索和生成之间交替，允许在每一步从知识库中更丰富、更有针对性的上下文。递归检索涉及逐步细化用户查询并将问题分解为子问题，然后通过检索和生成不断解决复杂问题。自适应检索侧重于使 RAG 系统能够自主确定外部知识检索是否必要以及何时停止检索和生成，通常使用 LLM 生成的特殊标记来控制。</p>
+<h2 id="生成-GENERATION"><a href="#生成-GENERATION" class="headerlink" title="生成-GENERATION"></a>生成-GENERATION</h2><p>在检索后，将所有检索到的信息直接输入到LLM中回答问题并不是一个好的实践。</p>
+<h3 id="上下文配置"><a href="#上下文配置" class="headerlink" title="上下文配置"></a>上下文配置</h3><p>过长的上下文信息会导致LLM“忽视中间段落”，与人类一样，LLM 往往只关注长文本的开头和结尾，同时忘记中间部分。因此，在 RAG 系统中，我们通常需要进一步处理检索到的内容。</p>
+<p>重排：从根本上重新排序对文档(chunks)块进行重新排序以首先突出最相关的结果，有效地减少整体文档池，在信息检索中切断双重目的，充当增强器和过滤器，为更精确的语言模型处理提供细化的输入。</p>
+<p>上下文选择&#x2F;压缩：对RAG过程的一个误解是相信尽可能多地检索相关文档并用长检索提示包含他们是有好处的。然而，大量的信息也会带来大量的干扰，削弱大语言模型对于关键信息的敏锐度。</p>
+<p>压缩方法包括检测并移除不重要的tokens，将上下文转化为人类很难理解但是LLM很好理解的形式。</p>
+<p>小语言模型SLM用作过滤器，大语言模型LLM用作重排代理。在信息抽取任务中，指导LLM去重组被SLM识别的挑战性样本会导致效果显著提升。</p>
+<h3 id="LLM微调"><a href="#LLM微调" class="headerlink" title="LLM微调"></a>LLM微调</h3><p>当LLM缺少特定领域的数据的时候，外部知识可以被提供通过微调技术。</p>
+<p>微调的另一个好处是可以控制模型的输入和输出。它可以让LLM适应特定的数据格式和按照指示以特定风格生成响应。</p>
+<p>通过强化学习将LLM输出与人类或检索器偏好对齐是一种潜在的方法。除了与人类偏好对齐外，还可以与微调模型和检索器的偏好保持一致。</p>
+<p>当环境防止访问强大的专有模型或更大的参数开源模型时，一种简单有效的方法是提取更强大的模型（例如 GPT-4）。</p>
+<h2 id="下游任务与评估"><a href="#下游任务与评估" class="headerlink" title="下游任务与评估"></a>下游任务与评估</h2><h3 id="下游任务"><a href="#下游任务" class="headerlink" title="下游任务"></a>下游任务</h3><p>RAG的核心任务仍然是<strong>问答</strong>(QA)，QA包括传统的单步&#x2F;多步问答、多项选择、特定领域问答、长文本场景问答。</p>
+<p>RAG也不断扩展到多个下游任务，如信息提取(IE)、对话生成、代码搜索等。</p>
+<h3 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h3><p>上下文相关性和噪声鲁棒性对于评估检索质量很重要，而答案忠实度、答案相关性、负拒绝、信息集成和反事实鲁棒性对于评估生成质量很重要。</p>
+<h2 id="RAG面临主要挑战和未来前景"><a href="#RAG面临主要挑战和未来前景" class="headerlink" title="RAG面临主要挑战和未来前景"></a>RAG面临主要挑战和未来前景</h2><h3 id="RAG-VS-长上下文"><a href="#RAG-VS-长上下文" class="headerlink" title="RAG VS 长上下文"></a>RAG VS 长上下文</h3><p>目前，LLM 可以毫不费力地管理超过 200,000 个标记的上下文。这也引发了关于当LLM不受上下文限制的时候是否还需要RAG的讨论。</p>
+<p>对于RAG过程，整个检索和推理过程是可观察的，而仅依靠长上下文生成仍然是一个黑匣子。在超长上下文的背景下开发新的 RAG 方法是未来研究趋势之一。</p>
+<h3 id="RAG鲁棒性"><a href="#RAG鲁棒性" class="headerlink" title="RAG鲁棒性"></a>RAG鲁棒性</h3><p>检索过程中噪声或矛盾信息的存在会对RAG的输出质量产生不利影响。这种情况被比喻地称为“Misinformation 可以比根本没有信息更糟糕”。</p>
+<p>提高RAG对这种对抗性或反事实输入的抵抗力正在获得研究势头，已成为一个关键的性能指标。</p>
+<p>The Power of Noise: Redefining Retrieval for RAG Systems.研究结果表明，包含不相关的文档可能会意外地提高准确性超过 30%，这与质量降低的初始假设相矛盾。</p>
+<p>结果强调了开发专门的策略将检索与语言生成模型集成的重要性，强调了进一步研究和探索对 RAG 鲁棒性的必要性。</p>
+<h3 id="混合方法"><a href="#混合方法" class="headerlink" title="混合方法"></a>混合方法</h3><p>将RAG与微调技术相结合正在成为领先策略，确定RAG与微调最佳整合取决于是顺序、交替还是端到端的训练。</p>
+<p>另一个趋势是将特殊功能的小语言模型SLM引入RAG，并通过RAG系统进行微调。</p>
+<h3 id="scaling-laws-of-RAG"><a href="#scaling-laws-of-RAG" class="headerlink" title="scaling laws of RAG"></a>scaling laws of RAG</h3><p>基于RAG的端到端模型和预训练模型仍然是当前研究人员的重点之一。</p>
+<p>Kaplan, Jared, et al. “Scaling Laws for Neural Language Models.” arXiv: Learning,arXiv: Learning, Jan. 2020.</p>
+<p>缩放规律已经被建立对LLM，但是应用目前尚未确定。</p>
+<h3 id="Production-Ready-RAG"><a href="#Production-Ready-RAG" class="headerlink" title="Production-Ready RAG"></a>Production-Ready RAG</h3><p>然而，提高检索效率，提高大型知识库的文档召回率，保证数据安全，例如防止LLM中元数据和文档来源的无意披露，是仍然有待解决的挑战。</p>
+<p>RAG技术在特殊方向的趋势：1.特定需求的定制化。2.降低最初的学习曲线来简化RAG使用。3.优化RAG来更好的服务生产环境。</p>
+<h3 id="多模态RAG"><a href="#多模态RAG" class="headerlink" title="多模态RAG"></a>多模态RAG</h3><p>RAG在图像、音频视频、编码领域的应用。</p>
+<h2 id="个人阅读总结"><a href="#个人阅读总结" class="headerlink" title="个人阅读总结"></a>个人阅读总结</h2><h3 id="通原理"><a href="#通原理" class="headerlink" title="通原理"></a>通原理</h3><p>对于RAG技术栈的原理自己在脑海中应该有了一定的轮廓，接下来就是重点学习一些技术细节，比如<strong>微调技术、嵌入技术</strong>，更多去关注下游任务实践与部署应用。</p>
+<p>读完论文后要动手去尝试去实现一下RAG技术，通过动手实践真正对这门技术有一个具体的认识，而不是仅仅漂浮于理论上。练实践带动并反作用于学习，真正从实践中体会部署技术、微调技术、训练技术。</p>
+<p><img src="/img/post/lianlu.png" srcset="/img/loading.gif" lazyload alt="RAG执行链路"></p>
+<h3 id="知趋势"><a href="#知趋势" class="headerlink" title="知趋势"></a>知趋势</h3><p>读完论文后要对RAG的未来发展趋势自己心里要有一定的认知。这项技术已经做了解决了哪些问题？还能解决哪些问题？哪些方面还需提高或面临困难？对于上面三个问题，通过后期继续学习后要有清楚的认识。起步阶段不要着急，刚刚读了这个方向的一篇文章而已。</p>
+<p>同样更重要的就是，了解趋势与发现问题后，如何去解决？如何转换为自己Idea，这也是关键。</p>
+<h3 id="着力点"><a href="#着力点" class="headerlink" title="着力点"></a>着力点</h3><p>多模态RAG(Multi-modal RAG)、半结构化数据检索(处理半结构化数据的方法优化)、鲁棒性(RAG的对抗性或反事实输入的抵抗力)</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AE%BA%E6%96%87%E7%A0%94%E8%AF%BB/" class="category-chain-item">论文研读</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/RAG/" class="print-no-link">#RAG</a>
+      
+        <a href="/tags/LLM/" class="print-no-link">#LLM</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>RAG for LLM - A survey</div>
+      <div>http://example.com/2024/09/19/RAG-for-LLM-A-survey/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Munger Yang</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年9月19日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/09/19/Google-File-System/" title="Google File System">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Google File System</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/09/18/%E3%80%8A%E5%9C%A8%E7%BA%BF%E3%80%8B-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" title="《在线》-读书笔记">
+                        <span class="hidden-mobile">《在线》-读书笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.css')
+      Fluid.utils.createScript('https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://comment.mungeryang.top/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <a target="_blank" rel="noopener" href="https://www.aliyun.com/">本网站由<img src="/img/aliyun.png" srcset="/img/loading.gif" lazyload width="65px" />提供CDN加速/云存储服务</a>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+    
+    
+
+  
+</div>
+
+  
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      京ICP证202408081001号
+    </a>
+  </span>
+  
+    
+      <span>
+        <a
+          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12345678"
+          rel="nofollow noopener"
+          class="beian-police"
+          target="_blank"
+        >
+          
+            <span style="visibility: hidden; width: 0">|</span>
+            <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
+          
+          <span>京公网安备202408081001号</span>
+        </a>
+      </span>
+    
+  
+</div>
+
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/love.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
