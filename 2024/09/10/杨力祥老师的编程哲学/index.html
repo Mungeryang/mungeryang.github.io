@@ -19,16 +19,16 @@
   <meta name="author" content="Munger Yang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="天下大事，必做于细               把程序写成东西感谢今生遇见杨力祥老师！！！活了20多年了，第一次遇到一位将面向对象思想讲解这么透彻的老师。 老师一上来的课程就非常硬核，告诉我们，面向对象就是把程序写成东西 以麦当劳炸薯条的例子，教会我们区分面向过程和面向对象。面向过程就是流程化，第一步做什么第二部做什么。。。最后一步做什么。规则、时间、火候、尺寸必须一点都">
+    <meta name="description" content="天下大事，必做于细站在设计者的角度去思考问题               把程序写成东西感谢今生遇见杨力祥老师！！！活了20多年了，第一次遇到一位将面向对象思想讲解这么透彻的老师。 老师一上来的课程就非常硬核，告诉我们，面向对象就是把程序写成东西 以麦当劳炸薯条的例子，教会我们区分面向过程和面向对象。面向过程就是流程化，第一步做什么第二部做什么。。。最后一步做什么。规则、">
 <meta property="og:type" content="article">
 <meta property="og:title" content="杨力祥老师的编程哲学-把程序写成东西">
 <meta property="og:url" content="http://example.com/2024/09/10/%E6%9D%A8%E5%8A%9B%E7%A5%A5%E8%80%81%E5%B8%88%E7%9A%84%E7%BC%96%E7%A8%8B%E5%93%B2%E5%AD%A6/index.html">
 <meta property="og:site_name" content="munger写字的地方">
-<meta property="og:description" content="天下大事，必做于细               把程序写成东西感谢今生遇见杨力祥老师！！！活了20多年了，第一次遇到一位将面向对象思想讲解这么透彻的老师。 老师一上来的课程就非常硬核，告诉我们，面向对象就是把程序写成东西 以麦当劳炸薯条的例子，教会我们区分面向过程和面向对象。面向过程就是流程化，第一步做什么第二部做什么。。。最后一步做什么。规则、时间、火候、尺寸必须一点都">
+<meta property="og:description" content="天下大事，必做于细站在设计者的角度去思考问题               把程序写成东西感谢今生遇见杨力祥老师！！！活了20多年了，第一次遇到一位将面向对象思想讲解这么透彻的老师。 老师一上来的课程就非常硬核，告诉我们，面向对象就是把程序写成东西 以麦当劳炸薯条的例子，教会我们区分面向过程和面向对象。面向过程就是流程化，第一步做什么第二部做什么。。。最后一步做什么。规则、">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/life/oo.jpg">
 <meta property="article:published_time" content="2024-09-10T02:38:51.000Z">
-<meta property="article:modified_time" content="2024-09-26T11:01:56.088Z">
+<meta property="article:modified_time" content="2024-09-30T11:25:26.965Z">
 <meta property="article:author" content="Munger Yang">
 <meta property="article:tag" content="编程思想">
 <meta property="article:tag" content="创新思维">
@@ -280,7 +280,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k 字
+          1.7k 字
         
       </span>
     
@@ -291,7 +291,7 @@
         
         
         
-          14 分钟
+          15 分钟
         
       </span>
     
@@ -343,7 +343,7 @@
               <div class="markdown-body">
                 
                 <div class="note note-success">
-            <p>天下大事，必做于细</p>
+            <p>天下大事，必做于细</p><p>站在设计者的角度去思考问题</p>
           </div>
 
 <img src="/img/life/oo.jpg" srcset="/img/loading.gif" lazyload/>
@@ -389,7 +389,8 @@
 <p>什么叫函数声明？-只给编译器看不占内存</p>
 <p>函数声明的作用：函数的栈空间是靠函数的声明开辟的，被调函数的形参空间是主调函数做出来的。而空间大小有参数的类型决定，仅仅告诉编译器要撑多大空间。</p>
 <p>函数外不能进行赋值运算，编译完是指令的（动作）必须进函数。无论是变量还是函数，只要<strong>定义就要在内存中出东西</strong>。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-type">int</span> a;<span class="hljs-comment">//变量的声明，全局变量直接在内存中静态代码区赋值为0</span><br><span class="hljs-type">int</span> b;<br>b = <span class="hljs-number">5</span><span class="hljs-comment">//函数外的赋值操作，编译报错！！</span><br><span class="hljs-type">int</span> <span class="hljs-built_in">main</span>()&#123;<br>  <span class="hljs-type">int</span> a = <span class="hljs-number">1</span>;<span class="hljs-comment">//变量的声明+定义 </span><br>  <br>&#125;<br></code></pre></td></tr></table></figure>
+<p>所有C语言编译完是指令的，一定要进函数，不能在全局位置，指令必须存在函数内部。函数调用必须也要在函数内部进行，main函数是出发点。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-type">int</span> a;<span class="hljs-comment">//变量的声明，全局变量直接在内存中静态代码区赋值为0</span><br><span class="hljs-type">int</span> b;<br>b = <span class="hljs-number">5</span><span class="hljs-comment">//函数外的赋值操作，编译报错！！</span><br><span class="hljs-type">int</span> c = <span class="hljs-number">10</span>;<span class="hljs-comment">//定义了一个变量c并初始化为10，与前两行不等价</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>  <span class="hljs-type">int</span> a = <span class="hljs-number">1</span>;<span class="hljs-comment">//变量的声明+定义 </span><br>  <br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>main函数存在的意义：</p>
 <p>禁止全局的语句进行运算操作，函数调用也是语句</p>
@@ -399,32 +400,8 @@
 <p>5.狗屎值与野指针</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>  <span class="hljs-type">int</span> a;<span class="hljs-comment">//生成狗屎值-只声明不赋值</span><br>  <span class="hljs-comment">//千万不要这么写</span><br>	<span class="hljs-type">int</span> *p;<span class="hljs-comment">//野指针-指向位置随机，危险系数极大</span><br>	*p = <span class="hljs-number">5</span>;<span class="hljs-comment">//给一个随机位置赋值，会发生难以预料的危险，如果这个指针指向了内核</span><br>&#125;<br><br></code></pre></td></tr></table></figure>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<p>C++有两类人，一类是负责设计类机构的，另一部分是基于类架构写程序的人</p>
+<p>C++语言的设计与演化</p>
 
                 
               </div>
