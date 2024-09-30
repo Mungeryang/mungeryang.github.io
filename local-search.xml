@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>AI大模型时代人才需求与技能培养</title>
+    <link href="/2024/09/30/AI%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%97%B6%E4%BB%A3%E4%BA%BA%E6%89%8D%E9%9C%80%E6%B1%82%E4%B8%8E%E6%8A%80%E8%83%BD%E5%9F%B9%E5%85%BB/"/>
+    <url>/2024/09/30/AI%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%97%B6%E4%BB%A3%E4%BA%BA%E6%89%8D%E9%9C%80%E6%B1%82%E4%B8%8E%E6%8A%80%E8%83%BD%E5%9F%B9%E5%85%BB/</url>
+    
+    <content type="html"><![CDATA[<h2 id="AI大模型需要的三类人才"><a href="#AI大模型需要的三类人才" class="headerlink" title="AI大模型需要的三类人才"></a>AI大模型需要的三类人才</h2><p>核心基础理论与架构、大模型+X、支持大模型的计算机系统</p><h2 id="技能与素质需求"><a href="#技能与素质需求" class="headerlink" title="技能与素质需求"></a>技能与素质需求</h2><h3 id="大模型核心基础理论与架构"><a href="#大模型核心基础理论与架构" class="headerlink" title="大模型核心基础理论与架构"></a>大模型核心基础理论与架构</h3><p>机器学习基础：熟悉机器学习基础算法，线性回归、决策树、随机向量机等，要理解过拟合、正则化、交叉验证等概念</p><p>深度学习理论：神经网络的基本结构和工作原理，熟练使用深度学习框架，如：tensorfllow、pytorch，理解卷积神经网络CNN、循环神经网络RNN、Transformer等结构</p><h3 id="大模型-X"><a href="#大模型-X" class="headerlink" title="大模型+X"></a>大模型+X</h3><p>交叉学科，行业赋能，落地应用。大模型在各行各业的落地使用。</p><h3 id="支持大模型的计算机系统"><a href="#支持大模型的计算机系统" class="headerlink" title="支持大模型的计算机系统"></a>支持大模型的计算机系统</h3><p>不做模型本身，但是也要了解大模型的原理、机器学习与深度学习。更多地侧重对于大模型的训练、部署与使用层面，了解如何评估模型的性能，掌握云计算与大数据技术，能够处理大规模数据集，会使用云服务对打模型进行部署服务与运用。</p><p>引用自：郑纬民院士</p><p>视频源：<a href="https://www.bilibili.com/video/BV1jUtKekEkR/?spm_id_from=333.1007.tianma.2-2-5.click&vd_source=f093c3d64ba399e149cbffa6cd31a7b0">https://www.bilibili.com/video/BV1jUtKekEkR/?spm_id_from=333.1007.tianma.2-2-5.click&amp;vd_source=f093c3d64ba399e149cbffa6cd31a7b0</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>大模型应用开发</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LLM</tag>
+      
+      <tag>人工智能</tag>
+      
+      <tag>职业发展</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>8-9月总结与展望</title>
     <link href="/2024/09/29/8-9%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/"/>
     <url>/2024/09/29/8-9%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/</url>
@@ -74,13 +103,13 @@
       
       <tag>科研心路</tag>
       
+      <tag>职业发展</tag>
+      
       <tag>机器学习</tag>
       
       <tag>深度学习</tag>
       
       <tag>前沿讲座</tag>
-      
-      <tag>职业发展</tag>
       
     </tags>
     
