@@ -62,7 +62,7 @@
     <link href="/2024/09/28/Pytorch-and-Deep-learning-NoteBook/"/>
     <url>/2024/09/28/Pytorch-and-Deep-learning-NoteBook/</url>
     
-    <content type="html"><![CDATA[<div class="note note-success">            <p>PyTorch与深度学习笔记，持续更新….</p>          </div><h2 id="参考学习资料"><a href="#参考学习资料" class="headerlink" title="参考学习资料"></a>参考学习资料</h2><p>小土堆-pytorch学习教程：<a href="https://www.bilibili.com/video/BV1hE411t7RN/?p=10&spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=f093c3d64ba399e149cbffa6cd31a7b0">https://www.bilibili.com/video/BV1hE411t7RN/?p=10&amp;spm_id_from=333.1007.top_right_bar_window_history.content.click&amp;vd_source=f093c3d64ba399e149cbffa6cd31a7b0</a></p><p>李沐-动手学深度学习：<a href="https://www.bilibili.com/video/BV1wM4m117mp/?spm_id_from=333.337.search-card.all.click&vd_source=f093c3d64ba399e149cbffa6cd31a7b0">https://www.bilibili.com/video/BV1wM4m117mp/?spm_id_from=333.337.search-card.all.click&amp;vd_source=f093c3d64ba399e149cbffa6cd31a7b0</a></p><p>李宏毅深度学习教程LeeDL-Tutorial（苹果书）：<a href="https://github.com/datawhalechina/leedl-tutorial?tab=readme-ov-file">https://github.com/datawhalechina/leedl-tutorial?tab=readme-ov-file</a></p><h2 id="PyTorch-CookBook"><a href="#PyTorch-CookBook" class="headerlink" title="PyTorch  CookBook"></a>PyTorch  CookBook</h2>]]></content>
+    <content type="html"><![CDATA[<div class="note note-success">            <p>PyTorch与深度学习笔记，持续更新….</p><p>不要着急，扎扎实实打好基本功！</p>          </div><h2 id="参考学习资料"><a href="#参考学习资料" class="headerlink" title="参考学习资料"></a>参考学习资料</h2><p>小土堆-pytorch学习教程：<a href="https://www.bilibili.com/video/BV1hE411t7RN/?p=10&spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=f093c3d64ba399e149cbffa6cd31a7b0">https://www.bilibili.com/video/BV1hE411t7RN/?p=10&amp;spm_id_from=333.1007.top_right_bar_window_history.content.click&amp;vd_source=f093c3d64ba399e149cbffa6cd31a7b0</a></p><p>李沐-动手学深度学习：<a href="https://www.bilibili.com/video/BV1wM4m117mp/?spm_id_from=333.337.search-card.all.click&vd_source=f093c3d64ba399e149cbffa6cd31a7b0">https://www.bilibili.com/video/BV1wM4m117mp/?spm_id_from=333.337.search-card.all.click&amp;vd_source=f093c3d64ba399e149cbffa6cd31a7b0</a></p><p>李宏毅深度学习教程LeeDL-Tutorial（苹果书）：<a href="https://github.com/datawhalechina/leedl-tutorial?tab=readme-ov-file">https://github.com/datawhalechina/leedl-tutorial?tab=readme-ov-file</a></p><h2 id="PyTorch-CookBook"><a href="#PyTorch-CookBook" class="headerlink" title="PyTorch  CookBook"></a>PyTorch  CookBook</h2><h3 id="DataSet类代码实战"><a href="#DataSet类代码实战" class="headerlink" title="DataSet类代码实战"></a>DataSet类代码实战</h3><h3 id="transforms的使用"><a href="#transforms的使用" class="headerlink" title="transforms的使用"></a>transforms的使用</h3><p>transforms应该如何被使用？</p><p>为什么需要tensor的数据类型？</p>]]></content>
     
     
     <categories>
@@ -399,6 +399,83 @@
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! </p><p>值得纪念的日子，今天把之前的博客内容全部成功迁移到了新的平台上面。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>  cout &lt;&lt; welcome to hexo! &lt;&lt; endl;<br>&#125;<br><br></code></pre></td></tr></table></figure>]]></content>
     
     
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>归家小记</title>
+    <link href="/2024/04/24/%E5%BD%92%E5%AE%B6%E5%B0%8F%E8%AE%B0/"/>
+    <url>/2024/04/24/%E5%BD%92%E5%AE%B6%E5%B0%8F%E8%AE%B0/</url>
+    
+    <content type="html"><![CDATA[<p>2024.04.13-2024.04.20</p><p>发小结婚，正好毕设初稿交上了，给自己放了一周的假期，回家搂席，调整一周。</p><p>返校回去的一个多月，自己明显懒惰了许多，每天都是睡到八点半，晚上也睡的很晚，生活并不规律。回家后的一个最明显的特征就是回来以后懒觉睡的少了。晚上十一点睡觉，早晨七点起床，睡的很踏实。</p><p>回家这几天，早起的习惯逐渐调节回来了，我希望自己回学校以后还能够继续保持好习惯。早上七点二十之前务必起床，晚上十一点半前务必睡觉。</p><p>周六晚上回来后，去爷爷家做了很久，和爷爷奶奶聊了很长时间的天；周一到周五在杜生陪姥姥姥爷了很长时间，感觉很幸福、很充实！</p><p>周日下午和桂一聊了一会，孩子正处在叛逆期，净和她妈妈对着干，上周在学校和老师发生了矛盾，到家后把自己关在屋子里不出来。其实想想自己当年那会，也是这股子劲头。为了二叔，我觉着，我作为大哥的有责任去教导它，开导他。聊天的最后，我给他写了八个大字：不要抱怨、不要逃避。希望他能记住我说的这几个字吧，算是过来人的教训。</p><p>周日晚上三叔请客吃饭，喝了不少啤酒，喝的肚子挺难受的。客人走后，三叔哭了，这应该我今生第一次看见三叔在我面前哭泣。他这个人，一生太过于小心翼翼，内心的自卑使他无法正常和亲人沟通感情，这是原生家庭和成长经历带给他的。三叔一定背负着太多的压力与重担，那一刻我想也是稍微的解脱，在大侄子面前卸下了平时严肃的面孔，终于吐露了心声。跟我说的最多的，也是当年我父亲跟我说的最多的：要努力。</p><p>爷爷一会也来了，我们爷三个，难得的机会坐在了一起。没有想象中的那么敞开心扉的畅聊，更多的有的却是沉默。婶婶说了一句幽默的话：小儿子，大孙子，老爷爷的命根子。</p><p>周二参加了好朋友的婚礼，快有5、6年没有正经参加过别人的婚礼了。现场的感觉真是不一般，说实话，很感动，想结婚哈哈。</p><p>周三晚上和俩挚友聚餐，三个人中今年只有我今年幸运保送研究生了，他们两个考研全部失败了。我一点没有沾沾自喜，跟多的是感同身受。三个人、三条道路、三种人生。那晚喝了点白酒，我们聊了很长时间的天。。。</p><p>现在是周五晚上了，想着赶紧把一周归家小记赶紧写出来。因为我知道，如果我再拖着，我肯定就不会再写了…</p><p>周六返校，周日又正式开工了。回去以后少拖延，少睡觉，多写代码，多看书，提升技术！</p><p>道路是曲折的，前途是光明的。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>动机</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>生活随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>湾区游记</title>
+    <link href="/2024/02/23/%E6%B9%BE%E5%8C%BA%E6%B8%B8%E8%AE%B0/"/>
+    <url>/2024/02/23/%E6%B9%BE%E5%8C%BA%E6%B8%B8%E8%AE%B0/</url>
+    
+    <content type="html"><![CDATA[<p>自驾一路向南，澳门、珠海、佛山、广州</p><p>2024.02.16-2024.02.22</p><p><img src="/img/life/zhuhai.jpg"></p><p>和老舅一家自驾大湾区(广州、珠海、佛山、澳门)。总体收获很大，一路上经历丰富，有高速堵车、昼夜奔袭、度假休息、患病感冒。这次出行，属实是把自己的身体耐造性提高性了一大截，不过代价就是回来之后感染了 新冠嗓子疼病毒 并且身体变虚了。。。开学晚回去几天，把身体调整调整，休整好身体之后再出发。</p><p><img src="/img/life/aomen.jpeg"></p><p>大湾区气候感觉还是潮湿，特别是珠海。一路上的风景也是很美的，我国的经济特区珠海、横琴，特别行政区澳门，还有超级都市群广州、佛山都特别开眼界。以前总觉得湖北、湖南地区属于我国的经济发达地区，总之要比我们河北省好。但是经过这次的实地调查后才发现，原来湖北、湖南大部分地区都依旧还是非常贫困的山区。高速公路也是非常不好走，只有双向4车道，特别是经过湖南地区的隧道的时候，几乎每年都要堵车。围绕着长沙的几个小城市还都是不错的，湘潭、株洲市都很干净，衡阳也可以。回来之后江西境内的高速都要顺畅很多，而且总体体验要比湖北、湖南地区丝滑很多。地势也没有绵延起伏，赣州以南有很多高山，赣州以北又有很多的平原。河南是个人口大省，人口密度大到难以想象，进入高速后根据车流量就可以判断出来。这片中原大地是我国的大粮仓，一路上除华北平原外少有的大平原开阔地带。</p><p><img src="/img/life/duche.jpeg"></p><p>这一路上和老舅、舅妈聊了很多，家庭、学业、事业。。。原来老舅和舅妈大二才确定关系、原来老妈年轻的时候并没有那么有自信和光环、原来我一直有偏见的LMJ在老舅眼里被降维打击般的望眼欲穿。老舅也和自己分享了很多学业、事业上的经历，对于<strong>顺境和逆境的分析</strong>、<strong>对于名和利的取舍</strong>、<strong>对于变通的处世方法</strong>。他将他自己宝贵的经验分享给了我，自己一定要认真复盘。</p><p>大湾区之旅，一生铭记，并且未完待续….</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>动机</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>生活随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>毛选及相关</title>
+    <link href="/2023/12/26/%E6%AF%9B%E9%80%89%E5%8F%8A%E7%9B%B8%E5%85%B3/"/>
+    <url>/2023/12/26/%E6%AF%9B%E9%80%89%E5%8F%8A%E7%9B%B8%E5%85%B3/</url>
+    
+    <content type="html"><![CDATA[<div class="note note-danger">            <p>今日欢呼孙大圣，只缘妖雾又重来</p>          </div><p><img src="/img/life/mao.webp"></p><h1 id="唯物辩证法的基本规律"><a href="#唯物辩证法的基本规律" class="headerlink" title="唯物辩证法的基本规律"></a>唯物辩证法的基本规律</h1><p>《大众哲学》——艾思奇</p><p>唯物主义者必须让自己养成一种习惯：遇到任何事情、任何问题，都能够认真地做系统周密的调查研究，把事物本身的规律寻找出来，然后按照规律去办事，去解决问题，去指导工作，使事情办的好，问题得以顺利解决，工作做的有成绩，不至于碰钉子，或者至少不碰大钉子。</p><p>不如意和碰钉子的原因是因为我们的主观意愿和事物的客观规律不符合！</p><p>世界上一切事物，是在我们的主观心意之外独立存在着的，它们的发展变化情况不是依赖我们的心意为转移的。世界上的事情，绝对不是我们想要怎样就怎样的，相反的，常常是我们希望这样，而偏偏事实上就不会这样。考试失利、投资失败、分手失恋、失业…</p><p>“凡事不会无缘无故的发生”，这就是“无风不起浪”这一个成语包含的最主要的哲学思想，这种思想在每个人的头脑中普遍存在着，其实每个人都相信，一切事物的发生，它的出现总有一定的原因，一定道理。一切事物不会凭空产生和消失，任何事物都有它发生、发展和没落的过程。</p><h1 id="实践论"><a href="#实践论" class="headerlink" title="实践论"></a>实践论</h1><p>用联系和运动的观点看待事物的发展</p><h1 id="矛盾论"><a href="#矛盾论" class="headerlink" title="矛盾论"></a>矛盾论</h1><p>对立统一</p><p>在研究一切问题的时候，注意到事物发展的曲折性，不要把事物的发展，看作一条直线上升，而没有任何迂回、后退、停滞的形式，也不要把任何事物的发展看作是简单的循环，而不注意它由低级到高级的上升。事物的发展是曲折的，螺旋式上升的。</p><h2 id="战略战术分析"><a href="#战略战术分析" class="headerlink" title="战略战术分析"></a>战略战术分析</h2><p>中国红色政权存在的原因</p><p>井冈山斗争</p><p>论持久战</p><p>抗日游击战争的战略问题</p><h1 id="预见力与原则"><a href="#预见力与原则" class="headerlink" title="预见力与原则"></a>预见力与原则</h1><h2 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h2><p>1.独立自主</p><p>独立自主、自力更生，在此基础之上来尽可能多的争取外援。合理的看待外援也是一种辩证法。</p><p>只有坚持独立自主，自己把自己照顾好，让自己强大起来，才能帮助到父母和家人，才能真正帮助到朋友。否则都是假的。</p><p>白手起家还需要独立自主。</p><p>爱别人，首先爱自己。</p><p>让步一定是积极的而不是消极的，本质是为了更好的合作，同样，让步也是有一定界限的。</p><p>2.实事求是</p><p>实事——客观存在的一切事物</p><p>求——调查研究</p><p>是——客观事物的内部联系，即规律性</p><p>实事：研究一切问题都要从实际事物出发，而不是从理论、概念、观点和定义出发。</p><p>求是：研究事物的规律，总结事物的规律，然后用规律指导行动。</p><p>3.群众路线</p><p>群众路线就是不脱离不脱离社会实际，因为群众是构成社会实际最基础的基础。</p><h2 id="预见力"><a href="#预见力" class="headerlink" title="预见力"></a>预见力</h2><p>什么事预见力？就是将矛盾发展演变成种种趋势加以判断，然后对自己主观能动性加以判断，最后得出事物发展的最大可能性。并且把这种可能性和必然性指出来，辅助以相应的对策，最后取得胜利。</p><p>在复杂的事物也是由简单事物的叠加组成的，提高预见力与洞察力，本质上就是需要我们擅长事物的矛盾分析和条件分析。</p><h1 id="成事的科学原理"><a href="#成事的科学原理" class="headerlink" title="成事的科学原理"></a>成事的科学原理</h1><p>分析清楚事物的矛盾，通过调查研究得出干这件事需要哪些条件，然后确定现在是否时机已经成熟们是否具备这样的条件，之后就是发挥主观能动行去创造条件，最终把事情尽可能的按照自己想的那样去办成。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>动机</category>
+      
+      <category>读书笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>生活随笔</tag>
+      
+    </tags>
     
   </entry>
   
