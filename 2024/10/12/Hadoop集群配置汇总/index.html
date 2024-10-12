@@ -19,24 +19,26 @@
   <meta name="author" content="Munger Yang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="论文研读这个月只读了一篇关于RAG的综述文章，详细的笔记可以参考RAG for LLM：A survey这篇博客文章。 通过浏览该领域以及拓宽知识面，又找到了如下几个感兴趣的点：  RAG  Text2SQL  多模态检索  Agent   读文献的能力、论文写作的能力是需要一步步培养、积累、学些的，不能放松对写作能力的培养，写作和表达是这一年在雁栖湖要努力下功夫去打磨的本领。 技术学习【重要】小">
+    <meta name="description" content="汇总目的 老师给的参考教程看的头大 畅哥在用Ubuntu，之前自己都很懒用的配置好的Centos7，所以决定学一学Ubuntu系统  啥是伪分布式？与集群有啥区别？伪分布式模式是一种在单节点上模拟多节点运行的方式，‌Hadoop进程以分离的‌Java进程运行，节点既作为‌NameNode也作为DataNode，同时读取‌HDFS中的文件。这种模式虽然不是真正的分布式，但可以在单台机器上模拟多节点环">
 <meta property="og:type" content="article">
-<meta property="og:title" content="8-9月总结与展望">
-<meta property="og:url" content="http://example.com/2024/09/30/8-9%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/index.html">
+<meta property="og:title" content="Hadoop集群配置汇总">
+<meta property="og:url" content="http://example.com/2024/10/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E6%B1%87%E6%80%BB/index.html">
 <meta property="og:site_name" content="munger写字的地方">
-<meta property="og:description" content="论文研读这个月只读了一篇关于RAG的综述文章，详细的笔记可以参考RAG for LLM：A survey这篇博客文章。 通过浏览该领域以及拓宽知识面，又找到了如下几个感兴趣的点：  RAG  Text2SQL  多模态检索  Agent   读文献的能力、论文写作的能力是需要一步步培养、积累、学些的，不能放松对写作能力的培养，写作和表达是这一年在雁栖湖要努力下功夫去打磨的本领。 技术学习【重要】小">
+<meta property="og:description" content="汇总目的 老师给的参考教程看的头大 畅哥在用Ubuntu，之前自己都很懒用的配置好的Centos7，所以决定学一学Ubuntu系统  啥是伪分布式？与集群有啥区别？伪分布式模式是一种在单节点上模拟多节点运行的方式，‌Hadoop进程以分离的‌Java进程运行，节点既作为‌NameNode也作为DataNode，同时读取‌HDFS中的文件。这种模式虽然不是真正的分布式，但可以在单台机器上模拟多节点环">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-09-30T15:02:32.000Z">
-<meta property="article:modified_time" content="2024-09-30T16:22:04.541Z">
+<meta property="article:published_time" content="2024-10-12T14:40:30.000Z">
+<meta property="article:modified_time" content="2024-10-12T15:23:50.346Z">
 <meta property="article:author" content="Munger Yang">
-<meta property="article:tag" content="科研心路">
+<meta property="article:tag" content="big data">
+<meta property="article:tag" content="分布式计算">
+<meta property="article:tag" content="存储">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>8-9月总结与展望 - munger写字的地方</title>
+  <title>Hadoop集群配置汇总 - munger写字的地方</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -254,7 +256,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="8-9月总结与展望"></span>
+            <span id="subtitle" data-typed-text="Hadoop集群配置汇总"></span>
           
         </div>
 
@@ -265,8 +267,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-09-30 23:02" pubdate>
-          2024年9月30日 晚上
+        <time datetime="2024-10-12 22:40" pubdate>
+          2024年10月12日 晚上
         </time>
       </span>
     
@@ -277,7 +279,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          862 字
+          1.3k 字
         
       </span>
     
@@ -288,7 +290,7 @@
         
         
         
-          8 分钟
+          11 分钟
         
       </span>
     
@@ -334,42 +336,58 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">8-9月总结与展望</h1>
+            <h1 id="seo-header">Hadoop集群配置汇总</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="论文研读"><a href="#论文研读" class="headerlink" title="论文研读"></a>论文研读</h2><p>这个月只读了一篇关于RAG的综述文章，详细的笔记可以参考RAG for LLM：A survey这篇博客文章。</p>
-<p>通过浏览该领域以及拓宽知识面，又找到了如下几个感兴趣的点：</p>
-<ul>
-<li><p>RAG</p>
-</li>
-<li><p>Text2SQL</p>
-</li>
-<li><p>多模态检索</p>
-</li>
-<li><p>Agent</p>
-</li>
-</ul>
-<p>读文献的能力、论文写作的能力是需要一步步培养、积累、学些的，不能放松对写作能力的培养，<strong>写作和表达</strong>是这一年在雁栖湖要努力下功夫去打磨的本领。</p>
-<h2 id="技术学习"><a href="#技术学习" class="headerlink" title="技术学习"></a>技术学习</h2><p>【重要】小土堆-Pytorch</p>
-<p>【重要】李沐-动手学深度学习</p>
-<p>ziliz-milvus数据库检索</p>
-<p>黑马程序员-Spark、Flink、NoSQL</p>
-<p>个人认为：这半年最主要的任务就是打好机器学习和深度学习的基础，一定要对原理有深刻的理解，对动手实现做到熟练运用。</p>
-<p>不要着急，多下功夫。</p>
-<h2 id="适应节奏"><a href="#适应节奏" class="headerlink" title="适应节奏"></a>适应节奏</h2><p>正式开学的一周，很不适应。时间安排上、上课的节奏上、作息规律上都不是非常适应。好在我认为我的适应能力还是很强的，从第二周开始，慢慢调整过来了，主要是中秋节去了趟雄安，和好朋友们毕业后聚了一聚，很多开学之初困扰的心结慢慢打开了。这个心结有学业方面的，生活方面的，感情方面的。聊了很多，也听他们聊了很多。虽人生南北多歧路，君向潇湘我向秦，但是最终的目标都是一样的。为了未来更好的生活而努力奋斗。</p>
-<p>回来以后我整个人状态好了很多，最明显的变化就是食欲大增，心情好多了，更专注于自己的事情了。不要着急，给自己一个缓冲时间，慢慢发力。</p>
-<p>现在变得越来越像一个夜猫子了，睡的越来越晚，早上也是不能早起了。我觉着要相对调整生物钟，和本科的时候不一样了，不要强迫自己，而必须保证一天最好的状态，效率第一。</p>
-<h2 id="遇见良师"><a href="#遇见良师" class="headerlink" title="遇见良师"></a>遇见良师</h2><p>这个月和杨力祥老师课后长谈了两次，一次是在9.18晚上下课后，一次是在今天9.30号晚上下课后。两次长谈都是我们下课主动去找老师问问题，然后老师根据问题展开的多方面的讨论。</p>
-<p>这是我在果壳遇到的难得的良师益友，他从思想上改变了我对计算机、对人工智能、对如何思考的观点与思维模式。每次和老师聊完，心中彷佛都燃烧了一团火，像雷总说的那样，要做世界上伟大的程序员。</p>
-<p>鉴赏力的培养、创新力的训练、如何想问题、如何做关联、预见力的洞察、跨学科的素养，这些都是大学问，值得深思。<strong>不要盲目努力、勤奋，先想明白了再去做，再去执行</strong>。</p>
-<h2 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h2><p>希望未来一个月有所提高的方面：</p>
-<ul>
-<li>文献阅读能力：把我核心能力、代码复现能力、找idea</li>
-<li>深度学习实践：未来一个月多动手学深度学习、多实操、多总结</li>
-<li>科学论文写作与英语：英语听说读写的精进，论文、文章的写作能力怎么样提升，思考</li>
-</ul>
+                <h2 id="汇总目的"><a href="#汇总目的" class="headerlink" title="汇总目的"></a>汇总目的</h2><ol>
+<li>老师给的参考教程看的头大</li>
+<li>畅哥在用Ubuntu，之前自己都很懒用的配置好的Centos7，所以决定学一学Ubuntu系统</li>
+</ol>
+<h2 id="啥是伪分布式？与集群有啥区别？"><a href="#啥是伪分布式？与集群有啥区别？" class="headerlink" title="啥是伪分布式？与集群有啥区别？"></a>啥是伪分布式？与集群有啥区别？</h2><p>伪分布式模式是一种在单节点上模拟多节点运行的方式，‌Hadoop进程以分离的‌Java进程运行，节点既作为‌NameNode也作为DataNode，同时读取‌HDFS中的文件。这种模式虽然不是真正的分布式，但可以在单台机器上模拟多节点环境，方便调试和理解分布式系统的运行机制。</p>
+<p>在分布式部署中，Hadoop集群由多台计算机组成，每台计算机都可以独立运行Hadoop的各个组件，如HDFS（Hadoop分布式文件系统）和MapReduce。数据会被分散存储在不同的节点上，任务也会并行执行在不同的节点上，从而提高了整个系统的性能和可靠性。</p>
+<p>我是这样理解的：严格意义上来讲，一台计算机中开多台虚拟机属于伪分布式操作；但是多虚拟机恰恰模拟出了多计算机的效果，所以叫它集群配置。真正的分布式最好的例子就是阿里云买三台服务器，统一配置，最直观，可惜成本最大。。。。</p>
+<h2 id="操作系统的选择"><a href="#操作系统的选择" class="headerlink" title="操作系统的选择"></a>操作系统的选择</h2><p>Ubuntu	18.04&#x2F;22.04</p>
+<p>Centos7	</p>
+<h2 id="虚拟机的选择"><a href="#虚拟机的选择" class="headerlink" title="虚拟机的选择"></a>虚拟机的选择</h2><p>Vmare</p>
+<p>Virtual Box</p>
+<p>云服务器</p>
+<p>推荐的组合：Centos7+Vmare、Vmare+Ubuntu、云服务器(单机版，集群费用成本太高)</p>
+<h1 id="以下都是高质量教程-我的除外"><a href="#以下都是高质量教程-我的除外" class="headerlink" title="以下都是高质量教程(我的除外)"></a>以下都是高质量教程(我的除外)</h1><h2 id="基于Ubuntu的集群搭建详细教程"><a href="#基于Ubuntu的集群搭建详细教程" class="headerlink" title="基于Ubuntu的集群搭建详细教程"></a>基于Ubuntu的集群搭建详细教程</h2><h3 id="高质量博客推荐"><a href="#高质量博客推荐" class="headerlink" title="高质量博客推荐"></a>高质量博客推荐</h3><p>厦门大学林子雨老师的大数据博客网站非常不错，里面文章内容也非常有料：</p>
+<p><a target="_blank" rel="noopener" href="https://dblab.xmu.edu.cn/blog/category/big-data/">https://dblab.xmu.edu.cn/blog/category/big-data/</a></p>
+<p>老师秉持着开源精神，将大部分资源全部开源了，推荐给每一个我的博客的读者！！！羊毛该薅就得薅</p>
+<h3 id="简略版本："><a href="#简略版本：" class="headerlink" title="简略版本："></a>简略版本：</h3><p><a target="_blank" rel="noopener" href="https://dblab.xmu.edu.cn/blog/94/">https://dblab.xmu.edu.cn/blog/94/</a></p>
+<h3 id="集群版本："><a href="#集群版本：" class="headerlink" title="集群版本："></a>集群版本：</h3><p><a target="_blank" rel="noopener" href="https://dblab.xmu.edu.cn/blog/8/">https://dblab.xmu.edu.cn/blog/8/</a></p>
+<h3 id="伪分布式版本："><a href="#伪分布式版本：" class="headerlink" title="伪分布式版本："></a>伪分布式版本：</h3><p><a target="_blank" rel="noopener" href="https://dblab.xmu.edu.cn/blog/7/">https://dblab.xmu.edu.cn/blog/7/</a></p>
+<h3 id="CSDN-blog教程："><a href="#CSDN-blog教程：" class="headerlink" title="CSDN-blog教程："></a>CSDN-blog教程：</h3><p>金州饿霸: <a target="_blank" rel="noopener" href="https://blog.csdn.net/wangjian530/article/details/142781899">https://blog.csdn.net/wangjian530/article/details/142781899</a></p>
+<h2 id="基于Centos7的集群搭建详细教程"><a href="#基于Centos7的集群搭建详细教程" class="headerlink" title="基于Centos7的集群搭建详细教程"></a>基于Centos7的集群搭建详细教程</h2><h3 id="伪分布式版本：-1"><a href="#伪分布式版本：-1" class="headerlink" title="伪分布式版本："></a>伪分布式版本：</h3><p><a target="_blank" rel="noopener" href="https://dblab.xmu.edu.cn/blog/190/">https://dblab.xmu.edu.cn/blog/190/</a></p>
+<h3 id="我自己的配置-不详细、慎重参考"><a href="#我自己的配置-不详细、慎重参考" class="headerlink" title="我自己的配置(不详细、慎重参考)"></a>我自己的配置(不详细、慎重参考)</h3><h4 id="配置core-site-xml"><a href="#配置core-site-xml" class="headerlink" title="配置core-site.xml"></a>配置core-site.xml</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@node1 hadoop]# vim core-site.xml<br>&lt;configuration&gt;<br>&lt;!-- 指定HDFS 中NameNode 的地址--&gt;<br>&lt;property&gt;<br>    &lt;name&gt;fs.defaultFS&lt;/name&gt;<br>    &lt;value&gt;hdfs://node1:8020&lt;/value&gt;<br>&lt;/property&gt;<br>&lt;!-- 指定Hadoop 运行时产生文件的存储目录--&gt;<br>&lt;property&gt;<br>    &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;<br>    &lt;value&gt;/export/server/hadoop-3.3.0/data&lt;/value&gt;<br>&lt;/property&gt;<br>&lt;!-- 在web UI访问HDFS使用的用户名 --&gt;<br>&lt;property&gt;<br>    &lt;name&gt;hadoop.http.staticuser.user&lt;/name&gt;<br>    &lt;value&gt;root&lt;/value&gt;<br>&lt;/property&gt;<br></code></pre></td></tr></table></figure>
+
+<p>配置hdfs-site.xml</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@node1 hadoop]# vim hdfs-site.xml<br>&lt;!-- 指定Hadoop 辅助名称节点主机配置--&gt;<br>&lt;property&gt;<br>    &lt;name&gt;dfs.namenode.secondary.http-address&lt;/name&gt;<br>    &lt;value&gt;node2:9868&lt;/value&gt;<br>&lt;/property&gt;<br></code></pre></td></tr></table></figure>
+
+<h4 id="配置mapred-site-xml"><a href="#配置mapred-site-xml" class="headerlink" title="配置mapred-site.xml"></a>配置mapred-site.xml</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@node1 hadoop]# vim mapred-site.xml<br>&lt;configuration&gt;<br>    &lt;value&gt;HADOOP_MAPRED_HOME=$&#123;HADOOP_HOME&#125;&lt;/value&gt;<br>&lt;!-- 指定MR 运行在YARN 上--&gt;<br>&lt;property&gt;<br>    &lt;name&gt;mapreduce.framework.name&lt;/name&gt;<br>    &lt;value&gt;yarn&lt;/value&gt;<br>&lt;/property&gt;<br><br>&lt;!-- MR App Master环境变量 --&gt;<br>&lt;property&gt;<br>    &lt;name&gt;yarn.app.mapreduce.am.env&lt;/name&gt;<br>    &lt;value&gt;HADOOP_MAPRED_HOME=$&#123;HADOOP_HOME&#125;&lt;/value&gt;<br>&lt;/property&gt;<br><br>&lt;!-- MR MapTask环境变量 --&gt;<br>&lt;property&gt;<br>    &lt;name&gt;mapreduce.map.env&lt;/name&gt;<br>    &lt;value&gt;HADOOP_MAPRED_HOME=$&#123;HADOOP_HOME&#125;&lt;/value&gt;<br>&lt;/property&gt;<br>&lt;!-- MR ReduceTask环境变量 --&gt;<br>&lt;property&gt;<br>    &lt;name&gt;mapreduce.reduce.env&lt;/name&gt;<br>    &lt;value&gt;HADOOP_MAPRED_HOME=$&#123;HADOOP_HOME&#125;&lt;/value&gt;<br>&lt;/property&gt;<br>&lt;/configuration&gt; <br></code></pre></td></tr></table></figure>
+
+<h4 id="配置yarn-site-xml"><a href="#配置yarn-site-xml" class="headerlink" title="配置yarn-site.xml"></a>配置yarn-site.xml</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@node1 hadoop]# vim yarn-site.xml<br>&lt;configuration&gt;<br>&lt;!-- Reducer 获取数据的方式--&gt;<br>&lt;property&gt;<br>    &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;<br>    &lt;value&gt;mapreduce_shuffle&lt;/value&gt;<br>&lt;/property&gt;<br><br>&lt;!-- 指定YARN 的ResourceManager 的地址--&gt;<br>&lt;property&gt;<br>    &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;<br>    &lt;value&gt;node1&lt;/value&gt;<br>&lt;/property&gt;<br><br>&lt;!-- 服务器请求最小内存 --&gt;<br>&lt;property&gt;<br>    &lt;name&gt;yarn.scheduler.minimum-allocation-mb&lt;/name&gt;<br>    &lt;value&gt;512&lt;/value&gt;<br>&lt;/property&gt;<br><br>&lt;!-- 服务器请求最大内存 --&gt;<br>&lt;property&gt;<br>    &lt;name&gt;yarn.scheduler.maximum-allocation-mb&lt;/name&gt;<br>    &lt;value&gt;2048&lt;/value&gt;<br>&lt;/property&gt;<br><br>&lt;!-- 容器虚拟内存与物理内存之间的比率 --&gt;<br>&lt;property&gt;<br>    &lt;name&gt;yarn.nodemanager.vmem-pmem-ratio&lt;/name&gt;<br>    &lt;value&gt;4&lt;/value&gt;<br>&lt;/property&gt;<br>&lt;/configuration&gt;<br></code></pre></td></tr></table></figure>
+
+<h4 id="配置workers"><a href="#配置workers" class="headerlink" title="配置workers"></a>配置workers</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@node1 hadoop]# vim workers <br>node1<br>node2<br>node3<br></code></pre></td></tr></table></figure>
+
+<h4 id="配置hadoop-env-sh"><a href="#配置hadoop-env-sh" class="headerlink" title="配置hadoop-env.sh"></a>配置hadoop-env.sh</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@node1 hadoop]# vim hadoop-env.sh<br>export JAVA_HOME=/export/server/jdk1.8.0_241<br><br>export HDFS_NAMENODE_USER=root<br>export HDFS_DATANODE_USER=root<br>export HDFS_SECONDARYNAMENODE_USER=root<br>export YARN_RESOURCEMANAGER_USER=root<br>export YARN_NODEMANAGER_USER=root<br></code></pre></td></tr></table></figure>
+
+<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@node1 hadoop]# vim /etc/profile<br>export HADOOP_HOME=/export/server/hadoop-3.3.0<br>export PATH=$PATH:$&#123;HADOOP_HOME&#125;/bin:$&#123;HADOOP_HOME&#125;/sbin<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="配置文件传输到其他节点"><a href="#配置文件传输到其他节点" class="headerlink" title="配置文件传输到其他节点"></a>配置文件传输到其他节点</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@node1 server]# scp -r /etc/profile node2:$PWD  <br>[root@node1 server]# scp -r /etc/profile node3:$PWD<br>[root@node1 server]# scp /etc/profile node2:/etc <br>[root@node1 server]# scp /etc/profile node3:/etc<br></code></pre></td></tr></table></figure>
+
+<p>格式化与一键启动</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">只能格式化一次</span><br>[root@node1 hadoop-3.3.0]# bin/hdfs namenode -format<br><br>[root@node1 sbin]# start-dfs.sh<br>[root@node1 sbin]# stop-dfs.sh<br>[root@node1 sbin]# start-yarn.sh<br>[root@node1 sbin]# stop-yarn.sh<br><span class="hljs-meta prompt_">#</span><span class="language-bash">一键启动YARN、HDFS</span><br>start-all.sh<br><span class="hljs-meta prompt_">#</span><span class="language-bash">一键关闭YARN、HDFS</span><br>start-all.sh<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">单独启动或关闭集群</span><br>hdfs -daemon start namenode<br>hdfs -daemon stop namenode<br>hdfs -daemon start datanode<br>hdfs -daemon stop datanode<br></code></pre></td></tr></table></figure>
+
+
+
+
+
 
                 
               </div>
@@ -388,7 +406,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%8A%A8%E6%9C%BA/" class="category-chain-item">动机</a>
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BC%80%E5%8F%91/" class="category-chain-item">数据科学与数据开发</a>
   
   
 
@@ -403,7 +421,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%A7%91%E7%A0%94%E5%BF%83%E8%B7%AF/" class="print-no-link">#科研心路</a>
+        <a href="/tags/big-data/" class="print-no-link">#big data</a>
+      
+        <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/" class="print-no-link">#分布式计算</a>
+      
+        <a href="/tags/%E5%AD%98%E5%82%A8/" class="print-no-link">#存储</a>
       
     </div>
   
@@ -415,8 +437,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>8-9月总结与展望</div>
-      <div>http://example.com/2024/09/30/8-9月总结与展望/</div>
+      <div>Hadoop集群配置汇总</div>
+      <div>http://example.com/2024/10/12/Hadoop集群配置汇总/</div>
     </div>
     <div class="license-meta">
       
@@ -428,7 +450,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年9月30日</div>
+          <div>2024年10月12日</div>
         </div>
       
       
@@ -461,18 +483,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/10/08/10%E6%9C%88%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BBlist/" title="10月文献阅读list">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">10月文献阅读list</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/09/29/AI%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%97%B6%E4%BB%A3%E4%BA%BA%E6%89%8D%E9%9C%80%E6%B1%82%E4%B8%8E%E6%8A%80%E8%83%BD%E5%9F%B9%E5%85%BB/" title="AI大模型时代人才需求与技能培养">
-                        <span class="hidden-mobile">AI大模型时代人才需求与技能培养</span>
+                      <a href="/2024/10/08/10%E6%9C%88%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BBlist/" title="10月文献阅读list">
+                        <span class="hidden-mobile">10月文献阅读list</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
