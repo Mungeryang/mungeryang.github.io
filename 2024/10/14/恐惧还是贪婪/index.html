@@ -19,26 +19,31 @@
   <meta name="author" content="Munger Yang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="汇总目的 老师给的参考教程看的头大 畅哥在用Ubuntu，之前自己都很懒用的配置好的Centos7，所以决定学一学Ubuntu系统  啥是伪分布式？与集群有啥区别？伪分布式模式是一种在单节点上模拟多节点运行的方式，‌Hadoop进程以分离的‌Java进程运行，节点既作为‌NameNode也作为DataNode，同时读取‌HDFS中的文件。这种模式虽然不是真正的分布式，但可以在单台机器上模拟多节点环">
+    <meta name="description" content="别人恐惧时你要贪婪，别人贪婪时你要恐惧—沃伦·巴菲特             对JJ要有信心—做时间的朋友、长期主义今年总体是赚钱的，见好就收，还有两个月过年，猥琐发育，坚持住✊！今年的机会也差不多就到这了，没那么多心思去关注了，学习快跟不上了哈哈哈～ 国庆节后，心情就是过山车。。。最重要的原因就是因为ZB市场的起起伏伏。  （当时心想，我要是有100个w，一周的操作足以">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hadoop集群配置汇总">
-<meta property="og:url" content="http://example.com/2024/10/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E6%B1%87%E6%80%BB/index.html">
+<meta property="og:title" content="恐惧还是贪婪">
+<meta property="og:url" content="http://example.com/2024/10/14/%E6%81%90%E6%83%A7%E8%BF%98%E6%98%AF%E8%B4%AA%E5%A9%AA/index.html">
 <meta property="og:site_name" content="munger写字的地方">
-<meta property="og:description" content="汇总目的 老师给的参考教程看的头大 畅哥在用Ubuntu，之前自己都很懒用的配置好的Centos7，所以决定学一学Ubuntu系统  啥是伪分布式？与集群有啥区别？伪分布式模式是一种在单节点上模拟多节点运行的方式，‌Hadoop进程以分离的‌Java进程运行，节点既作为‌NameNode也作为DataNode，同时读取‌HDFS中的文件。这种模式虽然不是真正的分布式，但可以在单台机器上模拟多节点环">
+<meta property="og:description" content="别人恐惧时你要贪婪，别人贪婪时你要恐惧—沃伦·巴菲特             对JJ要有信心—做时间的朋友、长期主义今年总体是赚钱的，见好就收，还有两个月过年，猥琐发育，坚持住✊！今年的机会也差不多就到这了，没那么多心思去关注了，学习快跟不上了哈哈哈～ 国庆节后，心情就是过山车。。。最重要的原因就是因为ZB市场的起起伏伏。  （当时心想，我要是有100个w，一周的操作足以">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-10-12T14:40:30.000Z">
-<meta property="article:modified_time" content="2024-10-12T15:23:50.346Z">
+<meta property="og:image" content="http://example.com/img/life/184.jpeg">
+<meta property="og:image" content="http://example.com/img/life/jj1.jpeg">
+<meta property="og:image" content="http://example.com/img/life/jj2.jpeg">
+<meta property="og:image" content="http://example.com/img/life/jj-chuangye.jpeg">
+<meta property="og:image" content="http://example.com/img/life/jj-zhaiquan.jpeg">
+<meta property="og:image" content="http://example.com/img/life/jj-xinpian.jpeg">
+<meta property="article:published_time" content="2024-10-14T14:59:12.000Z">
+<meta property="article:modified_time" content="2024-10-14T16:26:48.686Z">
 <meta property="article:author" content="Munger Yang">
-<meta property="article:tag" content="big data">
-<meta property="article:tag" content="分布式计算">
-<meta property="article:tag" content="存储">
+<meta property="article:tag" content="生活随笔">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/life/184.jpeg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Hadoop集群配置汇总 - munger写字的地方</title>
+  <title>恐惧还是贪婪 - munger写字的地方</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -256,7 +261,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hadoop集群配置汇总"></span>
+            <span id="subtitle" data-typed-text="恐惧还是贪婪"></span>
           
         </div>
 
@@ -267,8 +272,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-10-12 22:40" pubdate>
-          2024年10月12日 晚上
+        <time datetime="2024-10-14 22:59" pubdate>
+          2024年10月14日 晚上
         </time>
       </span>
     
@@ -279,7 +284,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          1.1k 字
         
       </span>
     
@@ -290,7 +295,7 @@
         
         
         
-          11 分钟
+          9 分钟
         
       </span>
     
@@ -336,58 +341,37 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hadoop集群配置汇总</h1>
+            <h1 id="seo-header">恐惧还是贪婪</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="汇总目的"><a href="#汇总目的" class="headerlink" title="汇总目的"></a>汇总目的</h2><ol>
-<li>老师给的参考教程看的头大</li>
-<li>畅哥在用Ubuntu，之前自己都很懒用的配置好的Centos7，所以决定学一学Ubuntu系统</li>
-</ol>
-<h2 id="啥是伪分布式？与集群有啥区别？"><a href="#啥是伪分布式？与集群有啥区别？" class="headerlink" title="啥是伪分布式？与集群有啥区别？"></a>啥是伪分布式？与集群有啥区别？</h2><p>伪分布式模式是一种在单节点上模拟多节点运行的方式，‌Hadoop进程以分离的‌Java进程运行，节点既作为‌NameNode也作为DataNode，同时读取‌HDFS中的文件。这种模式虽然不是真正的分布式，但可以在单台机器上模拟多节点环境，方便调试和理解分布式系统的运行机制。</p>
-<p>在分布式部署中，Hadoop集群由多台计算机组成，每台计算机都可以独立运行Hadoop的各个组件，如HDFS（Hadoop分布式文件系统）和MapReduce。数据会被分散存储在不同的节点上，任务也会并行执行在不同的节点上，从而提高了整个系统的性能和可靠性。</p>
-<p>我是这样理解的：严格意义上来讲，一台计算机中开多台虚拟机属于伪分布式操作；但是多虚拟机恰恰模拟出了多计算机的效果，所以叫它集群配置。真正的分布式最好的例子就是阿里云买三台服务器，统一配置，最直观，可惜成本最大。。。。</p>
-<h2 id="操作系统的选择"><a href="#操作系统的选择" class="headerlink" title="操作系统的选择"></a>操作系统的选择</h2><p>Ubuntu	18.04&#x2F;22.04</p>
-<p>Centos7	</p>
-<h2 id="虚拟机的选择"><a href="#虚拟机的选择" class="headerlink" title="虚拟机的选择"></a>虚拟机的选择</h2><p>Vmare</p>
-<p>Virtual Box</p>
-<p>云服务器</p>
-<p>推荐的组合：Centos7+Vmare、Vmare+Ubuntu、云服务器(单机版，集群费用成本太高)</p>
-<h1 id="以下都是高质量教程-我的除外"><a href="#以下都是高质量教程-我的除外" class="headerlink" title="以下都是高质量教程(我的除外)"></a>以下都是高质量教程(我的除外)</h1><h2 id="基于Ubuntu的集群搭建详细教程"><a href="#基于Ubuntu的集群搭建详细教程" class="headerlink" title="基于Ubuntu的集群搭建详细教程"></a>基于Ubuntu的集群搭建详细教程</h2><h3 id="高质量博客推荐"><a href="#高质量博客推荐" class="headerlink" title="高质量博客推荐"></a>高质量博客推荐</h3><p>厦门大学林子雨老师的大数据博客网站非常不错，里面文章内容也非常有料：</p>
-<p><a target="_blank" rel="noopener" href="https://dblab.xmu.edu.cn/blog/category/big-data/">https://dblab.xmu.edu.cn/blog/category/big-data/</a></p>
-<p>老师秉持着开源精神，将大部分资源全部开源了，推荐给每一个我的博客的读者！！！羊毛该薅就得薅</p>
-<h3 id="简略版本："><a href="#简略版本：" class="headerlink" title="简略版本："></a>简略版本：</h3><p><a target="_blank" rel="noopener" href="https://dblab.xmu.edu.cn/blog/94/">https://dblab.xmu.edu.cn/blog/94/</a></p>
-<h3 id="集群版本："><a href="#集群版本：" class="headerlink" title="集群版本："></a>集群版本：</h3><p><a target="_blank" rel="noopener" href="https://dblab.xmu.edu.cn/blog/8/">https://dblab.xmu.edu.cn/blog/8/</a></p>
-<h3 id="伪分布式版本："><a href="#伪分布式版本：" class="headerlink" title="伪分布式版本："></a>伪分布式版本：</h3><p><a target="_blank" rel="noopener" href="https://dblab.xmu.edu.cn/blog/7/">https://dblab.xmu.edu.cn/blog/7/</a></p>
-<h3 id="CSDN-blog教程："><a href="#CSDN-blog教程：" class="headerlink" title="CSDN-blog教程："></a>CSDN-blog教程：</h3><p>金州饿霸: <a target="_blank" rel="noopener" href="https://blog.csdn.net/wangjian530/article/details/142781899">https://blog.csdn.net/wangjian530/article/details/142781899</a></p>
-<h2 id="基于Centos7的集群搭建详细教程"><a href="#基于Centos7的集群搭建详细教程" class="headerlink" title="基于Centos7的集群搭建详细教程"></a>基于Centos7的集群搭建详细教程</h2><h3 id="伪分布式版本：-1"><a href="#伪分布式版本：-1" class="headerlink" title="伪分布式版本："></a>伪分布式版本：</h3><p><a target="_blank" rel="noopener" href="https://dblab.xmu.edu.cn/blog/190/">https://dblab.xmu.edu.cn/blog/190/</a></p>
-<h3 id="我自己的配置-不详细、慎重参考"><a href="#我自己的配置-不详细、慎重参考" class="headerlink" title="我自己的配置(不详细、慎重参考)"></a>我自己的配置(不详细、慎重参考)</h3><h4 id="配置core-site-xml"><a href="#配置core-site-xml" class="headerlink" title="配置core-site.xml"></a>配置core-site.xml</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@node1 hadoop]# vim core-site.xml<br>&lt;configuration&gt;<br>&lt;!-- 指定HDFS 中NameNode 的地址--&gt;<br>&lt;property&gt;<br>    &lt;name&gt;fs.defaultFS&lt;/name&gt;<br>    &lt;value&gt;hdfs://node1:8020&lt;/value&gt;<br>&lt;/property&gt;<br>&lt;!-- 指定Hadoop 运行时产生文件的存储目录--&gt;<br>&lt;property&gt;<br>    &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;<br>    &lt;value&gt;/export/server/hadoop-3.3.0/data&lt;/value&gt;<br>&lt;/property&gt;<br>&lt;!-- 在web UI访问HDFS使用的用户名 --&gt;<br>&lt;property&gt;<br>    &lt;name&gt;hadoop.http.staticuser.user&lt;/name&gt;<br>    &lt;value&gt;root&lt;/value&gt;<br>&lt;/property&gt;<br></code></pre></td></tr></table></figure>
+                <div class="note note-success">
+            <p>别人恐惧时你要贪婪，别人贪婪时你要恐惧—沃伦·巴菲特</p>
+          </div>
 
-<p>配置hdfs-site.xml</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@node1 hadoop]# vim hdfs-site.xml<br>&lt;!-- 指定Hadoop 辅助名称节点主机配置--&gt;<br>&lt;property&gt;<br>    &lt;name&gt;dfs.namenode.secondary.http-address&lt;/name&gt;<br>    &lt;value&gt;node2:9868&lt;/value&gt;<br>&lt;/property&gt;<br></code></pre></td></tr></table></figure>
-
-<h4 id="配置mapred-site-xml"><a href="#配置mapred-site-xml" class="headerlink" title="配置mapred-site.xml"></a>配置mapred-site.xml</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@node1 hadoop]# vim mapred-site.xml<br>&lt;configuration&gt;<br>    &lt;value&gt;HADOOP_MAPRED_HOME=$&#123;HADOOP_HOME&#125;&lt;/value&gt;<br>&lt;!-- 指定MR 运行在YARN 上--&gt;<br>&lt;property&gt;<br>    &lt;name&gt;mapreduce.framework.name&lt;/name&gt;<br>    &lt;value&gt;yarn&lt;/value&gt;<br>&lt;/property&gt;<br><br>&lt;!-- MR App Master环境变量 --&gt;<br>&lt;property&gt;<br>    &lt;name&gt;yarn.app.mapreduce.am.env&lt;/name&gt;<br>    &lt;value&gt;HADOOP_MAPRED_HOME=$&#123;HADOOP_HOME&#125;&lt;/value&gt;<br>&lt;/property&gt;<br><br>&lt;!-- MR MapTask环境变量 --&gt;<br>&lt;property&gt;<br>    &lt;name&gt;mapreduce.map.env&lt;/name&gt;<br>    &lt;value&gt;HADOOP_MAPRED_HOME=$&#123;HADOOP_HOME&#125;&lt;/value&gt;<br>&lt;/property&gt;<br>&lt;!-- MR ReduceTask环境变量 --&gt;<br>&lt;property&gt;<br>    &lt;name&gt;mapreduce.reduce.env&lt;/name&gt;<br>    &lt;value&gt;HADOOP_MAPRED_HOME=$&#123;HADOOP_HOME&#125;&lt;/value&gt;<br>&lt;/property&gt;<br>&lt;/configuration&gt; <br></code></pre></td></tr></table></figure>
-
-<h4 id="配置yarn-site-xml"><a href="#配置yarn-site-xml" class="headerlink" title="配置yarn-site.xml"></a>配置yarn-site.xml</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@node1 hadoop]# vim yarn-site.xml<br>&lt;configuration&gt;<br>&lt;!-- Reducer 获取数据的方式--&gt;<br>&lt;property&gt;<br>    &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;<br>    &lt;value&gt;mapreduce_shuffle&lt;/value&gt;<br>&lt;/property&gt;<br><br>&lt;!-- 指定YARN 的ResourceManager 的地址--&gt;<br>&lt;property&gt;<br>    &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;<br>    &lt;value&gt;node1&lt;/value&gt;<br>&lt;/property&gt;<br><br>&lt;!-- 服务器请求最小内存 --&gt;<br>&lt;property&gt;<br>    &lt;name&gt;yarn.scheduler.minimum-allocation-mb&lt;/name&gt;<br>    &lt;value&gt;512&lt;/value&gt;<br>&lt;/property&gt;<br><br>&lt;!-- 服务器请求最大内存 --&gt;<br>&lt;property&gt;<br>    &lt;name&gt;yarn.scheduler.maximum-allocation-mb&lt;/name&gt;<br>    &lt;value&gt;2048&lt;/value&gt;<br>&lt;/property&gt;<br><br>&lt;!-- 容器虚拟内存与物理内存之间的比率 --&gt;<br>&lt;property&gt;<br>    &lt;name&gt;yarn.nodemanager.vmem-pmem-ratio&lt;/name&gt;<br>    &lt;value&gt;4&lt;/value&gt;<br>&lt;/property&gt;<br>&lt;/configuration&gt;<br></code></pre></td></tr></table></figure>
-
-<h4 id="配置workers"><a href="#配置workers" class="headerlink" title="配置workers"></a>配置workers</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@node1 hadoop]# vim workers <br>node1<br>node2<br>node3<br></code></pre></td></tr></table></figure>
-
-<h4 id="配置hadoop-env-sh"><a href="#配置hadoop-env-sh" class="headerlink" title="配置hadoop-env.sh"></a>配置hadoop-env.sh</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@node1 hadoop]# vim hadoop-env.sh<br>export JAVA_HOME=/export/server/jdk1.8.0_241<br><br>export HDFS_NAMENODE_USER=root<br>export HDFS_DATANODE_USER=root<br>export HDFS_SECONDARYNAMENODE_USER=root<br>export YARN_RESOURCEMANAGER_USER=root<br>export YARN_NODEMANAGER_USER=root<br></code></pre></td></tr></table></figure>
-
-<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@node1 hadoop]# vim /etc/profile<br>export HADOOP_HOME=/export/server/hadoop-3.3.0<br>export PATH=$PATH:$&#123;HADOOP_HOME&#125;/bin:$&#123;HADOOP_HOME&#125;/sbin<br></code></pre></td></tr></table></figure>
-
-
-
-<h4 id="配置文件传输到其他节点"><a href="#配置文件传输到其他节点" class="headerlink" title="配置文件传输到其他节点"></a>配置文件传输到其他节点</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@node1 server]# scp -r /etc/profile node2:$PWD  <br>[root@node1 server]# scp -r /etc/profile node3:$PWD<br>[root@node1 server]# scp /etc/profile node2:/etc <br>[root@node1 server]# scp /etc/profile node3:/etc<br></code></pre></td></tr></table></figure>
-
-<p>格式化与一键启动</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">只能格式化一次</span><br>[root@node1 hadoop-3.3.0]# bin/hdfs namenode -format<br><br>[root@node1 sbin]# start-dfs.sh<br>[root@node1 sbin]# stop-dfs.sh<br>[root@node1 sbin]# start-yarn.sh<br>[root@node1 sbin]# stop-yarn.sh<br><span class="hljs-meta prompt_">#</span><span class="language-bash">一键启动YARN、HDFS</span><br>start-all.sh<br><span class="hljs-meta prompt_">#</span><span class="language-bash">一键关闭YARN、HDFS</span><br>start-all.sh<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">单独启动或关闭集群</span><br>hdfs -daemon start namenode<br>hdfs -daemon stop namenode<br>hdfs -daemon start datanode<br>hdfs -daemon stop datanode<br></code></pre></td></tr></table></figure>
-
-
-
-
-
+<h2 id="对JJ要有信心—做时间的朋友、长期主义"><a href="#对JJ要有信心—做时间的朋友、长期主义" class="headerlink" title="对JJ要有信心—做时间的朋友、长期主义"></a>对JJ要有信心—做时间的朋友、长期主义</h2><p>今年总体是赚钱的，见好就收，还有两个月过年，猥琐发育，坚持住✊！今年的机会也差不多就到这了，没那么多心思去关注了，学习快跟不上了哈哈哈～</p>
+<p>国庆节后，心情就是过山车。。。最重要的原因就是因为<strong>ZB市场</strong>的起起伏伏。</p>
+<p><img src="/img/life/184.jpeg" srcset="/img/loading.gif" lazyload></p>
+<p>（当时心想，我要是有100个w，一周的操作足以半生衣食无忧，人在市场面前还是好渺小。。。）</p>
+<p>当年明月在《明朝那些事儿》里说的非常好，<strong>我们这个古老的民族，五千多年生生不息，只要自己人不折腾自己人，日子肯定会愈过愈好。</strong></p>
+<p>都说这几年大环境不好、jj不好，但是实话实讲，今年开始，只要动机正有耐心，还是慢慢能赚到钱的。</p>
+<p><img src="/img/life/jj1.jpeg" srcset="/img/loading.gif" lazyload></p>
+<p>直到上周，才真正体会到了老舅前一阵子的感慨：压力最大的不是下跌你陪了多少进去，而是疯涨的时候你不知道什么时候收手，人性都是贪婪的，而且是常态。</p>
+<p><img src="/img/life/jj2.jpeg" srcset="/img/loading.gif" lazyload></p>
+<p>我是国庆节前的一个周五下午，看了zzj会议释放的信号，和微博、水木社区的某些评论，决定赌一把，想着投机赚一笔。雷总说的好：“<strong>机会来了，猪都能飞啊</strong>！”。真是第一次感到市场的力量，无形的手，指数级增长的魅力。</p>
+<h2 id="理性：多数情况你只是运气好，不要觉着自己有很强能力，也别辜负好运气——实事求是"><a href="#理性：多数情况你只是运气好，不要觉着自己有很强能力，也别辜负好运气——实事求是" class="headerlink" title="理性：多数情况你只是运气好，不要觉着自己有很强能力，也别辜负好运气——实事求是"></a>理性：多数情况你只是运气好，不要觉着自己有很强能力，也别辜负好运气——实事求是</h2><p>三年多了，感谢国家让我体会到了什么叫<strong>指数级增长</strong>，一颗小草根伴随着时代的飓风呼啸而过。</p>
+<p>斐波那契数列真不是吹的！</p>
+<h3 id="创业板"><a href="#创业板" class="headerlink" title="创业板"></a>创业板</h3><p>涨的最疯狂的板块，说实话，<strong>不懂，赚钱纯靠投机</strong>。所以到年底，<strong>抽出来，别被套进去，见好就收</strong>。后期无论再怎么疯狂，都首先观望，不着急入手，维持在500以下<strong>求稳定长期回报</strong>。</p>
+<p><img src="/img/life/jj-chuangye.jpeg" srcset="/img/loading.gif" lazyload></p>
+<h3 id="永利债券"><a href="#永利债券" class="headerlink" title="永利债券"></a>永利债券</h3><p>目前为止，持有时间最长的一支基金，也是体会到了时间的朋友。这波高潮没有赶上，在高潮结束后，市场情绪稳定后，我决定加码永利。毕竟债券的风险要低与股票型基金，只有长期持有，才有回报的可能，被总想着挣快钱。</p>
+<p><img src="/img/life/jj-zhaiquan.jpeg" srcset="/img/loading.gif" lazyload></p>
+<h3 id="芯片半导体"><a href="#芯片半导体" class="headerlink" title="芯片半导体"></a>芯片半导体</h3><p>我个人长期<strong>看好芯片半导体</strong>，毕竟现在自己从事AI相关的行当。但是具体规则目前还没学明白，未来趋势看不清，我想买未来，但是风险难把握。所以，高潮小赚一笔过后，抽离，维持在500以下<strong>求稳定长期回报</strong>。</p>
+<p><img src="/img/life/jj-xinpian.jpeg" srcset="/img/loading.gif" lazyload></p>
+<p>今天JF军对湾湾进行联合利剑-2024B JS演习，军工大涨，对于这种机会就属于转瞬即逝，想抓住很难。</p>
+<h1 id="日益增长的对美好生活的需求，同不充分、不平衡发展之间的矛盾"><a href="#日益增长的对美好生活的需求，同不充分、不平衡发展之间的矛盾" class="headerlink" title="日益增长的对美好生活的需求，同不充分、不平衡发展之间的矛盾"></a>日益增长的对美好生活的需求，同不充分、不平衡发展之间的矛盾</h1><p>现在愈来愈对这句话感同身受，能总结出这句话来的人真是牛逼！</p>
+<p>从本科开始试水理财，加上疫情两年多消费不大，而且也没谈对象，自己还是在支付宝上攒下了一笔钱。时至今天回头再看，当初的这个攒钱决策时正确的，因为能给今天带来很大的自由空间。那么下一步就是要思考，如何在一个更好的平台上去发现更多的资源，创造更多的财富。注意，这里说的是财富，不是钱。</p>
+<p>ZB市场起起伏伏，恰如生活一样，都是<strong>波动的</strong>，事事如你所愿，很多时候是异想天开。唯一能做的也只是把握好能把握住的：真诚待人、踏实工作、精进技能、爱自己的家人和爱的人、锻炼好身体、保持好心态；能做到上述这些的，已是凤毛麟角。</p>
 
                 
               </div>
@@ -406,7 +390,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BC%80%E5%8F%91/" class="category-chain-item">数据科学与数据开发</a>
+  <a href="/categories/%E5%8A%A8%E6%9C%BA/" class="category-chain-item">动机</a>
   
   
 
@@ -421,11 +405,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/big-data/" class="print-no-link">#big data</a>
-      
-        <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/" class="print-no-link">#分布式计算</a>
-      
-        <a href="/tags/%E5%AD%98%E5%82%A8/" class="print-no-link">#存储</a>
+        <a href="/tags/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/" class="print-no-link">#生活随笔</a>
       
     </div>
   
@@ -437,8 +417,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hadoop集群配置汇总</div>
-      <div>http://example.com/2024/10/12/Hadoop集群配置汇总/</div>
+      <div>恐惧还是贪婪</div>
+      <div>http://example.com/2024/10/14/恐惧还是贪婪/</div>
     </div>
     <div class="license-meta">
       
@@ -450,7 +430,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年10月12日</div>
+          <div>2024年10月14日</div>
         </div>
       
       
@@ -483,18 +463,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/10/13/Text-2-SQL-in-LLM/" title="Text-2-SQL in LLM">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Text-2-SQL in LLM</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/10/08/10%E6%9C%88%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BBlist/" title="10月文献阅读list">
-                        <span class="hidden-mobile">10月文献阅读list</span>
+                      <a href="/2024/10/13/Text-2-SQL-in-LLM/" title="Text-2-SQL in LLM">
+                        <span class="hidden-mobile">Text-2-SQL in LLM</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
