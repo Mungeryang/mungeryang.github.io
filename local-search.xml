@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>我们是怎么学习的？机器是如何学习我们的学习的？</title>
+    <link href="/2024/10/18/%E6%83%B3%E6%95%B4%E6%98%8E%E7%99%BD%E6%88%91%E4%BB%AC%E6%98%AF%E6%80%8E%E4%B9%88%E5%AD%A6%E4%B9%A0%E7%9A%84%EF%BC%9F%E6%9C%BA%E5%99%A8%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E6%88%91%E4%BB%AC%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%9A%84%EF%BC%9F/"/>
+    <url>/2024/10/18/%E6%83%B3%E6%95%B4%E6%98%8E%E7%99%BD%E6%88%91%E4%BB%AC%E6%98%AF%E6%80%8E%E4%B9%88%E5%AD%A6%E4%B9%A0%E7%9A%84%EF%BC%9F%E6%9C%BA%E5%99%A8%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E6%88%91%E4%BB%AC%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%9A%84%EF%BC%9F/</url>
+    
+    <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>杨力祥老师上节课讲了，之所以自己职业生涯在很早的时候投入到AI领域，包括复现Alpho Go；在弄清楚机器是如何学习的同时，也想知道人自身是怎么学习的？</p><p><strong>关联、体系</strong>是学习的关键，不要被一些看似“懂得多”、“行家”某些人忽悠。学东西，任何一门东西，都要有体系的去学、有结构的去学。不要想玩沙子一样，看似懂得很多、知道的很多，但是只要一追问、深究，或者问问A和那个B之间有啥联系，他便说不上来了。</p><h2 id="认知"><a href="#认知" class="headerlink" title="认知"></a>认知</h2><p>认知科学、认知心理学</p><h2 id="脑科学"><a href="#脑科学" class="headerlink" title="脑科学"></a>脑科学</h2><p>[引自weibo博主blog：<strong>indigo</strong>]</p><p>推荐最近读过的最棒的一本书《A Brief History of Intelligence》，作者 Max Bennett 不是学者和生物学专家，而是一位创业者和 AI 专家，他联合创办了估值过十亿美金的 AI 公司 Bluecore。 这本“智能简史”我认为可以和 Yuval Harari 的《人类简史》比肩，从地球生物视角纵览了智能的演化，全书建立一个描述生物大脑进化的新框架，作者称其为“五次突破”，这对现在 AI 与具身智能的研究有巨大的参考价值。</p><h2 id="神经网络与反向传播"><a href="#神经网络与反向传播" class="headerlink" title="神经网络与反向传播"></a>神经网络与反向传播</h2><h2 id="注意力机制"><a href="#注意力机制" class="headerlink" title="注意力机制"></a>注意力机制</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>力祥哲学</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>力祥哲学</tag>
+      
+      <tag>创新思维</tag>
+      
+      <tag>系统论</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>恐惧还是贪婪</title>
     <link href="/2024/10/14/%E6%81%90%E6%83%A7%E8%BF%98%E6%98%AF%E8%B4%AA%E5%A9%AA/"/>
     <url>/2024/10/14/%E6%81%90%E6%83%A7%E8%BF%98%E6%98%AF%E8%B4%AA%E5%A9%AA/</url>
@@ -314,6 +343,8 @@
     
     <categories>
       
+      <category>力祥哲学</category>
+      
       <category>cs基础</category>
       
     </categories>
@@ -321,9 +352,9 @@
     
     <tags>
       
-      <tag>编程思想</tag>
-      
       <tag>创新思维</tag>
+      
+      <tag>编程思想</tag>
       
     </tags>
     
