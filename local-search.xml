@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>Multimodal RAG System Survey</title>
+    <link href="/2024/10/20/Multimodal-RAG-System-Survey/"/>
+    <url>/2024/10/20/Multimodal-RAG-System-Survey/</url>
+    
+    <content type="html"><![CDATA[<h1 id="A-Comprehensive-Guide-to-Building-Multimodal-RAG-Systems"><a href="#A-Comprehensive-Guide-to-Building-Multimodal-RAG-Systems" class="headerlink" title="A Comprehensive Guide to Building Multimodal RAG Systems"></a>A Comprehensive Guide to Building Multimodal RAG Systems</h1><p>本篇博文的主要内容是对一篇综述性博客文章()的翻译阅读与总结。通过阅读本篇文章，理清楚多模态RAG的基本概念与应用场景、部署方式、工作流程。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>论文研读</category>
+      
+      <category>人工智能与深度学习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LLM</tag>
+      
+      <tag>RAG</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>我们是怎么学习的？机器是如何学习我们的学习的？</title>
     <link href="/2024/10/18/%E6%83%B3%E6%95%B4%E6%98%8E%E7%99%BD%E6%88%91%E4%BB%AC%E6%98%AF%E6%80%8E%E4%B9%88%E5%AD%A6%E4%B9%A0%E7%9A%84%EF%BC%9F%E6%9C%BA%E5%99%A8%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E6%88%91%E4%BB%AC%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%9A%84%EF%BC%9F/"/>
     <url>/2024/10/18/%E6%83%B3%E6%95%B4%E6%98%8E%E7%99%BD%E6%88%91%E4%BB%AC%E6%98%AF%E6%80%8E%E4%B9%88%E5%AD%A6%E4%B9%A0%E7%9A%84%EF%BC%9F%E6%9C%BA%E5%99%A8%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E6%88%91%E4%BB%AC%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%9A%84%EF%BC%9F/</url>
@@ -175,7 +204,7 @@
     
     <categories>
       
-      <category>人工智能基础</category>
+      <category>人工智能与深度学习</category>
       
     </categories>
     
