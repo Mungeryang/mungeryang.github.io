@@ -58,33 +58,6 @@
   
   
   <entry>
-    <title>Text-2-SQL in LLM</title>
-    <link href="/2024/10/13/Text-2-SQL-in-LLM/"/>
-    <url>/2024/10/13/Text-2-SQL-in-LLM/</url>
-    
-    <content type="html"><![CDATA[<h2 id="半结构化数据处理"><a href="#半结构化数据处理" class="headerlink" title="半结构化数据处理"></a>半结构化数据处理</h2><p>处理半结构化数据的方法是<strong>利用LLM的编码能力在数据库表上执行Text-2-SQL</strong>[Zha, Liangyu, et al. TableGPT: Towards Unifying Tables, Nature Language and Commands into One GPT.]查询，或者<strong>将表格转化为文本格式</strong>[Luo, Ziyang, et al. Augmented Large Language Models with Parametric Knowledge Guiding.]，使用基于文本的处理方法进行分析。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>论文研读</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>LLM</tag>
-      
-      <tag>Text-2-SQL</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Hadoop集群配置汇总</title>
     <link href="/2024/10/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E6%B1%87%E6%80%BB/"/>
     <url>/2024/10/12/Hadoop%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%E6%B1%87%E6%80%BB/</url>
