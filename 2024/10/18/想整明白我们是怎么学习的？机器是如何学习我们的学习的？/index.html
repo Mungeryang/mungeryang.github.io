@@ -31,8 +31,10 @@
 <meta property="og:image" content="http://example.com/img/fig/sigmod.png">
 <meta property="og:image" content="http://example.com/img/fig/softmax.png">
 <meta property="og:image" content="http://example.com/img/fig/softnet.jpg">
+<meta property="og:image" content="http://example.com/img/fig/duoceng.jpg">
+<meta property="og:image" content="http://example.com/img/fig/shenjing.jpg">
 <meta property="article:published_time" content="2024-10-18T06:36:28.000Z">
-<meta property="article:modified_time" content="2024-10-30T11:25:04.237Z">
+<meta property="article:modified_time" content="2024-11-04T03:32:03.731Z">
 <meta property="article:author" content="Munger Yang">
 <meta property="article:tag" content="力祥哲学">
 <meta property="article:tag" content="创新思维">
@@ -285,7 +287,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.8k 字
+          2.9k 字
         
       </span>
     
@@ -296,7 +298,7 @@
         
         
         
-          24 分钟
+          25 分钟
         
       </span>
     
@@ -393,7 +395,7 @@
 <h3 id="线性神经网络"><a href="#线性神经网络" class="headerlink" title="线性神经网络"></a>线性神经网络</h3><p>通过softmax回归构建出单层线性神经网络：<br>$$<br>o_1 &#x3D;x_1w_{11}+x_2w_{12}+x_3w_{13}+x_4w_{14}+b_1 \<br>$$</p>
 <p>$$<br>o_2 &#x3D;x_1w_{21}+x_2w_{22}+x_3w_{23}+x_4w_{24}+b_2 \<br>$$</p>
 <p>$$<br>o_3 &#x3D;x_1w_{31}+x_2w_{32}+x_3w_{33}+x_4w_{34}+b_3 \<br>$$</p>
-<p><img src="/img/fig/softnet.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/fig/softnet.jpg" srcset="/img/loading.gif" lazyload alt="单层线性网络"></p>
 <p>$$<br>\mathbf{O}&#x3D;\mathbf{X}·\mathbf{W}+\mathbf{b} \<br>$$</p>
 <p>$$<br>\hat{\mathbf{Y}}&#x3D;\mathrm{softmax}(\mathbf{O})&#x3D;\frac{\exp(o_j)}{\sum_k\exp(o_k)} \<br>$$</p>
 <p>尽管softmax是一个非线性函数，但softmax回归的输出仍然由输入特征的<strong>仿射</strong>变换决定。 因此，softmax回归是一个<em>线性模型</em>。</p>
@@ -405,7 +407,8 @@
 <p>有感知这件事可不一般吧，有感知以后，当接受到外界刺激后，便会对刺激产生反应了。</p>
 <p>老师上课点名，听到名字后会立即喊“到”（如果不翘课的话嘿嘿），触摸到尖锐的物体或高温热水，会下意识的缩手；都是反应和感知。</p>
 <p>在深度学习领域，感知机的本质其实是一种运用<strong>Logistic回归</strong>的二分类模型。它只能处理二分类问题而且必须是线性可分的问题。</p>
-<h3 id="反向传播-Back-Propagation"><a href="#反向传播-Back-Propagation" class="headerlink" title="反向传播-Back Propagation"></a>反向传播-Back Propagation</h3><p>反向传播的思想就是网络结构一般以随机参数开始，伴随着不尽如人意的初始效果，通过“学习”（反向传播）赋予网络“穿越”的能力，使其自身不断自我更新，从而达到一个理想的结果。[]</p>
+<p>由简单的线性回归网络过渡延伸到多层感知机，本质上就是网络中间的隐藏层的层数增加了。</p>
+<p><img src="/img/fig/duoceng.jpg" srcset="/img/loading.gif" lazyload alt="多层多分类感知机"> </p>
 <h2 id="人工神经网络"><a href="#人工神经网络" class="headerlink" title="人工神经网络"></a>人工神经网络</h2><blockquote>
 <p> 建立一个体系，将知识建立起联系：<strong>softmax</strong>、<strong>sigmod</strong>、<strong>感知机</strong>、<strong>计算图</strong>、<strong>激活函数</strong>、<strong>反向传播</strong></p>
 </blockquote>
@@ -420,30 +423,31 @@
             <p>错误的认识或分类，会作为一个刺激信号在大脑皮层中进行一次<strong>反向传播</strong>，调整参数，然后让我们更新认知，纠正错误。</p><p>这是我理解的人的学习方式，抛开基于统计，对于“机器学习的过程”，我猜亦如此</p>
           </div>
 
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyNet</span><br>&#123;<br><span class="hljs-keyword">public</span>:<br>  <span class="hljs-built_in">MyNet</span>();<br>  ~<span class="hljs-built_in">MyNet</span>();<br>  <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">InintInput</span><span class="hljs-params">(<span class="hljs-type">int</span> nodes)</span></span>;<br>  <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-type">void</span> <span class="hljs-title">InitOutput</span><span class="hljs-params">(<span class="hljs-type">int</span> nodes)</span></span>;<br>  <span class="hljs-built_in">FunctionChoice</span>(string s);<br>  <span class="hljs-built_in">Back</span>();<br>  <span class="hljs-built_in">Build</span>(vector&lt;<span class="hljs-type">float</span>&gt; x,vector&lt;<span class="hljs-type">float</span>&gt; w,vector&lt;<span class="hljs-type">float</span>&gt; b);<br><span class="hljs-keyword">private</span>:<br>  vector&lt;<span class="hljs-type">float</span>&gt; w;<br>  vector&lt;<span class="hljs-type">float</span>&gt; b;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
 
 
-
-<blockquote>
-</blockquote>
-<p>输入</p>
+<h3 id="剖析神经元结构"><a href="#剖析神经元结构" class="headerlink" title="剖析神经元结构"></a>剖析神经元结构</h3><p><img src="/img/fig/shenjing.jpg" srcset="/img/loading.gif" lazyload alt="神经元结构"> </p>
+<p>输入：自变量&#x2F;参数 x列向量</p>
 <p>激活函数:在计算网络中， 一个节点的<strong>激活函数</strong>定义了该节点在给定的输入或输入的集合下的输出。$^{[WiKi]}$</p>
-<p>参数</p>
-<p>输出</p>
-<p>神经元网络能看成东西吗？用面向对象思想怎么玩？</p>
+<p>参数：w,b向量</p>
+<p>输出：output列向量</p>
+<h3 id="OO思想看神经网络"><a href="#OO思想看神经网络" class="headerlink" title="OO思想看神经网络"></a>OO思想看神经网络</h3><div class="note note-success">
+            <p>神经元网络能看成东西吗？用面向对象思想怎么玩？—本质上还是在<strong>搭积木</strong></p><p>高级思考：设计好的网络结构内存开哪？每一层要不要自己开内存？每层开内存也是共性</p>
+          </div>
+
+
+
 <p>用带参数的构造函数初始化一个小网络，宽度、层数</p>
 <p>1.动手写sin函数-泰勒展开，精度多少看rn项&#x2F;误差项0.000001</p>
 <p>写代码和写情书是一样的，得多练</p>
 <p>福岛邦彦</p>
-<p>设计好的网络结构内存开哪？每一层要不要自己开内存？</p>
-<p>每层开内存也是共性</p>
 <p>生成式最先淘汰的就是程序员，因为程序员最会训练程序员。</p>
 <p>GitHub是黑窝。</p>
-<p>客户是上帝，在西方，老师和学生的关系不是传道授业解惑，而是商业思维，及早地去适应社会的发展</p>
-<p>天下没有什么东西是不变的。</p>
 <p>操作系统和编译器能不能变成面向对象的方法写呢？</p>
 <p>怎么才能提出高水平的问题？</p>
-<p>优秀的人一定会随时改变自己的思路与想法，这是优秀的标志，不要咬死了死脑筋，那是愚蠢</p>
+<h3 id="反向传播-Back-Propagation"><a href="#反向传播-Back-Propagation" class="headerlink" title="反向传播-Back Propagation"></a>反向传播-Back Propagation</h3><p>反向传播的思想就是网络结构一般以随机参数开始，伴随着不尽如人意的初始效果，通过“学习”（反向传播）赋予网络“穿越”的能力，使其自身不断自我更新，从而达到一个理想的结果。$^{[4]}$</p>
+<p><strong>C++复现反向传播函数：</strong></p>
 <h2 id="CNN-卷积神经网络"><a href="#CNN-卷积神经网络" class="headerlink" title="CNN-卷积神经网络"></a>CNN-卷积神经网络</h2><h2 id="RNN-循环神经网络"><a href="#RNN-循环神经网络" class="headerlink" title="RNN-循环神经网络"></a>RNN-循环神经网络</h2><h2 id="GAN-生成对抗神经网络"><a href="#GAN-生成对抗神经网络" class="headerlink" title="GAN-生成对抗神经网络"></a>GAN-生成对抗神经网络</h2><h2 id="Alpha-Go"><a href="#Alpha-Go" class="headerlink" title="Alpha Go"></a>Alpha Go</h2><h2 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h2><p>可以尝试复现Transformer，大作业之一</p>
 <p>出题：填空、简答之类的概念性；设计题（应用）</p>
 <p>文本匹配任务的建模方法：孪生网络和交互聚合</p>
