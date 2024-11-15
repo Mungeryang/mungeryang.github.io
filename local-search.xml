@@ -4,6 +4,134 @@
   
   
   <entry>
+    <title>ViT论文研读复现</title>
+    <link href="/2024/11/16/ViT%E8%AE%BA%E6%96%87%E7%A0%94%E8%AF%BB%E5%A4%8D%E7%8E%B0/"/>
+    <url>/2024/11/16/ViT%E8%AE%BA%E6%96%87%E7%A0%94%E8%AF%BB%E5%A4%8D%E7%8E%B0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="AN-IMAGE-IS-WORTH-16X16-WORDS-TRANSFORMERS-FOR-IMAGE-RECOGNITION-AT-SCALE"><a href="#AN-IMAGE-IS-WORTH-16X16-WORDS-TRANSFORMERS-FOR-IMAGE-RECOGNITION-AT-SCALE" class="headerlink" title="AN IMAGE IS WORTH 16X16 WORDS:TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE"></a><em>AN IMAGE IS WORTH 16X16 WORDS:TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE</em></h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>大模型相关</category>
+      
+      <category>论文研读</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LLM</tag>
+      
+      <tag>RAG</tag>
+      
+      <tag>MLLM</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>RagVL论文研读复现</title>
+    <link href="/2024/11/16/RagVL%E8%AE%BA%E6%96%87%E7%A0%94%E8%AF%BB%E5%A4%8D%E7%8E%B0/"/>
+    <url>/2024/11/16/RagVL%E8%AE%BA%E6%96%87%E7%A0%94%E8%AF%BB%E5%A4%8D%E7%8E%B0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="MLLM-IS-A-STRONG-RERANKER-ADVANCING-MUL-TIMODAL-RETRIEVAL-AUGMENTED-GENERATION-VIA-KNOWLEDGE-ENHANCED-RERANKING-AND-NOISE-INJECTED-TRAINING"><a href="#MLLM-IS-A-STRONG-RERANKER-ADVANCING-MUL-TIMODAL-RETRIEVAL-AUGMENTED-GENERATION-VIA-KNOWLEDGE-ENHANCED-RERANKING-AND-NOISE-INJECTED-TRAINING" class="headerlink" title="MLLM IS A STRONG RERANKER: ADVANCING MUL TIMODAL RETRIEVAL-AUGMENTED GENERATION VIA KNOWLEDGE-ENHANCED RERANKING AND NOISE INJECTED TRAINING"></a>MLLM IS A STRONG RERANKER: ADVANCING MUL TIMODAL RETRIEVAL-AUGMENTED GENERATION VIA KNOWLEDGE-ENHANCED RERANKING AND NOISE INJECTED TRAINING</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>大模型相关</category>
+      
+      <category>论文研读</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LLM</tag>
+      
+      <tag>RAG</tag>
+      
+      <tag>MLLM</tag>
+      
+      <tag>VQA</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>CLIP论文研读复现</title>
+    <link href="/2024/11/16/CLIP%E8%AE%BA%E6%96%87%E7%A0%94%E8%AF%BB%E5%A4%8D%E7%8E%B0/"/>
+    <url>/2024/11/16/CLIP%E8%AE%BA%E6%96%87%E7%A0%94%E8%AF%BB%E5%A4%8D%E7%8E%B0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Learning-Transferable-Visual-Models-From-Natural-Language-Supervision"><a href="#Learning-Transferable-Visual-Models-From-Natural-Language-Supervision" class="headerlink" title="Learning Transferable Visual Models From Natural Language Supervision"></a><em>Learning Transferable Visual Models From Natural Language Supervision</em></h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>大模型相关</category>
+      
+      <category>论文研读</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LLM</tag>
+      
+      <tag>RAG</tag>
+      
+      <tag>MLLM</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>EchoSight论文研读复现</title>
+    <link href="/2024/11/16/EchoSight%E8%AE%BA%E6%96%87%E7%A0%94%E8%AF%BB%E5%A4%8D%E7%8E%B0/"/>
+    <url>/2024/11/16/EchoSight%E8%AE%BA%E6%96%87%E7%A0%94%E8%AF%BB%E5%A4%8D%E7%8E%B0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="EchoSight-Advancing-Visual-Language-Models-with-Wiki-Knowledge"><a href="#EchoSight-Advancing-Visual-Language-Models-with-Wiki-Knowledge" class="headerlink" title="EchoSight: Advancing Visual-Language Models with Wiki Knowledge"></a>EchoSight: Advancing Visual-Language Models with Wiki Knowledge</h1><p>Yibin Yan &amp;&amp; Weidi Xie</p><p>School of Artificial Intelligence, Shanghai Jiao Tong University</p><p>原文连接：<a href="https://arxiv.org/pdf/2407.12735">https://arxiv.org/pdf/2407.12735</a></p><p>论文主页：<a href="https://go2heart.github.io/echosight/">https://go2heart.github.io/echosight/</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>大模型相关</category>
+      
+      <category>论文研读</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LLM</tag>
+      
+      <tag>RAG</tag>
+      
+      <tag>MLLM</tag>
+      
+      <tag>VQA</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>科研绘图可视化精进</title>
     <link href="/2024/11/15/%E7%A7%91%E7%A0%94%E7%BB%98%E5%9B%BE%E5%8F%AF%E8%A7%86%E5%8C%96%E7%B2%BE%E8%BF%9B/"/>
     <url>/2024/11/15/%E7%A7%91%E7%A0%94%E7%BB%98%E5%9B%BE%E5%8F%AF%E8%A7%86%E5%8C%96%E7%B2%BE%E8%BF%9B/</url>
@@ -570,11 +698,11 @@
       
       <tag>LLM</tag>
       
+      <tag>RAG</tag>
+      
       <tag>部署</tag>
       
       <tag>微调技术</tag>
-      
-      <tag>RAG</tag>
       
     </tags>
     
