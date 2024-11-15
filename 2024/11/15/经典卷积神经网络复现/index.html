@@ -19,27 +19,26 @@
   <meta name="author" content="Munger Yang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="A Comprehensive Guide to Building Multimodal RAG Systems本篇博文的主要内容是对一篇综述性博客文章()的翻译阅读与总结。通过阅读本篇文章，理清楚多模态RAG的基本概念与应用场景、部署方式、工作流程。 RAG系统的优势是可以整合自身数据并增强LLM的智力，对于问题给出更多精确的回答。然而，关键的限制就是RAG系统仅仅是它仅适用于文本数据。 许多现">
+    <meta name="description" content="基于pytorch将经典的卷积神经网络架构复现一下             卷积神经网络基础知识LeNet-5网络结构图 结构分析复现代码1234567891011121314151617181920212223242526272829303132333435363738import torchfrom torch import nn#LeNet-5一共有7层，输入图像大">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Multimodal RAG System Survey">
-<meta property="og:url" content="http://example.com/2024/10/20/Multimodal-RAG-System-Survey/index.html">
+<meta property="og:title" content="经典卷积神经网络复现">
+<meta property="og:url" content="http://example.com/2024/11/15/%E7%BB%8F%E5%85%B8%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%A4%8D%E7%8E%B0/index.html">
 <meta property="og:site_name" content="munger写字的地方">
-<meta property="og:description" content="A Comprehensive Guide to Building Multimodal RAG Systems本篇博文的主要内容是对一篇综述性博客文章()的翻译阅读与总结。通过阅读本篇文章，理清楚多模态RAG的基本概念与应用场景、部署方式、工作流程。 RAG系统的优势是可以整合自身数据并增强LLM的智力，对于问题给出更多精确的回答。然而，关键的限制就是RAG系统仅仅是它仅适用于文本数据。 许多现">
+<meta property="og:description" content="基于pytorch将经典的卷积神经网络架构复现一下             卷积神经网络基础知识LeNet-5网络结构图 结构分析复现代码1234567891011121314151617181920212223242526272829303132333435363738import torchfrom torch import nn#LeNet-5一共有7层，输入图像大">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.analyticsvidhya.com/wp-content/uploads/2024/09/unnamed-3-2.webp">
-<meta property="article:published_time" content="2024-10-20T05:30:49.000Z">
-<meta property="article:modified_time" content="2024-11-15T07:42:48.006Z">
+<meta property="og:image" content="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*1TI1aGBZ4dybR6__DI9dzA.png">
+<meta property="article:published_time" content="2024-11-15T06:42:17.000Z">
+<meta property="article:modified_time" content="2024-11-15T15:48:04.809Z">
 <meta property="article:author" content="Munger Yang">
-<meta property="article:tag" content="LLM">
-<meta property="article:tag" content="RAG">
+<meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.analyticsvidhya.com/wp-content/uploads/2024/09/unnamed-3-2.webp">
+<meta name="twitter:image" content="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*1TI1aGBZ4dybR6__DI9dzA.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Multimodal RAG System Survey - munger写字的地方</title>
+  <title>经典卷积神经网络复现 - munger写字的地方</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -257,7 +256,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Multimodal RAG System Survey"></span>
+            <span id="subtitle" data-typed-text="经典卷积神经网络复现"></span>
           
         </div>
 
@@ -268,8 +267,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-10-20 13:30" pubdate>
-          2024年10月20日 下午
+        <time datetime="2024-11-15 14:42" pubdate>
+          2024年11月15日 下午
         </time>
       </span>
     
@@ -280,7 +279,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          913 字
         
       </span>
     
@@ -291,7 +290,7 @@
         
         
         
-          18 分钟
+          8 分钟
         
       </span>
     
@@ -337,97 +336,51 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Multimodal RAG System Survey</h1>
+            <h1 id="seo-header">经典卷积神经网络复现</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="A-Comprehensive-Guide-to-Building-Multimodal-RAG-Systems"><a href="#A-Comprehensive-Guide-to-Building-Multimodal-RAG-Systems" class="headerlink" title="A Comprehensive Guide to Building Multimodal RAG Systems"></a>A Comprehensive Guide to Building Multimodal RAG Systems</h1><p>本篇博文的主要内容是对一篇综述性博客文章()的翻译阅读与总结。通过阅读本篇文章，理清楚多模态RAG的基本概念与应用场景、部署方式、工作流程。</p>
-<p>RAG系统的优势是可以整合自身数据并增强LLM的智力，对于问题给出更多精确的回答。然而，关键的限制就是RAG系统仅仅是它仅适用于文本数据。 许多现实世界的数据本质上是多模态的，是文本、图像、表格等形式的混合。</p>
-<p>该篇综述的主要目的就是着眼构建一个多模态的RAG系统，使用智能数据转换和多模态LLM解决混合数据格式。</p>
-<h2 id="传统的RAG系统"><a href="#传统的RAG系统" class="headerlink" title="传统的RAG系统"></a>传统的RAG系统</h2><p>RAG系统架构通常包括：</p>
-<ol>
-<li>数据处理和索引</li>
-<li>检索和响应生成</li>
-</ol>
-<h3 id="数据处理和索引"><a href="#数据处理和索引" class="headerlink" title="数据处理和索引"></a>数据处理和索引</h3><p>加载文档中的文本内容-&gt;将大型文本元素拆分为较小的块-&gt;使用嵌入器模型将它们转换为嵌入-&gt;将块和嵌入存储到矢量数据库中</p>
-<p><img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2024/09/unnamed-5.webp" srcset="/img/loading.gif" lazyload alt="建立索引"></p>
-<h3 id="检索和响应生成"><a href="#检索和响应生成" class="headerlink" title="检索和响应生成"></a>检索和响应生成</h3><p>用户提问-&gt;文档检索-&gt;提示-&gt;LLM-&gt;回答</p>
-<p>从向量数据库中检索与输入问题相似的相关文本文档块，然后将问题和上下文文档块发送到LLM以生成人类。</p>
-<p><img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2024/09/unnamed-1-3.webp" srcset="/img/loading.gif" lazyload alt="检索生成"></p>
-<h2 id="传统RAG系统的限制"><a href="#传统RAG系统的限制" class="headerlink" title="传统RAG系统的限制"></a>传统RAG系统的限制</h2><ul>
-<li>无法获悉实时数据</li>
-<li>系统仅会利用好我们自身向量数据库中的数据</li>
-<li>大部分RAG系统仅仅致力于文本数据的检索和生成</li>
-<li>传统的LLMs 仅仅处理文本内容去生成回答</li>
-<li>无法利用多模态数据进行工作</li>
-</ul>
-<h2 id="什么是多模态？"><a href="#什么是多模态？" class="headerlink" title="什么是多模态？"></a>什么是多模态？</h2><p>Multimodal data is essentially data belonging to multiple modalities.</p>
-<p>多模态数据本质上是属于多种模态的数据。 模态的正式定义来自人机交互 (HCI) 系统的背景，其中模态被称为计算机和人类之间的单个独立输入和输出通道的分类（更多详细信息请参阅维基百科）。 常见的计算机-人类模式包括以下内容：</p>
-<p>文本：Input and output through written language(e.g., chat interfaces).</p>
-<p>语音：Voice-based interaction(e.g., voice assistants).</p>
-<p>视频：Image and video processing for visual recognition (e.g., face detection).</p>
-<p>手势：Hand and body movement tracking(e.g., gesture controls).</p>
-<p>触控：Haptic feedback and touchscreens.</p>
-<p>音频：Sound-based signals (e.g., music recognition, alerts).</p>
-<p>生物识别：Interaction through physiological data (e.g., eye-tracking, fingerprints).</p>
-<p>本综述重点关注处理文本、图像和表格。 理解此类数据所需的关键组件之一是多模态大语言模型 (LLM)。</p>
-<p>多模态的本质是混合了多种多种模式和格式的数据：</p>
-<p><img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2024/09/unnamed-2_11zon.webp" srcset="/img/loading.gif" lazyload alt="多模态数据"></p>
-<h2 id="什么是多模态大语言模型？"><a href="#什么是多模态大语言模型？" class="headerlink" title="什么是多模态大语言模型？"></a>什么是多模态大语言模型？</h2><p>多模态大语言模型 (LLM) 本质上是基于 Transformer 的 LLM，已针对多模态数据进行预训练和微调，以分析和理解各种数据格式，包括文本、图像、表格、音频和视频。 </p>
-<p><img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2024/09/unnamed-3-2.webp" srcset="/img/loading.gif" lazyload alt="MLLMs"></p>
-<p> 理想情况下，真正的多模态模型不仅应该能够理解混合数据格式，还应该生成相同的数据格式。</p>
-<p>文生图、图生文、文生音、文生视频</p>
-<p>多模态编码阶段：</p>
-<p>利用现有的成熟模型对各种模式的输入进行编码。</p>
-<p>LLM理解和响应阶段</p>
-<p>LLM被用作NExT GPT的核心代理。从技术上讲，他们采用Vicuna LLM，该LLM<strong>将来自不同模态的表示作为输入</strong>，并对<strong>输入进行语义理解和推理</strong>。它输出1）直接的文本响应和2）每种模态的<strong>信号标记</strong>，这些标记用作指示<strong>解码层是否生成多模态内容以及如果是则生成什么内容的指令</strong>。</p>
-<p>多模态生成阶段</p>
-<p>从LLM（如果有的话）<strong>接收具有特定指令的多模态信号</strong>，<strong>基于Transformer的输出投影层将信号令牌表示映射到后续多模态解码器可以理解的表示中</strong>。从技术上讲，他们采用了不同模态代的现成潜在条件<strong>扩散模型</strong>，即用于图像合成的稳定扩散（SD）、用于视频合成的Zeroscope和用于音频合成的AudioLDM。</p>
-<p>目前，大多数可供实际使用的多模态LLM都是片面的，这意味着它们可以理解混合数据格式，但只能生成文本响应。</p>
-<p><strong>GPT-4V &amp; GPT-4o</strong> (OpenAI):</p>
-<p><strong>Gemini</strong> (Google):</p>
-<p><strong>Claude</strong> (Anthropic):</p>
-<p>想要构建完全开源的解决方案或担心数据隐私或延迟并更喜欢在内部本地托管所有内容，可以借助目前最流行的开放和开源多式联运模型构建：</p>
-<p>LLaVA-NeXT: An open-source multimodal model with capabilities to work with text, images and also video, which an improvement on top of the popular LLaVa model</p>
-<p>PaliGemma: A vision-language model from Google that integrates both image and text processing, designed for tasks like optical character recognition (OCR), object detection, and visual question answering (VQA). </p>
-<p>Pixtral 12B: An advanced multimodal model from Mistral AI with 12 billion parameters that can process both images and text. Built on Mistral’s Nemo architecture, Pixtral 12B excels in tasks like image captioning and object recognition.</p>
-<p>目前为止最为强大的多模态模型是Open-AI的GPT-4.o</p>
-<h2 id="多模态RAG系统的工作流"><a href="#多模态RAG系统的工作流" class="headerlink" title="多模态RAG系统的工作流"></a>多模态RAG系统的工作流</h2><p>多模态RAG系统的构建流程与本篇博客的构建选择：</p>
-<p><img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2024/09/unnamed-4-2.webp" srcset="/img/loading.gif" lazyload alt="workflow"></p>
-<p>不好理解的一部分？</p>
-<p>端到端的工作流：</p>
-<p>如何去理解Summary？为什么图像、表格、和文本中在嵌入的时候都变成了Image Summary、Table Summary、Text Summary？</p>
-<p>Option 1：</p>
-<p>选择1缺陷的原因是多模态嵌入模型通常无法对这些视觉图像中的数字等粒度信息进行编码，并将其压缩为有意义的嵌入。</p>
-<p>Option 2：</p>
-<p>选项 2 受到严重限制，因为我们最终不会在该系统中使用图像，即使它可能包含有价值的信息，并且它不是真正的多模式 RAG 系统。 </p>
-<p>Option 3：</p>
-<p>将继续使用选项 3 作为我们的多模态RAG 系统工作流程。 在此工作流程中，我们将从图像、表格以及可选的文本块中创建摘要，并使用多向量检索器，这可以帮助根据相应的原始图像、表格和文本元素映射和检索原始图像、表格和文本元素。 </p>
-<h2 id="Multi-Vector-Retrieval-Workflow"><a href="#Multi-Vector-Retrieval-Workflow" class="headerlink" title="Multi-Vector Retrieval Workflow"></a>Multi-Vector Retrieval Workflow</h2><p>考虑到我们将在上一节中讨论的工作流程，对于我们的检索工作流程，我们将使用如下图所示的多向量检索器，正如 LangChain 博客中推荐和提到的那样。 多向量检索器的主要目的是充当包装器，并帮助将每个文本块、表格和图像摘要<strong>映射到</strong>实际的文本块、表格和图像元素，然后可以在检索期间获得这些内容。</p>
-<p><img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2024/09/unnamed-5-2.webp" srcset="/img/loading.gif" lazyload alt="多向量检索器"></p>
-<p>首先使用 Unstructed 等文档解析工具分别提取文本、表格和图像元素。 然后，我们将<strong>把每个提取的元素传递到 LLM 中，并生成详细的文本摘要</strong>，如上所示。 接下来，我们将使用任何流行的<strong>嵌入器模型</strong>（例如 OpenAI Embedders）将<strong>摘要及其嵌入存储到向量数据库</strong>中。 我们还将每个摘要的相应原始文档元素（文本、表格、图像）存储在文档存储中，文档存储可以是任何数据库平台，例如 Redis。</p>
-<p>当用户提出问题时，首先，多向量检索器检索相关摘要，这些摘要在语义（嵌入）相似性方面与问题相似，然后使用公共的 doc_ids、原始文本、表格和图像 返回的元素将进一步传递给 RAG 系统的 LLM 作为回答用户问题的上下文。</p>
-<h2 id="多模态RAG的架构细节"><a href="#多模态RAG的架构细节" class="headerlink" title="多模态RAG的架构细节"></a>多模态RAG的架构细节</h2><ol>
-<li>Load all documents and use a document loader like <strong>unstructured.io</strong> to extract text chunks, image, and tables.</li>
-<li>If necessary, convert HTML tables to markdown; they are often very effective with LLMs</li>
-<li>Pass each text chunk, image, and table into a multimodal LLM like GPT-4o and get a detailed summary.</li>
-<li>Store summaries in a vector DB and the raw document pieces in a document DB like Redis</li>
-<li>Connect the two databases with a common document_id using a multi-vector retriever to identify which summary maps to which raw document piece.</li>
-<li>Connect this multi-vector retrieval system with a multimodal LLM like GPT-4o.</li>
-<li>Query the system, and based on similar summaries to the query, get the raw document pieces, including tables and images, as the context.</li>
-<li>Using the above context, generate a response using the multimodal LLM for the question.</li>
-</ol>
-<hr>
-<p><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXc-woXqKviW7JlYQlmaecD0QpvsiyX4PNJoAB6d4wEm_y4Ks6qXuJNTZ61KTOyJ1v8xi1k4CujEisnRNAWM4LIpgQs_HREGihbG3bquz1y-YXsNt84k7Y9jWy_Vip6yLPiIfNmnTAyI86xvEzbYFSpu69g?key=jCBGNvykPV6Ye85DC-Uxrg" srcset="/img/loading.gif" lazyload alt="架构"></p>
-<p>1.加载所有文档，并使用类似unstructure.io的文档加载器提取文本块、图像和表格。</p>
-<p>2.如有必要，将HTML表格转换为markdown；他们通常对LLM非常有效</p>
-<p>3.将每个文本块、图像和表格传递到GPT-4o等多模式LLM中，并获得详细的摘要。</p>
-<p>4.将摘要存储在向量数据库中，将原始文档片段存储在Redis等文档数据库中</p>
-<p>5.使用多向量检索器使用公共document_id连接两个数据库，以识别哪个摘要映射到哪个原始文档块。</p>
-<p>6.将这个多向量检索系统与GPT-4o等多模态LLM连接起来。</p>
-<p>7.查询系统，并根据与查询类似的摘要，获取原始文档片段，包括表格和图像，作为上下文。</p>
-<p>8.使用上述上下文，使用多模态LLM生成问题的答案。</p>
+                <div class="note note-success">
+            <p>基于<code>pytorch</code>将经典的卷积神经网络架构复现一下</p>
+          </div>
+
+<h2 id="卷积神经网络基础知识"><a href="#卷积神经网络基础知识" class="headerlink" title="卷积神经网络基础知识"></a>卷积神经网络基础知识</h2><h2 id="LeNet-5"><a href="#LeNet-5" class="headerlink" title="LeNet-5"></a>LeNet-5</h2><h3 id="网络结构图"><a href="#网络结构图" class="headerlink" title="网络结构图"></a>网络结构图</h3><p><img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*1TI1aGBZ4dybR6__DI9dzA.png" srcset="/img/loading.gif" lazyload alt="LeNet-5"></p>
+<h3 id="结构分析"><a href="#结构分析" class="headerlink" title="结构分析"></a>结构分析</h3><h3 id="复现代码"><a href="#复现代码" class="headerlink" title="复现代码"></a>复现代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> torch<br><span class="hljs-keyword">from</span> torch <span class="hljs-keyword">import</span> nn<br><br><span class="hljs-comment">#LeNet-5一共有7层，输入图像大小为32*32*1，输出对应10个类别的条件概率</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">LeNet5</span>(nn.Module):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-built_in">super</span>(LeNet5,<span class="hljs-variable language_">self</span>).__init__()<br>        <span class="hljs-variable language_">self</span>.layer1 = nn.Sequential(<br>          	<span class="hljs-comment">#输入channels：1；输出channels：6，卷积核：5*5</span><br>            nn.Conv2d(<span class="hljs-number">1</span>,<span class="hljs-number">6</span>,<span class="hljs-number">5</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>),<br>            nn.ReLU(inplace=<span class="hljs-literal">True</span>),<br>          	<span class="hljs-comment">#2*2卷积核，步长为2进行最大池化</span><br>            nn.MaxPool2d(kernel_size=<span class="hljs-number">2</span>,stride=<span class="hljs-number">2</span>)<br>        )<br>        <span class="hljs-variable language_">self</span>.layer2 = nn.Sequential(<br>          	<span class="hljs-comment">#输入channels：6；输出channels：16，卷积核：5*5</span><br>            nn.Conv2d(<span class="hljs-number">6</span>,<span class="hljs-number">16</span>,<span class="hljs-number">5</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>),<br>            nn.ReLU(inplace=<span class="hljs-literal">True</span>),<br>          	<span class="hljs-comment">#2*2卷积核，步长为2进行最大池化</span><br>            nn.MaxPool2d(kernel_size=<span class="hljs-number">2</span>,stride=<span class="hljs-number">2</span>)<br>        )<br>        <span class="hljs-variable language_">self</span>.classifier = nn.Sequential(<br>            nn.Flatten(),<span class="hljs-comment">#将卷积后的16@5*5图像输出展平</span><br>            nn.Linear(<span class="hljs-number">400</span>,<span class="hljs-number">120</span>),<span class="hljs-comment">#线性层</span><br>            nn.ReLU(inplace=<span class="hljs-literal">True</span>),<br>            nn.Linear(<span class="hljs-number">120</span>,<span class="hljs-number">84</span>),<span class="hljs-comment">#线性层</span><br>            nn.ReLU(inplace=<span class="hljs-literal">True</span>),<br>            nn.Linear(<span class="hljs-number">84</span>,<span class="hljs-number">10</span>),<span class="hljs-comment">#线性层</span><br>            nn.Softmax(dim=<span class="hljs-number">1</span>)<br>        )<br><br>    <span class="hljs-comment">#前向传播计算</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self,x</span>):<br>        x = <span class="hljs-variable language_">self</span>.layer1(x)<br>        x = <span class="hljs-variable language_">self</span>.layer2(x)<br>        <span class="hljs-built_in">print</span>(x.shape)<br>        x = <span class="hljs-variable language_">self</span>.classifier(x)<br>        <span class="hljs-keyword">return</span> x<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h2><h3 id="网络结构图-1"><a href="#网络结构图-1" class="headerlink" title="网络结构图"></a>网络结构图</h3><p><img src="https://i0.wp.com/bainsa.xyz/wp-content/uploads/2023/11/a1.png?fit=940,469&ssl=1" srcset="/img/loading.gif" lazyload alt="AlexNet"></p>
+<h3 id="结构细节"><a href="#结构细节" class="headerlink" title="结构细节"></a>结构细节</h3><div class="note note-danger">
+            <p>卷积核大小如何确定？</p>
+          </div>
+
+<p>虽然说目前有比较火的研究方向针对这种自动神经网络结构搜索（NAS），这些自动搜索出来的网络在常规数据集上的建模结果显示（当然是达到一定的准确度）：自动搜索出来的网络中的卷积核的类别有包括各种常见的型号（3 * 3、5 * 5、7*7），且在网络中的前后排布没有规律。</p>
+<div class="note note-danger">
+            <p>nn.BatchNorm2d()的作用？</p>
+          </div>
+
+<p>在深度神经网络中，梯度消失是一个常见的问题。BatchNorm2d通过对激活函数前添加归一化层，抑制了梯度消失的问题，从而加速了优化过程。</p>
+<p>BatchNorm2d通过对数据的归一化处理，使得权重初始化的影响减小，无论权重的初始值如何，都可以通过归一化和仿射变换得到较好的效果。</p>
+<div class="note note-danger">
+            <p>nn.Dropout(0.5,inplace&#x3D;True)的作用？</p>
+          </div>
+
+<p>nn.Dropout模块的作用是在训练过程中随机关闭一部分神经元，以增加模型的泛化能力。通常，我们在全连接层之后应用dropout，以避免破坏卷积层中重要的空间信息。</p>
+<p>一般建议在10%-50%之间设置dropout比例</p>
+<h3 id="复现代码-1"><a href="#复现代码-1" class="headerlink" title="复现代码"></a>复现代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> torch<br><span class="hljs-keyword">from</span> torch <span class="hljs-keyword">import</span> nn<br><br><span class="hljs-comment">#AlexNet的输入为224*224*3图像，输出为1000个类别的条件概率</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">AlexNet</span>(nn.Module):<br>    <span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">    Neural network model consisting of layers proposed by AlexNet paper</span><br><span class="hljs-string">    &#x27;&#x27;&#x27;</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-built_in">super</span>(AlexNet,<span class="hljs-variable language_">self</span>).__init__()<br>        <span class="hljs-variable language_">self</span>.layer1 = nn.Sequential(<br>          	<span class="hljs-comment">#输入channels：3；输出channels：96，卷积核：11*11</span><br>            nn.Conv2d(<span class="hljs-number">3</span>,<span class="hljs-number">96</span>,<span class="hljs-number">11</span>,<span class="hljs-number">4</span>,<span class="hljs-number">0</span>),<br>            nn.BatchNorm2d(<span class="hljs-number">96</span>),<br>            nn.ReLU(inplace=<span class="hljs-literal">True</span>),<br>          	<span class="hljs-comment">#3*3卷积核，步长为2进行最大池化</span><br>            nn.MaxPool2d(<span class="hljs-number">3</span>,<span class="hljs-number">2</span>)<br>        )<br>        <span class="hljs-variable language_">self</span>.layer2 = nn.Sequential(<br>          	<span class="hljs-comment">#输入channels：96；输出channels：256，卷积核：5*5</span><br>            nn.Conv2d(<span class="hljs-number">96</span>,<span class="hljs-number">256</span>,<span class="hljs-number">5</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>),<br>            nn.BatchNorm2d(<span class="hljs-number">256</span>),<br>            nn.ReLU(inplace=<span class="hljs-literal">True</span>),<br>          	<span class="hljs-comment">#3*3卷积核，步长为2进行最大池化</span><br>            nn.MaxPool2d(<span class="hljs-number">3</span>,<span class="hljs-number">2</span>),<br>        )<br>        <span class="hljs-variable language_">self</span>.layer3 = nn.Sequential(<br>          	<span class="hljs-comment">#输入channels：256；输出channels：384，卷积核：3*3</span><br>            nn.Conv2d(<span class="hljs-number">256</span>,<span class="hljs-number">384</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>),<br>            nn.BatchNorm2d(<span class="hljs-number">394</span>),<br>            nn.ReLU(inplace=<span class="hljs-literal">True</span>),<br>        )<br>        <span class="hljs-variable language_">self</span>.layer4 = nn.Sequential(<br>          	<span class="hljs-comment">#输入channels：384；输出channels：384，卷积核：3*3</span><br>            nn.Conv2d(<span class="hljs-number">384</span>,<span class="hljs-number">384</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>),<br>            nn.BatchNorm2d(<span class="hljs-number">394</span>),<br>            nn.ReLU(inplace=<span class="hljs-literal">True</span>)<br>        )<br>        <span class="hljs-variable language_">self</span>.layer5 = nn.Sequential(<br>          	<span class="hljs-comment">#输入channels：384；输出channels：256，卷积核：3*3</span><br>            nn.Conv2d(<span class="hljs-number">384</span>,<span class="hljs-number">256</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>),<br>            nn.BatchNorm2d(<span class="hljs-number">256</span>),<br>            nn.ReLU(inplace=<span class="hljs-literal">True</span>),<br>          	<span class="hljs-comment">#3*3卷积核，步长为2进行最大池化</span><br>            nn.MaxPool2d(<span class="hljs-number">3</span>,<span class="hljs-number">2</span>)<br>        )<br>    <br>        <span class="hljs-variable language_">self</span>.classifier = nn.Sequential(<br>            nn.Dropout(<span class="hljs-number">0.5</span>,inplace=<span class="hljs-literal">True</span>),<br>            nn.Linear(<span class="hljs-number">256</span>*<span class="hljs-number">6</span>*<span class="hljs-number">6</span>,<span class="hljs-number">4096</span>),<br>            nn.ReLU(inplace=<span class="hljs-literal">True</span>),<br>            nn.Dropout(<span class="hljs-number">0.5</span>,inplace=<span class="hljs-literal">True</span>),<br>            nn.Linear(<span class="hljs-number">4096</span>,<span class="hljs-number">4096</span>),<br>            nn.ReLU(inplace=<span class="hljs-literal">True</span>),<br>            nn.Linear(<span class="hljs-number">4096</span>,<span class="hljs-number">1000</span>),<br>            nn.Softmax(dim=<span class="hljs-number">1</span>)<br>        )<br><br>    <span class="hljs-comment">#前向传播计算</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self,x</span>):<br>        x = <span class="hljs-variable language_">self</span>.layer1(x)<br>        x = <span class="hljs-variable language_">self</span>.layer2(x)<br>        x = <span class="hljs-variable language_">self</span>.layer4(x)<br>        x = <span class="hljs-variable language_">self</span>.layer5(x)<br>        output = <span class="hljs-variable language_">self</span>.classifier(x)<br>        <span class="hljs-keyword">return</span> output<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="VGG"><a href="#VGG" class="headerlink" title="VGG"></a>VGG</h2><h3 id="网络结构图-2"><a href="#网络结构图-2" class="headerlink" title="网络结构图"></a>网络结构图</h3><p><img src="https://production-media.paperswithcode.com/methods/vgg_7mT4DML.png" srcset="/img/loading.gif" lazyload alt="VGG"></p>
+<h2 id="GoogleNet"><a href="#GoogleNet" class="headerlink" title="GoogleNet"></a>GoogleNet</h2><h3 id="网络结构图-3"><a href="#网络结构图-3" class="headerlink" title="网络结构图"></a>网络结构图</h3><p><img src="https://viso.ai/wp-content/uploads/2024/04/google-net-like.png" srcset="/img/loading.gif" lazyload alt="GoogleNet"></p>
+<h2 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h2><h3 id="网络结构图-4"><a href="#网络结构图-4" class="headerlink" title="网络结构图"></a>网络结构图</h3><p><img src="https://miro.medium.com/v2/resize:fit:2000/1*6hF97Upuqg_LdsqWY6n_wg.png" srcset="/img/loading.gif" lazyload alt="ResNet"></p>
 
                 
               </div>
@@ -442,26 +395,6 @@
 
 <span class="category-chains">
   
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9B%B8%E5%85%B3/" class="category-chain-item">大模型相关</a>
-  
-  
-
-      </span>
-    
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E8%AE%BA%E6%96%87%E7%A0%94%E8%AF%BB/" class="category-chain-item">论文研读</a>
-  
-  
-
-      </span>
-    
   
     
       <span class="category-chain">
@@ -481,9 +414,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/LLM/" class="print-no-link">#LLM</a>
-      
-        <a href="/tags/RAG/" class="print-no-link">#RAG</a>
+        <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="print-no-link">#深度学习</a>
       
     </div>
   
@@ -495,8 +426,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Multimodal RAG System Survey</div>
-      <div>http://example.com/2024/10/20/Multimodal-RAG-System-Survey/</div>
+      <div>经典卷积神经网络复现</div>
+      <div>http://example.com/2024/11/15/经典卷积神经网络复现/</div>
     </div>
     <div class="license-meta">
       
@@ -508,7 +439,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年10月20日</div>
+          <div>2024年11月15日</div>
         </div>
       
       
@@ -541,9 +472,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/10/24/%E6%8A%89%E6%8B%A9/" title="抉择本身就是向前吧">
+                      <a href="/2024/11/15/%E7%A7%91%E7%A0%94%E7%BB%98%E5%9B%BE%E5%8F%AF%E8%A7%86%E5%8C%96%E7%B2%BE%E8%BF%9B/" title="科研绘图可视化精进">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">抉择本身就是向前吧</span>
+                        <span class="hidden-mobile">科研绘图可视化精进</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -551,8 +482,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/10/18/%E6%83%B3%E6%95%B4%E6%98%8E%E7%99%BD%E6%88%91%E4%BB%AC%E6%98%AF%E6%80%8E%E4%B9%88%E5%AD%A6%E4%B9%A0%E7%9A%84%EF%BC%9F%E6%9C%BA%E5%99%A8%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E6%88%91%E4%BB%AC%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%9A%84%EF%BC%9F/" title="我们是怎么学习的？机器是如何学习我们的学习的？">
-                        <span class="hidden-mobile">我们是怎么学习的？机器是如何学习我们的学习的？</span>
+                      <a href="/2024/11/11/C-%E4%BA%94%E5%AD%90%E6%A3%8B/" title="C++五子棋">
+                        <span class="hidden-mobile">C++五子棋</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
