@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/fig/history-LLM.png">
 <meta property="article:published_time" content="2024-10-28T05:51:36.000Z">
-<meta property="article:modified_time" content="2024-10-29T07:07:31.322Z">
+<meta property="article:modified_time" content="2024-11-17T07:12:14.016Z">
 <meta property="article:author" content="Munger Yang">
 <meta property="article:tag" content="LLM">
 <meta property="article:tag" content="多模态">
@@ -280,7 +280,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k 字
+          1.3k 字
         
       </span>
     
@@ -291,7 +291,7 @@
         
         
         
-          9 分钟
+          12 分钟
         
       </span>
     
@@ -350,16 +350,38 @@
           </div>
 
 <p><a target="_blank" rel="noopener" href="https://github.com/RUCAIBox/LLMSurvey?tab=readme-ov-file">https://github.com/RUCAIBox/LLMSurvey?tab=readme-ov-file</a></p>
+<p>input (prompt) -&gt; fn{LLM} -&gt; output</p>
 <h2 id="历史发展"><a href="#历史发展" class="headerlink" title="历史发展"></a>历史发展</h2><p>大语言模型发展主要经历了统计语言模型 –&gt; 神经语言模型 –&gt; 预训练语言模型 –&gt; 大语言模型四个阶段</p>
 <p>图片引用自<a target="_blank" rel="noopener" href="https://cleaner.love/">Cleaner 知识库</a></p>
 <p><img src="/img/fig/history-LLM.png" srcset="/img/loading.gif" lazyload alt="语言模型发展史"></p>
-<h2 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h2><p>Token的概念相当于文字，一个中文文字对应一个token，比如我爱你，对应三个token：我+爱+你；一个英文的字符对应一个token，比如love，而icecream对应两个token：ice+cream。</p>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h3><p>Token的概念相当于文字，一个中文文字对应一个token，比如我爱你，对应三个token：我+爱+你；一个英文的字符对应一个token，比如love，而icecream对应两个token：ice+cream。</p>
 <p>联系理解，计算机理解数据的形式是<strong>比特流</strong>，那么类比联想理解，LLM理解数据的“字节”就是一个Token。</p>
-<h2 id="预训练"><a href="#预训练" class="headerlink" title="预训练"></a>预训练</h2><p>使用大语言模型在<strong>大规模语料</strong>上进行预训练，大语言模型可以获得通用的语言理解与生成能力，掌握较为广泛的世界知识，具备解决众多下游任务的性能潜力。</p>
-<h2 id="微调"><a href="#微调" class="headerlink" title="微调"></a>微调</h2><p>指令微调是指使用自然语言形式的数据对预训练后的大语言模型进行<strong>参数微调</strong>，它是增强和激活大语言模型特定能力的重要方法之一。通过使用任务输入与输出的配对数据进行模型训练，可以使语言模型掌握通过问答形式进行任务求解的能力和较强的指令遵循能力，并且能够无需下游任务的训练样本或者示例就可以解决训练中未见过的任务。</p>
-<h2 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h2><p>经过大规模的预训练和有监督指令微调，大语言模型具备了解决各种任务的通用能力和指令遵循能力，但是同时也可能生成<code>有偏见的</code>、<code>冒犯的</code>以及<code>事实错误的</code>文本内容。这些潜在的有害行为，可能在下游应用中产生严重的影响与危害，进一步被恶意使用者进行放大与利用。因此，在大语言模型的学习过程中，如何确保大语言模型的行为与人类价值观、人类真实意图和社会伦理相一致成为了一个 关键研究问题，通常称这一研究问题为<strong>人类对齐</strong>。</p>
-<h2 id="泛化"><a href="#泛化" class="headerlink" title="泛化"></a>泛化</h2><p>模型泛化是指一些模型可以应用（泛化）到其他场景，通常为采用迁移学习、微调等手段实现泛化。</p>
-<h2 id="涌现"><a href="#涌现" class="headerlink" title="涌现"></a>涌现</h2><p>模型规模达到一定阈值以上后，会在多步算术、大学考试、单词释义等场景的准确性显著提升，称为涌现。</p>
+<h3 id="预训练"><a href="#预训练" class="headerlink" title="预训练"></a>预训练</h3><p>使用大语言模型在<strong>大规模语料</strong>上进行预训练，大语言模型可以获得通用的语言理解与生成能力，掌握较为广泛的世界知识，具备解决众多下游任务的性能潜力。</p>
+<p>预训练大模型类比机器学习的训练模式，其实就是通过算法将模型在训练集上先进行训练</p>
+<h3 id="微调"><a href="#微调" class="headerlink" title="微调"></a>微调</h3><p>指令微调是指使用自然语言形式的数据对预训练后的大语言模型进行<strong>参数微调</strong>，它是增强和激活大语言模型特定能力的重要方法之一。通过使用任务输入与输出的配对数据进行模型训练，可以使语言模型掌握通过问答形式进行任务求解的能力和较强的指令遵循能力，并且能够无需下游任务的训练样本或者示例就可以解决训练中未见过的任务。</p>
+<h3 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h3><p>经过大规模的预训练和有监督指令微调，大语言模型具备了解决各种任务的通用能力和指令遵循能力，但是同时也可能生成<code>有偏见的</code>、<code>冒犯的</code>以及<code>事实错误的</code>文本内容。这些潜在的有害行为，可能在下游应用中产生严重的影响与危害，进一步被恶意使用者进行放大与利用。因此，在大语言模型的学习过程中，如何确保大语言模型的行为与人类价值观、人类真实意图和社会伦理相一致成为了一个 关键研究问题，通常称这一研究问题为<strong>人类对齐</strong>。</p>
+<h3 id="泛化"><a href="#泛化" class="headerlink" title="泛化"></a>泛化</h3><p>模型泛化是指一些模型可以应用（泛化）到其他场景，通常为采用迁移学习、微调等手段实现泛化。</p>
+<h3 id="涌现"><a href="#涌现" class="headerlink" title="涌现"></a>涌现</h3><p>模型规模达到一定阈值以上后，会在多步算术、大学考试、单词释义等场景的准确性显著提升，称为涌现。</p>
+<h2 id="RAG与微调"><a href="#RAG与微调" class="headerlink" title="RAG与微调"></a>RAG与微调</h2><p>目前的大模型都是预训练语言模型 LLaMA、GPT4o、o1-mini</p>
+<ul>
+<li>互联网公开的海量数据</li>
+<li>私有化数据</li>
+</ul>
+<p>针对互联网数据无法及时更新与专业领域私有化数据的解决方案：</p>
+<ul>
+<li>RAG-检索增强生成：数据（语料）数据大部分是文献资料、文档</li>
+<li>SFT-微调：QA-法律咨询、心理诊断等一问一答数据标签归类，微调出一个适用场景的垂直场景</li>
+</ul>
+<p>RAG缺点：</p>
+<p>检索出来的文档片段不完整，重排序</p>
+<p>对于系统延迟低场景(检索器检索)</p>
+<p>Embeding Model-嵌入</p>
+<p>将文本转换成一组N维的浮点数，文本向量又叫做Embedings</p>
+<p>向量之间可以计算距离，距离的远近对应语义的相似性</p>
+<p>以前的工程中，keywords、sql &#x3D; 精确匹配，使用关系型数据库进行存储。现在文本嵌入、图片嵌入等 &#x3D; 距离相似度匹配，使用向量数据库存储</p>
+<p>原始文档 -》embedded</p>
+<p>query  -》embedded</p>
+<p>必须使用同一个Embedded model</p>
 <h2 id="参考学习的资料："><a href="#参考学习的资料：" class="headerlink" title="参考学习的资料："></a>参考学习的资料：</h2><p>[1] 面向开发者的LLM教程:<a target="_blank" rel="noopener" href="https://datawhalechina.github.io/llm-cookbook/#/">https://datawhalechina.github.io/llm-cookbook/#/</a></p>
 <p>[2] LLMBOOK:<a target="_blank" rel="noopener" href="https://github.com/RUCAIBox/LLMSurvey?tab=readme-ov-file">https://github.com/RUCAIBox/LLMSurvey?tab=readme-ov-file</a></p>
 <p>[3] <a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/1361737">https://developer.aliyun.com/article/1361737</a></p>
