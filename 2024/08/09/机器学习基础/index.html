@@ -26,6 +26,7 @@
 <meta property="og:site_name" content="munger写字的地方">
 <meta property="og:description" content="Machine Learning-NotebookAndrew Ng-吴恩达&copy; Standford ONLINE &amp; DeepLearning.AI Mungeryang-杨桂淼总结     Introduction“Field of study that gives computers the ability to learn without being explicitly prog">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/fig/4.12.jpg">
 <meta property="og:image" content="http://example.com/img/fig/1.1.png">
 <meta property="og:image" content="http://example.com/img/fig/1.2.jpg">
 <meta property="og:image" content="http://example.com/img/fig/1.3.png">
@@ -61,12 +62,12 @@
 <meta property="og:image" content="http://example.com/img/fig/5.5.jpg">
 <meta property="og:image" content="http://example.com/img/fig/5.2.jpg">
 <meta property="article:published_time" content="2024-08-09T14:57:55.000Z">
-<meta property="article:modified_time" content="2024-08-10T13:22:54.492Z">
+<meta property="article:modified_time" content="2024-11-18T07:23:37.158Z">
 <meta property="article:author" content="Munger Yang">
 <meta property="article:tag" content="深度学习">
 <meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/fig/1.1.png">
+<meta name="twitter:image" content="http://example.com/img/fig/4.12.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -313,7 +314,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.2k 字
+          3.5k 字
         
       </span>
     
@@ -324,7 +325,7 @@
         
         
         
-          27 分钟
+          29 分钟
         
       </span>
     
@@ -384,14 +385,19 @@
 
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>“Field of study that gives computers the ability to learn without being explicitly programmed.”——Arthur Samuel(1995)</p>
 <p>  Practical advice for applying learning algorithm</p>
-<h2 id="Basic-conception-cookbook"><a href="#Basic-conception-cookbook" class="headerlink" title="Basic conception cookbook"></a>Basic conception cookbook</h2><p>Data set:</p>
-<p>Training set:</p>
-<p>Test set:</p>
-<p>Cost function:</p>
-<p>Gradient:</p>
-<p>Gradient descent:</p>
-<p>Recall:</p>
-<p>Precision:</p>
+<h2 id="Basic-conception-cookbook"><a href="#Basic-conception-cookbook" class="headerlink" title="Basic conception cookbook"></a>Basic conception cookbook</h2><p>Data set:数据集包括训练集+测试集</p>
+<p>Training set: 用于模型训练的数据集</p>
+<p>Test set: 用于模型测试的数据集</p>
+<p>Cost function: 衡量模型预测结果与真实结果之间的差异或误差</p>
+<p>Gradient: 方向导数；梯度的大小将表示函数在某一方向上的变化率</p>
+<p>Gradient descent:  一种最优化的算法，找到函数的局部最小值</p>
+<p>Accurate : 所有分类（无论是正类还是负类）正确分类的比例。TP + TN &#x2F; TP+FP+TN+FN</p>
+<p>Recall(also known as sensitivity): the fraction of relevant instances that were retrieved；所有实际正例被正确分类为正例的比例。TP&#x2F;TP+FN</p>
+<p>Precision(also called positive predictive value) : the fraction of relevant instances among the retrieved instances;模型所有正分类分类中实际正分类的比例。TP&#x2F;TP+FP</p>
+<p>F1: F1值 &#x3D; 正确率 * 召回率 * 2 &#x2F; (正确率 + 召回率)；F1值的范围在0和1之间，值越接近1表示模型的性能越好。F1值越大表示分类器在识别正例样本时取得了更好的平衡。</p>
+<p>A <code>confusion matrix</code> to show it:</p>
+<img src="/img/fig/4.12.jpg" srcset="/img/loading.gif" lazyload alt="s" style="text-align: center;"/>
+
 <h2 id="Supervised-learning-监督学习"><a href="#Supervised-learning-监督学习" class="headerlink" title="Supervised learning-监督学习"></a>Supervised learning-监督学习</h2><p> Learns from being given “<strong>right answers</strong>(labels)”</p>
 <img src="/img/fig/1.1.png" srcset="/img/loading.gif" lazyload alt="s" style="text-align: center;"/>
 
@@ -801,7 +807,7 @@ $$
 <li><p>Split dataset according to selected features, and create left and right branches of the tree</p>
 </li>
 <li><p>Keep repeating splitting process until stopping criteria is met:</p>
-<pre><code class="hljs">      <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">when a node <span class="hljs-keyword">is</span> <span class="hljs-number">100</span>% one <span class="hljs-keyword">class</span><br><br>		<span class="hljs-symbol">when</span> <span class="hljs-symbol">splitting</span> <span class="hljs-symbol">a</span> <span class="hljs-symbol">node</span> <span class="hljs-symbol">will</span> <span class="hljs-symbol">result</span> <span class="hljs-symbol">in</span> <span class="hljs-symbol">the</span> <span class="hljs-symbol">tree</span> <span class="hljs-symbol">exceeding</span> <span class="hljs-symbol">a</span> <span class="hljs-symbol">maximum</span> <span class="hljs-symbol">depth</span><br><br>		<span class="hljs-symbol">Information</span> <span class="hljs-symbol">gain</span> <span class="hljs-symbol">from</span> <span class="hljs-symbol">additional</span> <span class="hljs-symbol">splits</span> <span class="hljs-symbol">is</span> <span class="hljs-symbol">less</span> <span class="hljs-symbol">than</span> <span class="hljs-symbol">threshold</span><br><br>		<span class="hljs-symbol">when</span> <span class="hljs-symbol">number</span> <span class="hljs-symbol">of</span> <span class="hljs-symbol">examples</span> <span class="hljs-symbol">in</span> <span class="hljs-symbol">a</span> <span class="hljs-symbol">node</span> <span class="hljs-symbol">is</span> <span class="hljs-symbol">below</span>  <span class="hljs-symbol">a</span> <span class="hljs-symbol">threshold</span><br></code></pre></td></tr></table></figure>
+<pre><code class="hljs">      <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">when a node <span class="hljs-keyword">is</span> <span class="hljs-number">100</span>% one <span class="hljs-keyword">class</span><br><br>		<span class="hljs-symbol">when</span> <span class="hljs-symbol">splitting</span> <span class="hljs-symbol">a</span> <span class="hljs-symbol">node</span> <span class="hljs-symbol">will</span> <span class="hljs-symbol">result</span> <span class="hljs-symbol">in</span> <span class="hljs-symbol">the</span> <span class="hljs-symbol">tree</span> <span class="hljs-symbol">exceeding</span> <span class="hljs-symbol">a</span> <span class="hljs-symbol">maximum</span> <span class="hljs-symbol">depth</span><br>	<br>		<span class="hljs-symbol">Information</span> <span class="hljs-symbol">gain</span> <span class="hljs-symbol">from</span> <span class="hljs-symbol">additional</span> <span class="hljs-symbol">splits</span> <span class="hljs-symbol">is</span> <span class="hljs-symbol">less</span> <span class="hljs-symbol">than</span> <span class="hljs-symbol">threshold</span><br>	<br>		<span class="hljs-symbol">when</span> <span class="hljs-symbol">number</span> <span class="hljs-symbol">of</span> <span class="hljs-symbol">examples</span> <span class="hljs-symbol">in</span> <span class="hljs-symbol">a</span> <span class="hljs-symbol">node</span> <span class="hljs-symbol">is</span> <span class="hljs-symbol">below</span>  <span class="hljs-symbol">a</span> <span class="hljs-symbol">threshold</span><br></code></pre></td></tr></table></figure>
 </code></pre>
 </li>
 </ul>
