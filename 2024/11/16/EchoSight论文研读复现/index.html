@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://go2heart.github.io/echosight/static/images/teaser.png">
 <meta property="article:published_time" content="2024-11-15T16:12:41.000Z">
-<meta property="article:modified_time" content="2024-11-19T03:07:17.009Z">
+<meta property="article:modified_time" content="2024-11-19T03:34:22.556Z">
 <meta property="article:author" content="Munger Yang">
 <meta property="article:tag" content="LLM">
 <meta property="article:tag" content="RAG">
@@ -282,7 +282,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k 字
+          1.8k 字
         
       </span>
     
@@ -293,7 +293,7 @@
         
         
         
-          14 分钟
+          16 分钟
         
       </span>
     
@@ -447,32 +447,22 @@
 <h2 id="VQA-Questions"><a href="#VQA-Questions" class="headerlink" title="VQA Questions"></a>VQA Questions</h2><h2 id="模型训练"><a href="#模型训练" class="headerlink" title="模型训练"></a>模型训练</h2><p>EchoSight 的多模态重排序器使用 Encyclopedic-VQA 数据集和相应的 2M 知识库进行训练。要训练多模式重新排序器，请在更改必要的配置后运行 bash 脚本：</p>
 <p>修改配置文件参数路径：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs shell">root@I1dbca09acd00201b2e:/hy-tmp/EchoSight/scripts#vim train_reranker.sh<br><br>export CUDA_VISIBLE_DEVICES=0<br>python fine_tune_reranker.py \<br>   --blip-model-name &#x27;blip2_reranker&#x27; \<br>   --num-epochs 20 \<br>   --num-workers 4 \<br>   --learning-rate 1e-5 \<br>   --batch-size 6 \<br>   --transform targetpad \<br>   --target-ratio 1.25  \<br>   --save_frequency 50000 \<br>   --train_file /PATH/TO/TRAIN_FILE \<br>   --knowledge_base_file /PATH/TO/KNOWLEDGE_BASE_JSON_FILE \<br>   --negative_db_file /PATH/TO/NEGATIVE_DB_FILE \<br>   --inat_id2name /PATH/TO/INATURALISTS_ID2NAME \<br>   --save-training \<br><br></code></pre></td></tr></table></figure>
-<p>–train_file &#x2F;PATH&#x2F;TO&#x2F;TRAIN_FILE <br>–knowledge_base_file &#x2F;PATH&#x2F;TO&#x2F;KNOWLEDGE_BASE_JSON_FILE <br>–negative_db_file &#x2F;PATH&#x2F;TO&#x2F;NEGATIVE_DB_FILE <br>–inat_id2name &#x2F;PATH&#x2F;TO&#x2F;INATURALISTS_ID2NAME \</p>
+
+<p>–train_file：训练数据文件的路径。 训练文件应与 Encyclopedic-VQA 提供的格式相同。</p>
+<p>–knowledge_base_file：JSON 格式的知识库文件的路径。 格式应与Encyclopedic-VQA 的格式相同。</p>
+<p>–negative_db_file：用于训练的硬负样本数据库文件的路径。</p>
+<p>–inat_id2name：iNaturalist ID 到名称映射文件的路径。</p>
 <p>执行脚本：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">root@I1dbca09acd00201b2e:/hy-tmp/EchoSight/scripts#bash scripts/train_reranker.sh<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">root@I1dbca09acd00201b2e:/hy-tmp/EchoSight/scripts#bash scripts/test_reranker.sh<br></code></pre></td></tr></table></figure>
 
+<p>test_reranker:</p>
+<p>我们的重新排序模块权重可以在[Checkpoint]下载，要使用经过训练的模型进行推理，调整必要的参数后运行提供的 test_reranker.sh脚本。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell">root@I1dbca09acd00201b2e:/hy-tmp/EchoSight/scripts#vim test_reranker.sh<br><br>export CUDA_VISIBLE_DEVICES=0<br>python -m test.test_reranker \<br>    --test_file /PATH/TO/TESTFILE\<br>    --knowledge_base /PATH/TO/KNOWLEDGE_BASE_JSON_FILE\<br>    --faiss_index /PATH/TO/KNOWLEDGE_BASE_FAISS_INDEX\<br>    --retriever_vit eva-clip \<br>    --top_ks 1,5,10,20 \<br>    --retrieval_top_k 20\<br>    --perform_qformer_reranker \<br>    --qformer_ckpt_path /PATH/TO/QFORMER-CKPT\<br></code></pre></td></tr></table></figure>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<p>–test_file：测试文件的路径。</p>
+<p>–knowledge_base：知识库 JSON 文件的路径。</p>
+<p>–faiss_index：用于高效相似性搜索的 FAISS 索引文件的路径。</p>
+<p>–save_result_path：保存结果 json 文件的路径。</p>
 
                 
               </div>
