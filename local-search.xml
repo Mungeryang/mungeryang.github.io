@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>11月总结与展望</title>
+    <link href="/2024/12/05/11%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/"/>
+    <url>/2024/12/05/11%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/</url>
+    
+    <content type="html"><![CDATA[<h2 id="消失的半个月，难得喘口气"><a href="#消失的半个月，难得喘口气" class="headerlink" title="消失的半个月，难得喘口气"></a>消失的半个月，难得喘口气</h2><p>折腾了半个月的分布式文件系统期末结课结课实验，终于汇报结束了。</p><p>第15周了，很多课程都是实验节课，最近半个月实验压力也别大。但是好在昨天把大数据的实验和C++的实验都完成了，周六还有一场英语考试，紧张刺激的15周就终于要迎来胜利的曙光了！</p><p>这半个月主要在忙这些事，科研搁置了很多。今天开始，我要把失去的，都补回来哈哈哈哈！！</p><h2 id="做难事，收获颇丰"><a href="#做难事，收获颇丰" class="headerlink" title="做难事，收获颇丰"></a>做难事，收获颇丰</h2><p>本科之前从来没有接触过分布式，Java编程也是菜的一批…</p><p>其实这个大实验很早就着手准备了，但是一直理解不了架构，导致一拖再拖。最后的一周冲刺，每天晚上干到一点多，这种感觉前所未有。</p><p>马老师说过：梦想还是要有的，万一实现了呢</p><p><img src="/img/life/file.jpg" alt="难忘的下午"></p><p>上个月的主线任务完成度好不错：务必11月要执行的-<strong>带着把程序写成东西的思想，疯狂Coding</strong>！！！！</p><h2 id="12月任务"><a href="#12月任务" class="headerlink" title="12月任务"></a>12月任务</h2><p>2024年最后一个月，主要任务就一个：把之前<strong>深度学习</strong>所有相关知识整合、查漏补缺、复现Coding</p><p>今天5号了，这个月的任务除了复习最后的三门课之外，更多的精力要分配给如下任务：</p><ul><li>pytorch学习</li><li>卷积神经网络学习</li><li>语言神经网络学习</li><li>多读经典论文、多复现代码</li><li>精进python、C++</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>动机</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>科研心路</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>LLM训练常用操作-从训练到崩溃</title>
+    <link href="/2024/11/22/LLM%E8%AE%AD%E7%BB%83%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E6%B1%87%E6%80%BB/"/>
+    <url>/2024/11/22/LLM%E8%AE%AD%E7%BB%83%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E6%B1%87%E6%80%BB/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Conda相关"><a href="#Conda相关" class="headerlink" title="Conda相关"></a>Conda相关</h2><h3 id="虚拟环境"><a href="#虚拟环境" class="headerlink" title="虚拟环境"></a>虚拟环境</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">创建虚拟环境(指定python版本)</span><br>(base) root@I1dc83206c700201ce5:~/Echo/EchoSight# conda create --name echosight python=3.10<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">激活虚拟环境</span><br>(base) root@I1dc83206c700201ce5:~/Echo/EchoSight# conda activate echosight<br>(echosight) root@I1dc83206c700201ce5:~/Echo/EchoSight#<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">退出虚拟环境</span><br>(echosight) root@I1dc83206c700201ce5:~/Echo/EchoSight# conda deactivate echosight<br>(base) root@I1dc83206c700201ce5:~/Echo/EchoSight#<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">查看虚拟环境列表</span><br>(base) root@I1dc83206c700201ce5:~/Echo/EchoSight# conda env list<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">删除虚拟环境</span><br>(base) root@I1dc83206c700201ce5:~/Echo/EchoSight# conda remove --name echosight --all<br><br><br></code></pre></td></tr></table></figure><h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h2 id="Hugging-Face"><a href="#Hugging-Face" class="headerlink" title="Hugging Face"></a>Hugging Face</h2><h3 id="Access-authority"><a href="#Access-authority" class="headerlink" title="Access authority"></a>Access authority</h3><p>Hugging  Face拉取模型-恒源云服务器为例</p><p>服务器上要开启AI学术加速，对于GitHub、hugging face等网站可以实现上传、下载加速</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">(base) root@I1dc83206c700201ce5:/hy-tmp/EchoProject/LLM-model#export https_proxy=http://turbo.gpushare.http_proxy=http://turbo.gpushare.com:30000<br>(base) root@I1dc83206c700201ce5:/hy-tmp/EchoProject/LLM-model#export https_proxy=http://turbo2.gpushare.http_proxy=http://turbo2.gpushare.com:30000<br></code></pre></td></tr></table></figure><p>由于Hugging  Face属于国外网站，正常访问需要科学上网，所以使用git clone时同样也需要<strong>ssh认证</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">ssh秘钥创建</span><br>(base) root@I1dc83206c700201ce5:~/.ssh# ssh-keygen -t ed25519 -C &quot;youremail@gmail.com&quot;<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">复制公钥给Hugging Face设置</span><br>(base) root@I1dc83206c700201ce5:~/.ssh# ls<br>authorized_keys  id_ed25519  id_ed25519.pub<br>(base) root@I1dc83206c700201ce5:~/.ssh# vim id_ed25519.pub <br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">运行报错</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">OSError: We couldn<span class="hljs-string">&#x27;t connect to &#x27;</span>https://huggingface.co<span class="hljs-string">&#x27; to load this file, couldn&#x27;</span>t find it <span class="hljs-keyword">in</span> the cached files and it looks like BAAI/EVA-CLIP-8B is not the path to a directory containing a file named config.json.</span><br>(echosight) root@I1dc83206c700201ce5:/hy-tmp/EchoProject/hf-llm/Mistral-7B-Instruct-v0.2# cd /usr/local/miniconda3/envs/echosight/lib/python3.10/site-packages/huggingface_hub/<br>(echosight)root@I1dc83206c700201ce5:/usr/local/miniconda3/envs/echosight/lib/python3.10/site-packages/huggingface_hub/# ls<br>(echosight)root@I1dc83206c700201ce5:/usr/local/miniconda3/envs/echosight/lib/python3.10/site-packages/huggingface_hub/# vim constants.py<br><span class="hljs-meta prompt_"># </span><span class="language-bash">修改constants.py里面的hugging face参数为镜像网站</span><br>HUGGINGFACE_CO_URL_HOME = &quot;https://hf-mirror.com/&quot;<br>_HF_DEFAULT_ENDPOINT = &quot;https://hf-mirror.com/&quot;<br></code></pre></td></tr></table></figure><h3 id="拉取仓库模型"><a href="#拉取仓库模型" class="headerlink" title="拉取仓库模型"></a>拉取仓库模型</h3><p>首先在hf官网创建model的token，之后提供两种方式下载模型到服务器或者本地</p><p>第一种方法：使用huggingface_hub直接下载</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> huggingface_hub <span class="hljs-keyword">import</span> snapshot_download<br><span class="hljs-comment"># snapshot_download(repo_id=&quot;decapoda-research/llama-7b-hf&quot;)</span><br>snapshot_download(repo_id=<span class="hljs-string">&quot;THUDM/chatglm3-6b&quot;</span>)<br></code></pre></td></tr></table></figure><p>第一种方法：使用huggingface-cli下载</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">(echosight)root@I1dc83206c700201ce5:/hy-tmp/# huggingface-cli download --resume-download &lt;repo/name&gt; --local-dir &lt;path/to/local/dir&gt;<br></code></pre></td></tr></table></figure><ul><li>&lt;repo&#x2F;name&gt;：替换为你要下载的Hugging Face Hub上的模型或数据集的仓库名称</li><li>&lt;path&#x2F;to&#x2F;local&#x2F;dir&gt;：替换为你想要保存模型或数据集的本地目录路径</li><li><code>–resume-download</code>：可以尝试恢复一个之前中断的下载，这个选项特别有用，当你的网络连接不稳定，或者下载过程中因为某种原因被中断</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>大模型相关</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LLM</tag>
+      
+      <tag>RAG</tag>
+      
+      <tag>部署</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Attention is all you need</title>
     <link href="/2024/11/17/Attention-is-all-you-need/"/>
     <url>/2024/11/17/Attention-is-all-you-need/</url>
