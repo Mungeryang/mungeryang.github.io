@@ -1,0 +1,974 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/ucas.webp">
+  <link rel="icon" href="/img/ucas.webp">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Munger Yang">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Multimodal RAG与Prompt compression再梳理Multimodal RAG System Work Flow多模态RAG的完整工作流如下图所示：  再次梳理一遍多模态RAG系统的工作流程：              1.多模态信息输入—2.特征提取—3.特征融合—4.信息检索—5.上下文构建—6.生成答案             1.加载所有文档，并使用类似unstruc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Multimodal RAG and Prompt Compression">
+<meta property="og:url" content="http://example.com/2024/12/08/Multimodal-RAG-and-Prompt-Compression/index.html">
+<meta property="og:site_name" content="munger写字的地方">
+<meta property="og:description" content="Multimodal RAG与Prompt compression再梳理Multimodal RAG System Work Flow多模态RAG的完整工作流如下图所示：  再次梳理一遍多模态RAG系统的工作流程：              1.多模态信息输入—2.特征提取—3.特征融合—4.信息检索—5.上下文构建—6.生成答案             1.加载所有文档，并使用类似unstruc">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.arimetrics.com/wp-content/uploads/2023/03/prompt.png">
+<meta property="article:published_time" content="2024-12-08T07:45:37.000Z">
+<meta property="article:modified_time" content="2024-12-08T08:58:53.695Z">
+<meta property="article:author" content="Munger Yang">
+<meta property="article:tag" content="LLM">
+<meta property="article:tag" content="RAG">
+<meta property="article:tag" content="多模态">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.arimetrics.com/wp-content/uploads/2023/03/prompt.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Multimodal RAG and Prompt Compression - munger写字的地方</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":75,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Munger Yang&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about" target="_self">
+                <i class="iconfont icon-addrcard"></i>
+                <span>主页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                <span>博客</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/" target="_self">
+                    <i class="iconfont icon-pen"></i>
+                    <span>文章</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/" target="_self">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>总览</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/" target="_self">
+                    <i class="iconfont icon-category-fill"></i>
+                    <span>分类</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/" target="_self">
+                    <i class="iconfont icon-tags-fill"></i>
+                    <span>标签</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/picture" target="_self">
+                <i class="iconfont icon-image"></i>
+                <span>时刻</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/self/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>简历</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/paper.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Multimodal RAG and Prompt Compression"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-12-08 15:45" pubdate>
+          2024年12月8日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          20 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Multimodal RAG and Prompt Compression</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Multimodal-RAG与Prompt-compression再梳理"><a href="#Multimodal-RAG与Prompt-compression再梳理" class="headerlink" title="Multimodal RAG与Prompt compression再梳理"></a>Multimodal RAG与Prompt compression再梳理</h1><h2 id="Multimodal-RAG-System-Work-Flow"><a href="#Multimodal-RAG-System-Work-Flow" class="headerlink" title="Multimodal RAG System Work Flow"></a>Multimodal RAG System Work Flow</h2><p>多模态RAG的完整工作流如下图所示：</p>
+<p><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXc-woXqKviW7JlYQlmaecD0QpvsiyX4PNJoAB6d4wEm_y4Ks6qXuJNTZ61KTOyJ1v8xi1k4CujEisnRNAWM4LIpgQs_HREGihbG3bquz1y-YXsNt84k7Y9jWy_Vip6yLPiIfNmnTAyI86xvEzbYFSpu69g?key=jCBGNvykPV6Ye85DC-Uxrg" srcset="/img/loading.gif" lazyload alt="Multimodal RAG System"></p>
+<p>再次梳理一遍多模态RAG系统的工作流程：</p>
+<div class="note note-danger">
+            <p>1.多模态信息输入—2.特征提取—3.特征融合—4.信息检索—5.上下文构建—6.生成答案</p>
+          </div>
+
+<p>1.加载所有文档，并使用类似unstructure.io的文档加载器提取文本块、图像和表格。</p>
+<p>2.如有必要，将HTML表格转换为markdown；他们通常对LLM非常有效</p>
+<p>3.将每个文本块、图像和表格传递到GPT-4o等多模式LLM中，并获得详细的摘要。</p>
+<p>4.将摘要存储在向量数据库中，将原始文档片段存储在Redis等文档数据库中</p>
+<p>5.使用多向量检索器使用公共document_id连接两个数据库，以识别哪个摘要映射到哪个原始文档块。</p>
+<p>6.将这个多向量检索系统与GPT-4o等多模态LLM连接起来。</p>
+<p>7.查询系统，并根据与查询类似的摘要，获取原始文档片段，包括表格和图像，作为上下文。</p>
+<p>8.使用上述上下文，使用多模态LLM生成问题的答案。</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><h4 id="多模态输入"><a href="#多模态输入" class="headerlink" title="多模态输入"></a>多模态输入</h4><p>在VQA系统中，<strong>文本+图像</strong>是常见的输入形式。</p>
+<p>多模态RAG系统处理的是多种类型的数据，主要包括：</p>
+<ul>
+<li><strong>图像（Image）</strong>：可以是用户上传的图片、视频帧等视觉内容。</li>
+<li><strong>文本（Text）</strong>：用户的问题、描述、上下文信息等语言内容。</li>
+</ul>
+<h4 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h4><p><strong>图像特征提取</strong>：</p>
+<ul>
+<li>使用预训练的卷积神经网络（如ResNet、EfficientNet）或专门的多模态模型（如CLIP、VisualBERT）提取图像特征。</li>
+<li>图像特征通常表示为高维向量或特征图。</li>
+</ul>
+<p><strong>文本特征提取</strong>：</p>
+<ul>
+<li>使用基于Transformer的模型（如BERT、RoBERTa）或其他词嵌入技术（如Word2Vec、GloVe）将文本转换为嵌入向量。</li>
+<li>文本特征表示为上下文相关的向量表示。</li>
+</ul>
+<h3 id="特征融合"><a href="#特征融合" class="headerlink" title="特征融合"></a>特征融合</h3><h4 id="联合表示（Joint-Representation）"><a href="#联合表示（Joint-Representation）" class="headerlink" title="联合表示（Joint Representation）"></a><strong>联合表示（Joint Representation）</strong></h4><p>将图像特征和文本特征结合成一个统一的表示，以便模型能够同时考虑两种模态的信息。</p>
+<ul>
+<li>拼接式融合（Concatenation）：<ul>
+<li>直接将图像特征和文本特征向量拼接在一起。</li>
+</ul>
+</li>
+<li>交互式融合（Interactive Fusion）：<ul>
+<li>使用自注意力机制（Self-Attention）或跨注意力机制（Cross-Attention）在Transformer编码器中融合多模态特征。</li>
+<li>例如，VisualBERT将图像区域特征和文本嵌入在同一序列中，通过自注意力层实现交互。</li>
+</ul>
+</li>
+</ul>
+<h4 id="联合嵌入（Joint-Embedding）"><a href="#联合嵌入（Joint-Embedding）" class="headerlink" title="联合嵌入（Joint Embedding）"></a><strong>联合嵌入（Joint Embedding）</strong></h4><p>通过多模态对齐技术（如对比学习）将不同模态的特征投射到同一语义空间中，使得跨模态检索和匹配更为有效。</p>
+<ul>
+<li>CLIP（Contrastive Language-Image Pretraining）：<ul>
+<li>将图像和文本通过独立的编码器映射到共同的嵌入空间，通过对比损失优化使相关的图像和文本特征靠近，不相关的则远离。</li>
+</ul>
+</li>
+<li>BLIP&#x2F;BLIP2</li>
+</ul>
+<h3 id="信息检索"><a href="#信息检索" class="headerlink" title="信息检索"></a>信息检索</h3><h4 id="检索模块"><a href="#检索模块" class="headerlink" title="检索模块"></a><strong>检索模块</strong></h4><p>基于融合后的多模态特征，从<strong>知识库</strong>或<strong>文档库</strong>中检索与输入相关的信息。</p>
+<ul>
+<li>相似度计算：<ul>
+<li>计算输入特征与知识库中每个文档或片段的相似度（如余弦相似度）。</li>
+</ul>
+</li>
+<li>索引与搜索：<ul>
+<li>使用高效的向量索引技术（如FAISS、Annoy）加速大规模相似度搜索。</li>
+</ul>
+</li>
+</ul>
+<h4 id="检索结果过滤与排序"><a href="#检索结果过滤与排序" class="headerlink" title="检索结果过滤与排序"></a><strong>检索结果过滤与排序</strong></h4><ul>
+<li>过滤：<ul>
+<li>排除与查询不相关或低质量的检索结果。</li>
+</ul>
+</li>
+<li>排序：<ul>
+<li>根据相似度得分对检索结果进行排序，选取最相关的若干条信息作为生成答案的依据。</li>
+</ul>
+</li>
+</ul>
+<h3 id="上下文构建"><a href="#上下文构建" class="headerlink" title="上下文构建"></a>上下文构建</h3><h4 id="上下文整合"><a href="#上下文整合" class="headerlink" title="上下文整合"></a><strong>上下文整合</strong></h4><div class="note note-success">
+            <p>上下文的内容：检索到的相关信息与原始输入（图像和问题文本）进行整合后的内容</p>
+          </div>
+
+<ul>
+<li>上下文增强：<ul>
+<li>将检索到的文本信息与输入问题结合，提供更丰富的背景知识。</li>
+</ul>
+</li>
+<li>图文结合：<ul>
+<li>将检索到的文本信息与图像特征共同输入生成模型，辅助生成更准确的答案。</li>
+</ul>
+</li>
+</ul>
+<h4 id="Prompt-Compression（提示压缩）"><a href="#Prompt-Compression（提示压缩）" class="headerlink" title="Prompt Compression（提示压缩）"></a><strong>Prompt Compression（提示压缩）</strong></h4><p>为了提高模型处理效率和响应速度，对输入提示进行压缩，将多模态信息以更紧凑的形式传递给生成模型。</p>
+<ul>
+<li>联合特征表示：<ul>
+<li>使用预训练模型生成的联合嵌入向量作为压缩后的提示。</li>
+</ul>
+</li>
+<li>模板化设计：<ul>
+<li>设计高效的prompt模板，将图像和文本信息结构化地嵌入其中。</li>
+</ul>
+</li>
+</ul>
+<h3 id="答案生成"><a href="#答案生成" class="headerlink" title="答案生成"></a>答案生成</h3><h4 id="生成模块"><a href="#生成模块" class="headerlink" title="生成模块"></a><strong>生成模块</strong></h4><p>利用生成模型（如GPT、Mistral）基于整合后的上下文信息生成自然语言答案。</p>
+<ul>
+<li>自回归生成（Autoregressive Generation）：<ul>
+<li>模型逐步生成答案，每一步依赖于之前生成的内容和上下文。</li>
+</ul>
+</li>
+<li>条件生成（Conditional Generation）：<ul>
+<li>生成过程受到输入条件（如问题文本和图像特征）的约束，确保生成内容与输入相关。</li>
+</ul>
+</li>
+</ul>
+<h4 id="生成优化"><a href="#生成优化" class="headerlink" title="生成优化"></a><strong>生成优化</strong></h4><ul>
+<li>多样性与一致性：<ul>
+<li>通过调整生成参数（如温度、顶层采样）控制答案的多样性和一致性。</li>
+</ul>
+</li>
+<li>格式控制：<ul>
+<li>使用特定的prompt模板引导生成内容的格式和风格。</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://go2heart.github.io/echosight/static/images/teaser.png" srcset="/img/loading.gif" lazyload alt="多模态RAG"></p>
+<h2 id="Prompt的具体形式"><a href="#Prompt的具体形式" class="headerlink" title="Prompt的具体形式"></a>Prompt的具体形式</h2><h3 id="Multimodal-RAG-System博客里面的Prompt格式"><a href="#Multimodal-RAG-System博客里面的Prompt格式" class="headerlink" title="Multimodal RAG System博客里面的Prompt格式"></a><a target="_blank" rel="noopener" href="https://www.analyticsvidhya.com/blog/2024/09/guide-to-building-multimodal-rag-systems/">Multimodal RAG System</a>博客里面的Prompt格式</h3><p>博客中prompt构建函数如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">multimodal_prompt_function</span>(<span class="hljs-params">data_dict</span>):<br>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">    Create a multimodal prompt with both text and image context.</span><br><span class="hljs-string">    This function formats the provided context from `data_dict`, which contains</span><br><span class="hljs-string">    text, tables, and base64-encoded images. It joins the text (with table) portions</span><br><span class="hljs-string">    and prepares the image(s) in a base64-encoded format to be included in a </span><br><span class="hljs-string">    message.</span><br><span class="hljs-string">    The formatted text and images (context) along with the user question are used to</span><br><span class="hljs-string">    construct a prompt for GPT-4o</span><br><span class="hljs-string">    &quot;&quot;&quot;</span><br>    formatted_texts = <span class="hljs-string">&quot;\n&quot;</span>.join(data_dict[<span class="hljs-string">&quot;context&quot;</span>][<span class="hljs-string">&quot;texts&quot;</span>])<br>    messages = []<br>    <br>    <span class="hljs-comment"># Adding image(s) to the messages if present</span><br>    <span class="hljs-keyword">if</span> data_dict[<span class="hljs-string">&quot;context&quot;</span>][<span class="hljs-string">&quot;images&quot;</span>]:<br>        <span class="hljs-keyword">for</span> image <span class="hljs-keyword">in</span> data_dict[<span class="hljs-string">&quot;context&quot;</span>][<span class="hljs-string">&quot;images&quot;</span>]:<br>            image_message = &#123;<br>                <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;image_url&quot;</span>,<br>                <span class="hljs-string">&quot;image_url&quot;</span>: &#123;<span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">f&quot;data:image/jpeg;base64,<span class="hljs-subst">&#123;image&#125;</span>&quot;</span>&#125;,<br>            &#125;<br>            messages.append(image_message)<br>    <br>    <span class="hljs-comment"># Adding the text for analysis</span><br>    text_message = &#123;<br>        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;text&quot;</span>,<br>        <span class="hljs-string">&quot;text&quot;</span>: (<br>            <span class="hljs-string">f&quot;&quot;&quot;You are an analyst tasked with understanding detailed information </span><br><span class="hljs-string">                and trends from text documents,</span><br><span class="hljs-string">                data tables, and charts and graphs in images.</span><br><span class="hljs-string">                You will be given context information below which will be a mix of </span><br><span class="hljs-string">                text, tables, and images usually of charts or graphs.</span><br><span class="hljs-string">                Use this information to provide answers related to the user </span><br><span class="hljs-string">                question.</span><br><span class="hljs-string">                Do not make up answers, use the provided context documents below and </span><br><span class="hljs-string">                answer the question to the best of your ability.</span><br><span class="hljs-string">                </span><br><span class="hljs-string">                User question:</span><br><span class="hljs-string">                <span class="hljs-subst">&#123;data_dict[<span class="hljs-string">&#x27;question&#x27;</span>]&#125;</span></span><br><span class="hljs-string">                </span><br><span class="hljs-string">                Context documents:</span><br><span class="hljs-string">                <span class="hljs-subst">&#123;formatted_texts&#125;</span></span><br><span class="hljs-string">                </span><br><span class="hljs-string">                Answer:</span><br><span class="hljs-string">            &quot;&quot;&quot;</span><br>        ),<br>    &#125;<br>    messages.append(text_message)<br>    <span class="hljs-keyword">return</span> [HumanMessage(content=messages)]<br><br></code></pre></td></tr></table></figure>
+
+<p>经过<code>multimodal_prompt_function</code>处理后的信息被整合为一个messages列表：messages &#x3D; [image_message,text_message]。</p>
+<p>构建出的Prompt主要包含两部分：图像信息+文本信息</p>
+<p>假设检索到的上下文包含两个文本段落和一张图像，用户问题为“Tell me detailed statistics of the top 5 years with largest wildfire acres burned”</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">[</span><br>    <span class="hljs-punctuation">&#123;</span><br>        <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;image_url&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;image_url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...&quot;</span><span class="hljs-punctuation">&#125;</span><br>    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-punctuation">&#123;</span><br>        <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;image_url&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;image_url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...&quot;</span><span class="hljs-punctuation">&#125;</span><br>    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-punctuation">&#123;</span><br>        <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;text&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;You are an analyst tasked with understanding detailed information and trends from text documents, data tables, and charts and graphs in images. You will be given context information below which will be a mix of text, tables, and images usually of charts or graphs. Use this information to provide answers related to the user question. Do not make up answers, use the provided context documents below and answer the question to the best of your ability.\n\nUser question:\nTell me detailed statistics of the top 5 years with largest wildfire acres burned\n\nContext documents:\n[Text from first document]\n[Text from second document]\n\nAnswer:&quot;</span><br>    <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">]</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="EchoSight论文里的Prompt格式"><a href="#EchoSight论文里的Prompt格式" class="headerlink" title="EchoSight论文里的Prompt格式"></a>EchoSight论文里的Prompt格式</h3><h4 id="最终的Prompt格式"><a href="#最终的Prompt格式" class="headerlink" title="最终的Prompt格式"></a>最终的Prompt格式</h4><p><strong>Context + Question</strong>：<code>prompt</code> 格式通常包括上下文和问题：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">Context:</span> <span class="hljs-string">&lt;维基百科文章或section&gt;</span><br><span class="hljs-attr">Question:</span> <span class="hljs-string">&lt;问题&gt;</span><br><span class="hljs-attr">The answer is:</span><br></code></pre></td></tr></table></figure>
+
+<p>具体例子：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">Context:</span> <span class="hljs-string">Paris</span> <span class="hljs-string">is</span> <span class="hljs-string">the</span> <span class="hljs-string">capital</span> <span class="hljs-string">of</span> <span class="hljs-string">France,</span> <span class="hljs-string">located</span> <span class="hljs-string">in</span> <span class="hljs-string">the</span> <span class="hljs-string">northern</span> <span class="hljs-string">part</span> <span class="hljs-string">of</span> <span class="hljs-string">the</span> <span class="hljs-string">country.</span><br><span class="hljs-attr">Question:</span> <span class="hljs-string">What</span> <span class="hljs-string">is</span> <span class="hljs-string">the</span> <span class="hljs-string">capital</span> <span class="hljs-string">of</span> <span class="hljs-string">France?</span><br><span class="hljs-attr">The answer is:</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="带图像的prompt"><a href="#带图像的prompt" class="headerlink" title="带图像的prompt"></a>带图像的prompt</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">Image features:</span> <span class="hljs-string">&lt;图像的特征向量或描述&gt;</span><br><span class="hljs-attr">Question:</span> <span class="hljs-string">&lt;问题&gt;</span><br><span class="hljs-attr">The answer is:</span><br></code></pre></td></tr></table></figure>
+
+<p>可以将图像特征转化为文本描述：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">Context:</span> <span class="hljs-string">This</span> <span class="hljs-string">is</span> <span class="hljs-string">an</span> <span class="hljs-string">image</span> <span class="hljs-string">of</span> <span class="hljs-string">a</span> <span class="hljs-string">cat</span> <span class="hljs-string">sitting</span> <span class="hljs-string">on</span> <span class="hljs-string">a</span> <span class="hljs-string">couch</span> <span class="hljs-string">next</span> <span class="hljs-string">to</span> <span class="hljs-string">a</span> <span class="hljs-string">window</span> <span class="hljs-string">with</span> <span class="hljs-string">sunlight</span> <span class="hljs-string">streaming</span> <span class="hljs-string">in.</span><br><span class="hljs-attr">Question:</span> <span class="hljs-string">What</span> <span class="hljs-string">is</span> <span class="hljs-string">the</span> <span class="hljs-string">cat</span> <span class="hljs-string">doing?</span><br><span class="hljs-attr">The answer is:</span><br></code></pre></td></tr></table></figure>
+
+<p>也可以将图像通过特征提取模型转换为特征向量，以特定格式嵌入到 <strong>prompt</strong> 中：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">Image features:</span> [<span class="hljs-number">0.1</span>, <span class="hljs-number">0.2</span>, <span class="hljs-number">0.3</span>, <span class="hljs-string">...</span>]  <span class="hljs-comment"># 图像特征向量</span><br><span class="hljs-attr">Question:</span> <span class="hljs-string">&lt;问题&gt;</span><br><span class="hljs-attr">The answer is:</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="图像-文本-Prompt-格式-联合表示形式"><a href="#图像-文本-Prompt-格式-联合表示形式" class="headerlink" title="图像+文本 Prompt 格式-联合表示形式"></a>图像+文本 Prompt 格式-联合表示形式</h4><p>将图像特征和文本信息结合成一个联合输入，可以使用 CLIP 这样的多模态模型将图像和文本映射到相同的嵌入空间</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">Image and Text features:</span> <span class="hljs-string">&lt;联合特征表示&gt;</span><br><span class="hljs-attr">Question:</span> <span class="hljs-string">&lt;问题&gt;</span><br><span class="hljs-attr">The answer is:</span><br></code></pre></td></tr></table></figure>
+
+<p>CLIP、VisualBERT、FLAVA等模型是基于 <strong>多模态数据联合训练</strong> 的。这些模型已经通过海量的图像-文本配对数据进行训练，能够在 <strong>文本</strong> 和 <strong>图像</strong> 之间建立语义连接。</p>
+<p>Transformer模型的 <strong>自注意力机制</strong>（Self-attention）能够有效地对输入的不同部分进行加权，理解其中的关系。当我们输入 <strong>图像特征</strong> 和 <strong>问题文本</strong> 时，模型通过注意力机制结合这两部分信息，从而产生推理。</p>
+<p>GPT、Mistral等非常擅长处理长文本和复杂的上下文关系。通过 <strong>自回归生成</strong> 或 <strong>条件生成</strong>，模型会基于已知的上下文信息生成答案。</p>
+<h2 id="RAG链构建"><a href="#RAG链构建" class="headerlink" title="RAG链构建"></a>RAG链构建</h2><p>RAG链构建如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python">multimodal_rag = (<br>        &#123;<br>            <span class="hljs-string">&quot;context&quot;</span>: itemgetter(<span class="hljs-string">&#x27;context&#x27;</span>),<br>            <span class="hljs-string">&quot;question&quot;</span>: itemgetter(<span class="hljs-string">&#x27;input&#x27;</span>),<br>        &#125;<br>            |<br>        RunnableLambda(multimodal_prompt_function)<br>            |<br>        chatgpt<br>            |<br>        StrOutputParser()<br>)<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>使用<code>itemgetter</code>从输入数据中提取<code>&#39;input&#39;</code>（用户的问题）。</li>
+<li>通过<code>RunnableLambda</code>运行<code>multimodal_prompt_function</code>，将提取的<code>context</code>和<code>question</code>传入，生成多模态prompt。</li>
+<li>生成的prompt传递给<code>chatgpt</code>模型（假设为GPT-4模型的实例）进行回答生成。</li>
+<li>使用<code>StrOutputParser</code>将模型生成的回答解析为字符串格式。</li>
+</ol>
+<p>信息检索模块构建如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">retrieve_docs = (itemgetter(<span class="hljs-string">&#x27;input&#x27;</span>)<br>                    |<br>                retriever_multi_vector<br>                    |<br>                RunnableLambda(split_image_text_types))<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>使用<code>itemgetter</code>从输入数据中提取<code>&#39;input&#39;</code>（用户的问题）。</li>
+<li><code>retriever_multi_vector</code>使用多向量检索技术（如基于CLIP的多模态向量检索）从知识库中检索与查询相关的文档和图像。</li>
+<li>通过<code>RunnableLambda(split_image_text_types)</code>将检索到的内容分为文本和图像两类，便于后续处理。</li>
+</ol>
+<p>整合RAG链与检索模块：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">multimodal_rag_w_sources = (RunnablePassthrough.assign(context=retrieve_docs)<br>                                               .assign(answer=multimodal_rag)<br>)<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>使用<code>RunnablePassthrough.assign</code>将<code>retrieve_docs</code>的输出赋值给<code>context</code>键。</li>
+<li>使用<code>.assign</code>将先前定义的<code>multimodal_rag</code>链赋值给<code>answer</code>键。</li>
+<li>通过这种方式，最终的<code>multimodal_rag_w_sources</code>链能够同时处理检索到的上下文和生成的答案。</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9B%B8%E5%85%B3/" class="category-chain-item">大模型相关</a>
+  
+  
+
+      </span>
+    
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="category-chain-item">人工智能与深度学习</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/LLM/" class="print-no-link">#LLM</a>
+      
+        <a href="/tags/RAG/" class="print-no-link">#RAG</a>
+      
+        <a href="/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/" class="print-no-link">#多模态</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Multimodal RAG and Prompt Compression</div>
+      <div>http://example.com/2024/12/08/Multimodal-RAG-and-Prompt-Compression/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Munger Yang</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年12月8日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/12/06/%E5%8A%A8%E6%89%8B%E5%AD%A6%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" title="动手学循环神经网络">
+                        <span class="hidden-mobile">动手学循环神经网络</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.css')
+      Fluid.utils.createScript('https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://comment.mungeryang.top/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <a target="_blank" rel="noopener" href="https://www.aliyun.com/">本网站由<img src="/img/aliyun.png" srcset="/img/loading.gif" lazyload width="65px" />提供CDN加速/云存储服务</a>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+    
+    
+
+  
+</div>
+
+  
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      京ICP备2024090304号
+    </a>
+  </span>
+  
+    
+      <span>
+        <a
+          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12345678"
+          rel="nofollow noopener"
+          class="beian-police"
+          target="_blank"
+        >
+          
+            <span style="visibility: hidden; width: 0">|</span>
+            <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
+          
+          <span>京公网安备2024090304号</span>
+        </a>
+      </span>
+    
+  
+</div>
+
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/love.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
