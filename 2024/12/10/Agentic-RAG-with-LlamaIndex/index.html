@@ -19,26 +19,29 @@
   <meta name="author" content="Munger Yang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="消失的半个月，难得喘口气折腾了半个月的分布式文件系统期末结课结课实验，终于汇报结束了。 第15周了，很多课程都是实验节课，最近半个月实验压力也别大。但是好在昨天把大数据的实验和C++的实验都完成了，周六还有一场英语考试，紧张刺激的15周就终于要迎来胜利的曙光了！ 这半个月主要在忙这些事，科研搁置了很多。今天开始，我要把失去的，都补回来哈哈哈哈！！ 最后一个月的工作重心转移到MLLMs RAG pr">
+    <meta name="description" content="传统RAG作为一个首次接触RAG的开发者，简单理解RAG就是给LLM外挂一个知识库。 可笑的是记得第一次开组会给两位导师将MMLMs RAG System的综述博客，讲完以后导师问我如何通俗理解RAG，能不能举一个例子。我停顿了3秒，尴尬地说讲不出来。 讲不出实际的应用案例，说明你对这个领域内的知识、方法还不够理解。 老师随后说：LLM知道杨桂淼是谁吗？我说：不知道。老师接着说：如何事先已经把杨桂">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2024年11月总结与展望">
-<meta property="og:url" content="http://example.com/2024/12/05/11%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/index.html">
+<meta property="og:title" content="Agentic RAG with LlamaIndex">
+<meta property="og:url" content="http://example.com/2024/12/10/Agentic-RAG-with-LlamaIndex/index.html">
 <meta property="og:site_name" content="munger写字的地方">
-<meta property="og:description" content="消失的半个月，难得喘口气折腾了半个月的分布式文件系统期末结课结课实验，终于汇报结束了。 第15周了，很多课程都是实验节课，最近半个月实验压力也别大。但是好在昨天把大数据的实验和C++的实验都完成了，周六还有一场英语考试，紧张刺激的15周就终于要迎来胜利的曙光了！ 这半个月主要在忙这些事，科研搁置了很多。今天开始，我要把失去的，都补回来哈哈哈哈！！ 最后一个月的工作重心转移到MLLMs RAG pr">
+<meta property="og:description" content="传统RAG作为一个首次接触RAG的开发者，简单理解RAG就是给LLM外挂一个知识库。 可笑的是记得第一次开组会给两位导师将MMLMs RAG System的综述博客，讲完以后导师问我如何通俗理解RAG，能不能举一个例子。我停顿了3秒，尴尬地说讲不出来。 讲不出实际的应用案例，说明你对这个领域内的知识、方法还不够理解。 老师随后说：LLM知道杨桂淼是谁吗？我说：不知道。老师接着说：如何事先已经把杨桂">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/life/file.jpg">
-<meta property="article:published_time" content="2024-12-05T03:18:45.000Z">
-<meta property="article:modified_time" content="2024-12-10T01:30:38.512Z">
+<meta property="og:image" content="https://www.devturtleblog.com/wp-content/uploads/2024/05/llamaindex-wallpaper.webp">
+<meta property="article:published_time" content="2024-12-10T01:49:19.000Z">
+<meta property="article:modified_time" content="2024-12-11T12:22:02.970Z">
 <meta property="article:author" content="Munger Yang">
-<meta property="article:tag" content="科研心路">
+<meta property="article:tag" content="LLM">
+<meta property="article:tag" content="RAG">
+<meta property="article:tag" content="Agent">
+<meta property="article:tag" content="GPT">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/life/file.jpg">
+<meta name="twitter:image" content="https://www.devturtleblog.com/wp-content/uploads/2024/05/llamaindex-wallpaper.webp">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>2024年11月总结与展望 - munger写字的地方</title>
+  <title>Agentic RAG with LlamaIndex - munger写字的地方</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -256,7 +259,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="2024年11月总结与展望"></span>
+            <span id="subtitle" data-typed-text="Agentic RAG with LlamaIndex"></span>
           
         </div>
 
@@ -267,8 +270,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-12-05 11:18" pubdate>
-          2024年12月5日 上午
+        <time datetime="2024-12-10 09:49" pubdate>
+          2024年12月10日 上午
         </time>
       </span>
     
@@ -279,7 +282,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          874 字
+          900 字
         
       </span>
     
@@ -336,51 +339,65 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">2024年11月总结与展望</h1>
+            <h1 id="seo-header">Agentic RAG with LlamaIndex</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="消失的半个月，难得喘口气"><a href="#消失的半个月，难得喘口气" class="headerlink" title="消失的半个月，难得喘口气"></a>消失的半个月，难得喘口气</h2><p>折腾了半个月的分布式文件系统期末结课结课实验，终于汇报结束了。</p>
-<p>第15周了，很多课程都是实验节课，最近半个月实验压力也别大。但是好在昨天把大数据的实验和C++的实验都完成了，周六还有一场英语考试，紧张刺激的15周就终于要迎来胜利的曙光了！</p>
-<p>这半个月主要在忙这些事，科研搁置了很多。今天开始，我要把失去的，都补回来哈哈哈哈！！</p>
-<p><code>最后一个月的工作重心转移到MLLMs RAG prompt与技术学习上来。</code></p>
-<h2 id="做难事，收获颇丰"><a href="#做难事，收获颇丰" class="headerlink" title="做难事，收获颇丰"></a>做难事，收获颇丰</h2><p>本科之前从来没有接触过分布式，Java编程也是菜的一批…</p>
-<p>其实这个大实验很早就着手准备了，但是一直理解不了架构，导致一拖再拖。最后的一周冲刺，每天晚上干到一点多，这种感觉前所未有。</p>
-<p>马老师说过：梦想还是要有的，万一实现了呢</p>
-<p><img src="/img/life/file.jpg" srcset="/img/loading.gif" lazyload alt="难忘的下午"></p>
-<p>上个月的主线任务完成度不错：务必11月要执行的-<strong>带着把程序写成东西的思想，疯狂Coding</strong>！！！！</p>
-<p>11月完成的任务：</p>
-<ol>
-<li>循环神经网路、attention机制、Transformer架构基础知识理解(但是又快忘了😂)</li>
-<li>三个卷积神经网络结构的编写</li>
-<li>Java分布式文件系统项目(大部头费时费力收获颇丰)</li>
-<li>C++五子棋程序(大部头费时费力收获颇丰)</li>
-</ol>
-<h2 id="切入"><a href="#切入" class="headerlink" title="切入"></a>切入</h2><p>要快速上手一个方向或者一个小领域，一般来说需要掌握一些基础知识（最基本的概念和原理）、前沿进展（近几年的研究方向与热点）和特定的工具（例如编程语言、框架）。</p>
+                <h2 id="传统RAG"><a href="#传统RAG" class="headerlink" title="传统RAG"></a>传统RAG</h2><p>作为一个首次接触RAG的开发者，简单理解RAG就是给LLM外挂一个知识库。</p>
+<p>可笑的是记得第一次开组会给两位导师将MMLMs RAG System的综述博客，讲完以后导师问我如何通俗理解RAG，能不能举一个例子。我停顿了3秒，尴尬地说讲不出来。</p>
+<p>讲不出实际的应用案例，说明你对这个领域内的知识、方法还不够理解。</p>
+<p>老师随后说：LLM知道杨桂淼是谁吗？我说：不知道。老师接着说：如何事先已经把杨桂淼的基本信息都告诉了LLM，然后你在针对杨桂淼对LLM进行提问，那它可以回答出你的问题吗？我说：应该可以了。确实，外挂一个数据库，里面存放着所有有关杨桂淼信息的网页，当我query杨桂淼的相关问题时，LLM根据知识库返回的信息进行生产响应，这就是RAG。</p>
 <div class="note note-success">
-            <p>思考：深度学习领域基础知识是什么？前沿进展有哪些？需要学习哪些特定的工具去学习？</p><p>思考：自然语言处理领域的基础知识是什么？前沿进展有哪些？需要学习哪些特定的工具去学习？</p><p>思考：大模型领域基础知识是什么？前沿进展有哪些？需要学习哪些特定的工具去学习？</p>
+            <p>RAG最核心的思想：给LLM补充外部知识以提高生成质量</p>
           </div>
 
-<h2 id="客观分析一下自己目前的水平"><a href="#客观分析一下自己目前的水平" class="headerlink" title="客观分析一下自己目前的水平"></a>客观分析一下自己目前的水平</h2><div class="note note-success">
-            <p>革命尚未成功，同志还需努力</p>
+<p>RAG应用整体上划分为两大阶段：</p>
+<ol>
+<li>数据索引：知识-加载-分割-嵌入-索引</li>
+<li>数据查询：根据索引进行检索前处理-检索-检索后处理-生成</li>
+</ol>
+<p>RAG pipeline主要包括三大组件：</p>
+<ol>
+<li>外部知识源</li>
+<li>提示模版</li>
+<li>生成模型</li>
+</ol>
+<h2 id="微调与RAG的区别"><a href="#微调与RAG的区别" class="headerlink" title="微调与RAG的区别"></a>微调与RAG的区别</h2><p>还是以一个例子说明</p>
+<p>如果把LLM比做一个优秀的学生正在参加一门考试，微调与RAG的区别如下：</p>
+<p><strong>RAG</strong>：考试过程中给他提供这门课的全部参考资料，要求他现做现用，并争取写出答案</p>
+<p><strong>微调</strong>：在考试前一天对他进行辅导，让他成为某个领域&#x2F;学科的专家，然后再去参加考试</p>
+<h2 id="RAG与具有理解超长上下文能力的LLM"><a href="#RAG与具有理解超长上下文能力的LLM" class="headerlink" title="RAG与具有理解超长上下文能力的LLM"></a>RAG与具有理解超长上下文能力的LLM</h2><p>大模型的上下文窗口(content window)正在以不可思议的速度增大，在超长上下文中精确检索出特定位置的某个事实性知识(<code>大海捞针的能力</code>)也带来了一个争议性话题：<strong>如果未来能够把几百个文档一股脑式地全部丢进大模型的上下文窗口，并且大模型能够在其中检索出事实性知识，那么我们还有必要做外部索引与检索给大模型进行知识外挂吗？</strong></p>
+<p>RAG的核心功能仍然是检索。事实上，大量实验测试表明，受限于主流LLM所依赖的底层Transformer架构的基本原理，当前理解超长上下文的能力并不像宣传的那样出色。</p>
+<p>RAG与具有理解超长上下文能力LLM之间的trade-off是相辅相成、取长补短式发展的，不应该是谁取代谁。</p>
+<h2 id="Agentic-RAG"><a href="#Agentic-RAG" class="headerlink" title="Agentic RAG"></a>Agentic RAG</h2><blockquote>
+<p>Agentic RAG describes an AI agent-based implementation of RAG，<strong>the core of Agentic RAG is Agent.</strong></p>
+<p>Agentic RAG—your super-smart digital library assistant!</p>
+</blockquote>
+<p>主动式RAG是基于AI agent的RAG实现，将AI agent 整合到RAG pipeline中，编排组件以执行简单的信息检索任务和生成之外的操作，以克服non-agentic pipeline的限制。</p>
+<p>Agentic RAG更典型的是在检索组件的pipeline中使用agents。特别的，检索组件通过使用可访问不同检索器工具(tools)的检索agetns而成为agentic。</p>
+<p>Agentic RAG应用推理的检索场景：</p>
+<ol>
+<li>Decide whether to retrieve information or not</li>
+<li>Decide which tool to use to retrieve relevant information</li>
+<li>Formulate the query itself</li>
+<li>Evaluate the retrieved context and decide whether it needs to re-retrieve.</li>
+</ol>
+<p>Agentic RAG的主要工作流程：</p>
+<div class="note note-success">
+            <p>Document Processing—Creating Embedings—Indexing—Retrieval—Agent based Reasoning—Generation</p>
           </div>
 
-<p>机器学习基础：吴恩达机器学习课程刷完，理解基本概念</p>
-<p>深度学习：小土堆pytorch教程刷完，李沐的实战教程一直在断断续续看不系统。经典的网络架构梳理出来了，但是对于架构细节与实现还是<strong>眼高手低</strong>的状态。</p>
-<p>NLP：这学期听了自然语言处理这门课，但是吸收效果一般，尚未开始系统学习。</p>
-<h2 id="12月任务"><a href="#12月任务" class="headerlink" title="12月任务"></a>12月任务</h2><div class="note note-danger">
-            <p>不要吝惜代码，实现，虽然不是必要的，会很大程度上加深你的理解。</p>
-          </div>
-
-<p>2024年最后一个月，主要任务就一个：把之前<strong>深度学习</strong>所有相关知识整合、查漏补缺、复现Coding</p>
-<p>今天5号了，这个月的任务除了复习最后的三门课之外，更多的精力要分配给如下任务：</p>
+<h3 id="Router-Engine"><a href="#Router-Engine" class="headerlink" title="Router Engine"></a>Router Engine</h3><p>在基础的RAG pipeline中，LLM仅仅用于整合生成答案，</p>
+<h3 id="Tool"><a href="#Tool" class="headerlink" title="Tool"></a>Tool</h3><p>检索组件的工具选择：</p>
 <ul>
-<li>卷积神经网络学习(还剩VGG、ResNet没有实现)</li>
-<li>语言神经网络学习</li>
-<li>多读经典论文、多复现代码(循环神经网络、Attention、Transformer、BERT掌握)</li>
-<li>精进python、C++(必须精通使用)</li>
+<li>Vector search Engine</li>
+<li>Web search</li>
+<li>Calculator</li>
+<li>software(Email、chat programs)</li>
 </ul>
+<h2 id="Implementing-a-Basic-Multi-Document-Agentic-RAG"><a href="#Implementing-a-Basic-Multi-Document-Agentic-RAG" class="headerlink" title="Implementing a Basic Multi-Document Agentic RAG"></a>Implementing a Basic Multi-Document Agentic RAG</h2><p>课程源：<a target="_blank" rel="noopener" href="https://learn.deeplearning.ai/courses/building-agentic-rag-with-llamaindex">deeplearning.ai短期课</a></p>
+<p>博客链接：<a target="_blank" rel="noopener" href="https://www.analyticsvidhya.com/blog/2024/09/multi-document-agentic-rag-using-llamaindex/">https://www.analyticsvidhya.com/blog/2024/09/multi-document-agentic-rag-using-llamaindex/</a></p>
 
                 
               </div>
@@ -399,7 +416,17 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%8A%A8%E6%9C%BA/" class="category-chain-item">动机</a>
+  <a href="/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9B%B8%E5%85%B3/" class="category-chain-item">大模型相关</a>
+  
+  
+
+      </span>
+    
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="category-chain-item">人工智能与深度学习</a>
   
   
 
@@ -414,7 +441,13 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%A7%91%E7%A0%94%E5%BF%83%E8%B7%AF/" class="print-no-link">#科研心路</a>
+        <a href="/tags/LLM/" class="print-no-link">#LLM</a>
+      
+        <a href="/tags/RAG/" class="print-no-link">#RAG</a>
+      
+        <a href="/tags/Agent/" class="print-no-link">#Agent</a>
+      
+        <a href="/tags/GPT/" class="print-no-link">#GPT</a>
       
     </div>
   
@@ -426,8 +459,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>2024年11月总结与展望</div>
-      <div>http://example.com/2024/12/05/11月总结与展望/</div>
+      <div>Agentic RAG with LlamaIndex</div>
+      <div>http://example.com/2024/12/10/Agentic-RAG-with-LlamaIndex/</div>
     </div>
     <div class="license-meta">
       
@@ -439,7 +472,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年12月5日</div>
+          <div>2024年12月10日</div>
         </div>
       
       
@@ -472,18 +505,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/12/06/%E5%8A%A8%E6%89%8B%E5%AD%A6%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" title="动手学循环神经网络">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">动手学循环神经网络</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/11/22/LLM%E8%AE%AD%E7%BB%83%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E6%B1%87%E6%80%BB/" title="LLM训练常用操作-从训练到崩溃">
-                        <span class="hidden-mobile">LLM训练常用操作-从训练到崩溃</span>
+                      <a href="/2024/12/08/Multimodal-RAG-and-Prompt-Compression/" title="Multimodal RAG and Prompt Compression">
+                        <span class="hidden-mobile">Multimodal RAG and Prompt Compression</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
