@@ -19,16 +19,16 @@
   <meta name="author" content="Munger Yang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="循环神经网络-RNN长短期记忆网络-LSTMSeq2Seq序列模型">
+    <meta name="description" content="由于pytorch已经将三个循环神经网络、LSTM进行了高度的封装，所以本节不再去关注网络结构的设计和复现，而是重点关注如何在自己设计的网络结构中将RNN和LSTM融入进去以实现特等的任务。 卷积神经网络是借鉴人类视觉的思想，教会计算机识别东西；从循环神经网络开始，我们的核心任务就是教会计算机理解序列数据。 人类并不是每时每刻都从头开始思考。 当我们阅读这篇文章时，会根据对前面单词的理解来理解每个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="动手学循环神经网络">
 <meta property="og:url" content="http://example.com/2024/12/06/%E5%8A%A8%E6%89%8B%E5%AD%A6%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/index.html">
 <meta property="og:site_name" content="munger写字的地方">
-<meta property="og:description" content="循环神经网络-RNN长短期记忆网络-LSTMSeq2Seq序列模型">
+<meta property="og:description" content="由于pytorch已经将三个循环神经网络、LSTM进行了高度的封装，所以本节不再去关注网络结构的设计和复现，而是重点关注如何在自己设计的网络结构中将RNN和LSTM融入进去以实现特等的任务。 卷积神经网络是借鉴人类视觉的思想，教会计算机识别东西；从循环神经网络开始，我们的核心任务就是教会计算机理解序列数据。 人类并不是每时每刻都从头开始思考。 当我们阅读这篇文章时，会根据对前面单词的理解来理解每个">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.blumeglobal.com/media/wp-content/uploads/2018/11/NLP-image-scaled.jpg">
 <meta property="article:published_time" content="2024-12-06T13:24:02.000Z">
-<meta property="article:modified_time" content="2024-12-10T01:39:56.162Z">
+<meta property="article:modified_time" content="2024-12-16T08:19:47.135Z">
 <meta property="article:author" content="Munger Yang">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary_large_image">
@@ -279,7 +279,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          19 字
+          1.7k 字
         
       </span>
     
@@ -290,7 +290,7 @@
         
         
         
-          1 分钟
+          15 分钟
         
       </span>
     
@@ -341,7 +341,59 @@
             
               <div class="markdown-body">
                 
-                <h2 id="循环神经网络-RNN"><a href="#循环神经网络-RNN" class="headerlink" title="循环神经网络-RNN"></a>循环神经网络-RNN</h2><h2 id="长短期记忆网络-LSTM"><a href="#长短期记忆网络-LSTM" class="headerlink" title="长短期记忆网络-LSTM"></a>长短期记忆网络-LSTM</h2><h2 id="Seq2Seq序列模型"><a href="#Seq2Seq序列模型" class="headerlink" title="Seq2Seq序列模型"></a>Seq2Seq序列模型</h2>
+                <p>由于pytorch已经将三个循环神经网络、LSTM进行了高度的封装，所以本节不再去关注网络结构的设计和复现，而是重点关注如何在自己设计的网络结构中将RNN和LSTM融入进去以实现特等的任务。</p>
+<p>卷积神经网络是借鉴人类视觉的思想，教会计算机识别东西；从循环神经网络开始，我们的核心任务就是教会计算机理解序列数据。</p>
+<p>人类并不是每时每刻都从头开始思考。 当我们阅读这篇文章时，会根据对前面单词的理解来理解每个单词。</p>
+<h2 id="循环神经网络-RNN"><a href="#循环神经网络-RNN" class="headerlink" title="循环神经网络-RNN"></a>循环神经网络-RNN</h2><p>循环神经网络是神经网络的一种，为什么取名字要叫做循环呢？</p>
+<p>就是因为它的神经元输出会在下一个时间步作为反馈进行输入，使整个网络具有处理<strong>序列数据</strong>的能力。</p>
+<p>一个复杂的系统包含若干的最小单元组件，每个最小单元组件都会重复自身动作从而构成整个系统的运转，“循环”变应运而生。</p>
+<p>普通的神经网络处理的是独立同分布数据，层与层之间就是简单的前馈链接关系，输入和输出长度是固定的。</p>
+<p>而循环神经网络具有记忆能力，这种记忆能力体现在上层神经元的输出会作为下层神经元的输入，可以处理时序数据，而且输入输出长度不固定。<br>$$<br>h_{t}&#x3D;tanh(h_{t-1}W_{h}+x_{t}W_{x}+b)<br>$$<br>$$<br>&#x3D; tanh(h_{t-1}W_{hh}+b_{hh}+x_{t}W_{ih}+b_{ih})<br>$$</p>
+<p>模型输入：input_size,hidden_size</p>
+<p>模型输出：output_size,ht</p>
+<p><img src="/img/fig/rnn.jpg" srcset="/img/loading.gif" lazyload alt="RNN"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">RNNLayer</span>(nn.Module):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self,input_size, hidden_size, num_layers=<span class="hljs-number">1</span>, batch_first=<span class="hljs-literal">True</span></span>):<br>        <span class="hljs-variable language_">self</span>.hidden_size = hidden_size<br>        <span class="hljs-variable language_">self</span>.num_layers = num_layers<br>        <span class="hljs-variable language_">self</span>.input_size = input_size<br>        <span class="hljs-variable language_">self</span>.bidirectional = <span class="hljs-literal">False</span><br>        <span class="hljs-built_in">super</span>().__init__()<br>        <span class="hljs-variable language_">self</span>.W_ih = nn.Parameter(torch.rand(<span class="hljs-variable language_">self</span>.input_size, <span class="hljs-variable language_">self</span>.hidden_size))<br>        <span class="hljs-variable language_">self</span>.W_hh = nn.Parameter(torch.rand(<span class="hljs-variable language_">self</span>.hidden_size, <span class="hljs-variable language_">self</span>.hidden_size))<br>        <span class="hljs-variable language_">self</span>.b_ih = nn.Parameter(torch.zeros(<span class="hljs-variable language_">self</span>.hidden_size))<br>        <span class="hljs-variable language_">self</span>.b_hh = nn.Parameter(torch.zeros(<span class="hljs-variable language_">self</span>.hidden_size))<br>        <br>    <span class="hljs-comment">#前向传播的两个参数分别为x_t(输入变量)和h_prev(隐藏变量)</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self,x_t,h_prev=<span class="hljs-literal">None</span></span>):<br>        <span class="hljs-comment"># part 1: torch.matmul(x_t, self.W_ih)</span><br>        <span class="hljs-comment"># x_t包含多个时间步，形状为[batch_size, time_steps_num, input_dim]</span><br>        <span class="hljs-comment"># W_ih形状为[input_dim, hidden_size]</span><br>        <span class="hljs-comment"># torch.matmul(x_t, self.W_ih) 输出矩阵形状为[batch_size, time_steps_num, hidden_size]</span><br>        <span class="hljs-comment"># part 2: torch.matmul(h_prev, self.W_hh)</span><br>        <span class="hljs-comment"># h_prev 形状为[batch_size, time_steps_num, hidden_size]</span><br>        <span class="hljs-comment"># W_hh形状为[hidden_size, hidden_size]</span><br>        <span class="hljs-comment"># torch.matmul(h_prev, self.W_hh) 输出矩阵形状为[batch_size, time_steps_num, hidden_size]</span><br>        <span class="hljs-keyword">if</span> h_prev == <span class="hljs-literal">None</span>:<br>             h_prev = torch.zeros( x_t.size(<span class="hljs-number">0</span>), <span class="hljs-variable language_">self</span>.hidden_size)<br>        output = torch.tanh(torch.matmul(x_t, <span class="hljs-variable language_">self</span>.W_ih) + <span class="hljs-variable language_">self</span>.b_ih + torch.matmul(h_prev, <span class="hljs-variable language_">self</span>.W_hh) + <span class="hljs-variable language_">self</span>.b_hh)<br>        <span class="hljs-keyword">return</span> output,output[:,-<span class="hljs-number">1</span>,:].unsqueeze(<span class="hljs-number">0</span>)<br></code></pre></td></tr></table></figure>
+
+
+
+<div class="note note-success">
+            <p>RNN的梯度消失&#x2F;爆炸</p>
+          </div>
+
+<p>RNN的梯度消失或爆炸问题主要体现在“循环”过程中隐藏变量的迭代计算过程中。</p>
+<ul>
+<li>隐藏变量的参数&gt;1: 每迭代一次都会呈现幂律型增长，经过ReLU激活后会趋向于正无穷</li>
+<li>隐藏变量的参数&lt;1: 每迭代一次都会呈现幂律型衰退，经过ReLU激活后始终等于0</li>
+</ul>
+<h2 id="长短期记忆网络-LSTM"><a href="#长短期记忆网络-LSTM" class="headerlink" title="长短期记忆网络-LSTM"></a>长短期记忆网络-LSTM</h2><p>网络的输入：隐藏变量H、记忆C、输入序列X</p>
+<p>网络的输出：输出序列Y、隐藏变量H、新的记忆C</p>
+<p><img src="/img/fig/lstm.jpg" srcset="/img/loading.gif" lazyload alt="LSTM"></p>
+<p>参数初始化：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">init_paramaters</span>(<span class="hljs-params">vocab_size,hidden_units</span>):<br>    std = <span class="hljs-number">0.01</span><br>    input_units = output_units = vocab_size<br>    <br>    <span class="hljs-comment">#正态分布</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">normal</span>(<span class="hljs-params">shape</span>):<br>        <span class="hljs-keyword">return</span> torch.randn(size=shape) * std<br>    <br>    <span class="hljs-comment">#LSTM_cell_weights</span><br>    forget_gate_weights = normal((input_units + hidden_units,hidden_units))<br>    input_gate_weights = normal((input_units+hidden_units,hidden_units))<br>    output_gate_weights = normal((input_units + hidden_units,hidden_units))<br>    c_tilda_gate_weights = normal((input_units + hidden_units,hidden_units))<br>    <br>    <span class="hljs-comment"># 偏置项</span><br>    forget_gate_bias = torch.zeros((<span class="hljs-number">1</span>, hidden_units))<br>    input_gate_bias = torch.zeros((<span class="hljs-number">1</span>, hidden_units))<br>    output_gate_bias = torch.zeros((<span class="hljs-number">1</span>, hidden_units))<br>    c_tilda_gate_bias = torch.zeros((<span class="hljs-number">1</span>, hidden_units))<br>    <br>    <span class="hljs-comment">#输出层参数</span><br>    hidden_output_weights = normal((hidden_units, output_units))<br>    output_bias = torch.zeros((<span class="hljs-number">1</span>, output_units))<br>    <br>    <span class="hljs-comment"># 将所有参数添加到字典</span><br>    paramaters = &#123;<br>        <span class="hljs-string">&#x27;fgw&#x27;</span>: forget_gate_weights,<br>        <span class="hljs-string">&#x27;igw&#x27;</span>: input_gate_weights,<br>        <span class="hljs-string">&#x27;ogw&#x27;</span>: output_gate_weights,<br>        <span class="hljs-string">&#x27;cgw&#x27;</span>: c_tilda_gate_weights,<br>        <span class="hljs-string">&#x27;fgb&#x27;</span>: forget_gate_bias,<br>        <span class="hljs-string">&#x27;igb&#x27;</span>: input_gate_bias,<br>        <span class="hljs-string">&#x27;ogb&#x27;</span>: output_gate_bias,<br>        <span class="hljs-string">&#x27;cgb&#x27;</span>: c_tilda_gate_bias,<br>        <span class="hljs-string">&#x27;how&#x27;</span>: hidden_output_weights,<br>        <span class="hljs-string">&#x27;ob&#x27;</span>: output_bias<br>    &#125;<br>    <br>    <span class="hljs-comment"># 设置 requires_grad=True 以启用梯度计算</span><br>    <span class="hljs-comment"># 确保所有参数在反向传播中能够计算梯度</span><br>    <span class="hljs-keyword">for</span> para <span class="hljs-keyword">in</span> paramaters.values():<br>        para.requires_grad_(<span class="hljs-literal">True</span>)<br>    <br>    <span class="hljs-keyword">return</span> paramaters<br></code></pre></td></tr></table></figure>
+
+<p>网络结构定义：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">LSTM</span>(<span class="hljs-params">inputs,state,params</span>):<br>    [W_xi, W_hi, b_i, W_xf, W_hf, b_f, W_xo, W_ho, b_o, W_xc, W_hc, b_c,<br>     W_hq, b_q] = params <span class="hljs-comment">#各个门的参数</span><br>    (H,C) = state <span class="hljs-comment">#隐藏参数和记忆参数</span><br>    outputs = []<br>    <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> inputs:<br>        I = torch.sigmoid((x @ W_xi) + (H @ W_hi) + b_i) <span class="hljs-comment">#输入门</span><br>        F = torch.sigmoid((x @ W_xf) + (H @ W_hf) + b_f) <span class="hljs-comment">#遗忘门</span><br>        O = torch.sigmoid((x @ W_xo) + (H @ W_ho) + b_o) <span class="hljs-comment">#输出门</span><br>        C_tilda = torch.tanh((x @ W_xc) + (H @ W_hc) + b_c) <span class="hljs-comment">#候选记忆</span><br>        C = F * C + I * C_tilda<br>        H = O * torch.tanh(C)<br>        Y = (H @ W_hq) + b_q<br>        outputs.append(Y)<br>    <span class="hljs-keyword">return</span> torch.cat(outputs,dim=<span class="hljs-number">0</span>),(H,C)<br></code></pre></td></tr></table></figure>
+
+<p>对于每个LSTM门，它的输出是通过如下方式计算的：</p>
+<ul>
+<li>假设当前的输入向量为 xt&#x3D;[x1,x2,x3,x4]（维度是 <code>input_units = 4</code>），上一时刻的隐藏状态为 $h_{t-1} &#x3D; [h_1, h_2, h_3]$（维度是 <code>hidden_units = 3</code>）。</li>
+<li>我们将这两个向量拼接起来，得到一个向量 [x1,x2,x3,x4,h1,h2,h3]，维度是7。</li>
+<li>然后，我们将这个7维的向量与权重矩阵相乘，得到一个维度为3的向量（即隐藏状态的维度）。这个3维的向量就是该门的输出（例如，遗忘门的输出），它会被用来更新LSTM的状态。</li>
+</ul>
+<h2 id="GRU"><a href="#GRU" class="headerlink" title="GRU"></a>GRU</h2><p>传统的循环神经网络（RNN）在处理长序列数据时常常遇到梯度消失或梯度爆炸的问题，这限制了它们捕捉长期依赖关系的能力。为了解决这些问题，长短期记忆网络（LSTM）被提出，它通过引入门控机制来控制信息的流动，从而有效缓解了梯度消失问题。GRU模型则是在LSTM的基础上进一步简化和发展的，它由Cho等人在2014年提出，旨在简化LSTM的结构，同时保持类似的性能。</p>
+<p>GRU通过合并LSTM中的遗忘门和输入门为更新门，并引入重置门，同时合并单元状态和隐藏状态，使得模型更为简洁，训练速度更快。这种结构上的简化并没有牺牲性能，GRU在很多任务中的表现与LSTM相当，甚至在某些情况下更优。因此，GRU因其高效和简洁的特性，在自然语言处理、语音识别、时间序列预测等多个领域得到了广泛的应用。</p>
+<p><img src="https://zh.d2l.ai/_images/gru-3.svg" srcset="/img/loading.gif" lazyload alt="GRU"></p>
+<p>参数初始化：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">get_params</span>(<span class="hljs-params">vocab_size, num_hiddens, device</span>):<br>    num_inputs = num_outputs = vocab_size<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">normal</span>(<span class="hljs-params">shape</span>):<br>        <span class="hljs-keyword">return</span> torch.randn(size=shape, device=device)*<span class="hljs-number">0.01</span><br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">three</span>():<br>        <span class="hljs-keyword">return</span> (normal((num_inputs, num_hiddens)),<br>                normal((num_hiddens, num_hiddens)),<br>                torch.zeros(num_hiddens, device=device))<br><br>    W_xz, W_hz, b_z = three()  <span class="hljs-comment"># 更新门参数</span><br>    W_xr, W_hr, b_r = three()  <span class="hljs-comment"># 重置门参数</span><br>    W_xh, W_hh, b_h = three()  <span class="hljs-comment"># 候选隐状态参数</span><br>    <span class="hljs-comment"># 输出层参数</span><br>    W_hq = normal((num_hiddens, num_outputs))<br>    b_q = torch.zeros(num_outputs, device=device)<br>    <span class="hljs-comment"># 附加梯度</span><br>    params = [W_xz, W_hz, b_z, W_xr, W_hr, b_r, W_xh, W_hh, b_h, W_hq, b_q]<br>    <span class="hljs-keyword">for</span> param <span class="hljs-keyword">in</span> params:<br>        param.requires_grad_(<span class="hljs-literal">True</span>)<br>    <span class="hljs-keyword">return</span> params<br></code></pre></td></tr></table></figure>
+
+<p>模型定义：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">gru</span>(<span class="hljs-params">inputs,state,params</span>):<br>    W_xr,W_xz,W_xh,b_z,b_h,b_r,W_hr,W_hz,W_hh,W_hq,b_q = params<br>    H, = state<br>    outputs = []<br>    <span class="hljs-keyword">for</span> X <span class="hljs-keyword">in</span> inputs:<br>        Z = torch.sigmoid((X @ W_xz) + (H @ W_hz) + b_z)<br>        R = torch.sigmoid((X @ W_xr) + (H @ W_hr) + b_r)<br>        H_tilda = torch.tanh((X @ W_xh) + ((R * H)@W_hh) + b_h)<br>        H = Z * H + (<span class="hljs-number">1</span> - Z) * H_tilda<br>        Y = H @ W_hq + b_q<br>        outputs.append(Y)<br>    <span class="hljs-keyword">return</span> torch.cat(outputs,dim=<span class="hljs-number">0</span>),(H,)<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
                 
               </div>
             
@@ -532,6 +584,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -765,6 +823,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
