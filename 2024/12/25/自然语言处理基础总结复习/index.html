@@ -27,7 +27,7 @@
 <meta property="og:description" content="自然语言处理任务             六大核心任务与对应的11个子任务文章顺序按照自顶向下进行总结梳理与复习             信息抽取 实体识别与抽取 实体消岐 关系抽取 事件抽取  归纳类别文本分类 情感识别情感分类 回答问题 问答系统 机器阅读理解 智能对话  凝练内容自动文摘 语言翻译机器翻译 自然语言处理基础技术 分本分类  利用计算机对大量文本的文档按照分类标准实现自动归档">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-12-25T01:56:03.000Z">
-<meta property="article:modified_time" content="2024-12-25T09:34:36.518Z">
+<meta property="article:modified_time" content="2024-12-28T03:08:17.938Z">
 <meta property="article:author" content="Munger Yang">
 <meta property="article:tag" content="期末总结">
 <meta name="twitter:card" content="summary_large_image">
@@ -572,6 +572,12 @@
   
 
 
+  
+  
+
+
+
+
 
 
 
@@ -803,6 +809,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

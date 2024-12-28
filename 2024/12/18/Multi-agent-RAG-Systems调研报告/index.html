@@ -19,16 +19,16 @@
   <meta name="author" content="Munger Yang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Agentic RAG调研报告—探索搭建适配多数据源的Multi-agent RAG SystemMulti-agent RAG架构设计 适配多数据源 计算机中的文档：TXT文档、PDF文档、Office文档 存储在多种类型数据库中的结构化数据、半结构化数据：MySQL、PostageSQL、Redis、MongDB 存储在图数据库中图数据：Neo4j 存储在向量数据库中的向量数据：Milvus、">
+    <meta name="description" content="Agentic RAG调研报告—探索搭建适配多数据源的Multi-agent RAG SystemMulti-agent RAG架构设计应用场景与需求根据不同的知识库与应用特点构造了不同的查询引擎，它们面向不同的领域知识，采用了不同的索引(比如VectorIndex与GraphIndex)。我们需要给使用者(可能是人或应用)提供一致性体验，他们无须关心后端使用的真实查询引擎是哪一个，只需要输入问题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Multi-agent RAG Systems调研报告">
 <meta property="og:url" content="http://example.com/2024/12/18/Multi-agent-RAG-Systems%E8%B0%83%E7%A0%94%E6%8A%A5%E5%91%8A/index.html">
 <meta property="og:site_name" content="munger写字的地方">
-<meta property="og:description" content="Agentic RAG调研报告—探索搭建适配多数据源的Multi-agent RAG SystemMulti-agent RAG架构设计 适配多数据源 计算机中的文档：TXT文档、PDF文档、Office文档 存储在多种类型数据库中的结构化数据、半结构化数据：MySQL、PostageSQL、Redis、MongDB 存储在图数据库中图数据：Neo4j 存储在向量数据库中的向量数据：Milvus、">
+<meta property="og:description" content="Agentic RAG调研报告—探索搭建适配多数据源的Multi-agent RAG SystemMulti-agent RAG架构设计应用场景与需求根据不同的知识库与应用特点构造了不同的查询引擎，它们面向不同的领域知识，采用了不同的索引(比如VectorIndex与GraphIndex)。我们需要给使用者(可能是人或应用)提供一致性体验，他们无须关心后端使用的真实查询引擎是哪一个，只需要输入问题">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://weaviate.io/assets/images/Multi_Agent_RAG_System-73e480f62a52e172a78a0ac344dcdcb5.png">
 <meta property="article:published_time" content="2024-12-18T01:08:02.000Z">
-<meta property="article:modified_time" content="2024-12-27T03:34:05.955Z">
+<meta property="article:modified_time" content="2024-12-28T03:34:53.763Z">
 <meta property="article:author" content="Munger Yang">
 <meta property="article:tag" content="LLM">
 <meta property="article:tag" content="RAG">
@@ -281,7 +281,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          220 字
+          367 字
         
       </span>
     
@@ -292,7 +292,7 @@
         
         
         
-          2 分钟
+          4 分钟
         
       </span>
     
@@ -343,9 +343,9 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Agentic-RAG调研报告—探索搭建适配多数据源的Multi-agent-RAG-System"><a href="#Agentic-RAG调研报告—探索搭建适配多数据源的Multi-agent-RAG-System" class="headerlink" title="Agentic RAG调研报告—探索搭建适配多数据源的Multi-agent RAG System"></a>Agentic RAG调研报告—探索搭建适配多数据源的Multi-agent RAG System</h1><h2 id="Multi-agent-RAG架构设计"><a href="#Multi-agent-RAG架构设计" class="headerlink" title="Multi-agent RAG架构设计"></a>Multi-agent RAG架构设计</h2><p><img src="/./img/fig/agentrag.jpg" srcset="/img/loading.gif" lazyload alt="Multi-agent RAG"></p>
-<p><strong>适配多数据源</strong></p>
-<p>计算机中的文档：<code>TXT文档</code>、<code>PDF文档</code>、<code>Office文档</code></p>
+                <h1 id="Agentic-RAG调研报告—探索搭建适配多数据源的Multi-agent-RAG-System"><a href="#Agentic-RAG调研报告—探索搭建适配多数据源的Multi-agent-RAG-System" class="headerlink" title="Agentic RAG调研报告—探索搭建适配多数据源的Multi-agent RAG System"></a>Agentic RAG调研报告—探索搭建适配多数据源的Multi-agent RAG System</h1><h2 id="Multi-agent-RAG架构设计"><a href="#Multi-agent-RAG架构设计" class="headerlink" title="Multi-agent RAG架构设计"></a>Multi-agent RAG架构设计</h2><h3 id="应用场景与需求"><a href="#应用场景与需求" class="headerlink" title="应用场景与需求"></a>应用场景与需求</h3><p>根据不同的知识库与应用特点构造了不同的<strong>查询引擎</strong>，它们面向不同的领域知识，采用了不同的索引(比如VectorIndex与GraphIndex)。我们需要给使用者(可能是人或应用)提供一致性体验，他们无须关心后端使用的真实查询引擎是哪一个，只需要输入问题即可获得正确的答案。$^{[1]}$</p>
+<p><img src="/./img/fig/agentrag.jpg" srcset="/img/loading.gif" lazyload alt="Multi-agent RAG"></p>
+<h3 id="适配多数据源"><a href="#适配多数据源" class="headerlink" title="适配多数据源"></a><strong>适配多数据源</strong></h3><p>计算机中的文档：<code>TXT文档</code>、<code>PDF文档</code>、<code>Office文档</code></p>
 <p>存储在多种类型数据库中的结构化数据、半结构化数据：<code>MySQL</code>、<code>PostageSQL</code>、<code>Redis</code>、<code>MongDB</code></p>
 <p>存储在图数据库中图数据：<code>Neo4j</code></p>
 <p>存储在向量数据库中的向量数据：<code>Milvus</code>、<code>Chroma</code>、<code>Elastic</code></p>
@@ -353,8 +353,9 @@
 <li><a target="_blank" rel="noopener" href="https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_query_cookbook/">https://docs.llamaindex.ai/en/stable/examples/agent/openai_agent_query_cookbook/</a> - OpenAI Agent + Query Engine Experimental Cookbook: 融合了vector_tool和sql_tool</li>
 <li><a target="_blank" rel="noopener" href="https://github.com/karthik-codex/Autogen_GraphRAG_Ollama">https://github.com/karthik-codex/Autogen_GraphRAG_Ollama</a> - GraphRAG + AutoGen + Ollama + Chainlit UI &#x3D; Local Multi-Agent RAG Superbot：这个应用程序将 <strong>GraphRAG</strong> 与 <strong>AutoGen</strong> 代理集成在一起，由 Ollama 的本地LLM提供支持，可实现免费的离线嵌入和推理。</li>
 </ol>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzAxMjc3MjkyMg==&mid=2648407123&idx=2&sn=80ddf495e6c08af3355d8bf4a5109328&chksm=83836f06b4f4e610a99aa86e9882b7416c8f3ff42519c7aaff7d99a8ce936493e43a623f6e83&scene=178&cur_album_id=3276284267911856128#rd">RAG行业问答博客观点开源整理：从RAG评估、应用参考、开源框架到操作实践总结</a></p>
-<p>[2] <a target="_blank" rel="noopener" href="https://github.com/lizhe2004/Awesome-LLM-RAG-Application?tab=readme-ov-file">https://github.com/lizhe2004/Awesome-LLM-RAG-Application?tab=readme-ov-file</a></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] 基于大模型的RAG应用开发与优化—构建企业级LLM应用. 严灿平. 中国工信出版集团</p>
+<p>[2] <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzAxMjc3MjkyMg==&mid=2648407123&idx=2&sn=80ddf495e6c08af3355d8bf4a5109328&chksm=83836f06b4f4e610a99aa86e9882b7416c8f3ff42519c7aaff7d99a8ce936493e43a623f6e83&scene=178&cur_album_id=3276284267911856128#rd">RAG行业问答博客观点开源整理：从RAG评估、应用参考、开源框架到操作实践总结</a></p>
+<p>[3] <a target="_blank" rel="noopener" href="https://github.com/lizhe2004/Awesome-LLM-RAG-Application?tab=readme-ov-file">https://github.com/lizhe2004/Awesome-LLM-RAG-Application?tab=readme-ov-file</a></p>
 
                 
               </div>
@@ -560,6 +561,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -793,6 +800,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
