@@ -27,7 +27,7 @@
 <meta property="og:description" content="理解自然语言处理领域的基础技术与核心任务 什么是实体？怎样理解序列？ Entity vs Object；实体是“某种概念”的实例化，比如一个具体的地名、人名，我觉着实体其实和面向对象中对象的概念相似，就是一个东西，一个具体的东西。 广义的序列我认为可以理解为一串文字序列，一串经过嵌入后的文本向量。 词性标注：基于机器学习的方法，往往需要对分词后的词进行词性标注，词性一般包括动词、形容词、名词。标注">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-12-25T01:56:03.000Z">
-<meta property="article:modified_time" content="2025-01-05T10:05:06.982Z">
+<meta property="article:modified_time" content="2025-01-08T07:55:39.190Z">
 <meta property="article:author" content="Munger Yang">
 <meta property="article:tag" content="期末总结">
 <meta name="twitter:card" content="summary_large_image">
@@ -277,7 +277,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          1.8k 字
         
       </span>
     
@@ -288,7 +288,7 @@
         
         
         
-          11 分钟
+          15 分钟
         
       </span>
     
@@ -395,7 +395,7 @@
 <p>激活函数的作用：增强网络表达能力，加入非线性因素</p>
 <p>随机梯度下降与梯度下降区别：每次参数更新的数据量不同</p>
 <h3 id="神经网络相关"><a href="#神经网络相关" class="headerlink" title="神经网络相关"></a>神经网络相关</h3><p>卷积层的作用：通过卷积操作减少参数</p>
-<p>池化层的作用：通过采样减少网络规模</p>
+<p>池化层的作用：通过下采样减少网络规模</p>
 <p>全连接层：将池化层单元扁平化</p>
 <p>RNN的参数训练方法：BPTT</p>
 <h3 id="语言模型相关"><a href="#语言模型相关" class="headerlink" title="语言模型相关"></a>语言模型相关</h3><p>什么是词向量：将词转换为稠密向量的分布式表示</p>
@@ -410,6 +410,67 @@
 <p>什么是BART：BART采用了一种编码-解码架构，编码器部分是双向的，类似于BERT，可以捕捉输入文本的上下文信息；解码器部分是自回归的，类似于传统的序列生成模型（如GPT），可以逐步生成输出序列。</p>
 <p>GPT使用的是Transformer的什么：解码器部分</p>
 <p>CRF的作用：CRF能够对整个序列进行全局优化，而不是单独地对每个元素进行标注，会考虑整个序列的上下文信息，使得标注结果更加一致和合理。</p>
+<p>生成任务中常用的评价指标：BLUE、ROUGE</p>
+<h2 id="2024年秋学期-期末考试真题回忆"><a href="#2024年秋学期-期末考试真题回忆" class="headerlink" title="2024年秋学期-期末考试真题回忆"></a>2024年秋学期-期末考试真题回忆</h2><p>家人们，能记住多少算多少哈哈哈哈~</p>
+<p>考试时间：2025年1月6日</p>
+<h3 id="选择题-10-1"><a href="#选择题-10-1" class="headerlink" title="选择题 10 * 1"></a>选择题 10 * 1</h3><ol>
+<li><p>CBOW训练的是什么</p>
+</li>
+<li><p>skip_gram训练的是什么</p>
+</li>
+<li><p>激活函数有什么作用：增强网络表达能力</p>
+</li>
+<li><p>指针网络的作用：不仅可以用于机器翻译任务，还可以用于其他任务</p>
+</li>
+<li><p>词向量之间相似的原因解释</p>
+</li>
+<li><p>Attention的输入形式</p>
+</li>
+<li><p>top-k采样、贪心解码相关</p>
+</li>
+<li><p>Chatgpt相关的问题不正确的是：每次使用都是先微调</p>
+</li>
+</ol>
+<p>还有两个记不起来了~</p>
+<h3 id="填空题-10-2"><a href="#填空题-10-2" class="headerlink" title="填空题 10*2"></a>填空题 10*2</h3><p>   1.机器学习三要素</p>
+<ol start="2">
+<li><p>池化层作用是什么</p>
+</li>
+<li><p>什么是硬注意力</p>
+</li>
+<li><p>BART中为什么要使用位置嵌入</p>
+</li>
+<li><p>Seq2Seq序列生成模型的三种类型</p>
+</li>
+<li><p>CRF的作用是什么</p>
+</li>
+<li><p>生成任务中常用的评价指标是什么</p>
+</li>
+<li><p>RNN训练方法是什么</p>
+</li>
+<li><p>文本匹配常用的建模方法</p>
+</li>
+<li><p>什么是曝光偏差</p>
+</li>
+</ol>
+<h3 id="简答题-5-6"><a href="#简答题-5-6" class="headerlink" title="简答题 5*6"></a>简答题 5*6</h3><ol>
+<li><p>什么是BPE算法？简要概述其工作原理</p>
+</li>
+<li><p>Transformer实现并行处理所用到的技术有哪些？</p>
+</li>
+<li><p>神经网络语言语言模型存在的问题？使用RNN+词向量的方式是如何解决这些问题的</p>
+</li>
+<li><p>简述第二、三、四、五范式特点和应用场景</p>
+</li>
+<li><p>简述传统的事件抽取任务，并给出传统的事件抽取的建模任务有哪些？具体实现步骤</p>
+</li>
+</ol>
+<h3 id="计算题-10-1"><a href="#计算题-10-1" class="headerlink" title="计算题 10*1"></a>计算题 10*1</h3><p>维特比算法</p>
+<h3 id="设计题-12-1"><a href="#设计题-12-1" class="headerlink" title="设计题 12*1"></a>设计题 12*1</h3><p>题干记得是：“这是一家正宗的俄式西餐，味道浓厚，环境很好”</p>
+<p>(1) 写出属性情感输出</p>
+<p>(2) 设计一个情感属性关联模型，解释其原理，画出模型图</p>
+<h3 id="设计题-18-1"><a href="#设计题-18-1" class="headerlink" title="设计题 18*1"></a>设计题 18*1</h3><p>(1) 检索式问答系统包含哪几个部分？作用是什么？</p>
+<p>(2) 设计一个检索式问答系统，并解释其原理</p>
 
                 
               </div>
