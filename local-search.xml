@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>2025年1月总结与展望</title>
+    <link href="/2025/01/30/2025%E5%B9%B41%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/"/>
+    <url>/2025/01/30/2025%E5%B9%B41%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/</url>
+    
+    <content type="html"><![CDATA[<p>2025年1月30日，星期四，阴天，这是写的第48篇博客文章。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>动机</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>科研心路</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>梁文锋专访</title>
     <link href="/2025/01/29/%E6%A2%81%E6%96%87%E9%94%8B%E4%B8%93%E8%AE%BF/"/>
     <url>/2025/01/29/%E6%A2%81%E6%96%87%E9%94%8B%E4%B8%93%E8%AE%BF/</url>
@@ -39,7 +64,7 @@
     <link href="/2025/01/27/DeepSeek-YYDS/"/>
     <url>/2025/01/27/DeepSeek-YYDS/</url>
     
-    <content type="html"><![CDATA[<h1 id="DeepSeek-R1-Incentivizing-Reasoning-Capability-in-LLMs-via-Reinforcement-Learning"><a href="#DeepSeek-R1-Incentivizing-Reasoning-Capability-in-LLMs-via-Reinforcement-Learning" class="headerlink" title="DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning"></a>DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning</h1><center>DeepSeek-AI</center><center>https://arxiv.org/pdf/2501.12948</center><p><img src="https://i.bstr.es/drivingeco/2025/01/Deepseek-r1-logo.webp"></p><h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>文章介绍了DeepSeek-AI团队开发的第一代<strong>推理模型</strong>DeepSeek-R1-Zero和DeepSeek-R1。DeepSeek-R1是一种基于大规模强化学习训练的模型，无需监督微调作为初步步骤，展现出强大的推理能力。</p><ul><li><p>优势：推理能力强</p></li><li><p>挑战：可读性差、语言混合</p></li></ul><p><code>模型提出的标志性意义</code>：DeepSeek-R1<strong>迈出了使用纯强化学习 (RL) 提高语言模型推理能力的第一步</strong>，目标是<strong>探索 LLM 在没有任何监督数据的情况下开发推理能力的潜力</strong>，重点关注LLM<strong>通过纯 RL 过程进行模型自身进化</strong>。</p><p><img src="/./img/fig/deepseek.jpg" alt="deepseek-performance"></p><p>自身进化的同时提高了推理性能，同时，因为无需任何监督数据，极大地降低了成本。LLM拼多多称号当之无愧！国产骄傲！</p><p>DeepSeek-R1-Zero represents a pure RL approach without relying on cold-start data, achieving strong performance across various tasks.</p><p>DeepSeek-R1 is more powerful, leveraging cold-start data alongside iterative RL fine-tuning.</p><p>DeepSeek-R1-Zero 是使用 DeepSeek-V3-Base 作为基础模型，结合GRPO作为RL框架经过数千步推理训练得到。然而DeepSeek-R1-Zero 遇到了可读性差、语言混合的困难，为了进一步提高推理性能，DeepSeek-AI团队由DeepSeek-R1-Zero模型改进到DeepSeek-R1模型，其结合了少量 cold-start data 和a multi-stage training pipeline。</p><p>在RL接近收敛的时候，通过对 RL 检查点进行rejection sampling来创建新的 SFT 数据，并结合 DeepSeek-V3 在写作、事实问答和自我认知等领域的监督数据，然后重新训练 DeepSeek-V3-Base 模型。</p><h2 id="Contributions"><a href="#Contributions" class="headerlink" title="Contributions"></a>Contributions</h2><ol><li><strong>Post - training</strong>: 在现有基础模型上进行大规模强化学习，该团队直接将RL应用于基础模型，而不依赖于监督微调（SFT）作为一个初步步骤。这种方法允许模型探索思想链（CoT）来解决复杂的问题，从而开发出DeepSeek-R1-Zero。团队也介绍了开发DeepSeek-R1的pipeline。该管道包含了两个RL阶段，以及两个SFT阶段，作为模型的推理和非推理能力的种子。</li><li><strong>Distillation</strong>: 蒸馏后使得小模型也具有大能量，该团队证明了更大模型的推理模式可以被提炼为更小的模型，与通过RL在小模型上发现的推理模式相比，从而获得更好的性能。</li></ol><h2 id="Future-Work"><a href="#Future-Work" class="headerlink" title="Future Work"></a>Future Work</h2><ul><li><strong>General Capability:</strong> 目前，DeepSeek-R1在function calling, multi-turn, complex role-playing, and JSON output等任务上还不如DeepSeek-V3。接下来，我们计划探索可以利用多长时间的CoT来增强这些领域的任务。</li><li><strong>Language Mixing:</strong> DeepSeek-R1目前针对中文和英语进行了优化，这可能导致在处理其他语言的查询时出现语言混合问题。例如，DeepSeek-R1可能会使用英语进行推理和响应，即使查询使用的是英语或中文以外的语言。我们的目标是在未来的更新中解决这一限制。</li><li><strong>Prompting Engineering:</strong> 在评估DeepSeek-R1时，我们观察到它对提示很敏感。Few-shot的激励不断地降低了它的表现。因此，我们建议用户直接描述问题，并使用zero-shot指定输出格式，以获得最佳结果。</li><li><strong>Software Engineering Tasks:</strong> 由于评估时间长，影响了RL过程的效率，因此大规模的RL在软件工程任务中尚未得到广泛的应用。因此，DeepSeek-R1在软件工程基准测试上并没有显示出比DeepSeek-V3相比的巨大改进。未来的版本将通过对软件工程数据实施拒绝抽样或在RL过程中合并异步评估来提高效率来解决这个问题。</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="DeepSeek-R1-Incentivizing-Reasoning-Capability-in-LLMs-via-Reinforcement-Learning"><a href="#DeepSeek-R1-Incentivizing-Reasoning-Capability-in-LLMs-via-Reinforcement-Learning" class="headerlink" title="DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning"></a>DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning</h1><center>DeepSeek-AI</center><center>https://arxiv.org/pdf/2501.12948</center><p><img src="https://i.bstr.es/drivingeco/2025/01/Deepseek-r1-logo.webp"></p><h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>文章介绍了DeepSeek-AI团队开发的第一代<strong>推理模型</strong>DeepSeek-R1-Zero和DeepSeek-R1。DeepSeek-R1是一种基于大规模强化学习训练的模型，无需监督微调作为初步步骤，展现出强大的推理能力。</p><ul><li><p>优势：推理能力强</p></li><li><p>挑战：可读性差、语言混合</p></li></ul><p><code>模型提出的标志性意义</code>：DeepSeek-R1<strong>迈出了使用纯强化学习 (RL) 提高语言模型推理能力的第一步</strong>，目标是<strong>探索 LLM 在没有任何监督数据的情况下开发推理能力的潜力</strong>，重点关注LLM<strong>通过纯 RL 过程进行模型自身进化</strong>。</p><p><img src="/./img/fig/deepseek.jpg" alt="deepseek-performance"></p><p>自身进化的同时提高了推理性能，同时，因为无需任何监督数据，极大地降低了成本。LLM拼多多称号当之无愧！国产骄傲！</p><p>DeepSeek-R1-Zero represents a pure RL approach without relying on cold-start data, achieving strong performance across various tasks.</p><p>DeepSeek-R1 is more powerful, leveraging cold-start data alongside iterative RL fine-tuning.</p><p>DeepSeek-R1-Zero 是使用 DeepSeek-V3-Base 作为基础模型，结合GRPO作为RL框架经过数千步推理训练得到。然而DeepSeek-R1-Zero 遇到了可读性差、语言混合的困难，为了进一步提高推理性能，DeepSeek-AI团队由DeepSeek-R1-Zero模型改进到DeepSeek-R1模型，其结合了少量 cold-start data 和a multi-stage training pipeline。</p><p>在RL接近收敛的时候，通过对 RL 检查点进行rejection sampling来创建新的 SFT 数据，并结合 DeepSeek-V3 在写作、事实问答和自我认知等领域的监督数据，然后重新训练 DeepSeek-V3-Base 模型。</p><h2 id="Contributions"><a href="#Contributions" class="headerlink" title="Contributions"></a>Contributions</h2><ol><li><strong>Post - training</strong>: 在现有基础模型上进行大规模强化学习，该团队直接将RL应用于基础模型，而不依赖于监督微调（SFT）作为一个初步步骤。这种方法允许模型探索思想链（CoT）来解决复杂的问题，从而开发出DeepSeek-R1-Zero。团队也介绍了开发DeepSeek-R1的pipeline。该管道包含了两个RL阶段，以及两个SFT阶段，作为模型的推理和非推理能力的种子。</li><li><strong>Distillation</strong>: 蒸馏后使得小模型也具有大能量，该团队证明了更大模型的推理模式可以被提炼为更小的模型，与通过RL在小模型上发现的推理模式相比，从而获得更好的性能。</li></ol><h2 id="Future-Work"><a href="#Future-Work" class="headerlink" title="Future Work"></a>Future Work</h2><ul><li><strong>General Capability:</strong> 目前，DeepSeek-R1在function calling, multi-turn, complex role-playing, and JSON output等任务上还不如DeepSeek-V3。接下来，我们计划探索可以利用多长时间的CoT来增强这些领域的任务。</li><li><strong>Language Mixing:</strong> DeepSeek-R1目前针对中文和英语进行了优化，这可能导致在处理其他语言的查询时出现语言混合问题。例如，DeepSeek-R1可能会使用英语进行推理和响应，即使查询使用的是英语或中文以外的语言。我们的目标是在未来的更新中解决这一限制。</li><li><strong>Prompting Engineering:</strong> 在评估DeepSeek-R1时，我们观察到它对提示很敏感。Few-shot的激励不断地降低了它的表现。因此，我们建议用户直接描述问题，并使用zero-shot指定输出格式，以获得最佳结果。</li><li><strong>Software Engineering Tasks:</strong> 由于评估时间长，影响了RL过程的效率，因此大规模的RL在软件工程任务中尚未得到广泛的应用。因此，DeepSeek-R1在软件工程基准测试上并没有显示出比DeepSeek-V3相比的巨大改进。未来的版本将通过对软件工程数据实施拒绝抽样或在RL过程中合并异步评估来提高效率来解决这个问题。</li></ul><h2 id="Ollama本地部署deepseek-R1"><a href="#Ollama本地部署deepseek-R1" class="headerlink" title="Ollama本地部署deepseek - R1"></a>Ollama本地部署deepseek - R1</h2>]]></content>
     
     
     <categories>
@@ -68,7 +93,7 @@
     <link href="/2025/01/24/Graph-RAG-A-Survey/"/>
     <url>/2025/01/24/Graph-RAG-A-Survey/</url>
     
-    <content type="html"><![CDATA[<center>  <h1>Graph Retrieval-Augmented Generation: A Survey</h1>  https://www.arxiv.org/pdf/2408.08921</center>]]></content>
+    <content type="html"><![CDATA[<center>  <h1>Graph Retrieval-Augmented Generation: A Survey</h1>  https://www.arxiv.org/pdf/2408.08921</center><p>通过引用外部知识库，RAG改进了LLM输出，有效地减轻了诸如“幻觉”、缺乏特定领域的知识和过时的信息等问题。但是，<strong>数据库中不同实体之间复杂的关系结构给RAG系统带来了挑战</strong>。</p><p>GraphRAG利用<strong>跨实体</strong>的结构信息，以实现更精确和全面的检索，捕获关系知识，并促进更准确的、上下文感知的响应。</p><p>这篇文章是首次对于GraphRAG方法提供了全面的总结，规范了GraphRAG workflow(包括Graph-Based</p><p>Indexing、Graph-Guided Retrieval和Graph-Enhanced Generation)，强调了每一个阶段的核心技术和训练方法。此外，还对下有任务、应用领域、评估方法、工业案例进行阐述。</p>]]></content>
     
     
     <categories>
@@ -103,7 +128,7 @@
     <link href="/2025/01/20/Agentic-RAG-A-Survey/"/>
     <url>/2025/01/20/Agentic-RAG-A-Survey/</url>
     
-    <content type="html"><![CDATA[<center>  <h1>AGENTIC RETRIEVAL-AUGMENTED GENERATION: A SURVEY ON AGENTIC RAG</h1>  <h3>Aditi Singh | Abul Ehtesham | Saket Kumar | Tala Talaei Khoei</h3>  https://arxiv.org/abs/2501.09136</center><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>文章首先以LLM在<strong>文本生成</strong>和<strong>自然语言理解</strong>方面的革新引入。然后笔锋一转(however)，揭示了对依赖静态数据“革新”的局限性，静态训练数据使得LLM不能够及时地动态响应、处理实时需求。针对这一局限性，引出文章重点介绍的技术： <strong>Retrieval-Augmented Generation (RAG)</strong> 。RAG的出现使得LLM可以及时更新训练数据，利用最新数据作出实时响应。当然，传统的RAG技术在多步推理和复杂任务管理上同样存在缺陷。</p><h2 id="RAG基础"><a href="#RAG基础" class="headerlink" title="RAG基础"></a>RAG基础</h2><h2 id="梳理RAG技术范式发展"><a href="#梳理RAG技术范式发展" class="headerlink" title="梳理RAG技术范式发展"></a>梳理RAG技术范式发展</h2>]]></content>
+    <content type="html"><![CDATA[<center>  <h1>AGENTIC RETRIEVAL-AUGMENTED GENERATION: A SURVEY ON AGENTIC RAG</h1>  <h3>Aditi Singh | Abul Ehtesham | Saket Kumar | Tala Talaei Khoei</h3>  https://arxiv.org/abs/2501.09136</center><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>文章首先以LLM在<strong>文本生成</strong>和<strong>自然语言理解</strong>方面的革新引入。然后笔锋一转(however)，揭示了对依赖静态数据“革新”的局限性，静态训练数据使得LLM不能够及时地动态响应、处理实时需求。针对这一局限性，引出文章重点介绍的技术： <strong>Retrieval-Augmented Generation (RAG)</strong> 。RAG的出现使得LLM可以及时更新训练数据，利用最新数据作出实时响应。当然，传统的RAG技术在多步推理和复杂任务管理上同样存在缺陷。</p><p>Agentic RAG通过将AI agents嵌入到RAG pipeline中超越了传统RAG在多步推理和复杂任务管理上存在的缺陷。Agents利用代理式设计组件动态管理检索策略，迭代改善上下文理解，适应工作流对于复杂任务的需要。</p><p>本文从RAG范式演化与基础原则开始，提供了一个对于Agentic RAG的全面探索。对于Agentic RAG架构细节、下游任务应用，以及强调了在系统扩充、确保道德决策和优化现实应用程序的性能方面的挑战。</p><h2 id="RAG基础"><a href="#RAG基础" class="headerlink" title="RAG基础"></a>RAG基础</h2><p>RAG面临的限制：</p><ol><li>outdated information</li><li>hallucinated responses</li><li>an inability to adapt to dynamic</li><li>real-world scenarios</li></ol><h3 id="Foundations-of-Retrieval-Augmented-Generation"><a href="#Foundations-of-Retrieval-Augmented-Generation" class="headerlink" title="Foundations of Retrieval-Augmented Generation"></a>Foundations of Retrieval-Augmented Generation</h3><div class="note note-danger">            <p>RAG &#x3D; LLM + Information retrieval</p>          </div><p>RAG就是融合LLM的生成能力和实时数据的信息检索能力</p><h3 id="Core-Components-of-RAG"><a href="#Core-Components-of-RAG" class="headerlink" title="Core Components of RAG"></a>Core Components of RAG</h3><ul><li><strong>Retrieveal</strong></li><li><strong>Augmentation</strong></li><li><strong>Generation</strong></li></ul><p>​</p><h2 id="梳理RAG技术范式发展"><a href="#梳理RAG技术范式发展" class="headerlink" title="梳理RAG技术范式发展"></a>梳理RAG技术范式发展</h2>]]></content>
     
     
     <categories>
@@ -219,7 +244,7 @@
   
   
   <entry>
-    <title>12月总结与展望</title>
+    <title>2024年12月总结与展望</title>
     <link href="/2024/12/31/12%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/"/>
     <url>/2024/12/31/12%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/</url>
     
