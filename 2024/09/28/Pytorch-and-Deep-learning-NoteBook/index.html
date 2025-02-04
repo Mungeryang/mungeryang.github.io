@@ -26,12 +26,14 @@
 <meta property="og:site_name" content="munger写字的地方">
 <meta property="og:description" content="PyTorch与深度学习笔记，持续更新….不要着急，扎扎实实打好基本功！             参考学习资料小土堆-pytorch学习教程：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1hE411t7RN&#x2F;?p&#x3D;10&amp;spm_id_from&#x3D;333.1007.top_right_bar_window_history.content.clic">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ai-market.jp/wp-content/uploads/2024/06/PyTorch.png">
 <meta property="article:published_time" content="2024-09-28T08:06:09.000Z">
-<meta property="article:modified_time" content="2024-12-30T11:27:18.004Z">
+<meta property="article:modified_time" content="2025-02-03T14:11:51.400Z">
 <meta property="article:author" content="Munger Yang">
 <meta property="article:tag" content="深度学习">
 <meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ai-market.jp/wp-content/uploads/2024/06/PyTorch.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -278,7 +280,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          555 字
+          1.7k 字
         
       </span>
     
@@ -289,7 +291,7 @@
         
         
         
-          5 分钟
+          14 分钟
         
       </span>
     
@@ -348,13 +350,56 @@
 <p>李沐-动手学深度学习：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1wM4m117mp/?spm_id_from=333.337.search-card.all.click&vd_source=f093c3d64ba399e149cbffa6cd31a7b0">https://www.bilibili.com/video/BV1wM4m117mp/?spm_id_from=333.337.search-card.all.click&amp;vd_source=f093c3d64ba399e149cbffa6cd31a7b0</a></p>
 <p>李宏毅深度学习教程LeeDL-Tutorial（苹果书）：<a target="_blank" rel="noopener" href="https://github.com/datawhalechina/leedl-tutorial?tab=readme-ov-file">https://github.com/datawhalechina/leedl-tutorial?tab=readme-ov-file</a></p>
 <p>张贤同学pytorch学习笔记：<a target="_blank" rel="noopener" href="https://pytorch.zhangxiann.com/">https://pytorch.zhangxiann.com/</a></p>
-<h2 id="PyTorch-CookBook"><a href="#PyTorch-CookBook" class="headerlink" title="PyTorch  CookBook"></a>PyTorch  CookBook</h2><p>Scaler </p>
-<p>Vector </p>
-<p>Matrix</p>
-<p>Tensor </p>
+<p>《pytorch实用教程(第二版)》<a target="_blank" rel="noopener" href="https://tingsongyu.github.io/PyTorch-Tutorial-2nd/">https://tingsongyu.github.io/PyTorch-Tutorial-2nd/</a></p>
+<h2 id="conda常用指令"><a href="#conda常用指令" class="headerlink" title="conda常用指令"></a>conda常用指令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">创建环境</span><br>conda create -n your_env_name python=x.x(x.x为python版本)<br>eg: conda create -n pytorch_tutorial python=3.7<br><span class="hljs-meta prompt_"># </span><span class="language-bash">激活环境</span><br>source avtivate your_env_name<br>eg: source activate pytorch_tutorial<br><span class="hljs-meta prompt_"># </span><span class="language-bash">推出环境</span><br>source deactivate<br><span class="hljs-meta prompt_"># </span><span class="language-bash">删除环境</span><br>conda remove -n your_env_name -all<br>eg: conda remove -n pytorch_tutorial -all<br><span class="hljs-meta prompt_"># </span><span class="language-bash">查看已有的虚拟环境</span><br>conda env list / conda info -e<br></code></pre></td></tr></table></figure>
+
+<h2 id="PyTorch-CookBook"><a href="#PyTorch-CookBook" class="headerlink" title="PyTorch  CookBook"></a>PyTorch  CookBook</h2><h3 id="PyTorch安装"><a href="#PyTorch安装" class="headerlink" title="PyTorch安装"></a>PyTorch安装</h3><p>CPU版本的安装：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">pip install torch torchvision torchaudio<br></code></pre></td></tr></table></figure>
+
+<p>GPU版本：</p>
+<p>安装指令可以去官网查看与之适配的CUDA版本，选择合适的操作系统、编程语言与CUDA版本安装即可</p>
+<p><a target="_blank" rel="noopener" href="https://pytorch.org/get-started/locally/">https://pytorch.org/get-started/locally/</a></p>
+<h3 id="PyTorch常用子文件"><a href="#PyTorch常用子文件" class="headerlink" title="PyTorch常用子文件"></a>PyTorch常用子文件</h3><p>执行完pip install torch后，Torch的安装路径为：&#x2F;Users&#x2F;mungeryang&#x2F;anaconda3&#x2F;lib&#x2F;python3.11&#x2F;site-packages&#x2F;torch，在程序中import torch其实是从安装路径中进行导入。</p>
+<p>torch中重要的组件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell">_pycache: 该文件夹存放python解释器生成的字节码,目的是通过牺牲一定的存储空间来提高加载速度<br>_C: 辅助C语言代码调用的一个模块,PyTorch的底层计算代码采用的是C++语言编写，并封装成库，供pytorch的python语言进行调用<br>include: 存放着上面描述底层计算所需的C++代码<br>lib: lib文件夹下包含大量的.lib .dll文件（分别是静态链接库和动态链接库）,torch文件夹中98%内容都在lib中<br>autograd: pytorch的核心模块与概念，它实现了梯度的自动求导，开发人员只需编写前向传播代码，反向传播部分由autograd自动实现<br>nn: 使用频率最高的模块，搭建网络的网络层就在nn.modules里边<br>onnx: pytorch模型转换到onnx模型表示的核心模块<br>optim: 优化使用的方法函数，都在optim文件夹中<br>utils: utils是各种软件工程中常见的文件夹，包含了各类常用工具，其中比较关键的是data文件夹，tensorboard文件夹<br>datasets: 常用的数据集写的数据读取函数，例如常见的cifar, coco, mnist,svhn,voc都是有对应的函数支持<br>torchvision:<br>models: 它里边存放了经典的、可复现的、有训练权重参数可下载的深度学习模型<br>ops: 视觉任务特殊的功能函数<br>transforms: transforms是pytorch自带的图像预处理、增强、转换工具<br></code></pre></td></tr></table></figure>
+
+<p><em>菜鸟使用pytorch实现图像分类任务时可能考虑到的任务点</em>：</p>
+<p>图像数据是哪用一行代码读取进来的？</p>
+<p>transforms.Compose是如何工作对图像数据进行转换的？</p>
+<p>ToTensor又有哪些操作？</p>
+<p>如何编写Dataset？</p>
+<p>DataLoader有什么功能？如何使用？有什么需要注意的？</p>
+<p>模型如何按自己的数据流程搭建？</p>
+<p>nn有哪些网络层可以调用？</p>
+<p>损失函数有哪些？</p>
+<p>优化器是如何更新model参数的？</p>
+<p>学习率调整有哪些方法？如何设置它们的参数？</p>
+<p>model.train()与model.eval()作用是什么？</p>
+<p>optimizer.zero_grad()是做什么？为什么要梯度清零？</p>
+<p>scheduler.step() 作用是什么？应该放在哪个for循环里？</p>
+<h2 id="核心板块-Tensor"><a href="#核心板块-Tensor" class="headerlink" title="核心板块 - Tensor"></a>核心板块 - Tensor</h2><p>Pytorch中核心的数据结构就是张量——Tensor</p>
+<p>张量表示的是一个多维数组，它是标量、向量、矩阵的拓展。标量(Scaler)是零维张量，向量(Vector)是一维张量，矩阵(Matrix)是二维张量，一个RGB数组是三维张量。</p>
+<p>torch.Tensor的八大属性：</p>
+<ol>
+<li>data: 多维数组</li>
+<li>dtype: 多维数组的数据类型</li>
+<li>shape: 多维数组的形状</li>
+<li>device: tensor所在设备，cpu或GPU</li>
+<li>grad,  grad_fn, is_leaf, requires_grad: 梯度计算中需要的</li>
+</ol>
 <p>Pytorch训练的五大要素：数据、模型、损失函数、优化器、迭代训练</p>
 <p>多维数组是主要的数据处理形式</p>
-<h3 id="DataSet类代码实战"><a href="#DataSet类代码实战" class="headerlink" title="DataSet类代码实战"></a>DataSet类代码实战</h3><h3 id="创建简单的神经网络"><a href="#创建简单的神经网络" class="headerlink" title="创建简单的神经网络"></a>创建简单的神经网络</h3><p>使用Pytorch创建一个神经网络意味着创建一个新的类</p>
+<h2 id="数据模块-DataSet、DataLoader、transforms"><a href="#数据模块-DataSet、DataLoader、transforms" class="headerlink" title="数据模块 - DataSet、DataLoader、transforms"></a>数据模块 - DataSet、DataLoader、transforms</h2><p>DataSet是一个抽象基类，提供给用户自定义数据读取方式，核心在于<strong>getitem</strong>方法中对数据的处理。</p>
+<p>DataLoader是pytorch数据加载核心，包括了大乱数据、采样机制、多进程数据加载、组装Batch。</p>
+<h3 id="DataSet类代码实战"><a href="#DataSet类代码实战" class="headerlink" title="DataSet类代码实战"></a>DataSet类代码实战</h3><p>虽然DataLoader是pytorch核心数据模块，但是改动最多与原数据最为接近的是DataSet。</p>
+<p>DataSet类中核心功能：</p>
+<ol>
+<li><strong>getitem</strong>：实现读取一个样本的功能。通常是传入索引，然后实现从磁盘中读取数据，并行处理数据，返回样本数据。getitem返回的数据会在dataloader中组装成一个batch。</li>
+<li><strong>len</strong>：返回数据集大小</li>
+</ol>
+<p>Dataset负责与磁盘打交道，将磁盘上的数据读取并预处理好，提供给DataLoader，而DataLoader只需要关心如何组装成批数据，以及如何采样。</p>
+<h3 id="DataLoader类代码实战"><a href="#DataLoader类代码实战" class="headerlink" title="DataLoader类代码实战"></a>DataLoader类代码实战</h3><h2 id="模型板块"><a href="#模型板块" class="headerlink" title="模型板块"></a>模型板块</h2><p>nn.Module</p>
+<h2 id="创建简单的神经网络"><a href="#创建简单的神经网络" class="headerlink" title="创建简单的神经网络"></a>创建简单的神经网络</h2><p>使用Pytorch创建一个神经网络意味着创建一个新的类</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> torch<br><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn<br><span class="hljs-keyword">import</span> torch.nn.functional <span class="hljs-keyword">as</span> F<br><span class="hljs-keyword">from</span> torch.optim <span class="hljs-keyword">import</span> SGD<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">BasicNet</span>(nn.Module):<br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>    <span class="hljs-built_in">super</span>(BasicNet,<span class="hljs-variable language_">self</span>).__init__()<br>    <br>    <span class="hljs-comment">#初始化所有的权重和偏差</span><br>    <span class="hljs-variable language_">self</span>.w00 = nn.Parameter(torch.tensor(<span class="hljs-number">1.7</span>), requires_gard = <span class="hljs-literal">False</span>)<br>    <span class="hljs-variable language_">self</span>.b00 = nn.Parameter(torch.tensor(-<span class="hljs-number">0.85</span>), requires_gard = <span class="hljs-literal">False</span>)<br>    <span class="hljs-variable language_">self</span>.w01 = nn.Parameter(torch.tensor(-<span class="hljs-number">40.8</span>), requires_gard = <span class="hljs-literal">False</span>)<br>    <br>    <span class="hljs-variable language_">self</span>.w10 = nn.Parameter(torch.tensor(<span class="hljs-number">12.6</span>), requires_gard = <span class="hljs-literal">False</span>)<br>    <span class="hljs-variable language_">self</span>.b10 = nn.Parameter(torch.tensor(<span class="hljs-number">0.0</span>), requires_gard = <span class="hljs-literal">False</span>)<br>    <span class="hljs-variable language_">self</span>.w11 = nn.Parameter(torch.tensor(<span class="hljs-number">2.7</span>), requires_gard = <span class="hljs-literal">False</span>)<br>    <br>    <span class="hljs-variable language_">self</span>.final_bias = nn.Parameter(torch.tensor(-<span class="hljs-number">16.0</span>), requires_grad = <span class="hljs-literal">False</span>)<br>    <br>  <span class="hljs-comment"># 前向传播</span><br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self,<span class="hljs-built_in">input</span></span>):<br>    <br>    input_to_top_relu = <span class="hljs-built_in">input</span> * <span class="hljs-variable language_">self</span>.w00 + <span class="hljs-variable language_">self</span>.b00<br>    top_relu_output = F.relu(input_to_top_relu)<br>    scaled_top_relu_output = top_relu_output * <span class="hljs-variable language_">self</span>.w01<br>    <br>    input_to_buttom_relu = <span class="hljs-built_in">input</span> * <span class="hljs-variable language_">self</span>.w10 + <span class="hljs-variable language_">self</span>.b10<br>    buttom_relu_output = F.relu(input_to_buttom_relu)<br>    scaled_buttom_relu_output = buttom_relu_output * <span class="hljs-variable language_">self</span>.w11<br>    <br>    input_to_final_relu = scaled_top_relu_output + scaled_buttom_relu_output + <span class="hljs-variable language_">self</span>.final_bias<br>    output = F.relu(input_to_final_relu)<br>    <br>    <span class="hljs-keyword">return</span> output<br>  <br>input_doses = torch.linspace(start = <span class="hljs-number">0</span>,end = <span class="hljs-number">1</span>,step = <span class="hljs-number">11</span>)<br>model = BasicNet()<br>output = model(input_doses)<br></code></pre></td></tr></table></figure>
 
 <p>从创建网络到训练的完整流程：</p>
