@@ -19,16 +19,16 @@
   <meta name="author" content="Munger Yang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Graph Retrieval-Augmented Generation: A Survey   https:&#x2F;&#x2F;www.arxiv.org&#x2F;pdf&#x2F;2408.08921    通过引用外部知识库，RAG改进了LLM输出，有效地减轻了诸如“幻觉”、缺乏特定领域的知识和过时的信息等问题。但是，数据库中不同实体之间复杂的关系结构给RAG系统带来了挑战。 GraphRAG利用跨实体的结构信息，以实">
+    <meta name="description" content="Graph Retrieval-Augmented Generation: A Survey   https:&#x2F;&#x2F;www.arxiv.org&#x2F;pdf&#x2F;2408.08921  论文更多侧重理论概念层面，实践落地过程中需要自行体会各个阶段的实现过程。  Abstract通过引用外部知识库，RAG改进了LLM输出，有效地减轻了诸如“幻觉”、缺乏特定领域的知识和过时的信息等问题。但是，数据库中不同实">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Graph RAG:A Survey">
+<meta property="og:title" content="Graph RAG">
 <meta property="og:url" content="http://example.com/2025/01/24/Graph-RAG-A-Survey/index.html">
 <meta property="og:site_name" content="munger写字的地方">
-<meta property="og:description" content="Graph Retrieval-Augmented Generation: A Survey   https:&#x2F;&#x2F;www.arxiv.org&#x2F;pdf&#x2F;2408.08921    通过引用外部知识库，RAG改进了LLM输出，有效地减轻了诸如“幻觉”、缺乏特定领域的知识和过时的信息等问题。但是，数据库中不同实体之间复杂的关系结构给RAG系统带来了挑战。 GraphRAG利用跨实体的结构信息，以实">
+<meta property="og:description" content="Graph Retrieval-Augmented Generation: A Survey   https:&#x2F;&#x2F;www.arxiv.org&#x2F;pdf&#x2F;2408.08921  论文更多侧重理论概念层面，实践落地过程中需要自行体会各个阶段的实现过程。  Abstract通过引用外部知识库，RAG改进了LLM输出，有效地减轻了诸如“幻觉”、缺乏特定领域的知识和过时的信息等问题。但是，数据库中不同实">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blog.langchain.dev/content/images/2024/03/ragbased.webp">
 <meta property="article:published_time" content="2025-01-24T15:04:32.000Z">
-<meta property="article:modified_time" content="2025-01-30T15:41:53.817Z">
+<meta property="article:modified_time" content="2025-02-07T14:55:51.106Z">
 <meta property="article:author" content="Munger Yang">
 <meta property="article:tag" content="LLM">
 <meta property="article:tag" content="RAG">
@@ -41,7 +41,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Graph RAG:A Survey - munger写字的地方</title>
+  <title>Graph RAG - munger写字的地方</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -259,7 +259,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Graph RAG:A Survey"></span>
+            <span id="subtitle" data-typed-text="Graph RAG"></span>
           
         </div>
 
@@ -282,7 +282,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          198 字
+          2.3k 字
         
       </span>
     
@@ -293,7 +293,7 @@
         
         
         
-          2 分钟
+          20 分钟
         
       </span>
     
@@ -339,7 +339,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Graph RAG:A Survey</h1>
+            <h1 id="seo-header">Graph RAG</h1>
             
             
               <div class="markdown-body">
@@ -348,12 +348,99 @@
   <h1>Graph Retrieval-Augmented Generation: A Survey</h1>
   https://www.arxiv.org/pdf/2408.08921
 </center>
+论文更多侧重理论概念层面，实践落地过程中需要自行体会各个阶段的实现过程。
 
-
-<p>通过引用外部知识库，RAG改进了LLM输出，有效地减轻了诸如“幻觉”、缺乏特定领域的知识和过时的信息等问题。但是，<strong>数据库中不同实体之间复杂的关系结构给RAG系统带来了挑战</strong>。</p>
-<p>GraphRAG利用<strong>跨实体</strong>的结构信息，以实现更精确和全面的检索，捕获关系知识，并促进更准确的、上下文感知的响应。</p>
+<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>通过引用外部知识库，RAG改进了LLM输出，有效地减轻了诸如“幻觉”、缺乏特定领域的知识和过时的信息等问题。但是，<strong>数据库中不同实体之间复杂的关系结构给RAG系统带来了挑战</strong>。</p>
+<p><em>GraphRAG</em>利用<strong>跨实体</strong>的结构信息，以实现更精确和全面的检索，捕获关系知识，并促进更准确的、上下文感知的响应。</p>
 <p>这篇文章是首次对于GraphRAG方法提供了全面的总结，规范了GraphRAG workflow(包括Graph-Based</p>
 <p>Indexing、Graph-Guided Retrieval和Graph-Enhanced Generation)，强调了每一个阶段的核心技术和训练方法。此外，还对下有任务、应用领域、评估方法、工业案例进行阐述。</p>
+<h2 id="工作流与关键技术"><a href="#工作流与关键技术" class="headerlink" title="工作流与关键技术"></a>工作流与关键技术</h2><h3 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h3><div class="note note-success">
+            <p><strong>Graph-Based Indexing (G-Indexing) -&gt; Graph-Guided Retrieval (G-Retrieval) -&gt; Graph-Enhanced Generation (G-Generation)</strong> </p>
+          </div>
+
+<p>图索引建立：包括识别或构建与下游任务对齐的图数据库，并在其上建立索引。图数据可以来自开放知识图谱或自建图数据。</p>
+<p>图数据检索：从图数据库中提取相关信息以响应用户查询。涉及选择检索器、检索范式、检索粒度和增强技术。</p>
+<p>图增强生成：基于检索到的图数据生成有意义的输出。涉及选择生成器、转换图数据格式和生成增强技术。</p>
+<h3 id="核心技术"><a href="#核心技术" class="headerlink" title="核心技术"></a>核心技术</h3><ul>
+<li><strong>图数据:</strong> 包括开放知识图谱和自建图数据。开放知识图谱如Wikidata、Freebase等，自建图数据则根据特定任务定制。</li>
+</ul>
+<p><img src="/img/fig/g-data.jpg" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li><p><strong>索引方法:</strong> 包括图索引、文本索引和向量索引。混合索引结合了这些方法的优点。</p>
+</li>
+<li><p><strong>检索器:</strong> 分为非参数检索器、基于LM的检索器和基于GNN的检索器。检索范式包括一次检索、迭代检索和多阶段检索。</p>
+</li>
+</ul>
+<p><img src="/img/fig/g-retrieval.jpg" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li><strong>生成器:</strong> 包括GNNs、LMs和混合模型。生成增强技术包括预生成增强、中生成增强和后生成增强。</li>
+</ul>
+<p><img src="/img/fig/g-generation.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><strong>GraphRAG在图索引（G-Indexing）阶段是如何构建和优化图数据库的？</strong></p>
+<ol>
+<li><strong>数据源选择</strong>：图数据库可以来自公共知识图谱（如Wikidata、Freebase、DBpedia等）或自构建的数据源（如文本、其他形式的数据等）。</li>
+<li><strong>节点和边属性映射</strong>：将节点和边的属性进行映射，以便于后续的检索和生成操作。</li>
+<li><strong>指针建立</strong>：在节点之间建立指针，以便于快速遍历和检索。</li>
+<li><strong>数据组织</strong>：组织数据以支持快速遍历和检索操作，确保索引过程的高效性。</li>
+</ol>
+<p><strong>GraphRAG在图增强生成（G-Generation）阶段如何处理和转换检索到的图数据？</strong></p>
+<p>在图增强生成（G-Generation）阶段，GraphRAG需要将检索到的图数据转换为生成器可以处理的格式。具体步骤如下：</p>
+<ol>
+<li><strong>数据转换</strong>：将检索到的图数据（如节点、边、路径、子图等）转换为生成器可以理解的格式。常见的转换方法包括邻接表、自然语言描述、代码形式、语法树和节点序列等。</li>
+<li><strong>生成器输入</strong>：将转换后的图数据与查询一起作为输入提供给生成器。生成器可以是基于图神经网络（GNNs）的模型、判别式语言模型或生成式语言模型。</li>
+<li><strong>生成响应</strong>：生成器根据输入的查询和图数据生成最终的响应。对于生成式语言模型，这通常涉及解码过程，以生成自然语言文本作为响应。</li>
+</ol>
+<h2 id="Future-Prospects"><a href="#Future-Prospects" class="headerlink" title="Future Prospects"></a>Future Prospects</h2><h3 id="多模态数据整合"><a href="#多模态数据整合" class="headerlink" title="多模态数据整合"></a>多模态数据整合</h3><p>知识图谱中目前存储的仍然是大量文本数据，对于多模态数据的整合仍然是挑战，知识图谱的规模升级是发展GraphRAG的底层刚需。</p>
+<h3 id="检索机制"><a href="#检索机制" class="headerlink" title="检索机制"></a>检索机制</h3><p>当前的检索机制仍然是对于少量文本-实体的知识图谱作检索，而大量实体的复杂检索机制需要被探索。</p>
+<h3 id="检索上下文的无损失压缩"><a href="#检索上下文的无损失压缩" class="headerlink" title="检索上下文的无损失压缩"></a>检索上下文的无损失压缩</h3><p>应用GraphRAG，检索得到信息包含大量的实体和关系，这些信息会被转换为长文本输入序列。但是长文本输入序列包含两个问题：LLMs很难解决长文本序列、对于个人用户而言推理阶段的大量计算是障碍。</p>
+<p>因此，无损压缩对于GraphRAG是关键的。</p>
+<h3 id="落地应用"><a href="#落地应用" class="headerlink" title="落地应用"></a>落地应用</h3><p>应用场景：客服服务系统、推荐系统、KBQA(知识问答系统)</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>这篇调研文章全面的回顾了GraphRAG技术，系统地分类、组织了它的基本技术，训练方法和应用场景。GraphRAG通过使用从图数据集中派生出的关键知识，解决了传统RAG的关键性限制。</p>
+<center>
+  <h1>Retrieval-Augmented Generation with Graph</h1>
+  https://arxiv.org/pdf/2501.00309
+</center>
+论文更多侧重理论概念层面，实践落地过程中需要自行体会各个阶段的实现过程。
+
+<h2 id="Abstract-1"><a href="#Abstract-1" class="headerlink" title="Abstract"></a>Abstract</h2><p>与传统RAG相比，检索器、生成器和外部数据源可以做统一嵌入处理；Graph数据结构的独特性，在进行GraphRAG设计时面临着大量的挑战。</p>
+<p>论文的主要工作：定义了包含关键组件在内的GraphRAG的总体架构(包括查询处理器、检索器、组织器、生成器和数据源)、总结了<strong>特定领域</strong>的GraphRAG技术、讨论了GraphRAG未来发展方向。</p>
+<h2 id="图数据结构"><a href="#图数据结构" class="headerlink" title="图数据结构"></a>图数据结构</h2><p>内在的节点和边编码组成了大量异构和关系信息，是RAG中的黄金资源。</p>
+<p><img src="/img/fig/rag-with-graph.png" srcset="/img/loading.gif" lazyload></p>
+<p>RAG处理文本和图像数据，这些数据可以统一格式化为1-D序列数据或2-D网格数据。相比之下，<strong>GraphRAG</strong>处理图结构数据，涵盖了多种格式并包含特定领域的关系信息。</p>
+<h2 id="全面的GraphRAG架构"><a href="#全面的GraphRAG架构" class="headerlink" title="全面的GraphRAG架构"></a>全面的GraphRAG架构</h2><p>GraphRAG通过检索和生成技术来增强下游任务的执行，框架的核心在于利用图结构数据的特性，进行信息检索、数据挖掘。</p>
+<p><img src="/img/fig/framework-of-GraphRAG.png" srcset="/img/loading.gif" lazyload></p>
+<p>GraphRAG框架的关键组件：</p>
+<ol>
+<li><strong>查询处理器（Query Processor）</strong>：负责预处理用户定义的查询，使其能够与图数据源进行交互。</li>
+<li><strong>检索器（Retriever）</strong>：根据预处理后的查询从图数据源中检索相关内容。</li>
+<li><strong>组织器（Organizer）</strong>：对检索到的内容进行整理和优化，以提高生成器的性能。</li>
+<li><strong>生成器（Generator）</strong>：根据组织后的信息生成最终答案。</li>
+</ol>
+<h3 id="Query-Processor"><a href="#Query-Processor" class="headerlink" title="Query Processor"></a>Query Processor</h3><p>Query Processor是一个关键组件，它负责对用户输入的查询进行预处理，以便与图数据源进行交互。</p>
+<p>查询处理器主要功能：</p>
+<ul>
+<li><strong>实体识别</strong>：从查询中识别出实体，并将其与图数据源中的节点相匹配。</li>
+<li><strong>关系抽取</strong>：识别查询中的关系，并将其与图数据源中的边相匹配。</li>
+<li><strong>查询结构调整</strong>：将自然语言查询转换为结构化查询，如GQL（Graph Query Language）。</li>
+<li><strong>查询分解</strong>：将复杂的查询分解为多个子查询，以便进行多步推理。</li>
+<li><strong>查询扩展</strong>：通过添加相关术语来丰富查询，以提高检索的准确性和相关性。</li>
+</ul>
+<h3 id="Retriever"><a href="#Retriever" class="headerlink" title="Retriever"></a>Retriever</h3><p>检索器（Retriever）是负责从图数据源中检索相关信息的关键组件。</p>
+<p>检索器主要功能：</p>
+<p><strong>检索内容</strong>：根据预处理后的查询从图数据源中检索相关内容。</p>
+<p><strong>适应图结构数据</strong>：能够处理图结构数据的多样性和复杂性，包括不同格式和来源的信息。</p>
+<p><strong>多跳遍历</strong>：支持多跳遍历，以捕获逻辑上相关的知识。</p>
+<p><strong>领域特定设计</strong>：根据不同领域的特定需求进行设计，以提高检索的准确性和效率。</p>
+<h3 id="Organizer"><a href="#Organizer" class="headerlink" title="Organizer"></a>Organizer</h3><p>负责处理检索器检索到的内容，将其与预处理后的查询结合，以生成更适应生成器（Generator）的格式。</p>
+<p>主要功能：</p>
+<p><strong>内容优化</strong>：对检索到的内容进行后处理和优化，以提高其质量。</p>
+<p><strong>图结构处理</strong>：处理检索到的图结构数据，包括图剪枝、重排序和图增强。</p>
+<p><strong>文本化</strong>：将检索到的图结构数据转换为文本格式，以便生成器可以处理。</p>
+<h3 id="Generator"><a href="#Generator" class="headerlink" title="Generator"></a>Generator</h3><p><strong>生成器（Generator）</strong>是负责根据查询和检索到的信息生成最终答案的关键组件。生成器的任务是将组织者处理后的信息转化为具体的输出，这些输出可以是文本、图像、数值或其他形式的数据，取决于具体的应用场景。</p>
+<p>生成器主要功能：</p>
+<p><strong>生成最终答案</strong>：根据查询和检索到的信息生成具体的输出。</p>
+<p><strong>适应不同任务</strong>：能够处理多种任务，如分类、生成、预测等。</p>
+<p><strong>利用图结构信息</strong>：能够理解和利用图结构数据中的关系和模式。</p>
 
                 
               </div>
@@ -425,7 +512,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Graph RAG:A Survey</div>
+      <div>Graph RAG</div>
       <div>http://example.com/2025/01/24/Graph-RAG-A-Survey/</div>
     </div>
     <div class="license-meta">

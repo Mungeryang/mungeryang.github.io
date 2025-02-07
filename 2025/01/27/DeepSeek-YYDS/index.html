@@ -19,16 +19,16 @@
   <meta name="author" content="Munger Yang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement LearningDeepSeek-AI  https:&#x2F;&#x2F;arxiv.org&#x2F;pdf&#x2F;2501.12948   Intro文章介绍了DeepSeek-AI团队开发的第一代推理模型DeepSeek-R1-Zero和DeepSeek-R1。DeepSeek">
+    <meta name="description" content="DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement LearningDeepSeek-AI  https:&#x2F;&#x2F;arxiv.org&#x2F;pdf&#x2F;2501.12948  多看论文原文，少看自媒体公众号文章的鼓吹宣传！   与普通LLM相比，推理LLM倾向于在回答之前讲问题分解为更小的步骤(推理步骤和思维链)，这">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DeepSeek YYDS">
 <meta property="og:url" content="http://example.com/2025/01/27/DeepSeek-YYDS/index.html">
 <meta property="og:site_name" content="munger写字的地方">
-<meta property="og:description" content="DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement LearningDeepSeek-AI  https:&#x2F;&#x2F;arxiv.org&#x2F;pdf&#x2F;2501.12948   Intro文章介绍了DeepSeek-AI团队开发的第一代推理模型DeepSeek-R1-Zero和DeepSeek-R1。DeepSeek">
+<meta property="og:description" content="DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement LearningDeepSeek-AI  https:&#x2F;&#x2F;arxiv.org&#x2F;pdf&#x2F;2501.12948  多看论文原文，少看自媒体公众号文章的鼓吹宣传！   与普通LLM相比，推理LLM倾向于在回答之前讲问题分解为更小的步骤(推理步骤和思维链)，这">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.bstr.es/drivingeco/2025/01/Deepseek-r1-logo.webp">
 <meta property="article:published_time" content="2025-01-27T03:18:35.000Z">
-<meta property="article:modified_time" content="2025-02-01T13:34:15.239Z">
+<meta property="article:modified_time" content="2025-02-07T14:41:11.775Z">
 <meta property="article:author" content="Munger Yang">
 <meta property="article:tag" content="LLM">
 <meta property="article:tag" content="MLLM">
@@ -280,7 +280,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k 字
+          2.6k 字
         
       </span>
     
@@ -291,7 +291,7 @@
         
         
         
-          19 分钟
+          22 分钟
         
       </span>
     
@@ -346,7 +346,10 @@
 
 <center>https://arxiv.org/pdf/2501.12948</center>
 
+<center>多看论文原文，少看自媒体公众号文章的鼓吹宣传！</center>
+
 <p><img src="https://i.bstr.es/drivingeco/2025/01/Deepseek-r1-logo.webp" srcset="/img/loading.gif" lazyload></p>
+<p>与普通LLM相比，推理LLM倾向于在回答之前讲问题分解为更小的步骤(推理步骤和思维链)，这类模型是在让模型学习如如何回答。</p>
 <h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>文章介绍了DeepSeek-AI团队开发的第一代<strong>推理模型</strong>DeepSeek-R1-Zero和DeepSeek-R1。DeepSeek-R1是一种基于大规模强化学习训练的模型，无需监督微调作为初步步骤，展现出强大的推理能力。</p>
 <ul>
 <li><p>优势：推理能力强</p>
@@ -386,6 +389,27 @@
 </li>
 </ol>
 <p><strong>增强了文本到图像的稳定性</strong></p>
+<h2 id="DeepSeek的习得过程"><a href="#DeepSeek的习得过程" class="headerlink" title="DeepSeek的习得过程"></a>DeepSeek的习得过程</h2><p>复现R1之前务必要把<strong>deepseek-v3</strong>搞懂！</p>
+<p>DeepSeek是站在巨人的肩膀上，摸着OpenAI过河，不要去过分diss OpenAI。deepseek - R1是去“猜”o1的实现过程。DeepSeek是强在推理阶段，在SFT阶段未必是最优的解决方案。</p>
+<p>目前市面上大部分指导集成基本上都是部署的蒸馏版的R1，本质上base还是Qwen。</p>
+<h2 id="对DeepSeek的认知误区"><a href="#对DeepSeek的认知误区" class="headerlink" title="对DeepSeek的认知误区"></a>对DeepSeek的认知误区</h2><div class="note note-danger">
+            <p>误区：DeepSeek是全新物种，think是万能钥匙</p>
+          </div>
+
+<p>R1本质上还是一个大模型，只不过是目前推理模型开源最强</p>
+<div class="note note-danger">
+            <p>误区：DeepSeek-R1不需要提示词</p>
+          </div>
+
+<p>只要是大模型，就一定需要提示词，官方已经提供了34种提示词。<strong>之前大模型解决不了的场景，DeepSeek-R1依旧不好解决。</strong></p>
+<div class="note note-danger">
+            <p>误区：DeepSeek强化学习模型已经是最强模型，干死了OpenAI</p>
+          </div>
+
+<p>DeepSeek的多模态能力不具备、处理一些极端长上下文表现不佳、较03模型基准还有不小差距、base模型好造就了推理能力好(SFT负责记忆，RL负责泛化)</p>
+<h2 id="DeepSeek的场景机会"><a href="#DeepSeek的场景机会" class="headerlink" title="DeepSeek的场景机会"></a>DeepSeek的场景机会</h2><p>与RAG？与Agent(规划不靠谱)结合？</p>
+<p>think是显示过程可以作为微调数据使用，蒸馏得到的qwen学到了一定的推理和数值计算能力</p>
+<p>只会做纯量替换，使用其推理能力，目前并不会带来巨大个信。</p>
 <h2 id="Ollama本地部署deepseek-R1"><a href="#Ollama本地部署deepseek-R1" class="headerlink" title="Ollama本地部署deepseek - R1"></a>Ollama本地部署deepseek - R1</h2><h3 id="硬件配置"><a href="#硬件配置" class="headerlink" title="硬件配置"></a>硬件配置</h3><p>电脑 - MacBook Pro </p>
 <p>芯片 - Apple M3 Pro</p>
 <p>运行内存 - 18GB</p>
@@ -397,8 +421,6 @@
 
 
 <h3 id="下载deepseek-R1模型"><a href="#下载deepseek-R1模型" class="headerlink" title="下载deepseek-R1模型"></a>下载deepseek-R1模型</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><code class="hljs shell">ollama pull deepseek-r1:7b<br> ~  ollama run deepseek-r1:7b                                     ok  20:40:25<br>pulling manifest<br>pulling 96c415656d37... 100% ▕████████████████▏ 4.7 GB<br>pulling 369ca498f347... 100% ▕████████████████▏  387 B<br>pulling 6e4c38e1172f... 100% ▕████████████████▏ 1.1 KB<br>pulling f4d24e9138dd... 100% ▕████████████████▏  148 B<br>pulling 40fb844194b2... 100% ▕████████████████▏  487 B<br>verifying sha256 digest<br>writing manifest<br>success<br><span class="hljs-meta prompt_">&gt;</span><span class="language-bash">&gt;&gt; 什么是信息差？</span><br>&lt;think&gt;<br>嗯，用户问的是“什么是信息差”，我之前已经给了一个比较详细的回答了。现在我要<br>模拟一个assistant对这个问题的思考过程。首先，我需要理解用户的问题到底是什么<br>。<br><br>信息差通常指的是信息不均衡的情况，可能是因为信息不对称或者获取渠道不同导致某<br>些人掌握更多的信息，而另一些人则没有。这在商业、经济和社会中都很常见，比如在<br>交易中卖家和买家的信息不对称。<br><br>然后，我要考虑用户为什么会问这个问题。可能是他们正在处理一个实际的问题，比如<br>在谈判中如何利用信息差，或者在投资时如何应对信息不对称带来的风险。也有可能他<br>们在学习相关知识，需要理解这个概念的基本含义。<br><br>接下来，我应该分析信息差的几个方面：定义、原因、影响和应用。这样可以让思考过<br>程更全面，覆盖不同的角度。此外，还可以举一些例子来说明信息差在不同场景中的表<br>现，比如股票交易中的庄家信息优势，或者在线销售中买家对产品的不了解带来的风险<br>。<br><br>另外，我还需要考虑用户可能的深层需求。他们可能不仅仅想知道定义，还想知道如何<br>利用或避免信息差带来的问题。因此，在思考过程中，应该包括一些关于应对策略的内<br>容，比如透明化的措施、对称信息的重要性以及信息获取成本的影响。<br><br>最后，总结一下信息差的重要性和其在现代经济中的角色，这样用户不仅了解了表面的<br>定义，还能理解其背后的现实意义和应用价值。<br>&lt;/think&gt;<br><br>信息差是指在信息不对称的情况下，某些人或组织掌握的信息比其他人更多、更全面或<br>更有优势，从而在决策或行动中占据一定的优势。这种差异可能来自于信息获取渠道的<br>不同、信息来源的不可靠性，或者信息本身的敏感性和隐私性。<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">## 信息差的具体表现：</span></span><br>1. **信息不对称**：指一方掌握的信息多于另一方，导致后者处于不利地位。<br>2. **信息不对等**：一方获得大量优质信息，而另一方获取较少或低质量的信息。<br>3. **信息不透明**：某些信息被隐藏或限制，如商业机密、股票价格等。<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">## 信息差的影响：</span></span><br>1. **经济影响**：在金融市场中，信息差可能导致市场操纵、价格误导和投资风险增<br>加。例如，庄家可能利用内部信息操控股价。<br>2. **社会影响**：信息差可能导致资源分配不公，甚至引发社会矛盾。<br>3. **个人决策**：在个人生活中，信息差可能导致不公平竞争或权力滥用。<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">## 信息差的应对策略：</span></span><br>1. **透明化**：通过法律或制度限制信息不对称，确保信息公开和对称。<br>2. **教育与培训**：提高公众的信息素养，减少信息不对称的可能性。<br>3. **成本控制**：在获取和使用信息时，尽量降低信息不对称带来的风险。<br><br>理解信息差有助于我们更好地识别和管理信息不对称带来的挑战，在经济、社会和日常<br>生活中做出更明智的决策。<br></code></pre></td></tr></table></figure>
-
-
 
 
 
@@ -523,8 +545,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/01/24/Graph-RAG-A-Survey/" title="Graph RAG:A Survey">
-                        <span class="hidden-mobile">Graph RAG:A Survey</span>
+                      <a href="/2025/01/24/Graph-RAG-A-Survey/" title="Graph RAG">
+                        <span class="hidden-mobile">Graph RAG</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
