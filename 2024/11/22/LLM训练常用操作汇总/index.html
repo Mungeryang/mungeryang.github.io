@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbV0nsS-UXj2CFrm4REkgNl0D3o7Oa5SGIdQ&s">
 <meta property="article:published_time" content="2024-11-22T05:58:17.000Z">
-<meta property="article:modified_time" content="2024-12-06T13:41:54.413Z">
+<meta property="article:modified_time" content="2025-02-23T15:01:25.069Z">
 <meta property="article:author" content="Munger Yang">
 <meta property="article:tag" content="LLM">
 <meta property="article:tag" content="RAG">
@@ -281,7 +281,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          1.3k 字
         
       </span>
     
@@ -354,8 +354,6 @@
 
 
 
-
-
 <h2 id="Hugging-Face"><a href="#Hugging-Face" class="headerlink" title="Hugging Face"></a>Hugging Face</h2><h3 id="Access-authority"><a href="#Access-authority" class="headerlink" title="Access authority"></a>Access authority</h3><p>Hugging  Face拉取模型-恒源云服务器为例</p>
 <p>服务器上要开启AI学术加速，对于GitHub、hugging face等网站可以实现上传、下载加速</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">(base) root@I1dc83206c700201ce5:/hy-tmp/EchoProject/LLM-model#export https_proxy=http://turbo.gpushare.http_proxy=http://turbo.gpushare.com:30000<br>(base) root@I1dc83206c700201ce5:/hy-tmp/EchoProject/LLM-model#export https_proxy=http://turbo2.gpushare.http_proxy=http://turbo2.gpushare.com:30000<br></code></pre></td></tr></table></figure>
@@ -375,6 +373,18 @@
 <li>&lt;path&#x2F;to&#x2F;local&#x2F;dir&gt;：替换为你想要保存模型或数据集的本地目录路径</li>
 <li><code>–resume-download</code>：可以尝试恢复一个之前中断的下载，这个选项特别有用，当你的网络连接不稳定，或者下载过程中因为某种原因被中断</li>
 </ul>
+<h2 id="Ollama常用操作"><a href="#Ollama常用操作" class="headerlink" title="Ollama常用操作"></a>Ollama常用操作</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">启动服务</span><br>ollama serve<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">显示模型信息</span><br>ollama show<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">运行模型</span><br>ollama run model<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">从注册表中拉取模型</span><br>ollama pull modelname<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">列出模型</span><br>ollama list<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">删除模型</span><br>ollama rm modelname<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">模型使用提示符</span><br>/set | set session variables<br>/show | show model information<br>/load &lt;model&gt; | load a session or model<br>/save &lt;model&gt; | save your current session<br>/clear | clear session context<br>/bye | exit<br>/? /help | help for a command<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
 
                 
               </div>
