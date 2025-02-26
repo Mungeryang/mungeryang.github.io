@@ -19,26 +19,28 @@
   <meta name="author" content="Munger Yang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="2025年2月5日，乙巳年正月初八，星期三，晴，第49篇博客&#x2F;2025年第8篇博客，正式开工！！！ 关于DeepSeek以及未来1年有关LLM的一些观点和思考              观点整理自刘焕勇老师，转发切记注明出处！             明天就开工了，针对deepseek，我们静下心来看看，这波造神热度迟早要消散或者翻车。LLM帮大家解决落地问题，让大家有饭吃，有活干，才能">
+    <meta name="description" content="困扰的问题：在进行RAG、多模态检索的实践中难免要调用大模型，但是由于“网络”和注册等诸多因素，使得我们很难方便调用的Open API。             推荐一个API网站：https:&#x2F;&#x2F;www.dmxapi.com&#x2F; ，网站集成了当前主流的大模型的调用方法。 openai接口使用openai库调用大模型： 123456789101112131415161718">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开工大吉">
-<meta property="og:url" content="http://example.com/2025/02/05/%E5%BC%80%E5%B7%A5%E5%A4%A7%E5%90%89/index.html">
+<meta property="og:title" content="LLM开发必备">
+<meta property="og:url" content="http://example.com/2025/02/26/LLM%E5%BC%80%E5%8F%91%E5%BF%85%E5%A4%87/index.html">
 <meta property="og:site_name" content="munger写字的地方">
-<meta property="og:description" content="2025年2月5日，乙巳年正月初八，星期三，晴，第49篇博客&#x2F;2025年第8篇博客，正式开工！！！ 关于DeepSeek以及未来1年有关LLM的一些观点和思考              观点整理自刘焕勇老师，转发切记注明出处！             明天就开工了，针对deepseek，我们静下心来看看，这波造神热度迟早要消散或者翻车。LLM帮大家解决落地问题，让大家有饭吃，有活干，才能">
+<meta property="og:description" content="困扰的问题：在进行RAG、多模态检索的实践中难免要调用大模型，但是由于“网络”和注册等诸多因素，使得我们很难方便调用的Open API。             推荐一个API网站：https:&#x2F;&#x2F;www.dmxapi.com&#x2F; ，网站集成了当前主流的大模型的调用方法。 openai接口使用openai库调用大模型： 123456789101112131415161718">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://pic.rmb.bdstatic.com/84a301bfe903ca9eee3f9c416136c09e.jpeg">
-<meta property="article:published_time" content="2025-02-04T21:25:25.000Z">
-<meta property="article:modified_time" content="2025-02-04T13:03:43.147Z">
+<meta property="og:image" content="https://cdn.mos.cms.futurecdn.net/56FGudiPwbT8pAD3aSzJsm.jpg">
+<meta property="article:published_time" content="2025-02-26T08:11:45.000Z">
+<meta property="article:modified_time" content="2025-02-26T09:04:39.406Z">
 <meta property="article:author" content="Munger Yang">
-<meta property="article:tag" content="生活随笔">
+<meta property="article:tag" content="LLM">
+<meta property="article:tag" content="RAG">
+<meta property="article:tag" content="部署">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://pic.rmb.bdstatic.com/84a301bfe903ca9eee3f9c416136c09e.jpeg">
+<meta name="twitter:image" content="https://cdn.mos.cms.futurecdn.net/56FGudiPwbT8pAD3aSzJsm.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>开工大吉 - munger写字的地方</title>
+  <title>LLM开发必备 - munger写字的地方</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -256,7 +258,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="开工大吉"></span>
+            <span id="subtitle" data-typed-text="LLM开发必备"></span>
           
         </div>
 
@@ -267,8 +269,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-02-05 05:25" pubdate>
-          2025年2月5日 凌晨
+        <time datetime="2025-02-26 16:11" pubdate>
+          2025年2月26日 下午
         </time>
       </span>
     
@@ -279,7 +281,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k 字
+          431 字
         
       </span>
     
@@ -290,7 +292,7 @@
         
         
         
-          12 分钟
+          4 分钟
         
       </span>
     
@@ -336,46 +338,40 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">开工大吉</h1>
+            <h1 id="seo-header">LLM开发必备</h1>
             
             
               <div class="markdown-body">
                 
-                <p>2025年2月5日，乙巳年正月初八，星期三，晴，第49篇博客&#x2F;2025年第8篇博客，正式开工！！！</p>
-<h1 id="关于DeepSeek以及未来1年有关LLM的一些观点和思考"><a href="#关于DeepSeek以及未来1年有关LLM的一些观点和思考" class="headerlink" title="关于DeepSeek以及未来1年有关LLM的一些观点和思考"></a>关于DeepSeek以及未来1年有关LLM的一些观点和思考</h1><p><img src="https://p4.itc.cn/images01/20230410/ae3dde350de54c24a22196a05fc7dd64.jpeg" srcset="/img/loading.gif" lazyload></p>
-<div class="note note-success">
-            <p>观点整理自刘焕勇老师，转发切记注明出处！</p>
+                <div class="note note-danger">
+            <p>困扰的问题：在进行RAG、多模态检索的实践中难免要调用大模型，但是由于“网络”和注册等诸多因素，使得我们很难方便调用的Open API。</p>
           </div>
 
-<p>明天就开工了，针对deepseek，我们静下心来看看，这波造神热度迟早要消散或者翻车。LLM帮大家解决落地问题，让大家有饭吃，有活干，才能行。我倒觉得反而利好的是qwen跟豆包，因为后两者一直在做，deepseek那套grop，会被他们借鉴。然后，原有的基础跟基本盘会进一步牢固。等大家恢复理性之后，还是会乖乖用qwen阿里云这些。即便国家造神有单子，那也是deepseek自己，但独乐乐不如众乐乐，众乐乐才是真的乐。deepseek蒸馏版都70B，现在大家落地， qwen14B都部署费劲。所以，<strong>底层公司的刚需才是真需</strong>。</p>
-<p>Guonei 流行造神跟毁神，比比皆是。deepseek也逃不出这个魔咒。</p>
-<p>我觉得deepseek 只要不掉进舆论的坑里，就无所谓。他们开源的细节足以复现，因此会整体抬高中国大模型的实力。这点功不可没。至于后续，那就看谁能走的更靠前。而且，DS 打破了OpenAI 他们的神话，因此会给更多中国大模型厂商以启发，不一定非得复制OpenAI 才能成功，有更多的尝试，会有更多的成果。</p>
-<p>所以，作为社区成员的大家，保持冷静，<strong>从解决落地问题的角度出发，从吃饭的角度出发</strong>。就会明朗平静很多。</p>
-<p>从去年DS 的积累看，今年多模态应该没问题，所以今年肯定还会有新的模型出来，而且 R1 的开源启发了无数人的火花，今年看到 R2 甚至R3 都有可能。推理过程开放后，太有启发性了，等于给大模型开了一扇窗，可以用人能够理解的方式，让人们看到大模型在怎么运作，黑箱透明度的提高，意味着我们在大模型上的研究上可能会更有方向性。今年是个可以期待的一年。</p>
-<p><strong>今年是落地年，技术上可以期待，但也仅仅是技术本身，还是要解决吃饭问题</strong>。</p>
-<div class="note note-danger">
-            <p>自己的思考：今年务必多关注多模态、强化学习与RAG的结合，多做落地实践、多动手。</p>
-          </div>
+<p>推荐一个API网站：<a target="_blank" rel="noopener" href="https://www.dmxapi.com/">https://www.dmxapi.com/</a> ，网站集成了当前主流的大模型的调用方法。</p>
+<h2 id="openai接口"><a href="#openai接口" class="headerlink" title="openai接口"></a>openai接口</h2><p>使用openai库调用大模型：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> openai <span class="hljs-keyword">import</span> OpenAI<br><br><span class="hljs-comment"># 1. 创建客户端 -&gt; 将API密钥和base_url传给OpenAI对象</span><br>client = OpenAI(<br>    api_key=<span class="hljs-string">&quot;sk-........................&quot;</span>,<br>    base_url=<span class="hljs-string">&quot;https://www.dmxapi.com/v1&quot;</span><br>)<br><br><span class="hljs-comment"># 2. chat_completion -&gt; 实现chat </span><br>chat_completion = client.chat.completions.create(<br>    <span class="hljs-comment"># message的形式是以列表存储的json串</span><br>    messages=[<br>        &#123;<br>            <span class="hljs-string">&quot;role&quot;</span>: <span class="hljs-string">&quot;user&quot;</span>,<br>            <span class="hljs-string">&quot;content&quot;</span>: <span class="hljs-string">&quot;9.11和9.12哪个更大？&quot;</span>,<br>        &#125;<br>    ],<br>    model=<span class="hljs-string">&quot;gpt-4o-mini&quot;</span><br>)<br><br><span class="hljs-built_in">print</span>(chat_completion)<br></code></pre></td></tr></table></figure>
 
-<h1 id="关于LLM的一些通俗解释和理解"><a href="#关于LLM的一些通俗解释和理解" class="headerlink" title="关于LLM的一些通俗解释和理解"></a>关于LLM的一些通俗解释和理解</h1><div class="note note-success">
-            <p>读AI大佬Andrej Karpathy推文所记：<a target="_blank" rel="noopener" href="https://x.com/karpathy/status/1885026028428681698">https://x.com/karpathy/status/1885026028428681698</a></p>
-          </div>
+<p>Embedding模型调用：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> openai<br><br><span class="hljs-comment"># 设置openai密钥和基础URL</span><br>openai.api_key = <span class="hljs-string">&quot;sk-*********************&quot;</span><br>openai.base_url = <span class="hljs-string">&quot;https://www.dmxapi.com/v1/&quot;</span> <span class="hljs-comment"># 做嵌入时base_url后面要添加 /</span><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">get_embedding</span>(<span class="hljs-params">text</span>):<br>    response = openai.embeddings.create(<br>        model=<span class="hljs-string">&quot;text-embedding-3-small&quot;</span>,<br>        <span class="hljs-built_in">input</span>=text<br>    )<br>    <span class="hljs-keyword">return</span> response.data[<span class="hljs-number">0</span>].embedding<br><br>text = <span class="hljs-string">&quot;你好世界，我爱你！&quot;</span><br><br><span class="hljs-comment"># 获取文本嵌入</span><br>embedding = get_embedding(text)<br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;文本：<span class="hljs-subst">&#123;text&#125;</span>&quot;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;嵌入的向量维度：<span class="hljs-subst">&#123;<span class="hljs-built_in">len</span>(embedding)&#125;</span>&quot;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;嵌入的向量前5个元素：<span class="hljs-subst">&#123;embedding[:<span class="hljs-number">6</span>]&#125;</span>&quot;</span>)<br></code></pre></td></tr></table></figure>
 
-<p>费曼学习法：用自己话把问题和过程描述清楚，并建立关联。</p>
-<p>我们可以将训练大型语言模型 (LLM) 的过程巧妙地比作教育学生，并以教科书的结构为框架，阐述了当前 LLM 训练的现状和未来方向。</p>
-<p>当我们打开任何一本教科书，都会看到三种主要类型的信息：</p>
-<p><strong>1. 背景信息 &#x2F; 阐述 (Background information &#x2F; exposition):</strong> 这是教科书的核心内容，用于解释各种概念和知识。</p>
-<p>学生通过阅读和学习这些内容来构建知识体系，这就像是 <strong>LLM 的预训练 (pretraining)</strong> 阶段。在预训练阶段，模型通过阅读海量的互联网文本，学习语言的规律、世界的知识，积累广泛的背景知识，为后续的学习打下基础。</p>
-<p><strong>2. 例题及解答 (Worked problems with solutions):</strong> 教科书会提供具体的例题，并详细展示专家如何解决这些问题。</p>
-<p>这些例题是示范，引导学生模仿学习。这与 <strong>LLM 的 监督式微调 (supervised finetuning)</strong> 阶段相对应。在微调阶段，模型学习人类专家提供的“理想答案”，学习如何生成高质量、符合人类期望的回复，例如助手类应用的“理想回答”。</p>
-<p><strong>3. 练习题 (Practice problems):</strong> 教科书每章节末尾通常会设置大量的练习题，这些题目往往只提供最终答案，而不给出详细的解题步骤。</p>
-<p>练习题旨在引导学生通过 试错 (trial &amp; error) 的方式进行学习。学生需要尝试各种方法，才能找到正确的答案。Karpathy认为，这与 <strong>强化学习 (reinforcement learning)</strong> 的概念高度相似。</p>
-<p>Karpathy强调，目前我们已经让 LLM 经历了大量的“阅读”和“示例学习”，也就是预训练和监督式微调，但对于“练习题”这一环节，也就是强化学习，我们还处于一个新兴的、尚待开发的阶段。</p>
-<p>当我们为 LLM 创建数据集时，本质上与为它们编写教科书并无二致。为了让 LLM 真正“学会”，我们需要像编写教科书一样，提供这三种类型的数据：</p>
-<p><strong>大量的背景知识 (Background information)：</strong> 对应预训练，让模型积累广泛的知识。</p>
-<p><strong>示范性的例题 (Worked problems)：</strong> 对应监督式微调，让模型学习高质量的输出。</p>
-<p><strong>大量的练习题 (Practice problems)：</strong> 对应强化学习，让模型在实践中学习，通过试错和反馈不断改进。</p>
-<p><strong>LLM 需要阅读，更需要实践。</strong> 只有通过大量的实践练习，才能真正提升 LLM 的能力，让它们更好地理解世界、解决问题。</p>
+<p>文本：你好世界，我爱你！<br>嵌入的向量维度：1536<br>嵌入的向量前5个元素：[0.02944854088127613, -0.059522904455661774, -0.03096095100045204, 0.06727617979049683, 0.013377008028328419]</p>
+<p>langchain - Ollama调用嵌入模型：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> langchain_community.embeddings <span class="hljs-keyword">import</span> OllamaEmbeddings<br><br><span class="hljs-comment"># 使用本地Ollama运行嵌入模型</span><br>embed = OllamaEmbeddings(<br>    model=<span class="hljs-string">&#x27;milkey/dmeta-embedding-zh&#x27;</span>,<br>)<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="Deepseek-API"><a href="#Deepseek-API" class="headerlink" title="Deepseek API"></a>Deepseek API</h2><p>opanai库也提供了Deepseek API的调用方法。</p>
+<p>通过使用Deepseek API调用Deepseek - R1模型：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python">client = OpenAI(api_key=<span class="hljs-string">&quot;sk-********&quot;</span>,base_url=<span class="hljs-string">&quot;https://api.deepseek.com&quot;</span>)<br>messages = [&#123;<span class="hljs-string">&quot;role&quot;</span>: <span class="hljs-string">&quot;user&quot;</span>, <span class="hljs-string">&quot;content&quot;</span>: <span class="hljs-string">&quot;9.11 and 9.8,which is greater?&quot;</span>&#125;]<br>response = client.chat.completions.create(<br>    model=<span class="hljs-string">&quot;deepseek-chat&quot;</span>,<br>    messages=messages,<br>    stream=<span class="hljs-literal">False</span><br>)<br><span class="hljs-comment"># reasoning_content = response.choices[0].message.reasoning_content</span><br>content = response.choices[<span class="hljs-number">0</span>].message.content<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
 
                 
               </div>
@@ -394,7 +390,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%8A%A8%E6%9C%BA/" class="category-chain-item">动机</a>
+  <a href="/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9B%B8%E5%85%B3/" class="category-chain-item">大模型相关</a>
   
   
 
@@ -409,7 +405,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/" class="print-no-link">#生活随笔</a>
+        <a href="/tags/LLM/" class="print-no-link">#LLM</a>
+      
+        <a href="/tags/RAG/" class="print-no-link">#RAG</a>
+      
+        <a href="/tags/%E9%83%A8%E7%BD%B2/" class="print-no-link">#部署</a>
       
     </div>
   
@@ -421,8 +421,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>开工大吉</div>
-      <div>http://example.com/2025/02/05/开工大吉/</div>
+      <div>LLM开发必备</div>
+      <div>http://example.com/2025/02/26/LLM开发必备/</div>
     </div>
     <div class="license-meta">
       
@@ -434,7 +434,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年2月5日</div>
+          <div>2025年2月26日</div>
         </div>
       
       
@@ -467,18 +467,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/02/26/LLM%E5%BC%80%E5%8F%91%E5%BF%85%E5%A4%87/" title="LLM开发必备">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LLM开发必备</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/01/30/2025%E5%B9%B41%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/" title="2025年1月总结与展望">
-                        <span class="hidden-mobile">2025年1月总结与展望</span>
+                      <a href="/2025/02/05/%E5%BC%80%E5%B7%A5%E5%A4%A7%E5%90%89/" title="开工大吉">
+                        <span class="hidden-mobile">开工大吉</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
