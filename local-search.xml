@@ -177,9 +177,9 @@
     
     <categories>
       
-      <category>论文研读</category>
-      
       <category>大模型相关</category>
+      
+      <category>论文研读</category>
       
     </categories>
     
@@ -206,11 +206,11 @@
     
     <categories>
       
+      <category>大模型相关</category>
+      
       <category>人工智能与深度学习</category>
       
       <category>论文研读</category>
-      
-      <category>大模型相关</category>
       
     </categories>
     
@@ -241,11 +241,11 @@
     
     <categories>
       
+      <category>大模型相关</category>
+      
       <category>人工智能与深度学习</category>
       
       <category>论文研读</category>
-      
-      <category>大模型相关</category>
       
     </categories>
     
@@ -303,22 +303,22 @@
     
     <categories>
       
+      <category>大模型相关</category>
+      
       <category>人工智能与深度学习</category>
       
       <category>论文研读</category>
-      
-      <category>大模型相关</category>
       
     </categories>
     
     
     <tags>
       
+      <tag>GPT</tag>
+      
       <tag>深度学习</tag>
       
       <tag>NLP</tag>
-      
-      <tag>GPT</tag>
       
     </tags>
     
@@ -438,9 +438,9 @@
     
     <categories>
       
-      <category>论文研读</category>
-      
       <category>大模型相关</category>
+      
+      <category>论文研读</category>
       
     </categories>
     
@@ -467,9 +467,9 @@
     
     <categories>
       
-      <category>人工智能与深度学习</category>
-      
       <category>大模型相关</category>
+      
+      <category>人工智能与深度学习</category>
       
     </categories>
     
@@ -498,22 +498,22 @@
     
     <categories>
       
-      <category>人工智能与深度学习</category>
-      
       <category>大模型相关</category>
+      
+      <category>人工智能与深度学习</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>GPT</tag>
-      
       <tag>LLM</tag>
       
       <tag>RAG</tag>
       
       <tag>Agent</tag>
+      
+      <tag>GPT</tag>
       
     </tags>
     
@@ -531,9 +531,9 @@
     
     <categories>
       
-      <category>人工智能与深度学习</category>
-      
       <category>大模型相关</category>
+      
+      <category>人工智能与深度学习</category>
       
     </categories>
     
@@ -641,9 +641,9 @@
     
     <categories>
       
-      <category>论文研读</category>
-      
       <category>大模型相关</category>
+      
+      <category>论文研读</category>
       
     </categories>
     
@@ -652,9 +652,9 @@
       
       <tag>LLM</tag>
       
-      <tag>MLLM</tag>
-      
       <tag>RAG</tag>
+      
+      <tag>MLLM</tag>
       
       <tag>VQA</tag>
       
@@ -757,9 +757,9 @@
     
     <categories>
       
-      <category>人工智能与深度学习</category>
-      
       <category>大模型相关</category>
+      
+      <category>人工智能与深度学习</category>
       
     </categories>
     
@@ -811,11 +811,11 @@
     
     <categories>
       
+      <category>大模型相关</category>
+      
       <category>人工智能与深度学习</category>
       
       <category>论文研读</category>
-      
-      <category>大模型相关</category>
       
     </categories>
     
@@ -1015,9 +1015,9 @@
       
       <tag>科研心路</tag>
       
-      <tag>深度学习</tag>
-      
       <tag>职业发展</tag>
+      
+      <tag>深度学习</tag>
       
       <tag>机器学习</tag>
       
@@ -1068,9 +1068,9 @@
     
     <categories>
       
-      <category>论文研读</category>
-      
       <category>大模型相关</category>
+      
+      <category>论文研读</category>
       
     </categories>
     
