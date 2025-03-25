@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://p1.itc.cn/q_70/images03/20231009/844538d863cc41d682e5a085f7b09482.jpeg">
 <meta property="article:published_time" content="2025-03-14T16:55:16.000Z">
-<meta property="article:modified_time" content="2025-03-25T04:01:43.894Z">
+<meta property="article:modified_time" content="2025-03-25T13:33:22.165Z">
 <meta property="article:author" content="Munger Yang">
 <meta property="article:tag" content="MLLM">
 <meta property="article:tag" content="VQA">
@@ -280,7 +280,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          477 字
+          531 字
         
       </span>
     
@@ -291,7 +291,7 @@
         
         
         
-          4 分钟
+          5 分钟
         
       </span>
     
@@ -349,13 +349,26 @@
 
 
 <h2 id="依赖流"><a href="#依赖流" class="headerlink" title="依赖流"></a>依赖流</h2><h3 id="训练过程"><a href="#训练过程" class="headerlink" title="训练过程"></a>训练过程</h3><p>train.py → src&#x2F;utils.py → src&#x2F;vision_encoder_decoder.py → 语言模型(gpt2.py&#x2F;opt.py&#x2F;xglm.py)</p>
+<p><img src="/img/fig/train2.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="推理过程"><a href="#推理过程" class="headerlink" title="推理过程"></a>推理过程</h3><p>infer.py → src&#x2F;utils.py → src&#x2F;vision_encoder_decoder.py → 语言模型</p>
+<p><img src="/img/fig/train3.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="检索增强流"><a href="#检索增强流" class="headerlink" title="检索增强流"></a>检索增强流</h3><p>src&#x2F;retrieve_caps.py → src&#x2F;get_indexed_caps.py → 训练&#x2F;推理流程</p>
+<p><img src="/img/fig/train1.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="评估流"><a href="#评估流" class="headerlink" title="评估流"></a>评估流</h3><p>infer.py(生成描述) → coco-caption&#x2F;run_eval.py(计算指标)</p>
 <h2 id="关键功能"><a href="#关键功能" class="headerlink" title="关键功能"></a>关键功能</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs markdown">| 文件 | 功能 |<br><br>|------|------|<br><br>| train.py | 训练主脚本，包含参数配置和训练逻辑 |<br><br>| infer.py | 推理主脚本，载入模型并生成描述 |<br><br>| src/vision<span class="hljs-emphasis">_encoder_</span>decoder.py | 核心模型架构，结合视觉编码器和文本解码器 |<br><br>| src/retrieve<span class="hljs-emphasis">_caps.py | 实现检索相似图像描述功能 |</span><br><span class="hljs-emphasis"></span><br><span class="hljs-emphasis">| src/extract_</span>features.py | 提取和缓存图像特征 |<br><br>| src/utils.py | 数据处理和辅助函数 |<br><br>| SmallCap<span class="hljs-emphasis">_demo.ipynb | 演示模型使用方法和效果 |</span><br><span class="hljs-emphasis"></span><br><span class="hljs-emphasis">| coco-caption/run_</span>eval.py | 评估生成描述质量 |<br></code></pre></td></tr></table></figure>
 
 
 
+<h2 id="BUG"><a href="#BUG" class="headerlink" title="BUG"></a>BUG</h2><ol>
+<li><p>numpy版本与pandas版本不匹配导致错误，适配与4090的Pytorch版本： </p>
+<ul>
+<li>numpy              1.21.6</li>
+<li>pandas             1.3.5</li>
+</ul>
+</li>
+<li><p>&#x2F;hy-tmp&#x2F;smallcap&#x2F;datastore&#x2F;coco_index：coco_index折了两次，索引会自动生成coco_index不需要自己创建。</p>
+</li>
+</ol>
 
                 
               </div>
