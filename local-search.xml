@@ -4,6 +4,39 @@
   
   
   <entry>
+    <title>湖仓一体技术调研</title>
+    <link href="/2025/04/25/%E6%B9%96%E4%BB%93%E4%B8%80%E4%BD%93%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94/"/>
+    <url>/2025/04/25/%E6%B9%96%E4%BB%93%E4%B8%80%E4%BD%93%E6%8A%80%E6%9C%AF%E8%B0%83%E7%A0%94/</url>
+    
+    <content type="html"><![CDATA[<center> <h1>湖仓一体技术调研</h1> </center><center>中国科学院大学计算机科学与技术学院</center><center>2025春·大数据系统与大规模数据分析</center><center>授课老师：陈世敏老师(https://www.shimin-chen.com/index-gb.html)</center><center>小组成员：杨桂淼、王子曰、王晓妍</center><p><img src="https://learn.microsoft.com/zh-cn/azure/architecture/data-guide/scenarios/images/data-lake-use-cases.jpg" alt="引自：learn-microsoft"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>论文研读</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>big data</tag>
+      
+      <tag>分布式计算</tag>
+      
+      <tag>存储</tag>
+      
+      <tag>数据仓库</tag>
+      
+      <tag>数据湖</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>沐神论文阅读速览</title>
     <link href="/2025/04/15/%E6%B2%90%E7%A5%9E%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E9%80%9F%E8%A7%88/"/>
     <url>/2025/04/15/%E6%B2%90%E7%A5%9E%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E9%80%9F%E8%A7%88/</url>
@@ -34,8 +67,8 @@
   
   <entry>
     <title>Ask in Any Modality</title>
-    <link href="/2025/04/01/Ask-in-Any-Modality/"/>
-    <url>/2025/04/01/Ask-in-Any-Modality/</url>
+    <link href="/2025/04/05/Ask-in-Any-Modality/"/>
+    <url>/2025/04/05/Ask-in-Any-Modality/</url>
     
     <content type="html"><![CDATA[<p>2025年4月1日，星期二，晴天☀️，第57篇博客。</p><h1 id="Ask-in-Any-Modality-多模态检索增强生成的研究综述"><a href="#Ask-in-Any-Modality-多模态检索增强生成的研究综述" class="headerlink" title="Ask in Any Modality:多模态检索增强生成的研究综述"></a>Ask in Any Modality:多模态检索增强生成的研究综述</h1><p>本研究综述提供了对Multimodal-RAG系统的结构化和全面分析，涵盖了数据集、度量、基准、评估、方法以及检索、融合、增强和生成方面的创新。</p>]]></content>
     
