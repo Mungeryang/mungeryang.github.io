@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s3.cn-north-1.amazonaws.com.cn/aws-dam-prod/Data%20Lake/320x320-what-is-a-data-lake.b32634fa96e91bb5670b885be9428a2c0c40c76d.png">
 <meta property="article:published_time" content="2025-04-25T09:04:52.000Z">
-<meta property="article:modified_time" content="2025-05-07T08:24:14.592Z">
+<meta property="article:modified_time" content="2025-06-05T09:11:42.016Z">
 <meta property="article:author" content="Munger Yang">
 <meta property="article:tag" content="big data">
 <meta property="article:tag" content="分布式计算">
@@ -283,7 +283,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          220 字
+          1.8k 字
         
       </span>
     
@@ -294,7 +294,7 @@
         
         
         
-          2 分钟
+          16 分钟
         
       </span>
     
@@ -361,17 +361,68 @@
 <p><img src="https://learn.microsoft.com/zh-cn/azure/architecture/data-guide/scenarios/images/data-lake-use-cases.jpg" srcset="/img/loading.gif" lazyload alt="引自：learn-microsoft"></p>
 <p>前期任务及分工如下：</p>
 <p>前期三个人分别调研一个数据湖仓系统，完成云平台账号注册以及基本的环境配置。</p>
-<h2 id="基本概念调研"><a href="#基本概念调研" class="headerlink" title="基本概念调研"></a>基本概念调研</h2><p>数据湖</p>
-<p>数据仓库</p>
-<p>数据湖仓</p>
-<h2 id="项目文献调研"><a href="#项目文献调研" class="headerlink" title="项目文献调研"></a>项目文献调研</h2><p>先找到项目和项目的论文</p>
-<p><a target="_blank" rel="noopener" href="https://hudi.apache.org/blog/2021/07/21/streaming-data-lake-platform/">https://hudi.apache.org/blog/2021/07/21/streaming-data-lake-platform/</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cidrdb.org/cidr2023/papers/p92-jain.pdf">https://www.cidrdb.org/cidr2023/papers/p92-jain.pdf</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.vldb.org/pvldb/vol13/p3411-armbrust.pdf">https://www.vldb.org/pvldb/vol13/p3411-armbrust.pdf</a></p>
 <p>Apache Hudi（杨桂淼）：<a target="_blank" rel="noopener" href="https://hudi.apache.org/">https://hudi.apache.org/</a></p>
 <p>Apache lceberg（王子曰）：<a target="_blank" rel="noopener" href="https://iceberg.apache.org/">https://iceberg.apache.org/</a></p>
 <p>Delta Lake（王晓妍）：<a target="_blank" rel="noopener" href="https://delta.io/">https://delta.io/</a></p>
+<h2 id="基本概念调研"><a href="#基本概念调研" class="headerlink" title="基本概念调研"></a>基本概念调研</h2><div class="note note-success">
+            <p>大数据的4V特征：<strong>海量(Volume)、多样(Variety)、高速(Velocity)、价值(Value)</strong></p>
+          </div>
 
+<p>数据管理系统的演进过程：关系型数据库 -&gt; 数据仓库  -&gt; 数据湖 -&gt; 数据湖仓</p>
+<p><code>关系型数据库</code>：RDBMS 以关系模型为基础，将数据组织在预定义关系的二维表（即关系）中，表由列（属性）和行（记录）构成。每行数据通常拥有一个唯一标识符（主键），用于区分不同的记录。关系模型的一个重要特性是逻辑数据结构（如表、视图、索引）与物理存储结构的分离，这使得数据库管理员可以在不影响逻辑数据访问的前提下管理物理存储。结构化查询语言（SQL）是RDBMS进行数据查询和操作的标准语言。</p>
+<p><code>数据仓库</code>：文献普遍将数据仓库定义为用于支持决策制定的、集成的、面向主题的、时变的数据集合，其核心是结构化数据、写时模式（Schema-on-Write）、ETL过程和OLAP能力，旨在为商业智能提供单一事实来源。</p>
+<p><code>数据湖</code>：数据湖被描述为能够以原始格式存储海量、多样化数据（包括结构化、半结构化和非结构化数据）的中央存储库，采用读时模式（Schema-on-Read），支持ELT过程，并为高级分析和机器学习提供数据基础 。</p>
+<p><code>数据湖仓</code>：湖仓一体被视为数据仓库和数据湖的融合，旨在结合两者的优点：数据湖的低成本、灵活性和开放格式，以及数据仓库的数据管理、事务能力和查询性能。其核心是通过在数据湖的开放文件格式（如Parquet）之上引入表格式（Table Format）层（如Hudi, Iceberg, Delta Lake），实现ACID事务、模式管理、数据版本控制等功能。</p>
+<p><strong>数据仓库 vs. 数据湖 vs. 湖仓一体</strong></p>
+<h2 id="文献资料整理"><a href="#文献资料整理" class="headerlink" title="文献资料整理"></a>文献资料整理</h2><p>论文：</p>
+<ul>
+<li>Lakehouse: A New Generation of Open Platforms that Unify Data Warehousing and Advanced Analytics：<a target="_blank" rel="noopener" href="https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdfThe">https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdfThe</a> </li>
+<li>Data Lakehouse: Data Warehousing and More：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2310.08697">https://arxiv.org/abs/2310.08697</a></li>
+<li>Analyzing and Comparing Lakehouse Storage Systems：<a target="_blank" rel="noopener" href="https://www.cidrdb.org/cidr2023/papers/p92-jain.pdf">https://www.cidrdb.org/cidr2023/papers/p92-jain.pdf</a></li>
+<li>Assessing the Lakehouse: Analysis, Requirements and Definition：<a target="_blank" rel="noopener" href="https://www.ipvs.uni-stuttgart.de/departments/as/publications/schneijn/Assessing_the_Lakehouse_ICEIS2023.pdf">https://www.ipvs.uni-stuttgart.de/departments/as/publications/schneijn/Assessing_the_Lakehouse_ICEIS2023.pdf</a></li>
+<li>Delta Lake: High-Performance ACID Table Storage over Cloud Object Stores：<a target="_blank" rel="noopener" href="https://www.vldb.org/pvldb/vol13/p3411-armbrust.pdf">https://www.vldb.org/pvldb/vol13/p3411-armbrust.pdf</a></li>
+<li>Apache Hudi - The Data Lake Platform：<a target="_blank" rel="noopener" href="https://hudi.apache.org/blog/2021/07/21/streaming-data-lake-platform/">https://hudi.apache.org/blog/2021/07/21/streaming-data-lake-platform/</a></li>
+</ul>
+<p>开源文档与技术白皮书</p>
+<ul>
+<li>Delta Lake：<a target="_blank" rel="noopener" href="https://docs.dremio.com/25.x/sonar/query-manage/data-formats/delta-lake/">https://docs.dremio.com/25.x/sonar/query-manage/data-formats/delta-lake/</a></li>
+<li>Hudi：<a target="_blank" rel="noopener" href="https://hudi.apache.org/docs/quick-start-guide">https://hudi.apache.org/docs/quick-start-guide</a></li>
+<li>Data Warehouse vs. Data Lake vs. Data Lakehouse: An Overview of Three Cloud Data Storage Patterns：<a target="_blank" rel="noopener" href="https://go2.striim.com/hubfs/striim_tech_brief_data_storage_overview.pdf">https://go2.striim.com/hubfs/striim_tech_brief_data_storage_overview.pdf</a></li>
+</ul>
+<h2 id="现有系统分析"><a href="#现有系统分析" class="headerlink" title="现有系统分析"></a>现有系统分析</h2><h3 id="湖仓一体架构与功能"><a href="#湖仓一体架构与功能" class="headerlink" title="湖仓一体架构与功能"></a>湖仓一体架构与功能</h3><p>湖仓一体架构通过在数据湖的廉价存储之上叠加事务管理、元数据管理和数据治理等能力，力图打破数据仓库和数据湖之间的壁垒。</p>
+<h4 id="典型的分层架构"><a href="#典型的分层架构" class="headerlink" title="典型的分层架构"></a>典型的分层架构</h4><ul>
+<li><p><strong>数据接入层 (Ingestion Layer)</strong> ：负责从各种数据源（如关系型数据库、NoSQL数据库、业务应用、流式数据源、文件等）采集数据并将其导入湖仓系统。此层支持批量导入和实时流式导入，常见工具包括Apache Kafka, Apache Flume, Spark Streaming以及各类数据库连接器和CDC工具。</p>
+</li>
+<li><p><strong>存储层 (Storage Layer)</strong> ：通常采用可扩展、高持久且成本效益高的云对象存储服务（如AWS S3, Azure Blob Storage, Google Cloud Storage）或分布式文件系统（如HDFS）。数据在此层以开放文件格式（如Apache Parquet, Apache ORC, Apache Avro）存储，能够容纳结构化、半结构化和非结构化数据。</p>
+</li>
+<li><p><strong>表格式层 (Table Format &#x2F; Metadata Layer)</strong> ：这是湖仓一体架构的核心与灵魂，是其区别于传统数据湖的关键。表格式（如Apache Hudi, Apache Iceberg, Delta Lake）在数据湖的原始文件之上提供了一个抽象层，负责管理元数据，包括表结构（Schema）、事务日志、数据版本、分区信息以及文件统计信息等。它使得上层计算引擎可以将存储在对象存储中的文件集合视为具有事务特性和结构化定义的表。</p>
+</li>
+<li><p><strong>查询与处理引擎层 (Query&#x2F;Processing Engines)</strong> ：各种计算引擎（如Apache Spark, Presto, Trino, Apache Flink）和云数据服务（如AWS Athena, Google BigQuery, Snowflake）通过与表格式层交互来读取、处理和分析数据。这些引擎负责执行SQL查询、数据转换、机器学习任务等。</p>
+</li>
+<li><p><strong>治理与目录层 (Governance &amp; Catalog Layer)</strong> ：提供数据发现、访问控制、数据血缘追踪、数据质量监控和审计等功能。通常与元数据存储服务（如Hive Metastore, AWS Glue Data Catalog, Project Nessie）集成，以实现统一的元数据视图和治理策略。</p>
+</li>
+</ul>
+<h4 id="核心功能"><a href="#核心功能" class="headerlink" title="核心功能"></a>核心功能</h4><ul>
+<li><p><strong>ACID事务</strong>：确保数据操作的原子性、一致性、隔离性和持久性，为并发读写提供数据一致性和可靠性保障，这是从数据仓库借鉴并应用于数据湖的关键特性。</p>
+</li>
+<li><p><strong>模式管理 (Schema Management)</strong> ：包括模式强制（Schema Enforcement）和模式演进（Schema Evolution）。模式强制确保写入数据符合预定义结构，防止脏数据污染；模式演进则允许在不重写整个数据集的情况下修改表结构（如增删列、修改类型）以适应业务变化。</p>
+</li>
+<li><p><strong>数据版本控制 (Data Versioning &#x2F; Time Travel)</strong> ：记录数据的历史版本，允许用户查询表的过去某个时间点的状态、回滚到历史版本或重现实验结果。</p>
+</li>
+<li><p><strong>索引与数据裁剪&#x2F;跳过 (Indexing &amp; Data Skipping&#x2F;Pruning)</strong> ：利用文件&#x2F;分区元数据统计信息（如最小&#x2F;最大值）、Bloom过滤器、Z-Order等技术，在查询时跳过不相关的数据文件或分区，从而优化查询性能。</p>
+</li>
+<li><p><strong>支持多样化数据与工作负载</strong> ：能够处理结构化、半结构化和非结构化数据，并支持包括BI、SQL分析、数据科学、机器学习和流处理在内的多种工作负载。</p>
+</li>
+<li><p><strong>计算存储分离 (Decoupled Compute and Storage)</strong> ：通常构建在云原生架构之上，允许计算资源和存储资源独立扩展，从而提供更好的灵活性和成本优化。</p>
+</li>
+</ul>
+<h3 id="现有系统基本原理"><a href="#现有系统基本原理" class="headerlink" title="现有系统基本原理"></a>现有系统基本原理</h3><h4 id="Apache-Hudi"><a href="#Apache-Hudi" class="headerlink" title="Apache Hudi"></a><strong>Apache Hudi</strong></h4><p>Apache Hudi旨在为数据湖带来流式处理能力，特别是高效的记录级插入更新（Upsert）和删除操作。</p>
+<p><img src="https://www.biaodianfu.com/wp-content/uploads/2024/11/hudi-1.png" srcset="/img/loading.gif" lazyload alt="Apache Hudi架构"></p>
+<h4 id="Apache-Iceberg"><a href="#Apache-Iceberg" class="headerlink" title="Apache Iceberg"></a><strong>Apache Iceberg</strong></h4><p>Apache Iceberg专注于提供一个开放、高性能的表格式，特别强调表结构演进的灵活性、分区管理的便捷性以及跨引擎的互操作性。</p>
+<p><img src="https://www.biaodianfu.com/wp-content/uploads/2024/11/iceberg-1.gif" srcset="/img/loading.gif" lazyload alt="Apache Iceberg架构"></p>
+<h4 id="Delta-Lake"><a href="#Delta-Lake" class="headerlink" title="Delta Lake"></a><strong>Delta Lake</strong></h4><p>Delta Lake最初由Databricks开发，现为Linux基金会项目，它通过在Apache Parquet文件之上构建一个事务日志层，为数据湖带来了ACID事务和可靠性。</p>
+<p><img src="https://www.purestorage.com/content/dam/purestorage/knowledge/what-is-a-delta-lake-figure-2.png.imgo.png" srcset="/img/loading.gif" lazyload alt="Delta Lake架构"></p>
+<h4 id="对比分析"><a href="#对比分析" class="headerlink" title="对比分析"></a>对比分析</h4>
                 
               </div>
             
