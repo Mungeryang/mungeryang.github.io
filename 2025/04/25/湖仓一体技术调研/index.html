@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s3.cn-north-1.amazonaws.com.cn/aws-dam-prod/Data%20Lake/320x320-what-is-a-data-lake.b32634fa96e91bb5670b885be9428a2c0c40c76d.png">
 <meta property="article:published_time" content="2025-04-25T09:04:52.000Z">
-<meta property="article:modified_time" content="2025-06-05T09:11:42.016Z">
+<meta property="article:modified_time" content="2025-06-09T13:52:55.925Z">
 <meta property="article:author" content="Munger Yang">
 <meta property="article:tag" content="big data">
 <meta property="article:tag" content="分布式计算">
@@ -283,7 +283,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          3.7k 字
         
       </span>
     
@@ -294,7 +294,7 @@
         
         
         
-          16 分钟
+          31 分钟
         
       </span>
     
@@ -374,6 +374,17 @@
 <p><code>数据湖</code>：数据湖被描述为能够以原始格式存储海量、多样化数据（包括结构化、半结构化和非结构化数据）的中央存储库，采用读时模式（Schema-on-Read），支持ELT过程，并为高级分析和机器学习提供数据基础 。</p>
 <p><code>数据湖仓</code>：湖仓一体被视为数据仓库和数据湖的融合，旨在结合两者的优点：数据湖的低成本、灵活性和开放格式，以及数据仓库的数据管理、事务能力和查询性能。其核心是通过在数据湖的开放文件格式（如Parquet）之上引入表格式（Table Format）层（如Hudi, Iceberg, Delta Lake），实现ACID事务、模式管理、数据版本控制等功能。</p>
 <p><strong>数据仓库 vs. 数据湖 vs. 湖仓一体</strong></p>
+<h3 id="关系型数据库"><a href="#关系型数据库" class="headerlink" title="关系型数据库"></a>关系型数据库</h3><p><strong>核心功能</strong>: 主要用于<strong>在线交易处理 (OLTP)<strong>，比如你购物下的订单、银行的转账记录等。它的核心是保证数据的</strong>一致性、准确性</strong>。</p>
+<p>关系型数据库的特点是<strong>结构化数据</strong>: 数据以二维表格（行和列）的形式存储，结构非常规整。<strong>预定义模式 (Schema-on-Write)</strong>: 在写入数据之前，必须先定义好表的结构（比如字段名、数据类型）。</p>
+<p>痛点是：<strong>无法处理非结构化数据</strong>: 无法存储和处理像视频、音频、图片、社交媒体帖子这类非结构化数据。<strong>分析能力弱</strong>: 为交易而生，进行大规模、复杂的查询和分析时，会严重影响正常业务的性能。</p>
+<h3 id="数据仓库"><a href="#数据仓库" class="headerlink" title="数据仓库"></a>数据仓库</h3><p><strong>核心功能</strong>: 为了解决关系型数据库分析能力弱的问题而诞生，专注于<strong>在线分析处理 (OLAP)</strong> 和**商业智能 (BI)**。</p>
+<p>数据仓库的特点是：<strong>结构化和已处理</strong>: 只存储经过清洗、转换后的结构化数据，可以直接用于报表和分析。<strong>面向主题</strong>: 数据从多个业务数据库中抽取（ETL过程：抽取、转换、加载），并按照业务主题（如销售、库存）进行组织。<strong>历史数据</strong>: 存储了大量的历史数据，用于趋势分析和预测。</p>
+<p>痛点是：<strong>数据类型单一</strong>: 仍然无法很好地应对非结构化和半结构化数据。数据在进入数仓前，不符合要求的部分就被丢弃了，导致无法进行更原始、更全面的数据探索。<strong>灵活性差、成本高</strong>: ETL过程复杂且耗时。由于采用“预定义模式”，任何需求的变更都可能需要重新设计数据模型和ETL流程，非常僵化。存储和计算的成本也很高。</p>
+<h3 id="数据湖"><a href="#数据湖" class="headerlink" title="数据湖"></a>数据湖</h3><p><strong>核心功能</strong>: 为了解决数据仓库无法处理海量、多样化数据的痛点而出现。它的理念是“先存下所有东西，以后再想怎么用”。</p>
+<p>数据湖的特点是<strong>存储一切</strong>: 可以存储任何类型的数据，包括结构化、半结构化和非结构化（如日志文件、JSON、视频、音频等）的原始数据。<strong>后定义模式 (Schema-on-Read)</strong>: 在读取和分析数据时，才根据需求去定义数据的结构。<strong>原始、未经处理</strong>: 数据以其最原始的形式被加载进来，不做任何转换。<strong>低成本存储</strong>: 通常建立在HDFS等分布式文件系统上，存储成本非常低廉。</p>
+<p>痛点是：<strong>缺乏事务支持</strong>: 不支持ACID事务，这使得在数据湖上进行更新、删除操作变得非常复杂且不可靠，难以保证数据的一致性。<strong>数据沼泽 (Data Swamp)</strong>: 由于缺乏对数据质量的管控、元数据管理和治理，数据湖很容易变成一个无人能懂、无法使用的“数据沼泽”。</p>
+<h3 id="湖仓一体"><a href="#湖仓一体" class="headerlink" title="湖仓一体"></a>湖仓一体</h3><p>数据湖仓（也常被称为“湖仓一体”）的出现，正是为了解决一个核心矛盾：我们既想要<strong>数据湖的灵活性和低成本</strong>，又想要<strong>数据仓库的强大分析性能和数据治理能力</strong>。</p>
+<p>数据湖仓是一种新型的、开放的数据架构，将数据湖的低成本、灵活性与数据仓库的数据管理和分析功能相结合，旨在在同一个系统内实现对所有数据的BI和AI应用。</p>
 <h2 id="文献资料整理"><a href="#文献资料整理" class="headerlink" title="文献资料整理"></a>文献资料整理</h2><p>论文：</p>
 <ul>
 <li>Lakehouse: A New Generation of Open Platforms that Unify Data Warehousing and Advanced Analytics：<a target="_blank" rel="noopener" href="https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdfThe">https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdfThe</a> </li>
@@ -389,7 +400,9 @@
 <li>Hudi：<a target="_blank" rel="noopener" href="https://hudi.apache.org/docs/quick-start-guide">https://hudi.apache.org/docs/quick-start-guide</a></li>
 <li>Data Warehouse vs. Data Lake vs. Data Lakehouse: An Overview of Three Cloud Data Storage Patterns：<a target="_blank" rel="noopener" href="https://go2.striim.com/hubfs/striim_tech_brief_data_storage_overview.pdf">https://go2.striim.com/hubfs/striim_tech_brief_data_storage_overview.pdf</a></li>
 </ul>
-<h2 id="现有系统分析"><a href="#现有系统分析" class="headerlink" title="现有系统分析"></a>现有系统分析</h2><h3 id="湖仓一体架构与功能"><a href="#湖仓一体架构与功能" class="headerlink" title="湖仓一体架构与功能"></a>湖仓一体架构与功能</h3><p>湖仓一体架构通过在数据湖的廉价存储之上叠加事务管理、元数据管理和数据治理等能力，力图打破数据仓库和数据湖之间的壁垒。</p>
+<h2 id="现有系统分析"><a href="#现有系统分析" class="headerlink" title="现有系统分析"></a>现有系统分析</h2><h3 id="湖仓一体架构与功能"><a href="#湖仓一体架构与功能" class="headerlink" title="湖仓一体架构与功能"></a>湖仓一体架构与功能</h3><p><strong>目标与架构</strong>: 湖仓一体是一种全新的数据管理系统，它直接在低成本的数据湖存储之上，提供传统数据仓库的管理和性能特性，如ACID事务、数据版本控制、索引和查询优化 。其设计目标是融合数据湖的低成本、开放性和数据仓库的强大管理与优化能力 。</p>
+<h3 id="湖仓一体的核心特征"><a href="#湖仓一体的核心特征" class="headerlink" title="湖仓一体的核心特征"></a>湖仓一体的核心特征</h3><p>单一系统：消除了数据湖和数据仓库之间的数据移动和冗余，所有工作负载（BI、数据科学、ML）都可以在同一份数据副本上进行 。</p>
+<p>事务性元数据管理：湖仓一体的关键实现是在对象存储之上构建一个事务性的元数据层 。这一层定义了哪些数据文件构成一个表的特定版本，从而实现了ACID事务、数据版本回溯（Time Travel）等高级管理功能 。</p>
 <h4 id="典型的分层架构"><a href="#典型的分层架构" class="headerlink" title="典型的分层架构"></a>典型的分层架构</h4><ul>
 <li><p><strong>数据接入层 (Ingestion Layer)</strong> ：负责从各种数据源（如关系型数据库、NoSQL数据库、业务应用、流式数据源、文件等）采集数据并将其导入湖仓系统。此层支持批量导入和实时流式导入，常见工具包括Apache Kafka, Apache Flume, Spark Streaming以及各类数据库连接器和CDC工具。</p>
 </li>
@@ -418,11 +431,112 @@
 </ul>
 <h3 id="现有系统基本原理"><a href="#现有系统基本原理" class="headerlink" title="现有系统基本原理"></a>现有系统基本原理</h3><h4 id="Apache-Hudi"><a href="#Apache-Hudi" class="headerlink" title="Apache Hudi"></a><strong>Apache Hudi</strong></h4><p>Apache Hudi旨在为数据湖带来流式处理能力，特别是高效的记录级插入更新（Upsert）和删除操作。</p>
 <p><img src="https://www.biaodianfu.com/wp-content/uploads/2024/11/hudi-1.png" srcset="/img/loading.gif" lazyload alt="Apache Hudi架构"></p>
+<p>可以将 Hudi 的整体架构理解为由三大核心支柱支撑：</p>
+<ol>
+<li>**优化的表格式 (Optimized Table Format)**：定义了数据在数据湖中如何组织和布局。这是所有功能的基础，确保了数据的可管理性和事务性。</li>
+<li>**丰富的表服务 (Table Services)**：在后台运行的、用于管理和优化数据表的各种自动化服务。它们是保证数据湖高性能和低成本的关键，如同数据仓库中的 DBA 工具集。</li>
+<li>**统一的分析视图 (Unified Analytics Views)**：为上层查询引擎（如 Spark, Presto, Flink, Hive 等）提供统一、高性能的数据读取视图。</li>
+</ol>
+<p>它通过<strong>时间轴</strong>保证了事务性，通过<strong>文件组和文件切片</strong>实现了记录级别的更新，通过<strong>两种表类型 (CoW&#x2F;MoR)</strong> 在读写性能间提供了灵活选择，通过<strong>高效索引</strong>解决了数据定位难题，并利用一系列<strong>自动化表服务</strong>保证了数据湖的长期健康和高性能。</p>
 <h4 id="Apache-Iceberg"><a href="#Apache-Iceberg" class="headerlink" title="Apache Iceberg"></a><strong>Apache Iceberg</strong></h4><p>Apache Iceberg专注于提供一个开放、高性能的表格式，特别强调表结构演进的灵活性、分区管理的便捷性以及跨引擎的互操作性。</p>
 <p><img src="https://www.biaodianfu.com/wp-content/uploads/2024/11/iceberg-1.gif" srcset="/img/loading.gif" lazyload alt="Apache Iceberg架构"></p>
 <h4 id="Delta-Lake"><a href="#Delta-Lake" class="headerlink" title="Delta Lake"></a><strong>Delta Lake</strong></h4><p>Delta Lake最初由Databricks开发，现为Linux基金会项目，它通过在Apache Parquet文件之上构建一个事务日志层，为数据湖带来了ACID事务和可靠性。</p>
 <p><img src="https://www.purestorage.com/content/dam/purestorage/knowledge/what-is-a-delta-lake-figure-2.png.imgo.png" srcset="/img/loading.gif" lazyload alt="Delta Lake架构"></p>
-<h4 id="对比分析"><a href="#对比分析" class="headerlink" title="对比分析"></a>对比分析</h4>
+<p>与 Hudi 类似，Delta Lake也是一个构建在数据湖（如 S3, ADLS, GCS）之上的开源存储层，旨在为数据湖带来 ACID 事务、可靠性和高性能。</p>
+<p>Delta Lake 的架构可以概括为两个层次：</p>
+<ol>
+<li><strong>数据文件层 (Data Files)</strong> ：存储在云存储或 HDFS 上的 Parquet 文件。这是数据的“身体”，包含了所有的实际数据。Delta Lake 默认使用 Parquet 格式，因为它具备高效的压缩和列式存储特性，非常适合分析查询。</li>
+<li><strong>事务日志层 (Transaction Log)<strong>：这是 Delta Lake 的“大脑和灵魂”，也是其架构的精髓所在。它是一个名为 <code>_delta_log</code> 的子目录，与数据文件存放在一起。这个日志完整、有序地记录了对 Delta 表所做的</strong>每一次变更</strong>。</li>
+</ol>
+<h4 id="对比分析"><a href="#对比分析" class="headerlink" title="对比分析"></a>对比分析</h4><table>
+<thead>
+<tr>
+<th align="center">特性</th>
+<th align="center">Apache Hudi</th>
+<th align="center">Delta Lake</th>
+<th align="center">Apache Iceberg</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>核心优势</strong></td>
+<td align="center"><strong>高效记录级更新&#x2F;删除 (索引), 近实时流</strong></td>
+<td align="center"><strong>强事务 (日志), Spark 深度集成, 优化管理</strong></td>
+<td align="center"><strong>高性能元数据, 引擎无关, 高级分区&#x2F;模式演化</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>事务实现</strong></td>
+<td align="center">时间线 (Timeline)</td>
+<td align="center">事务日志 (Transaction Log)</td>
+<td align="center">快照隔离 + 原子元数据更新</td>
+</tr>
+<tr>
+<td align="center"><strong>关键机制</strong></td>
+<td align="center"><strong>索引 (Index)</strong></td>
+<td align="center"><strong>事务日志 (JSON&#x2F;Parquet)</strong></td>
+<td align="center"><strong>分层元数据 (Manifest Lists&#x2F;Manifests)</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>增量处理</strong></td>
+<td align="center"><strong>非常强大 (Incremental Query)</strong></td>
+<td align="center">支持 (Change Data Feed)</td>
+<td align="center">支持 (Incremental Scans)</td>
+</tr>
+<tr>
+<td align="center"><strong>表类型&#x2F;视图</strong></td>
+<td align="center"><strong>Copy-on-Write &#x2F; Merge-on-Read</strong></td>
+<td align="center">单一表格式 (类似 CoW，但优化机制丰富)</td>
+<td align="center">单一表格式 (物理布局优化灵活)</td>
+</tr>
+<tr>
+<td align="center"><strong>与引擎集成</strong></td>
+<td align="center">支持 Spark, Flink, Presto, Hive 等</td>
+<td align="center"><strong>深度集成 Spark (原生 API)</strong></td>
+<td align="center"><strong>广泛支持 (Flink, Spark, Trino, Hive 等)</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>分区演进</strong></td>
+<td align="center">有限支持</td>
+<td align="center">有限支持</td>
+<td align="center"><strong>原生支持 (Partition Evolution)</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>隐藏分区</strong></td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center"><strong>支持 (Hidden Partitioning)</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>时间旅行</strong></td>
+<td align="center">支持</td>
+<td align="center">支持</td>
+<td align="center">支持</td>
+</tr>
+<tr>
+<td align="center"><strong>模式演化</strong></td>
+<td align="center">支持</td>
+<td align="center">支持</td>
+<td align="center"><strong>支持更复杂的演化 (Sort Order Evolution)</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>文件跳过优化</strong></td>
+<td align="center">支持</td>
+<td align="center"><strong>支持 (Data Skipping + Z-Ordering)</strong></td>
+<td align="center"><strong>支持 (基于 Manifest 详细统计)</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>典型适用场景</strong></td>
+<td align="center">CDC, 频繁更新, 近实时摄入</td>
+<td align="center">Spark 生态湖仓, 强事务 ETL, Databricks 用户</td>
+<td align="center">超大规模, 多引擎访问, 灵活分区, 高性能元数据需求</td>
+</tr>
+<tr>
+<td align="center"><strong>主要推动者</strong></td>
+<td align="center">Uber</td>
+<td align="center">Databricks</td>
+<td align="center">Netflix, Tabular, Dremio 等</td>
+</tr>
+</tbody></table>
+
                 
               </div>
             
