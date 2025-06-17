@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s3.cn-north-1.amazonaws.com.cn/aws-dam-prod/Data%20Lake/320x320-what-is-a-data-lake.b32634fa96e91bb5670b885be9428a2c0c40c76d.png">
 <meta property="article:published_time" content="2025-04-25T09:04:52.000Z">
-<meta property="article:modified_time" content="2025-06-09T13:52:55.925Z">
+<meta property="article:modified_time" content="2025-06-11T16:18:37.355Z">
 <meta property="article:author" content="Munger Yang">
 <meta property="article:tag" content="big data">
 <meta property="article:tag" content="分布式计算">
@@ -283,7 +283,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.7k 字
+          9k 字
         
       </span>
     
@@ -294,7 +294,7 @@
         
         
         
-          31 分钟
+          76 分钟
         
       </span>
     
@@ -373,7 +373,6 @@
 <p><code>数据仓库</code>：文献普遍将数据仓库定义为用于支持决策制定的、集成的、面向主题的、时变的数据集合，其核心是结构化数据、写时模式（Schema-on-Write）、ETL过程和OLAP能力，旨在为商业智能提供单一事实来源。</p>
 <p><code>数据湖</code>：数据湖被描述为能够以原始格式存储海量、多样化数据（包括结构化、半结构化和非结构化数据）的中央存储库，采用读时模式（Schema-on-Read），支持ELT过程，并为高级分析和机器学习提供数据基础 。</p>
 <p><code>数据湖仓</code>：湖仓一体被视为数据仓库和数据湖的融合，旨在结合两者的优点：数据湖的低成本、灵活性和开放格式，以及数据仓库的数据管理、事务能力和查询性能。其核心是通过在数据湖的开放文件格式（如Parquet）之上引入表格式（Table Format）层（如Hudi, Iceberg, Delta Lake），实现ACID事务、模式管理、数据版本控制等功能。</p>
-<p><strong>数据仓库 vs. 数据湖 vs. 湖仓一体</strong></p>
 <h3 id="关系型数据库"><a href="#关系型数据库" class="headerlink" title="关系型数据库"></a>关系型数据库</h3><p><strong>核心功能</strong>: 主要用于<strong>在线交易处理 (OLTP)<strong>，比如你购物下的订单、银行的转账记录等。它的核心是保证数据的</strong>一致性、准确性</strong>。</p>
 <p>关系型数据库的特点是<strong>结构化数据</strong>: 数据以二维表格（行和列）的形式存储，结构非常规整。<strong>预定义模式 (Schema-on-Write)</strong>: 在写入数据之前，必须先定义好表的结构（比如字段名、数据类型）。</p>
 <p>痛点是：<strong>无法处理非结构化数据</strong>: 无法存储和处理像视频、音频、图片、社交媒体帖子这类非结构化数据。<strong>分析能力弱</strong>: 为交易而生，进行大规模、复杂的查询和分析时，会严重影响正常业务的性能。</p>
@@ -430,6 +429,7 @@
 </li>
 </ul>
 <h3 id="现有系统基本原理"><a href="#现有系统基本原理" class="headerlink" title="现有系统基本原理"></a>现有系统基本原理</h3><h4 id="Apache-Hudi"><a href="#Apache-Hudi" class="headerlink" title="Apache Hudi"></a><strong>Apache Hudi</strong></h4><p>Apache Hudi旨在为数据湖带来流式处理能力，特别是高效的记录级插入更新（Upsert）和删除操作。</p>
+<p>Apache Hudi为数据加载和更新提供了灵活的策略，其核心机制围绕记录键（record key）、索引和事务时间线展开。</p>
 <p><img src="https://www.biaodianfu.com/wp-content/uploads/2024/11/hudi-1.png" srcset="/img/loading.gif" lazyload alt="Apache Hudi架构"></p>
 <p>可以将 Hudi 的整体架构理解为由三大核心支柱支撑：</p>
 <ol>
@@ -438,8 +438,44 @@
 <li>**统一的分析视图 (Unified Analytics Views)**：为上层查询引擎（如 Spark, Presto, Flink, Hive 等）提供统一、高性能的数据读取视图。</li>
 </ol>
 <p>它通过<strong>时间轴</strong>保证了事务性，通过<strong>文件组和文件切片</strong>实现了记录级别的更新，通过<strong>两种表类型 (CoW&#x2F;MoR)</strong> 在读写性能间提供了灵活选择，通过<strong>高效索引</strong>解决了数据定位难题，并利用一系列<strong>自动化表服务</strong>保证了数据湖的长期健康和高性能。</p>
+<h5 id="写时复制-CoW-与读时合并-MoR-策略下的加载"><a href="#写时复制-CoW-与读时合并-MoR-策略下的加载" class="headerlink" title="写时复制 (CoW) 与读时合并 (MoR) 策略下的加载"></a>写时复制 (CoW) 与读时合并 (MoR) 策略下的加载</h5><p>Hudi支持两种主要的表类型（也是数据更新策略），它们在数据加载时的行为有所不同：</p>
+<ul>
+<li><strong>写时复制 (Copy-On-Write, CoW):</strong> 在CoW模式下，当数据被加载或更新时，如果记录导致现有数据文件的更改，Hudi会识别包含这些记录的文件，并将更新后的数据连同未更改的数据一起重写到一个新的版本化文件中。旧版本的文件保持不变，直到被清理策略移除。这种策略的特点是写入时会产生较高的写入放大（因为即使只更新一行，也可能重写整个文件），但在读取时不需要额外的合并操作，因此读取放大较低，查询性能通常较好 。对于批量加载主要是新数据追加的场景，CoW表现为直接写入新的Parquet文件。更新操作则完全以列式Parquet文件的形式写入，创建新的数据对象或文件版本 。  </li>
+<li><strong>读时合并 (Merge-On-Read, MoR):</strong> MoR模式旨在优化写入延迟。加载或更新数据时，Hudi不会立即重写包含旧数据的基础文件（通常是Parquet格式）。相反，它将记录级别的变更（插入、更新、删除）写入增量的、基于行的日志文件（通常是Avro格式）。实际的数据合并操作被推迟到查询时进行，或者通过后台的异步压缩（compaction）过程定期执行，将日志文件中的变更合并到新的基础文件中 。MoR模式的写入放大较低（写入速度快），但读取时需要合并基础文件和相关的日志文件，因此读取放大较高，查询延迟可能比CoW高，除非数据已被压缩。</li>
+</ul>
+<h5 id="记录键-Record-Key-与索引在加载中的作用"><a href="#记录键-Record-Key-与索引在加载中的作用" class="headerlink" title="记录键 (Record Key) 与索引在加载中的作用"></a>记录键 (Record Key) 与索引在加载中的作用</h5><p>Apache Hudi的核心设计之一是围绕记录键进行操作，这对于实现高效的upsert（更新或插入）至关重要。</p>
+<ul>
+<li><strong>记录键 (Record Key):</strong> 每个Hudi表中的记录都由一个唯一的记录键标识。这个键由用户指定，用于在数据加载和更新过程中唯一地识别一条记录。</li>
+<li><strong>索引 (Indexing):</strong> 为了在加载（尤其是upsert操作）时快速定位记录，Hudi采用了一种可插拔的索引机制。索引负责将记录键映射到其所在的物理文件组ID 。当一批新数据写入时，Hudi利用索引来判断每条记录是全新的插入（insert）还是对现有记录的更新（update）。常见的索引类型包括基于Bloom过滤器的索引（默认）、简单索引、HBase索引等。Bloom过滤器等索引机制可以显著加速这个打标过程，比传统的通过Spark Join进行判断要快得多 。这个索引查找和记录分类步骤是Hudi实现高效增量更新的基础 。</li>
+</ul>
+<h5 id="事务提交过程"><a href="#事务提交过程" class="headerlink" title="事务提交过程"></a>事务提交过程</h5><p>Hudi的事务提交过程确保了数据写入的原子性和一致性。其核心是维护一个事务时间线（timeline），记录了在表上执行的所有操作（如提交、清理、压缩、回滚等）。  </p>
+<p>数据写入（包括加载）通常遵循以下步骤 ：  </p>
+<ol>
+<li><strong>去重 (Deduping):</strong> （可选）对输入批次内可能存在的重复记录键进行预处理。</li>
+<li><strong>索引查找 (Index Lookup):</strong> 使用配置的索引机制，为输入记录打上标签（插入或更新），并确定其目标文件组。</li>
+<li><strong>文件大小调整 (File Sizing):</strong> Hudi会运行启发式算法，尝试将数据打包到大小合适的文件中，以优化存储和查询性能。</li>
+<li><strong>分区 (Partitioning):</strong> 根据分区键将数据分配到相应的分区路径。</li>
+<li><strong>写入I&#x2F;O (Write I&#x2F;O):</strong><ul>
+<li>对于CoW表，更新操作会导致生成新的版本化基础文件。插入操作会写入新的基础文件。</li>
+<li>对于MoR表，插入操作会写入新的基础文件（如果文件组不存在）或追加到现有日志文件；更新操作会追加到对应文件组的日志文件中。</li>
+</ul>
+</li>
+<li><strong>更新索引 (Update Index):</strong> 写入完成后，更新索引以反映新数据的位置。</li>
+<li><strong>提交 (Commit):</strong> 原子地将操作元数据（如写入的文件列表、记录数统计等）记录到Hudi时间线上，形成一个新的“instant”（即时点）。Hudi在写操作之间使用多版本并发控制（MVCC）来确保一致性，并在并发写操作之间使用乐观并发控制（OCC）或非阻塞并发控制（NBCC）。</li>
+</ol>
 <h4 id="Apache-Iceberg"><a href="#Apache-Iceberg" class="headerlink" title="Apache Iceberg"></a><strong>Apache Iceberg</strong></h4><p>Apache Iceberg专注于提供一个开放、高性能的表格式，特别强调表结构演进的灵活性、分区管理的便捷性以及跨引擎的互操作性。</p>
 <p><img src="https://www.biaodianfu.com/wp-content/uploads/2024/11/iceberg-1.gif" srcset="/img/loading.gif" lazyload alt="Apache Iceberg架构"></p>
+<h5 id="数据文件、清单文件-Manifest-File-与清单列表-Manifest-List-的协同"><a href="#数据文件、清单文件-Manifest-File-与清单列表-Manifest-List-的协同" class="headerlink" title="数据文件、清单文件 (Manifest File) 与清单列表 (Manifest List) 的协同"></a>数据文件、清单文件 (Manifest File) 与清单列表 (Manifest List) 的协同</h5><p>Iceberg的元数据组织呈现清晰的层次结构 ：  </p>
+<ol>
+<li><p><strong>数据文件 (Data Files):</strong> 这是实际存储表数据的物理文件，可以是Parquet、Avro或ORC格式 。在数据加载时，写入程序首先创建这些数据文件。这些文件一旦写入即不可变。  </p>
+</li>
+<li><p><strong>清单文件 (Manifest Files):</strong> 每个清单文件（Avro格式）跟踪一组数据文件 。它包含了这些数据文件的路径、文件格式、分区信息（每个数据文件属于哪个分区元组）、列级统计信息（如每列的最大&#x2F;最小值、空值计数）、以及可能的删除文件信息（用于Merge-on-Read场景）。清单文件本身也是不可变的，并且可以被多个快照复用，以避免重写未发生变化的元数据。  </p>
+</li>
+<li><p><strong>清单列表 (Manifest List):</strong> 每个表的快照（snapshot）都由一个清单列表文件（Avro格式）定义 。清单列表文件包含了构成该快照的所有清单文件的路径、每个清单文件所覆盖的分区范围统计信息（用于查询时裁剪掉不相关的清单文件）以及每个清单文件包含的数据文件数量等元数据。每次提交尝试都会生成一个新的清单列表，因为它总是代表一个新的快照。</p>
+</li>
+</ol>
+<p>数据加载时，首先写入新的数据文件。随后，会创建一个或多个新的清单文件，这些清单文件指向新写入的数据文件并记录其元数据。最后，会创建一个新的清单列表文件，该文件指向这些新的清单文件（以及可能复用的旧清单文件，如果它们包含的数据仍然是当前快照的一部分）。</p>
+<h5 id="Iceberg加载机制的灵活性与元数据可扩展性"><a href="#Iceberg加载机制的灵活性与元数据可扩展性" class="headerlink" title="Iceberg加载机制的灵活性与元数据可扩展性"></a><strong>Iceberg加载机制的灵活性与元数据可扩展性</strong></h5><p>Apache Iceberg将数据文件的写入与元数据提交过程解耦，并采用分层元数据结构，这为其带来了显著的灵活性和元数据操作的可扩展性，尤其是在查询规划方面。数据文件可以首先被并行且独立地写入。随后，元数据的更新（创建清单文件、清单列表和表元数据文件）也可以高效进行。其层次结构（表元数据 -&gt; 清单列表 -&gt; 清单文件 -&gt; 数据文件）使得在查询规划时能够进行有效的元数据裁剪，快速定位相关数据文件，而无需扫描所有元数据或执行大量的文件列表操作 。最终的原子提交操作仅聚焦于在Catalog中更新一个单一的指针，这相较于在分布式日志系统中协调跨多个日志段的变更（如果所有元数据都直接存储在这样的日志中），可能更为迅速和简单。</p>
 <h4 id="Delta-Lake"><a href="#Delta-Lake" class="headerlink" title="Delta Lake"></a><strong>Delta Lake</strong></h4><p>Delta Lake最初由Databricks开发，现为Linux基金会项目，它通过在Apache Parquet文件之上构建一个事务日志层，为数据湖带来了ACID事务和可靠性。</p>
 <p><img src="https://www.purestorage.com/content/dam/purestorage/knowledge/what-is-a-delta-lake-figure-2.png.imgo.png" srcset="/img/loading.gif" lazyload alt="Delta Lake架构"></p>
 <p>与 Hudi 类似，Delta Lake也是一个构建在数据湖（如 S3, ADLS, GCS）之上的开源存储层，旨在为数据湖带来 ACID 事务、可靠性和高性能。</p>
@@ -447,6 +483,52 @@
 <ol>
 <li><strong>数据文件层 (Data Files)</strong> ：存储在云存储或 HDFS 上的 Parquet 文件。这是数据的“身体”，包含了所有的实际数据。Delta Lake 默认使用 Parquet 格式，因为它具备高效的压缩和列式存储特性，非常适合分析查询。</li>
 <li><strong>事务日志层 (Transaction Log)<strong>：这是 Delta Lake 的“大脑和灵魂”，也是其架构的精髓所在。它是一个名为 <code>_delta_log</code> 的子目录，与数据文件存放在一起。这个日志完整、有序地记录了对 Delta 表所做的</strong>每一次变更</strong>。</li>
+</ol>
+<h5 id="事务日志-Transaction-Log-的角色与数据写入"><a href="#事务日志-Transaction-Log-的角色与数据写入" class="headerlink" title="事务日志 (Transaction Log) 的角色与数据写入"></a>事务日志 (Transaction Log) 的角色与数据写入</h5><p>Delta Lake的核心是位于表根目录下 <code>_delta_log</code> 子目录中的事务日志 。这个日志是有序记录了对表进行的每一个事务（如数据加载、更新、删除、模式变更等）。  </p>
+<ul>
+<li><strong>数据写入 (Data Writing):</strong> 当加载数据到Delta表时，数据本身以Parquet文件的形式写入表目录下的相应分区（如果表是分区的）或根目录（如果未分区）。  </li>
+<li><strong>事务日志条目 (Transaction Log Entry):</strong> 在数据文件写入完成后，Delta Lake会为该事务创建一个新的JSON文件（例如 <code>00000000000000000001.json</code>），并将其写入 <code>_delta_log</code> 目录。这个JSON文件包含了该事务所执行的操作的详细信息，例如：<ul>
+<li><code>add</code> 操作：列出新添加的Parquet文件的路径、分区值、统计信息（如文件大小、行数、列的最小&#x2F;最大值等）。</li>
+<li><code>remove</code> 操作：在执行覆盖写或删除操作时，列出被移除的旧文件的路径和删除时间戳。</li>
+<li><code>metadata</code> 操作：记录表的元数据信息，如模式、分区列、表属性等。</li>
+<li><code>protocol</code> 操作：定义表所遵循的Delta Lake协议版本，以支持不同的特性。</li>
+</ul>
+</li>
+<li><strong>原子提交 (Atomic Commit):</strong> Delta Lake通过确保每个JSON日志文件的写入是原子的来实现事务的原子性。这通常依赖于底层文件系统提供的原子操作，例如HDFS的<code>append</code>（虽然Delta主要使用创建新文件的方式）或云对象存储上的“如果不存在则放置”（put-if-absent）语义 。只有一个写入者能够成功创建特定版本号的JSON文件，从而确保了事务的串行化。</li>
+</ul>
+<h5 id="检查点-Checkpoints-与版本控制"><a href="#检查点-Checkpoints-与版本控制" class="headerlink" title="检查点 (Checkpoints) 与版本控制"></a>检查点 (Checkpoints) 与版本控制</h5><p>随着事务的不断发生，<code>_delta_log</code> 目录中的JSON文件数量会持续增长。为了提高查询性能（特别是获取表当前状态的速度）并避免列出和读取大量小的JSON文件，Delta Lake会定期创建检查点（checkpoint）文件 。  </p>
+<ul>
+<li><strong>检查点文件 (Checkpoint Files):</strong> 检查点文件（通常是Parquet格式，也可能是多部分Parquet或JSON格式的组合）整合了截至某个特定版本号（例如，每10个JSON提交创建一个检查点）的所有事务日志信息 。它包含了表的当前状态的快照，如当前有效的数据文件列表、表的模式、分区信息以及文件级别的统计数据。  </li>
+<li><strong>版本控制 (Versioning):</strong> <code>_delta_log</code> 中的每一个JSON文件（或检查点文件）都代表了表的一个新版本。这使得Delta Lake能够支持时间旅行（time travel）查询，即查询表在过去某个特定版本或时间点的状态。</li>
+</ul>
+<h5 id="写时复制-CoW-与读时合并-MoR-Deletion-Vectors"><a href="#写时复制-CoW-与读时合并-MoR-Deletion-Vectors" class="headerlink" title="写时复制 (CoW) 与读时合并 (MoR) - Deletion Vectors"></a>写时复制 (CoW) 与读时合并 (MoR) - Deletion Vectors</h5><p>Delta Lake传统上主要采用写时复制（CoW）策略。当数据被更新或删除时，包含受影响记录的Parquet文件会被重写。然而，为了优化更新和删除操作的性能，特别是减少写入放大，Delta Lake引入了“删除向量”（Deletion Vectors）特性 。  </p>
+<ul>
+<li><p><strong>删除向量 (Deletion Vectors):</strong> 当启用删除向量后，<code>DELETE</code>、<code>UPDATE</code> 和 <code>MERGE</code> 操作可以将某些行标记为已删除或已更改，而无需立即重写包含这些行的整个Parquet文件。这些标记信息存储在与数据文件分离的删除向量文件中。读取时，查询引擎会结合数据文件和删除向量来获取最新的数据视图。这种方式类似于读时合并（MoR）的行为，因为它推迟了物理数据的重写 。  </p>
+</li>
+<li><p><strong>物理应用:</strong> 被删除向量标记的更改会在后续的 <code>OPTIMIZE</code> 命令执行、自动压缩（auto-compaction）触发，或 <code>REORG TABLE... APPLY (PURGE)</code> 命令运行时被物理应用到数据文件中，即重写数据文件以移除标记的行或应用更改 。</p>
+</li>
+</ul>
+<h4 id="数据加载流程对比"><a href="#数据加载流程对比" class="headerlink" title="数据加载流程对比"></a>数据加载流程对比</h4><p><strong>Apache Hudi 加载流程:</strong></p>
+<ol>
+<li><strong>记录处理与索引:</strong> 输入记录被处理。如果是upsert操作或带有键的bulk_insert，Hudi会执行索引查找，将每条记录标记为插入或更新，并确定其目标文件组。</li>
+<li><strong>数据分区与文件大小调整:</strong> 根据分区键对数据进行分区，并应用文件大小调整的启发式算法，尝试将数据打包到大小合适的文件中。<code>bulk_insert</code>操作可能还会根据配置的排序模式（如<code>GLOBAL_SORT</code>或<code>PARTITION_SORT</code>）对数据进行排序和重分布。</li>
+<li><strong>数据写入:</strong> 数据被写入到基础文件（Parquet格式）和&#x2F;或日志文件（Avro格式，针对MoR表）。</li>
+<li><strong>索引更新:</strong> 更新索引以反映新数据的位置。</li>
+<li><strong>原子提交:</strong> 将事务元数据（如写入的文件、统计信息等）原子性地提交到Hudi的时间线上。这通常涉及到乐观并发控制（OCC）下的锁机制或MVCC协调。</li>
+</ol>
+<p><strong>Apache Iceberg 加载流程:</strong></p>
+<ol>
+<li><strong>数据文件写入:</strong> 数据首先被写入到数据文件（如Parquet、ORC或Avro格式）。</li>
+<li><strong>清单文件创建:</strong> 创建一个新的或多个新的清单文件（Manifest File），这些文件列出了新写入的数据文件及其统计信息（如列边界值、空值计数等）。</li>
+<li><strong>清单列表创建:</strong> 创建一个新的清单列表文件（Manifest List File），该文件指向相关的清单文件（包括新创建的和可能复用的旧清单文件）。</li>
+<li><strong>表元数据文件创建:</strong> 创建一个新的表元数据文件（JSON格式），该文件指向新的清单列表，并包含表的当前模式、快照ID、分区规范等信息。</li>
+<li><strong>原子提交:</strong> 尝试通过原子操作（通常是CAS）更新外部元数据存储（Catalog）中指向当前表元数据文件的指针。如果发生冲突（即其他写入者已提交），则当前写入操作会进行重试。</li>
+</ol>
+<p><strong>Delta Lake 加载流程:</strong></p>
+<ol>
+<li><strong>数据文件写入:</strong> 数据被写入到Parquet格式的数据文件中，通常分布在相应的分区目录下。</li>
+<li><strong>事务日志条目创建:</strong> 在 <code>_delta_log</code> 目录中创建一个新的事务日志条目（一个JSON文件），该文件记录了此次事务中添加的数据文件列表、删除的文件列表（如有）、事务的元数据（如操作类型、时间戳）以及可能的协议或元数据更新。</li>
+<li><strong>原子提交:</strong> 尝试以原子方式将新创建的JSON日志文件写入 <code>_delta_log</code> 目录。这通常依赖于底层文件系统的“如果不存在则创建”的原子语义。</li>
 </ol>
 <h4 id="对比分析"><a href="#对比分析" class="headerlink" title="对比分析"></a>对比分析</h4><table>
 <thead>
@@ -536,6 +618,45 @@
 <td align="center">Netflix, Tabular, Dremio 等</td>
 </tr>
 </tbody></table>
+<h3 id="湖仓系统对-HDFS-中非结构化数据的操作方式"><a href="#湖仓系统对-HDFS-中非结构化数据的操作方式" class="headerlink" title="湖仓系统对 HDFS 中非结构化数据的操作方式"></a>湖仓系统对 HDFS 中非结构化数据的操作方式</h3><p><strong>存储方式:</strong></p>
+<ul>
+<li>对于<strong>半结构化数据</strong>（如JSON、XML、Avro），Lakehouse格式（Hudi, Iceberg, Delta Lake）通常将其存储在支持复杂嵌套结构的列式文件格式中，最常见的是Apache Parquet或ORC。这些格式能够高效地压缩和查询嵌套数据，使其可以直接被SQL引擎或其他分析工具处理。</li>
+<li>对于<strong>非结构化数据</strong>（如图像文件<code>.jpg</code>, 视频文件<code>.mp4</code>, 音频文件<code>.mp3</code>, 纯文本文档<code>.txt</code>, 二进制大对象BLOBs），这些文件本身会以其原始格式直接存储在HDFS中。Lakehouse表此时扮演的角色是管理这些文件的<strong>元数据</strong>。例如，表中的一行可能代表一个图像文件，包含的列有文件路径（指向HDFS中的实际文件）、文件大小、创建日期、相关的标签或描述、甚至是提取出的特征（如图像的宽度、高度、主要颜色等）。</li>
+</ul>
+<p><strong>操作方式:</strong></p>
+<ul>
+<li><strong>元数据管理:</strong> Lakehouse格式的核心功能（ACID事务、版本控制、时间旅行、模式演进）主要应用于它们所管理的结构化或半结构化数据，以及非结构化文件的元数据。例如，当向表中添加一个新的图像文件引用时，这个添加操作是事务性的，并且可以被版本控制。如果更新了某个图像文件的标签，这个元数据的更新也是一个事务。</li>
+<li><strong>内容处理:</strong> 对非结构化数据内容的实际处理（例如，使用计算机视觉模型分析图像、使用自然语言处理技术分析文本、转码视频等）通常由专门的计算引擎完成，如Apache Spark结合其MLlib库、TensorFlow、PyTorch等 。这些引擎可以直接从HDFS读取由Lakehouse表元数据指向的原始文件路径。Lakehouse系统本身不直接提供对这些二进制文件内容的内部操作（例如，事务性地修改视频中的某一帧）。  </li>
+<li><strong>与高级分析集成:</strong> 湖仓架构通过提供统一的数据访问接口，使得机器学习（ML）和数据科学工作负载能够更便捷地利用存储在数据湖中的各类数据。例如，ML模型训练可能需要读取大量图像文件（路径存储在Lakehouse表中）和对应的标注信息（也存储在Lakehouse表中）。最近的一个趋势是将从非结构化数据中提取的<strong>向量嵌入 (vector embeddings)</strong> 存储在Parquet文件中，并由Lakehouse格式管理，这使得非结构化内容可以通过其结构化的向量表示被索引和查询 。</li>
+</ul>
+<h3 id="Hudi加载数据慢的原因"><a href="#Hudi加载数据慢的原因" class="headerlink" title="Hudi加载数据慢的原因"></a>Hudi加载数据慢的原因</h3><p>基准测试研究（如LHBench ）指出，Hudi在批量加载大型数据集（如3TB TPC-DS）时，其加载时间远超Delta Lake和Iceberg。报告将此归因于Hudi为有键更新所做的优化，导致在批量加载时执行了“昂贵的预处理步骤”，包括“键唯一性检查和键重分布” 。这些预处理步骤具体可以分解为：</p>
+<ul>
+<li><p><strong>索引构建与查找 (Index construction and lookup):</strong></p>
+<ul>
+<li>Hudi的核心是记录键（record key）。为了有效地执行upsert操作（即如果记录键已存在则更新，否则插入），Hudi需要一个索引来快速将传入的记录键映射到其在存储中的物理位置（即文件组ID）。  </li>
+<li>在批量加载数据时，即便是使用<code>bulk_insert</code>操作（如果提供了记录键并期望去重或后续能进行键更新），或者默认的<code>upsert</code>操作，Hudi都需要与这个索引机制交互。对于一个全新的表进行首次加载，这可能意味着需要为所有输入数据构建初始索引结构。如果使用<code>upsert</code>，则每条输入记录都需要通过索引查找来判断是插入还是更新。</li>
+<li>虽然Hudi提供了多种索引实现（如Bloom Filter索引、Simple Index、HBase Index等），并且其内置索引（如基于文件范围和Bloom Filter的索引）声称比使用Spark Join进行相同判断快数倍 ，但对于TB级别的海量数据，这个查找和标记过程本身仍然会消耗大量的计算资源和时间。</li>
+</ul>
+</li>
+<li><p><strong>主键唯一性检查与预结合 (Primary key uniqueness checks and Precombine):</strong></p>
+<ul>
+<li>为了保证数据的一致性，Hudi在upsert操作中会确保主键的唯一性。这包括检查输入批次内是否有重复键，以及与表中现有数据比较。</li>
+<li>Hudi还支持“预结合”（Precombine）机制。如果在写入配置中指定了预结合字段（例如，通过<code>hoodie.datasource.write.precombine.field</code>配置一个时间戳或版本号列 ），那么在实际写入之前，Hudi会根据此字段对输入数据中具有相同记录键的多条记录进行合并，只保留“最新”或“最优先”的一条。这个过程虽然能确保数据质量和处理晚到数据，但在批量加载大量原始数据时，无疑增加了额外的计算开销。</li>
+</ul>
+</li>
+<li><p><strong>数据重分布与文件大小调整 (Data redistribution and file sizing heuristics):</strong></p>
+<ul>
+<li><p>Hudi非常注重对底层存储文件大小的管理，以避免产生大量小文件，从而优化后续的查询性能 。在数据加载过程中，Hudi会运行启发式算法，尝试将数据打包到大小适宜（例如，接近配置的目标文件大小）的基础文件中。  </p>
+</li>
+<li><p>对于<code>bulk_insert</code>操作，Hudi提供了多种排序模式（<code>hoodie.bulkinsert.sort.mode</code>），如<code>NONE</code>（不排序，最快但文件大小控制较差）、<code>GLOBAL_SORT</code>（全局排序，文件大小控制最好但成本最高）、<code>PARTITION_SORT</code>（分区内排序，平衡性能和文件大小）等 。选择  </p>
+<p><code>GLOBAL_SORT</code>或<code>PARTITION_SORT</code>模式意味着在写入数据之前需要进行大规模的Shuffle和Sort操作，这在批量加载TB级数据时是非常耗时的。即使是默认的<code>upsert</code>操作，其内部的文件组分配和数据写入逻辑也会考虑文件大小的维护。</p>
+</li>
+<li><p>这种主动的文件组织和大小控制策略，与某些系统可能先快速写入数据（可能产生小文件），然后依赖后续独立的、显式的压缩（compaction）步骤来整理文件的做法不同，Hudi在写入时就承担了部分数据布局的成本。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>这些预处理步骤，虽然对于Hudi核心的增量更新和CDC场景至关重要，但在纯粹的、一次性的大批量数据追加（append-only）场景下，它们就构成了显著的性能开销。</p>
 
                 
               </div>
