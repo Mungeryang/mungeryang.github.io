@@ -19,27 +19,26 @@
   <meta name="author" content="Munger Yang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="基于Bert-base-chinese的中文文本分类安装必要的第三方库1root@autodl-container-7a964b9870-ea0546ee:~# pip install pandas transformers  ![image-20250625224311571](&#x2F;Users&#x2F;mungeryang&#x2F;Library&#x2F;Application S">
+    <meta name="description" content="强化学习:从入门到放弃   Munger的强化学习笔记  课程:强化学习的数学原理  西湖大学·赵世钰  学习笔记整理：杨桂淼  引OK,咱就是说；深度学习还没完全整透彻呢，强化学习快马加鞭地就来了。因为夏季小学期选了晓飞老师的《强化学习》课程，奈何网课我是实在听不进去，而且每天还要在所里通勤干活，只能拿出挤地铁的三个小时来看网课去学咯。。。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="五一五更之三：动手学BERT">
-<meta property="og:url" content="http://example.com/2025/05/03/%E4%BA%94%E4%B8%80%E4%BA%94%E6%9B%B4%E4%B9%8B%E4%B8%89%EF%BC%9A%E5%8A%A8%E6%89%8B%E5%AD%A6BERT/index.html">
+<meta property="og:title" content="强化学习:从入门到放弃">
+<meta property="og:url" content="http://example.com/2025/06/25/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0-%E4%BB%8E%E5%BC%80%E5%A7%8B%E5%88%B0%E6%94%BE%E5%BC%83/index.html">
 <meta property="og:site_name" content="munger写字的地方">
-<meta property="og:description" content="基于Bert-base-chinese的中文文本分类安装必要的第三方库1root@autodl-container-7a964b9870-ea0546ee:~# pip install pandas transformers  ![image-20250625224311571](&#x2F;Users&#x2F;mungeryang&#x2F;Library&#x2F;Application S">
+<meta property="og:description" content="强化学习:从入门到放弃   Munger的强化学习笔记  课程:强化学习的数学原理  西湖大学·赵世钰  学习笔记整理：杨桂淼  引OK,咱就是说；深度学习还没完全整透彻呢，强化学习快马加鞭地就来了。因为夏季小学期选了晓飞老师的《强化学习》课程，奈何网课我是实在听不进去，而且每天还要在所里通勤干活，只能拿出挤地铁的三个小时来看网课去学咯。。。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://sesameworkshop.org/wp-content/uploads/2023/03/presskit_ss_bio_bert.png">
-<meta property="article:published_time" content="2025-05-02T22:32:10.000Z">
-<meta property="article:modified_time" content="2025-06-25T16:00:30.567Z">
+<meta property="og:image" content="https://img1.doubanio.com/view/subject/m/public/s35126778.jpg">
+<meta property="article:published_time" content="2025-06-25T15:35:05.000Z">
+<meta property="article:modified_time" content="2025-06-25T15:48:49.992Z">
 <meta property="article:author" content="Munger Yang">
-<meta property="article:tag" content="LLM">
-<meta property="article:tag" content="深度学习">
+<meta property="article:tag" content="强化学习">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://sesameworkshop.org/wp-content/uploads/2023/03/presskit_ss_bio_bert.png">
+<meta name="twitter:image" content="https://img1.doubanio.com/view/subject/m/public/s35126778.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>五一五更之三：动手学BERT - munger写字的地方</title>
+  <title>强化学习:从入门到放弃 - munger写字的地方</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -257,7 +256,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="五一五更之三：动手学BERT"></span>
+            <span id="subtitle" data-typed-text="强化学习:从入门到放弃"></span>
           
         </div>
 
@@ -268,8 +267,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-05-03 06:32" pubdate>
-          2025年5月3日 早上
+        <time datetime="2025-06-25 23:35" pubdate>
+          2025年6月25日 晚上
         </time>
       </span>
     
@@ -280,7 +279,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          510 字
+          139 字
         
       </span>
     
@@ -291,7 +290,7 @@
         
         
         
-          5 分钟
+          2 分钟
         
       </span>
     
@@ -337,34 +336,24 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">五一五更之三：动手学BERT</h1>
+            <h1 id="seo-header">强化学习:从入门到放弃</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="基于Bert-base-chinese的中文文本分类"><a href="#基于Bert-base-chinese的中文文本分类" class="headerlink" title="基于Bert-base-chinese的中文文本分类"></a>基于Bert-base-chinese的中文文本分类</h1><h2 id="安装必要的第三方库"><a href="#安装必要的第三方库" class="headerlink" title="安装必要的第三方库"></a>安装必要的第三方库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">root@autodl-container-7a964b9870-ea0546ee:~# pip install pandas transformers<br></code></pre></td></tr></table></figure>
+                <center>
+<h1>强化学习:从入门到放弃</h1>
+</center>
 
-<p>![image-20250625224311571](&#x2F;Users&#x2F;mungeryang&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20250625224311571.png)</p>
-<h2 id="加载代码与数据集"><a href="#加载代码与数据集" class="headerlink" title="加载代码与数据集"></a>加载代码与数据集</h2><p>使用git从GitHub拉取镜像仓库</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">root@autodl-container-7a964b9870-ea0546ee:~# git <span class="hljs-built_in">clone</span> https://github.com/QijingGJ/Bert-Chinese-Text-Classification.git<br>root@autodl-container-7a964b9870-ea0546ee:~# <span class="hljs-built_in">ls</span><br>Bert-Chinese-Text-Classification  autodl-pub  autodl-tmp  miniconda3  tf-logs<br></code></pre></td></tr></table></figure>
+<center>Munger的强化学习笔记</center>
 
-<img src="/Users/mungeryang/Library/Application Support/typora-user-images/image-20250625222119585.png" srcset="/img/loading.gif" lazyload style="zoom:35%;" />
+<center>课程:强化学习的数学原理</center>
 
-<h2 id="下载google-bert-bert-base-chinese模型"><a href="#下载google-bert-bert-base-chinese模型" class="headerlink" title="下载google-bert&#x2F;bert-base-chinese模型"></a>下载google-bert&#x2F;bert-base-chinese模型</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">root@autodl-container-7a964b9870-ea0546ee:~# git <span class="hljs-built_in">clone</span> https://hf-mirror.com/google-bert/bert-base-chinese<br>root@autodl-container-7a964b9870-ea0546ee:~/bert-base-chinese# <span class="hljs-built_in">ls</span><br>README.md  config.json  flax_model.msgpack  model.safetensors  pytorch_model.bin  tf_model.h5  tokenizer.json  tokenizer_config.json  vocab.txt<br></code></pre></td></tr></table></figure>
+<center>西湖大学·赵世钰</center>
 
-<p>![image-20250625222817754](&#x2F;Users&#x2F;mungeryang&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20250625222817754.png)</p>
-<h2 id="修改数据参数"><a href="#修改数据参数" class="headerlink" title="修改数据参数"></a>修改数据参数</h2><p>修改必要参数路径前，先把模型文件整合一下，并创建好<code>bert_checkpoint</code>文件夹：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">root@autodl-container-7a964b9870-ea0546ee:~/bert-base-chinese# <span class="hljs-built_in">cd</span> ../<br>root@autodl-container-7a964b9870-ea0546ee:~# <span class="hljs-built_in">ls</span><br>Bert-Chinese-Text-Classification  autodl-pub  autodl-tmp  bert-base-chinese  miniconda3  tf-logs<br><br>root@autodl-container-7a964b9870-ea0546ee:~# <span class="hljs-built_in">mv</span> bert-base-chinese/ Bert-Chinese-Text-Classification/<br><br>root@autodl-container-7a964b9870-ea0546ee:~# <span class="hljs-built_in">ls</span><br>Bert-Chinese-Text-Classification  autodl-pub  autodl-tmp  miniconda3  tf-logs<br><br>root@autodl-container-7a964b9870-ea0546ee:~# <span class="hljs-built_in">cd</span> Bert-Chinese-Text-Classification/<br>root@autodl-container-7a964b9870-ea0546ee:~/Bert-Chinese-Text-Classification# <span class="hljs-built_in">ls</span><br>README  THUCNews  bert-base-chinese  bert_get_data.py  bert_test.py  bert_train.py  bert_tuili.py<br><br>root@autodl-container-7a964b9870-ea0546ee:~/Bert-Chinese-Text-Classification# <span class="hljs-built_in">mkdir</span> -p bert_checkpoint<br><br>root@autodl-container-7a964b9870-ea0546ee:~/Bert-Chinese-Text-Classification# <span class="hljs-built_in">ls</span><br>README  THUCNews  bert-base-chinese  bert_checkpoint  bert_get_data.py  bert_test.py  bert_train.py  bert_tuili.py<br></code></pre></td></tr></table></figure>
+<center>学习笔记整理：杨桂淼</center>
 
-<h3 id="bert-get-data-py"><a href="#bert-get-data-py" class="headerlink" title="bert_get_data.py"></a>bert_get_data.py</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#修改位置1:</span><br>bert_name = <span class="hljs-string">&#x27;/root/Bert-Chinese-Text-Classification/bert-base-chinese&#x27;</span><br>tokenizer = BertTokenizer.from_pretrained(bert_name)<br><br><span class="hljs-comment">#修改位置2:</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">GenerateData</span>(<span class="hljs-params">mode</span>):<br>    train_data_path = <span class="hljs-string">&#x27;/root/Bert-Chinese-Text-Classification/THUCNews/data/train.txt&#x27;</span><br>    dev_data_path = <span class="hljs-string">&#x27;/root/Bert-Chinese-Text-Classification/THUCNews/data/dev.txt&#x27;</span><br>    test_data_path = <span class="hljs-string">&#x27;/root/Bert-Chinese-Text-Classification/THUCNews/data/test.txt&#x27;</span><br><br>    ...代码逻辑保持不变<br></code></pre></td></tr></table></figure>
-
-<h3 id="bert-train-py与bert-test-py"><a href="#bert-train-py与bert-test-py" class="headerlink" title="bert_train.py与bert_test.py"></a>bert_train.py与bert_test.py</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#修改位置：</span><br>save_path = <span class="hljs-string">&#x27;/root/Bert-Chinese-Text-Classification/bert_checkpoint&#x27;</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="bert-tuili-py"><a href="#bert-tuili-py" class="headerlink" title="bert_tuili.py"></a>bert_tuili.py</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python">bert_name = <span class="hljs-string">&#x27;/root/Bert-Chinese-Text-Classification/bert-base-chinese&#x27;</span><br>tokenizer = BertTokenizer.from_pretrained(bert_name)<br>device = torch.device(<span class="hljs-string">&quot;cuda:0&quot;</span> <span class="hljs-keyword">if</span> torch.cuda.is_available() <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;cpu&quot;</span>)<br><br>save_path = <span class="hljs-string">&#x27;/root/Bert-Chinese-Text-Classification/bert_checkpoint&#x27;</span><br>model = BertClassifier()<br>model.load_state_dict(torch.load(os.path.join(save_path, <span class="hljs-string">&#x27;best.pt&#x27;</span>)))<br>model = model.to(device)<br>model.<span class="hljs-built_in">eval</span>()<br><br>real_labels = []<br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;/root/Bert-Chinese-Text-Classification/THUCNews/data/class.txt&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>    ...代码逻辑保持不变<br></code></pre></td></tr></table></figure>
-
-<h2 id="模型训练"><a href="#模型训练" class="headerlink" title="模型训练"></a>模型训练</h2><p>![image-20250625235024801](&#x2F;Users&#x2F;mungeryang&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20250625235024801.png)</p>
-<h2 id="模型测试"><a href="#模型测试" class="headerlink" title="模型测试"></a>模型测试</h2><p>![image-20250625235414672](&#x2F;Users&#x2F;mungeryang&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20250625235414672.png)</p>
-<h2 id="模型推理"><a href="#模型推理" class="headerlink" title="模型推理"></a>模型推理</h2><p>![image-20250625235727682](&#x2F;Users&#x2F;mungeryang&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20250625235727682.png)</p>
+<h2 id="引"><a href="#引" class="headerlink" title="引"></a>引</h2><p>OK,咱就是说；深度学习还没完全整透彻呢，强化学习快马加鞭地就来了。因为夏季小学期选了晓飞老师的《强化学习》课程，奈何网课我是实在听不进去，而且每天还要在所里通勤干活，只能拿出挤地铁的三个小时来看网课去学咯。。。</p>
 
                 
               </div>
@@ -383,7 +372,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9B%B8%E5%85%B3/" class="category-chain-item">大模型相关</a>
+  <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="category-chain-item">人工智能与深度学习</a>
   
   
 
@@ -393,7 +382,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="category-chain-item">人工智能与深度学习</a>
+  <a href="/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="category-chain-item">强化学习</a>
   
   
 
@@ -408,9 +397,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/LLM/" class="print-no-link">#LLM</a>
-      
-        <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="print-no-link">#深度学习</a>
+        <a href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="print-no-link">#强化学习</a>
       
     </div>
   
@@ -422,8 +409,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>五一五更之三：动手学BERT</div>
-      <div>http://example.com/2025/05/03/五一五更之三：动手学BERT/</div>
+      <div>强化学习:从入门到放弃</div>
+      <div>http://example.com/2025/06/25/强化学习-从开始到放弃/</div>
     </div>
     <div class="license-meta">
       
@@ -435,7 +422,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年5月3日</div>
+          <div>2025年6月25日</div>
         </div>
       
       
@@ -468,9 +455,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/05/04/%E4%BA%94%E4%B8%80%E4%BA%94%E6%9B%B4%E4%B9%8B%E5%9B%9B%EF%BC%9A%E5%8A%A8%E6%89%8B%E5%AD%A6GPT/" title="五一五更之四：动手学GPT">
+                      <a href="/2025/06/25/%E5%9F%BA%E4%BA%8EBert-base-chinese%E7%9A%84%E4%B8%AD%E6%96%87%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB/" title="">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">五一五更之四：动手学GPT</span>
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -478,8 +465,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/05/02/%E4%BA%94%E4%B8%80%E4%BA%94%E6%9B%B4%E4%B9%8B%E4%BA%8C%EF%BC%9A%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E7%9A%84%E8%B5%B7%E6%BA%90%E4%B8%8E%E5%8F%91%E5%B1%95/" title="五一五更之二：注意力机制的起源与发展">
-                        <span class="hidden-mobile">五一五更之二：注意力机制的起源与发展</span>
+                      <a href="/2025/06/17/%E7%A4%BE%E7%95%9C%E7%89%9B%E9%A9%AC%E7%94%9F%E6%B4%BB%E5%88%9D%E4%BD%93%E9%AA%8C/" title="社畜牛马生活初体验">
+                        <span class="hidden-mobile">社畜牛马生活初体验</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -568,6 +555,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -801,6 +794,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
