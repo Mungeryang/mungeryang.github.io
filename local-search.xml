@@ -4,13 +4,25 @@
   
   
   <entry>
-    <title></title>
-    <link href="/2025/06/25/%E5%9F%BA%E4%BA%8EBert-base-chinese%E7%9A%84%E4%B8%AD%E6%96%87%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB/"/>
-    <url>/2025/06/25/%E5%9F%BA%E4%BA%8EBert-base-chinese%E7%9A%84%E4%B8%AD%E6%96%87%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB/</url>
+    <title>2025年6月总结与展望</title>
+    <link href="/2025/07/01/2025%E5%B9%B46%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/"/>
+    <url>/2025/07/01/2025%E5%B9%B46%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/</url>
     
-    <content type="html"><![CDATA[<h1 id="基于Bert-base-chinese的中文文本分类"><a href="#基于Bert-base-chinese的中文文本分类" class="headerlink" title="基于Bert-base-chinese的中文文本分类"></a>基于Bert-base-chinese的中文文本分类</h1><center>刘贺</center><center>实验环境：Autodl - NVIDIA RTX 3090 45GB</center><center>5轮训练耗时：20mins</center><h2 id="安装必要的第三方库"><a href="#安装必要的第三方库" class="headerlink" title="安装必要的第三方库"></a>安装必要的第三方库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">root@autodl-container-7a964b9870-ea0546ee:~# pip install pandas transformers<br></code></pre></td></tr></table></figure><p>![image-20250625224311571](&#x2F;Users&#x2F;mungeryang&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20250625224311571.png)</p><h2 id="加载代码与数据集"><a href="#加载代码与数据集" class="headerlink" title="加载代码与数据集"></a>加载代码与数据集</h2><p>使用git从GitHub拉取镜像仓库</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">root@autodl-container-7a964b9870-ea0546ee:~# git <span class="hljs-built_in">clone</span> https://github.com/QijingGJ/Bert-Chinese-Text-Classification.git<br>root@autodl-container-7a964b9870-ea0546ee:~# <span class="hljs-built_in">ls</span><br>Bert-Chinese-Text-Classification  autodl-pub  autodl-tmp  miniconda3  tf-logs<br></code></pre></td></tr></table></figure><img src="/Users/mungeryang/Library/Application Support/typora-user-images/image-20250625222119585.png" style="zoom:35%;" /><h2 id="下载google-bert-bert-base-chinese模型"><a href="#下载google-bert-bert-base-chinese模型" class="headerlink" title="下载google-bert&#x2F;bert-base-chinese模型"></a>下载google-bert&#x2F;bert-base-chinese模型</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">root@autodl-container-7a964b9870-ea0546ee:~# git <span class="hljs-built_in">clone</span> https://hf-mirror.com/google-bert/bert-base-chinese<br>root@autodl-container-7a964b9870-ea0546ee:~/bert-base-chinese# <span class="hljs-built_in">ls</span><br>README.md  config.json  flax_model.msgpack  model.safetensors  pytorch_model.bin  tf_model.h5  tokenizer.json  tokenizer_config.json  vocab.txt<br></code></pre></td></tr></table></figure><p>![image-20250625222817754](&#x2F;Users&#x2F;mungeryang&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20250625222817754.png)</p><h2 id="修改数据参数"><a href="#修改数据参数" class="headerlink" title="修改数据参数"></a>修改数据参数</h2><p>修改必要参数路径前，先把模型文件整合一下，并创建好<code>bert_checkpoint</code>文件夹：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">root@autodl-container-7a964b9870-ea0546ee:~/bert-base-chinese# <span class="hljs-built_in">cd</span> ../<br>root@autodl-container-7a964b9870-ea0546ee:~# <span class="hljs-built_in">ls</span><br>Bert-Chinese-Text-Classification  autodl-pub  autodl-tmp  bert-base-chinese  miniconda3  tf-logs<br><br>root@autodl-container-7a964b9870-ea0546ee:~# <span class="hljs-built_in">mv</span> bert-base-chinese/ Bert-Chinese-Text-Classification/<br><br>root@autodl-container-7a964b9870-ea0546ee:~# <span class="hljs-built_in">ls</span><br>Bert-Chinese-Text-Classification  autodl-pub  autodl-tmp  miniconda3  tf-logs<br><br>root@autodl-container-7a964b9870-ea0546ee:~# <span class="hljs-built_in">cd</span> Bert-Chinese-Text-Classification/<br>root@autodl-container-7a964b9870-ea0546ee:~/Bert-Chinese-Text-Classification# <span class="hljs-built_in">ls</span><br>README  THUCNews  bert-base-chinese  bert_get_data.py  bert_test.py  bert_train.py  bert_tuili.py<br><br>root@autodl-container-7a964b9870-ea0546ee:~/Bert-Chinese-Text-Classification# <span class="hljs-built_in">mkdir</span> -p bert_checkpoint<br><br>root@autodl-container-7a964b9870-ea0546ee:~/Bert-Chinese-Text-Classification# <span class="hljs-built_in">ls</span><br>README  THUCNews  bert-base-chinese  bert_checkpoint  bert_get_data.py  bert_test.py  bert_train.py  bert_tuili.py<br></code></pre></td></tr></table></figure><h3 id="bert-get-data-py"><a href="#bert-get-data-py" class="headerlink" title="bert_get_data.py"></a>bert_get_data.py</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#修改位置1:</span><br>bert_name = <span class="hljs-string">&#x27;/root/Bert-Chinese-Text-Classification/bert-base-chinese&#x27;</span><br>tokenizer = BertTokenizer.from_pretrained(bert_name)<br><br><span class="hljs-comment">#修改位置2:</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">GenerateData</span>(<span class="hljs-params">mode</span>):<br>    train_data_path = <span class="hljs-string">&#x27;/root/Bert-Chinese-Text-Classification/THUCNews/data/train.txt&#x27;</span><br>    dev_data_path = <span class="hljs-string">&#x27;/root/Bert-Chinese-Text-Classification/THUCNews/data/dev.txt&#x27;</span><br>    test_data_path = <span class="hljs-string">&#x27;/root/Bert-Chinese-Text-Classification/THUCNews/data/test.txt&#x27;</span><br><br>    ...代码逻辑保持不变<br></code></pre></td></tr></table></figure><h3 id="bert-train-py与bert-test-py"><a href="#bert-train-py与bert-test-py" class="headerlink" title="bert_train.py与bert_test.py"></a>bert_train.py与bert_test.py</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#修改位置：</span><br>save_path = <span class="hljs-string">&#x27;/root/Bert-Chinese-Text-Classification/bert_checkpoint&#x27;</span><br></code></pre></td></tr></table></figure><h3 id="bert-tuili-py"><a href="#bert-tuili-py" class="headerlink" title="bert_tuili.py"></a>bert_tuili.py</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python">bert_name = <span class="hljs-string">&#x27;/root/Bert-Chinese-Text-Classification/bert-base-chinese&#x27;</span><br>tokenizer = BertTokenizer.from_pretrained(bert_name)<br>device = torch.device(<span class="hljs-string">&quot;cuda:0&quot;</span> <span class="hljs-keyword">if</span> torch.cuda.is_available() <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;cpu&quot;</span>)<br><br>save_path = <span class="hljs-string">&#x27;/root/Bert-Chinese-Text-Classification/bert_checkpoint&#x27;</span><br>model = BertClassifier()<br>model.load_state_dict(torch.load(os.path.join(save_path, <span class="hljs-string">&#x27;best.pt&#x27;</span>)))<br>model = model.to(device)<br>model.<span class="hljs-built_in">eval</span>()<br><br>real_labels = []<br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;/root/Bert-Chinese-Text-Classification/THUCNews/data/class.txt&#x27;</span>, <span class="hljs-string">&#x27;r&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>    ...代码逻辑保持不变<br></code></pre></td></tr></table></figure><h2 id="模型训练"><a href="#模型训练" class="headerlink" title="模型训练"></a>模型训练</h2><p>![image-20250625235024801](&#x2F;Users&#x2F;mungeryang&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20250625235024801.png)</p><h2 id="模型测试"><a href="#模型测试" class="headerlink" title="模型测试"></a>模型测试</h2><p>![image-20250625235414672](&#x2F;Users&#x2F;mungeryang&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20250625235414672.png)</p><h2 id="模型推理"><a href="#模型推理" class="headerlink" title="模型推理"></a>模型推理</h2><p>![image-20250625235727682](&#x2F;Users&#x2F;mungeryang&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20250625235727682.png)</p>]]></content>
+    <content type="html"><![CDATA[<p>今天是2025年7月1号，党的生日，祝党生日快乐！</p><h2 id="离别"><a href="#离别" class="headerlink" title="离别"></a>离别</h2><p>2025年6月16号，正式和雁栖湖道别啦，但是没有说再见👋，我相信我们还会再见的。雁子，我们还会再见的对吗？！</p><p>雁栖湖的一年和梦一样，这一年太过于充实和美好。</p><p>从2024年8月底来到这里，2025年将近6月底离开，这一年收获满满，很快乐、很充实。感觉就像是保研后老天给自己的奖励一样，让自己慢下来，好好去享受一下生活。</p><p>这一年认识了很多朋友，也在多方面锻炼了自己的能力；元旦晚会上跳了舞、冬天滑了雪、爬了一次来了无数次北京都没去过的长城和香山、逛遍了大小胡同、吃了角落里藏着的美食、作为主讲人参加了几次庄重的汇报、划了龙舟、打了数不尽场的篮球。。。</p><p>我想我们还会再见的，再见，我一定会换个身份和你再见。雁子，让我们各自努力，顶峰相见！</p><h2 id="打工人"><a href="#打工人" class="headerlink" title="打工人"></a>打工人</h2><p>“没跑路啊xdm，干了15天了。”</p><p>哈哈哈哈，最近抖音上这个哥们魔性的开场白给我洗脑了，同为打工人，现在也算是深有体会了。6月16号离校后便搬到了舅舅房山的家里，舅舅一家工作日住海淀家里，周一到周五房山的房子没人住，我便自己开始在房山开启了爽住模式。</p><p>老话说：“无利不起早”，老话说得没错。</p><p>记得从四月份开始写阅读总结的时候就说自己很懒了，早上根部起不来；这下好了，由于房山的房子离我们单位比较远，每天地铁来回通勤就要接近3个小时。现在，根本不需要担心自己早上起不来了，每天6点准时起床挤地铁。第一天起得晚，七点半上的地铁，卧槽，给我挤得窒息了，第二天开始便提前半小时。现在每天晚上11:30睡觉，早上六点闹钟，也适应了。</p><p>目前完全是上班节奏，晚上下班在单位吃完饭，下地铁基本上就7点了，到家收拾一下就去健身，留给自己自由支配的时间很少了。但是我感觉挺充实的，每天都有在地铁上利用好时间，最近在通勤过程中一直在学西湖大学赵世钰老师的《强化学习的数学原理》，没错，我就是卷王哈哈哈。我是真感兴趣，赵老师讲的真通透，打算正式回所前，要把这个网课系统的刷完，做好笔记。</p><p>上个月把马伯庸老师的短篇《长安的荔枝》看完了，这个月接着看《太白金星有点烦》，打工人的宿命在这一刻交相呼应。</p><p>我想，热爱自己所从事的工作胜过一切吧，虽然辛苦，但是我挺快乐的，这两点不矛盾！！！</p><h2 id="欠债还钱天经地义"><a href="#欠债还钱天经地义" class="headerlink" title="欠债还钱天经地义"></a>欠债还钱天经地义</h2><p>由于这半年一直在根据idea去做实验，我自己的博客空间已经欠下了n多篇文章都没有梳理了💔</p><p>接下来的这一月，我务必会把在雁栖湖的这一年里全部文章认认真真梳理完善完毕，把知识体系与技术路线都建立好，对自己负责、对为数不多的读者们负责。</p><p>进度差的多的文章有：五一五更系列、强化学习、线性代数的本质；重点关注完善。</p><p>PS：写这篇文章的时候，其实我正在工位摸鱼哈哈哈哈，7月挺好，事少，好好珍惜；2025的下半场了，加油呀！👊</p>]]></content>
     
     
+    <categories>
+      
+      <category>动机</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>科研心路</tag>
+      
+    </tags>
     
   </entry>
   
@@ -70,8 +82,8 @@
   
   <entry>
     <title>线性代数的本质</title>
-    <link href="/2025/06/17/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9A%84%E6%9C%AC%E8%B4%A8/"/>
-    <url>/2025/06/17/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9A%84%E6%9C%AC%E8%B4%A8/</url>
+    <link href="/2025/06/11/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9A%84%E6%9C%AC%E8%B4%A8/"/>
+    <url>/2025/06/11/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9A%84%E6%9C%AC%E8%B4%A8/</url>
     
     <content type="html"><![CDATA[<p>最近一个月每天都要挤地铁，通勤来回要三个小时，所以总得找点事干。</p><p>这两天在地铁上断断续续把《线性代数的本质》系列学完了，做个总结，构建一下核心知识体系。</p>]]></content>
     
@@ -156,7 +168,7 @@
     <link href="/2025/05/04/%E4%BA%94%E4%B8%80%E4%BA%94%E6%9B%B4%E4%B9%8B%E5%9B%9B%EF%BC%9A%E5%8A%A8%E6%89%8B%E5%AD%A6GPT/"/>
     <url>/2025/05/04/%E4%BA%94%E4%B8%80%E4%BA%94%E6%9B%B4%E4%B9%8B%E5%9B%9B%EF%BC%9A%E5%8A%A8%E6%89%8B%E5%AD%A6GPT/</url>
     
-    <content type="html"><![CDATA[<p>参考阅读书籍：《从零构建大语言模型》</p><p>代码仓库：<a href="https://github.com/rasbt/LLMs-from-scratch">https://github.com/rasbt/LLMs-from-scratch</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li><p>Build A Large Language Model (From Scratch), Sebastian Raschka, <a href="https://github.com/rasbt/LLMs-from-scratch">https://github.com/rasbt/LLMs-from-scratch</a></p></li><li><p>EZencoder. DeepSeek-R1 论文详解 part 3：GPT发展史 | scaling law | 训练范式 | 涌现, <a href="https://www.bilibili.com/video/BV1bUA8eYEHJ/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=f093c3d64ba399e149cbffa6cd31a7b0">https://www.bilibili.com/video/BV1bUA8eYEHJ/?spm_id_from=333.1007.top_right_bar_window_history.content.click&amp;vd_source=f093c3d64ba399e149cbffa6cd31a7b0</a></p></li></ul>]]></content>
     
     
     <categories>
@@ -236,8 +248,8 @@
   
   <entry>
     <title>五一五更之一：2025年4月总结与展望</title>
-    <link href="/2025/05/01/%E4%BA%94%E4%B8%80%E4%BA%94%E6%9B%B4%E4%B9%8B%E4%B8%80%EF%BC%9A2025%E5%B9%B44%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/"/>
-    <url>/2025/05/01/%E4%BA%94%E4%B8%80%E4%BA%94%E6%9B%B4%E4%B9%8B%E4%B8%80%EF%BC%9A2025%E5%B9%B44%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/</url>
+    <link href="/2025/05/01/2025%E5%B9%B44%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/"/>
+    <url>/2025/05/01/2025%E5%B9%B44%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/</url>
     
     <content type="html"><![CDATA[<p>五一放假回老家了，在家呆着也舒服，也不舒服。</p><p>舒服在于安心，回来无忧无虑，家是唯一的城堡；不舒服在于，竟然被弟弟妹妹们催婚了卧槽？！我爸我妈都没发表意见，被小一辈开始攻击了😭</p><h2 id="并不友好的人间4月天"><a href="#并不友好的人间4月天" class="headerlink" title="并不友好的人间4月天"></a>并不友好的人间4月天</h2><p>4月，大风、多雨。</p><p>天气起起伏伏，状态也是起起伏伏😑</p><p>这个月很焦虑，因为实验跑了<strong>一坨屎</strong>；深刻理解了Kaiming那句话：<strong>科研95%的时间都是沮丧的</strong>。（短短一句话，一个月的辛酸全部囊括了，无论多努力：）何况压根儿也没多努力，全部付之东流see you again；真正对当年明月那句话有了同感：历史书上，短短一页纸的内容就是一个人波澜壮阔的一生啊！）</p><p>科苑杯篮球赛也是起起伏伏，小组赛赢了两个比较弱的对手，但是遇到计算机学院这个实力稍微强一点的对手，便有点乱了阵脚。加上队友们有相继生病的，阵容并不完整，状态并不好。输给了计算机学院，真不甘心～其实是和他们有的一打的。</p><p>这个月竟然把《大明王朝1566》读完了，而且还读了《半小时漫画红楼梦》；真没想到竟然以这种漫画的形式完成了人生第一次《红楼梦》阅读。</p><p>陪熙宸看病的路上，零零碎碎读了周玲老师的另一本大作《认知驱动》，算是《认知觉醒》的姊妹篇；本质上还是教人做事。</p><h2 id="乌兰察布自驾"><a href="#乌兰察布自驾" class="headerlink" title="乌兰察布自驾"></a>乌兰察布自驾</h2><p>清明节放假和舅舅一家自驾去了乌兰察布和乌兰哈达火山群，内蒙好爽，体验感很好；牛马怎能不向往大草原啊～</p><h2 id="新知"><a href="#新知" class="headerlink" title="新知"></a>新知</h2><p>睿劼在微信读书给推荐了一本书不错：ddia《Designing Data Intensive Applications：数据密集型应用系统设计》<a href="https://ddia.qtmuniao.com/#/">https://ddia.qtmuniao.com/#/</a></p><p>冯小刚电影不错，尤其是和王朔一起搞的；现在再看，全是讽刺。</p><p>诺丁山也很好看，罗曼蒂克式的爱情片；艹，啥时候我也这么浪漫起来了哈哈哈。</p><p>————————</p><p>PS：四月很懵逼、很压抑；因为一直在经历失败、沮丧☹️想分身，想同时干很多事，但人是单线程，只能一件事一件事地干；有计划，但是又很拖延😂</p>]]></content>
     
@@ -367,9 +379,9 @@
     
     <tags>
       
-      <tag>MLLM</tag>
-      
       <tag>RAG</tag>
+      
+      <tag>MLLM</tag>
       
       <tag>多模态</tag>
       
@@ -798,11 +810,11 @@
     
     <tags>
       
+      <tag>GPT</tag>
+      
       <tag>深度学习</tag>
       
       <tag>NLP</tag>
-      
-      <tag>GPT</tag>
       
     </tags>
     
@@ -993,11 +1005,11 @@
       
       <tag>LLM</tag>
       
-      <tag>GPT</tag>
-      
       <tag>RAG</tag>
       
       <tag>Agent</tag>
+      
+      <tag>GPT</tag>
       
     </tags>
     
@@ -1136,9 +1148,9 @@
       
       <tag>LLM</tag>
       
-      <tag>MLLM</tag>
-      
       <tag>RAG</tag>
+      
+      <tag>MLLM</tag>
       
       <tag>VQA</tag>
       
