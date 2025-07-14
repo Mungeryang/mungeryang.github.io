@@ -19,16 +19,16 @@
   <meta name="author" content="Munger Yang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="DeepSeek-V3KV CacheMLAMLA的设计动机对于拥有数千亿参数的超大规模模型,推理过程中的主要挑战之一是巨大的KV缓存(KV Cache)。在自回归生成文本时，模型需要缓存先前所有词元的键(Key)和值(Value)向量，以便后续词元的生成能够关注到历史上下文。 MoEDeepSeek-R1">
+    <meta name="description" content="DeepSeek-V3DeepSeek-V3 Technical Report：https:&#x2F;&#x2F;arxiv.org&#x2F;pdf&#x2F;2412.19437  KV Cache由于是自回归语言模型，下一步的输出结果依赖于当前状态(及以前的状态)的结果，采用空间换时间的思想，将当前状态(及以前的状态)计算好的K和V存储到GPU中，加速下一步attention的计算。  手绘了一下KV Cache的缓存流程如下：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="五一五更之五：手撸DeepSeek V3&#x2F;R1">
 <meta property="og:url" content="http://example.com/2025/05/05/%E4%BA%94%E4%B8%80%E4%BA%94%E6%9B%B4%E4%B9%8B%E4%BA%94%EF%BC%9A%E6%89%8B%E6%92%B8DeepSeek-V3-R1/index.html">
 <meta property="og:site_name" content="munger写字的地方">
-<meta property="og:description" content="DeepSeek-V3KV CacheMLAMLA的设计动机对于拥有数千亿参数的超大规模模型,推理过程中的主要挑战之一是巨大的KV缓存(KV Cache)。在自回归生成文本时，模型需要缓存先前所有词元的键(Key)和值(Value)向量，以便后续词元的生成能够关注到历史上下文。 MoEDeepSeek-R1">
+<meta property="og:description" content="DeepSeek-V3DeepSeek-V3 Technical Report：https:&#x2F;&#x2F;arxiv.org&#x2F;pdf&#x2F;2412.19437  KV Cache由于是自回归语言模型，下一步的输出结果依赖于当前状态(及以前的状态)的结果，采用空间换时间的思想，将当前状态(及以前的状态)计算好的K和V存储到GPU中，加速下一步attention的计算。  手绘了一下KV Cache的缓存流程如下：">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://miro.medium.com/v2/resize:fit:1400/0*K5G6sxEZfcf1zzQk.png">
 <meta property="article:published_time" content="2025-05-05T10:33:45.000Z">
-<meta property="article:modified_time" content="2025-07-13T06:42:36.262Z">
+<meta property="article:modified_time" content="2025-07-14T09:52:07.511Z">
 <meta property="article:author" content="Munger Yang">
 <meta property="article:tag" content="LLM">
 <meta property="article:tag" content="深度学习">
@@ -281,7 +281,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          93 字
+          463 字
         
       </span>
     
@@ -292,7 +292,7 @@
         
         
         
-          1 分钟
+          4 分钟
         
       </span>
     
@@ -343,8 +343,42 @@
             
               <div class="markdown-body">
                 
-                <h1 id="DeepSeek-V3"><a href="#DeepSeek-V3" class="headerlink" title="DeepSeek-V3"></a>DeepSeek-V3</h1><h2 id="KV-Cache"><a href="#KV-Cache" class="headerlink" title="KV Cache"></a>KV Cache</h2><h2 id="MLA"><a href="#MLA" class="headerlink" title="MLA"></a>MLA</h2><h3 id="MLA的设计动机"><a href="#MLA的设计动机" class="headerlink" title="MLA的设计动机"></a>MLA的设计动机</h3><p>对于拥有数千亿参数的超大规模模型,推理过程中的主要挑战之一是巨大的KV缓存(KV Cache)。在自回归生成文本时，模型需要缓存先前所有词元的键(Key)和值(Value)向量，以便后续词元的生成能够关注到历史上下文。</p>
-<h2 id="MoE"><a href="#MoE" class="headerlink" title="MoE"></a>MoE</h2><h1 id="DeepSeek-R1"><a href="#DeepSeek-R1" class="headerlink" title="DeepSeek-R1"></a>DeepSeek-R1</h1>
+                <h1 id="DeepSeek-V3"><a href="#DeepSeek-V3" class="headerlink" title="DeepSeek-V3"></a>DeepSeek-V3</h1><p>DeepSeek-V3 Technical Report：<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2412.19437">https://arxiv.org/pdf/2412.19437</a></p>
+<p><img src="https://raw.githubusercontent.com/deepseek-ai/deepseek-v3/master/figures/benchmark.png" srcset="/img/loading.gif" lazyload alt="DeepSeek-V3"></p>
+<h2 id="KV-Cache"><a href="#KV-Cache" class="headerlink" title="KV Cache"></a>KV Cache</h2><p>由于是自回归语言模型，下一步的输出结果依赖于当前状态(及以前的状态)的结果，采用空间换时间的思想，将当前状态(及以前的状态)计算好的K和V存储到GPU中，加速下一步attention的计算。</p>
+<p><img src="https://miro.medium.com/v2/resize:fit:1400/1*g0kJ90z4LW4ZgtCKur4gTg.png" srcset="/img/loading.gif" lazyload alt="attention"></p>
+<p>手绘了一下KV Cache的缓存流程如下：</p>
+<img src="/img/fig/kv.jpg" srcset="/img/loading.gif" lazyload/>
+
+<p>如上图所示，KV Cache在执行过程中会造成GPU大量的空间消耗，使得GPU memory消耗非常大。</p>
+<p>两大流派解决空间消耗问题：1. quantization；2. 减小K和V大小</p>
+<h2 id="Rotary-Positional-Embedding"><a href="#Rotary-Positional-Embedding" class="headerlink" title="Rotary Positional Embedding"></a>Rotary Positional Embedding</h2><p>Positional Embedding主要包括两大类：</p>
+<p>Absolute positional embedding</p>
+<p>Relative positional embedding</p>
+<p>Rotary positional embedding</p>
+<center>
+  <img src="https://production-media.paperswithcode.com/methods/Screen_Shot_2021-08-10_at_10.38.41_AM.png" srcset="/img/loading.gif" lazyload alt="RoPE" style="zoom:60%;" />
+</center>
+
+
+
+<h2 id="MLA"><a href="#MLA" class="headerlink" title="MLA"></a>MLA</h2><center>
+  <img src="https://towardsdatascience.com/wp-content/uploads/2025/01/15MvV9YDPmc37axJe60w8Ag.png" srcset="/img/loading.gif" lazyload alt="MLA" style="zoom:70%;" />
+</center>
+
+<h3 id="MLA的设计动机"><a href="#MLA的设计动机" class="headerlink" title="MLA的设计动机"></a>MLA的设计动机</h3><p>对于拥有数千亿参数的超大规模模型,推理过程中的主要挑战之一是巨大的KV缓存(KV Cache)。在自回归生成文本时，模型需要缓存先前所有词元的键(Key)和值(Value)向量，以便后续词元的生成能够关注到历史上下文。</p>
+<h3 id="基本思想与方法"><a href="#基本思想与方法" class="headerlink" title="基本思想与方法"></a>基本思想与方法</h3><p>核心方法是矩阵的<strong>低秩分解</strong>。</p>
+<p>设计一个低维度的向量或者矩阵去取代最原始的KV Cache里面的K和V。GPU不在直接缓存K和V，而是去缓存一个低维度的矩阵$\mathbf{c}_{t}^{Q}$。</p>
+<p>K和V可以通过 $\mathbf{c}_{t}^{KV}$ 乘以对应的参数矩阵进行还原：</p>
+<p>$$<br>\mathbf{c} &#x3D; \mathbf{W}^{DK}\mathbf{h}_{t}<br>$$</p>
+<p>$$<br>\mathbf{K} &#x3D; \mathbf{W}^{UK}\mathbf{c}<br>$$</p>
+<p>所以只需要把$\mathbf{c}_{t}^{KV}$进行cache即可。</p>
+<p>但是这样做会引入Rotary Positional Embedding(RoPE)问题，MLA解决思路就是引入了额外的head。如上图所示，在Attention中引入一些额外的multi-head，使这些head做最原始的attention流程($\mathbf{q}_{t}^{C}$)，之后再将其与经过RoPE编码后的向量进行拼接。</p>
+<p>对于MLA的推导梳理过程如下：</p>
+<img src="/img/fig/mla.jpg" srcset="/img/loading.gif" lazyload/>
+
+<h2 id="MoE"><a href="#MoE" class="headerlink" title="MoE"></a>MoE</h2><p><img src="https://substackcdn.com/image/fetch/$s_!ZC1d!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1e45d3d4-d64a-40e5-bda0-1df7ff842983_1183x768.png" srcset="/img/loading.gif" lazyload></p>
+<h1 id="DeepSeek-R1"><a href="#DeepSeek-R1" class="headerlink" title="DeepSeek-R1"></a>DeepSeek-R1</h1>
                 
               </div>
             
@@ -549,6 +583,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -782,6 +822,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
