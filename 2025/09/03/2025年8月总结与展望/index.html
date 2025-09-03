@@ -19,27 +19,26 @@
   <meta name="author" content="Munger Yang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="A Comprehensive Guide to Building Multimodal RAG Systems本篇博文的主要内容是对一篇综述性博客文章()的翻译阅读与总结。通过阅读本篇文章，理清楚多模态RAG的基本概念与应用场景、部署方式、工作流程。 RAG系统的优势是可以整合自身数据并增强LLM的智力，对于问题给出更多精确的回答。然而，关键的限制就是RAG系统仅仅是它仅适用于文本数据。 许多现">
+    <meta name="description" content="今天是2025年9月3日，特地把八月份的总结放在了今天去写。 今天是中国人民抗日战争暨世界反法西斯战争胜利80周年纪念日，天安们广场举办了盛大的阅兵式，正义必胜、和平必胜、人名必胜！       爱党、爱国永记心间今年9·3阅兵从头看到尾，认认真真地把新兵种和新式尖端武器都了解了下，我军的信息化能力绝对是“世界一流”水平；当DF-61开过天安门广场，国威军威尽显，民族自豪感溢满屏幕！ 踏踏实实过日">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Multimodal RAG System Survey">
-<meta property="og:url" content="http://example.com/2024/10/20/Multimodal-RAG-System-Survey/index.html">
+<meta property="og:title" content="2025年8月总结与展望">
+<meta property="og:url" content="http://example.com/2025/09/03/2025%E5%B9%B48%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/index.html">
 <meta property="og:site_name" content="munger写字的地方">
-<meta property="og:description" content="A Comprehensive Guide to Building Multimodal RAG Systems本篇博文的主要内容是对一篇综述性博客文章()的翻译阅读与总结。通过阅读本篇文章，理清楚多模态RAG的基本概念与应用场景、部署方式、工作流程。 RAG系统的优势是可以整合自身数据并增强LLM的智力，对于问题给出更多精确的回答。然而，关键的限制就是RAG系统仅仅是它仅适用于文本数据。 许多现">
+<meta property="og:description" content="今天是2025年9月3日，特地把八月份的总结放在了今天去写。 今天是中国人民抗日战争暨世界反法西斯战争胜利80周年纪念日，天安们广场举办了盛大的阅兵式，正义必胜、和平必胜、人名必胜！       爱党、爱国永记心间今年9·3阅兵从头看到尾，认认真真地把新兵种和新式尖端武器都了解了下，我军的信息化能力绝对是“世界一流”水平；当DF-61开过天安门广场，国威军威尽显，民族自豪感溢满屏幕！ 踏踏实实过日">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.analyticsvidhya.com/wp-content/uploads/2024/09/unnamed-3-2.webp">
-<meta property="article:published_time" content="2024-10-20T05:30:49.000Z">
-<meta property="article:modified_time" content="2024-11-17T07:12:31.181Z">
+<meta property="og:image" content="https://s.rfi.fr/media/display/01515e60-8892-11f0-abcc-005056bf30b7/w:1024/p:16x9/000-738T6FL.jpg">
+<meta property="article:published_time" content="2025-09-03T08:37:59.000Z">
+<meta property="article:modified_time" content="2025-09-03T13:57:32.853Z">
 <meta property="article:author" content="Munger Yang">
-<meta property="article:tag" content="RAG">
-<meta property="article:tag" content="LLM">
+<meta property="article:tag" content="科研心路">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.analyticsvidhya.com/wp-content/uploads/2024/09/unnamed-3-2.webp">
+<meta name="twitter:image" content="https://s.rfi.fr/media/display/01515e60-8892-11f0-abcc-005056bf30b7/w:1024/p:16x9/000-738T6FL.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Multimodal RAG System Survey - munger写字的地方</title>
+  <title>2025年8月总结与展望 - munger写字的地方</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -257,7 +256,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Multimodal RAG System Survey"></span>
+            <span id="subtitle" data-typed-text="2025年8月总结与展望"></span>
           
         </div>
 
@@ -268,8 +267,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-10-20 13:30" pubdate>
-          2024年10月20日 下午
+        <time datetime="2025-09-03 16:37" pubdate>
+          2025年9月3日 下午
         </time>
       </span>
     
@@ -280,7 +279,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          1.3k 字
         
       </span>
     
@@ -291,7 +290,7 @@
         
         
         
-          18 分钟
+          11 分钟
         
       </span>
     
@@ -337,97 +336,34 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Multimodal RAG System Survey</h1>
+            <h1 id="seo-header">2025年8月总结与展望</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="A-Comprehensive-Guide-to-Building-Multimodal-RAG-Systems"><a href="#A-Comprehensive-Guide-to-Building-Multimodal-RAG-Systems" class="headerlink" title="A Comprehensive Guide to Building Multimodal RAG Systems"></a>A Comprehensive Guide to Building Multimodal RAG Systems</h1><p>本篇博文的主要内容是对一篇综述性博客文章()的翻译阅读与总结。通过阅读本篇文章，理清楚多模态RAG的基本概念与应用场景、部署方式、工作流程。</p>
-<p>RAG系统的优势是可以整合自身数据并增强LLM的智力，对于问题给出更多精确的回答。然而，关键的限制就是RAG系统仅仅是它仅适用于文本数据。 许多现实世界的数据本质上是多模态的，是文本、图像、表格等形式的混合。</p>
-<p>该篇综述的主要目的就是着眼构建一个多模态的RAG系统，使用智能数据转换和多模态LLM解决混合数据格式。</p>
-<h2 id="传统的RAG系统"><a href="#传统的RAG系统" class="headerlink" title="传统的RAG系统"></a>传统的RAG系统</h2><p>RAG系统架构通常包括：</p>
-<ol>
-<li>数据处理和索引</li>
-<li>检索和响应生成</li>
-</ol>
-<h3 id="数据处理和索引"><a href="#数据处理和索引" class="headerlink" title="数据处理和索引"></a>数据处理和索引</h3><p>加载文档中的文本内容-&gt;将大型文本元素拆分为较小的块-&gt;使用嵌入器模型将它们转换为嵌入-&gt;将块和嵌入存储到矢量数据库中</p>
-<p><img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2024/09/unnamed-5.webp" srcset="/img/loading.gif" lazyload alt="建立索引"></p>
-<h3 id="检索和响应生成"><a href="#检索和响应生成" class="headerlink" title="检索和响应生成"></a>检索和响应生成</h3><p>用户提问-&gt;文档检索-&gt;提示-&gt;LLM-&gt;回答</p>
-<p>从向量数据库中检索与输入问题相似的相关文本文档块，然后将问题和上下文文档块发送到LLM以生成人类。</p>
-<p><img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2024/09/unnamed-1-3.webp" srcset="/img/loading.gif" lazyload alt="检索生成"></p>
-<h2 id="传统RAG系统的限制"><a href="#传统RAG系统的限制" class="headerlink" title="传统RAG系统的限制"></a>传统RAG系统的限制</h2><ul>
-<li>无法获悉实时数据</li>
-<li>系统仅会利用好我们自身向量数据库中的数据</li>
-<li>大部分RAG系统仅仅致力于文本数据的检索和生成</li>
-<li>传统的LLMs 仅仅处理文本内容去生成回答</li>
-<li>无法利用多模态数据进行工作</li>
-</ul>
-<h2 id="什么是多模态？"><a href="#什么是多模态？" class="headerlink" title="什么是多模态？"></a>什么是多模态？</h2><p>Multimodal data is essentially data belonging to multiple modalities.</p>
-<p>多模态数据本质上是属于多种模态的数据。 模态的正式定义来自人机交互 (HCI) 系统的背景，其中模态被称为计算机和人类之间的单个独立输入和输出通道的分类（更多详细信息请参阅维基百科）。 常见的计算机-人类模式包括以下内容：</p>
-<p>文本：Input and output through written language(e.g., chat interfaces).</p>
-<p>语音：Voice-based interaction(e.g., voice assistants).</p>
-<p>视频：Image and video processing for visual recognition (e.g., face detection).</p>
-<p>手势：Hand and body movement tracking(e.g., gesture controls).</p>
-<p>触控：Haptic feedback and touchscreens.</p>
-<p>音频：Sound-based signals (e.g., music recognition, alerts).</p>
-<p>生物识别：Interaction through physiological data (e.g., eye-tracking, fingerprints).</p>
-<p>本综述重点关注处理文本、图像和表格。 理解此类数据所需的关键组件之一是多模态大语言模型 (LLM)。</p>
-<p>多模态的本质是混合了多种多种模式和格式的数据：</p>
-<p><img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2024/09/unnamed-2_11zon.webp" srcset="/img/loading.gif" lazyload alt="多模态数据"></p>
-<h2 id="什么是多模态大语言模型？"><a href="#什么是多模态大语言模型？" class="headerlink" title="什么是多模态大语言模型？"></a>什么是多模态大语言模型？</h2><p>多模态大语言模型 (LLM) 本质上是基于 Transformer 的 LLM，已针对多模态数据进行预训练和微调，以分析和理解各种数据格式，包括文本、图像、表格、音频和视频。 </p>
-<p><img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2024/09/unnamed-3-2.webp" srcset="/img/loading.gif" lazyload alt="MLLMs"></p>
-<p> 理想情况下，真正的多模态模型不仅应该能够理解混合数据格式，还应该生成相同的数据格式。</p>
-<p>文生图、图生文、文生音、文生视频</p>
-<p>多模态编码阶段：</p>
-<p>利用现有的成熟模型对各种模式的输入进行编码。</p>
-<p>LLM理解和响应阶段</p>
-<p>LLM被用作NExT GPT的核心代理。从技术上讲，他们采用Vicuna LLM，该LLM<strong>将来自不同模态的表示作为输入</strong>，并对<strong>输入进行语义理解和推理</strong>。它输出1）直接的文本响应和2）每种模态的<strong>信号标记</strong>，这些标记用作指示<strong>解码层是否生成多模态内容以及如果是则生成什么内容的指令</strong>。</p>
-<p>多模态生成阶段</p>
-<p>从LLM（如果有的话）<strong>接收具有特定指令的多模态信号</strong>，<strong>基于Transformer的输出投影层将信号令牌表示映射到后续多模态解码器可以理解的表示中</strong>。从技术上讲，他们采用了不同模态代的现成潜在条件<strong>扩散模型</strong>，即用于图像合成的稳定扩散（SD）、用于视频合成的Zeroscope和用于音频合成的AudioLDM。</p>
-<p>目前，大多数可供实际使用的多模态LLM都是片面的，这意味着它们可以理解混合数据格式，但只能生成文本响应。</p>
-<p><strong>GPT-4V &amp; GPT-4o</strong> (OpenAI):</p>
-<p><strong>Gemini</strong> (Google):</p>
-<p><strong>Claude</strong> (Anthropic):</p>
-<p>想要构建完全开源的解决方案或担心数据隐私或延迟并更喜欢在内部本地托管所有内容，可以借助目前最流行的开放和开源多式联运模型构建：</p>
-<p>LLaVA-NeXT: An open-source multimodal model with capabilities to work with text, images and also video, which an improvement on top of the popular LLaVa model</p>
-<p>PaliGemma: A vision-language model from Google that integrates both image and text processing, designed for tasks like optical character recognition (OCR), object detection, and visual question answering (VQA). </p>
-<p>Pixtral 12B: An advanced multimodal model from Mistral AI with 12 billion parameters that can process both images and text. Built on Mistral’s Nemo architecture, Pixtral 12B excels in tasks like image captioning and object recognition.</p>
-<p>目前为止最为强大的多模态模型是Open-AI的GPT-4.o</p>
-<h2 id="多模态RAG系统的工作流"><a href="#多模态RAG系统的工作流" class="headerlink" title="多模态RAG系统的工作流"></a>多模态RAG系统的工作流</h2><p>多模态RAG系统的构建流程与本篇博客的构建选择：</p>
-<p><img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2024/09/unnamed-4-2.webp" srcset="/img/loading.gif" lazyload alt="workflow"></p>
-<p>不好理解的一部分？</p>
-<p>端到端的工作流：</p>
-<p>如何去理解Summary？为什么图像、表格、和文本中在嵌入的时候都变成了Image Summary、Table Summary、Text Summary？</p>
-<p>Option 1：</p>
-<p>选择1缺陷的原因是多模态嵌入模型通常无法对这些视觉图像中的数字等粒度信息进行编码，并将其压缩为有意义的嵌入。</p>
-<p>Option 2：</p>
-<p>选项 2 受到严重限制，因为我们最终不会在该系统中使用图像，即使它可能包含有价值的信息，并且它不是真正的多模式 RAG 系统。 </p>
-<p>Option 3：</p>
-<p>将继续使用选项 3 作为我们的多模态RAG 系统工作流程。 在此工作流程中，我们将从图像、表格以及可选的文本块中创建摘要，并使用多向量检索器，这可以帮助根据相应的原始图像、表格和文本元素映射和检索原始图像、表格和文本元素。 </p>
-<h2 id="Multi-Vector-Retrieval-Workflow"><a href="#Multi-Vector-Retrieval-Workflow" class="headerlink" title="Multi-Vector Retrieval Workflow"></a>Multi-Vector Retrieval Workflow</h2><p>考虑到我们将在上一节中讨论的工作流程，对于我们的检索工作流程，我们将使用如下图所示的多向量检索器，正如 LangChain 博客中推荐和提到的那样。 多向量检索器的主要目的是充当包装器，并帮助将每个文本块、表格和图像摘要<strong>映射到</strong>实际的文本块、表格和图像元素，然后可以在检索期间获得这些内容。</p>
-<p><img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2024/09/unnamed-5-2.webp" srcset="/img/loading.gif" lazyload alt="多向量检索器"></p>
-<p>首先使用 Unstructed 等文档解析工具分别提取文本、表格和图像元素。 然后，我们将<strong>把每个提取的元素传递到 LLM 中，并生成详细的文本摘要</strong>，如上所示。 接下来，我们将使用任何流行的<strong>嵌入器模型</strong>（例如 OpenAI Embedders）将<strong>摘要及其嵌入存储到向量数据库</strong>中。 我们还将每个摘要的相应原始文档元素（文本、表格、图像）存储在文档存储中，文档存储可以是任何数据库平台，例如 Redis。</p>
-<p>当用户提出问题时，首先，多向量检索器检索相关摘要，这些摘要在语义（嵌入）相似性方面与问题相似，然后使用公共的 doc_ids、原始文本、表格和图像 返回的元素将进一步传递给 RAG 系统的 LLM 作为回答用户问题的上下文。</p>
-<h2 id="多模态RAG的架构细节"><a href="#多模态RAG的架构细节" class="headerlink" title="多模态RAG的架构细节"></a>多模态RAG的架构细节</h2><ol>
-<li>Load all documents and use a document loader like <strong>unstructured.io</strong> to extract text chunks, image, and tables.</li>
-<li>If necessary, convert HTML tables to markdown; they are often very effective with LLMs</li>
-<li>Pass each text chunk, image, and table into a multimodal LLM like GPT-4o and get a detailed summary.</li>
-<li>Store summaries in a vector DB and the raw document pieces in a document DB like Redis</li>
-<li>Connect the two databases with a common document_id using a multi-vector retriever to identify which summary maps to which raw document piece.</li>
-<li>Connect this multi-vector retrieval system with a multimodal LLM like GPT-4o.</li>
-<li>Query the system, and based on similar summaries to the query, get the raw document pieces, including tables and images, as the context.</li>
-<li>Using the above context, generate a response using the multimodal LLM for the question.</li>
-</ol>
-<hr>
-<p><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXc-woXqKviW7JlYQlmaecD0QpvsiyX4PNJoAB6d4wEm_y4Ks6qXuJNTZ61KTOyJ1v8xi1k4CujEisnRNAWM4LIpgQs_HREGihbG3bquz1y-YXsNt84k7Y9jWy_Vip6yLPiIfNmnTAyI86xvEzbYFSpu69g?key=jCBGNvykPV6Ye85DC-Uxrg" srcset="/img/loading.gif" lazyload alt="架构"></p>
-<p>1.加载所有文档，并使用类似unstructure.io的文档加载器提取文本块、图像和表格。</p>
-<p>2.如有必要，将HTML表格转换为markdown；他们通常对LLM非常有效</p>
-<p>3.将每个文本块、图像和表格传递到GPT-4o等多模式LLM中，并获得详细的摘要。</p>
-<p>4.将摘要存储在向量数据库中，将原始文档片段存储在Redis等文档数据库中</p>
-<p>5.使用多向量检索器使用公共document_id连接两个数据库，以识别哪个摘要映射到哪个原始文档块。</p>
-<p>6.将这个多向量检索系统与GPT-4o等多模态LLM连接起来。</p>
-<p>7.查询系统，并根据与查询类似的摘要，获取原始文档片段，包括表格和图像，作为上下文。</p>
-<p>8.使用上述上下文，使用多模态LLM生成问题的答案。</p>
+                <p>今天是2025年9月3日，特地把八月份的总结放在了今天去写。</p>
+<p>今天是<strong>中国人民抗日战争暨世界反法西斯战争</strong>胜利80周年纪念日，天安们广场举办了盛大的阅兵式，正义必胜、和平必胜、人名必胜！</p>
+<center>
+  <img src="https://x0.ifengimg.com/res/2025/14FA726210F67D0464195FD01C15A0DBCEE9EBC8_size136_w1080_h720.jpg" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+</center>
+
+<h2 id="爱党、爱国永记心间"><a href="#爱党、爱国永记心间" class="headerlink" title="爱党、爱国永记心间"></a>爱党、爱国永记心间</h2><p>今年9·3阅兵从头看到尾，认认真真地把新兵种和新式尖端武器都了解了下，我军的信息化能力绝对是“世界一流”水平；当DF-61开过天安门广场，国威军威尽显，民族自豪感溢满屏幕！</p>
+<p>踏踏实实过日子吧，就这些武器一亮相，用不着我们整天关心啥国家大事。真理就在大炮的射程之内，好巧不巧，我们的东风打击范围覆盖全球🇨🇳</p>
+<p>身为一名D员，我觉着爱党爱国不是整天挂在嘴边的，少说空话多做实事才是王道。其实我挺看不惯pyq疯狂转发直播链接这种行为的，现在信息这么发达，老子想看啥又用不着你丫刷屏转发。还有一些人，阅兵前发些找三不着两、稀奇古快的东西，真到活动开始了，咱就瞅它这个爱国劲儿啊，比丫谁都足。言论自由这是肯定的，我也不反对，但是我就是看不惯丫一套套的形式主义的劲儿！</p>
+<p>有事需要咱就狠狠往前冲，没事少bb别给社会添堵，这就是鄙人最大的诚意！</p>
+<h2 id="平淡"><a href="#平淡" class="headerlink" title="平淡"></a>平淡</h2><p>这两个字很有杀伤力～</p>
+<p>回所一个月了，总体过的还是很快乐的；这一个月基本上的作息是晚上0:30睡觉，早上8:30起床；九点多到工位十一点半吃饭，上午在岗俩半小时。中午13:30上工，下午17:30下工，在岗4小时。晚上八点多健身完后再回工位学到23:00结束一天的打工人生活，全天累计在工位9小时。</p>
+<p>平心而论，我还是属于比较吃苦耐劳类型的，唯一需要自己注意的，就是自己的工作效率。有多少时间刷手机，上厕所，走神儿。。。</p>
+<p>平淡的时间就要自己想事去做，找事去做；转变自己的思维认知和心态，老板给的活，别管什么活用心去做，都要从每一项工作中有所得。</p>
+<p>回所一个月生活还是很充实的，周末可以一起去吃大餐、和大酒，平时努力工作，晚上健身打球跑步，四个字总结目前的生活：还行，挺好！</p>
+<p>平淡其实最能杀死一切，因为平淡意味着你安于现状，对周围一切不再有好奇心。</p>
+<p>其实反思自己目前的状态，最能直观感受到的就是睡的愈来愈晚，起的愈来愈晚😭，其实我一直觉着早上早起一会多挤出一些时间来可以做很多很多的事情。一直想下定决心有所改变，但是始终没有任何进展😑</p>
+<p>希望九月自己能有所改变；同样的，老话常说无利不起早，想想六月底、七月初那会，每天11:40睡觉，早上6:10起床，为的就是赶进度写论文，那一个月真是拼，也是熬过来了。</p>
+<h2 id="保持兴趣与好奇"><a href="#保持兴趣与好奇" class="headerlink" title="保持兴趣与好奇"></a>保持兴趣与好奇</h2><p>八月份刷完了《从零构建大模型》、《图解大模型》两部大部头，收获颇丰；周围朋友们现在也都开始陆续出去实习了，最初的热闹新鲜过后，随之而来的就是平淡与乏味。</p>
+<p>想想自己真正想要什么，现在这个阶段对什么仍然感兴趣，还想并且还能(有足够的精力)去持续学一些什么，这是目前最重要的。(自从来北京读研以后，心态确实发生了很大的转变，慢慢开始有更多的生活了，不会逼着自己每天都要学习，算是和自己和解了很多，允许自己不够好，但是要求自己还要努力💪)</p>
+<p>围绕大模型相关领域能不能深入学进去，读到研究生了，该有一门安生立命的本事了，不然进入社会咋混啊！下定决心排除万难也要争取学好，学精！</p>
+<h2 id="想做的"><a href="#想做的" class="headerlink" title="想做的"></a>想做的</h2><p>近期想围绕Prompt压缩内容继续展开，开启第二篇小论文的工作，最近把硬提示和软提示里面的经典代表作都读了读，收获颇丰；但是还是要继续找点子、找idea。</p>
+<p>九月份在突破大模型架构的基础上，继续把预训练和微调搞清楚；结合ICAE这篇论文，认认真真完完整整地把指令微调的细节搞懂突破掉！加油！</p>
 
                 
               </div>
@@ -446,27 +382,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="category-chain-item">人工智能与深度学习</a>
-  
-  
-
-      </span>
-    
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E8%AE%BA%E6%96%87%E7%A0%94%E8%AF%BB/" class="category-chain-item">论文研读</a>
-  
-  
-
-      </span>
-    
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9B%B8%E5%85%B3/" class="category-chain-item">大模型相关</a>
+  <a href="/categories/%E5%8A%A8%E6%9C%BA/" class="category-chain-item">动机</a>
   
   
 
@@ -481,9 +397,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/RAG/" class="print-no-link">#RAG</a>
-      
-        <a href="/tags/LLM/" class="print-no-link">#LLM</a>
+        <a href="/tags/%E7%A7%91%E7%A0%94%E5%BF%83%E8%B7%AF/" class="print-no-link">#科研心路</a>
       
     </div>
   
@@ -495,8 +409,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Multimodal RAG System Survey</div>
-      <div>http://example.com/2024/10/20/Multimodal-RAG-System-Survey/</div>
+      <div>2025年8月总结与展望</div>
+      <div>http://example.com/2025/09/03/2025年8月总结与展望/</div>
     </div>
     <div class="license-meta">
       
@@ -508,7 +422,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年10月20日</div>
+          <div>2025年9月3日</div>
         </div>
       
       
@@ -541,18 +455,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/10/24/%E6%8A%89%E6%8B%A9/" title="抉择本身就是向前吧">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">抉择本身就是向前吧</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/10/18/%E6%83%B3%E6%95%B4%E6%98%8E%E7%99%BD%E6%88%91%E4%BB%AC%E6%98%AF%E6%80%8E%E4%B9%88%E5%AD%A6%E4%B9%A0%E7%9A%84%EF%BC%9F%E6%9C%BA%E5%99%A8%E6%98%AF%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E6%88%91%E4%BB%AC%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%9A%84%EF%BC%9F/" title="我们是怎么学习的？机器是如何学习我们的学习的？">
-                        <span class="hidden-mobile">我们是怎么学习的？机器是如何学习我们的学习的？</span>
+                      <a href="/2025/08/24/%E4%BB%8E%E9%9B%B6%E6%9E%84%E5%BB%BA%E5%A4%A7%E6%A8%A1%E5%9E%8B/" title="从零构建大模型">
+                        <span class="hidden-mobile">从零构建大模型</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
