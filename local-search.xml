@@ -4,11 +4,69 @@
   
   
   <entry>
+    <title>Colpali复现</title>
+    <link href="/2025/11/19/Colpali%E5%A4%8D%E7%8E%B0/"/>
+    <url>/2025/11/19/Colpali%E5%A4%8D%E7%8E%B0/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能与深度学习</category>
+      
+      <category>大模型相关</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LLM</tag>
+      
+      <tag>深度学习</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>从ColBERT到Colpali</title>
+    <link href="/2025/11/09/%E4%BB%8EColBERT%E5%88%B0Colpali/"/>
+    <url>/2025/11/09/%E4%BB%8EColBERT%E5%88%B0Colpali/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>人工智能与深度学习</category>
+      
+      <category>大模型相关</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LLM</tag>
+      
+      <tag>深度学习</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2025年10月总结与展望</title>
     <link href="/2025/10/31/2025%E5%B9%B410%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/"/>
     <url>/2025/10/31/2025%E5%B9%B410%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/</url>
     
-    <content type="html"><![CDATA[<h2 id="摸索、状态差"><a href="#摸索、状态差" class="headerlink" title="摸索、状态差"></a>摸索、状态差</h2><p>国庆节放假回来，终于把第一篇小论文的全部流程走完了；提交camera-ready版本、注册缴费。。。过程一波三折，完全是自己一步步摸索出来的路子。好在老师们都很配合、很给力，Qi老师主动转发了好几次通讯的邮件，非常上心；斌导最后贡献了一张自己的Visa卡，最后经费也是直接卡里直接扣了。</p><p>但是从国庆放假回来，感觉自己就像是一个无头苍蝇一般，每天生活非常无聊。早上来到工位就往那一坐，然后就是漫无目的的瞎看论文，东看一篇、西看一篇，完全没有任何想法和动力，又一次陷入了迷茫的状态。而且我发现，人的生活一旦失去了目标和方向感，自然而然就会变得漫无目的和无比懈怠。</p><p>因为10月几乎每天睡的都很晚，也可能是晚上健身的缘故，反正睡不好。当然也和自己的压力情况有关，因为迷茫、没有方向感，所以才没有动力去做事情。今天看了一篇公众号推文挺有感触的，持续的轻度压力转台会使人造成拖延和成就感幻想，导致无法正常开展工作。我觉着说的没毛病，还是要学会压力的转换。</p><p>不过虽然生活上像个无头苍蝇一样，思绪也跟着飞来飞去的，但是还是做了一些事情的。</p><p>这个月继续剖析阅读了transformers库的源代码，在上个月完成了GPT-2、Llama以及Qwen架构设计的基础之上，10月份又继续梳理了Vision Transformer和CLIP的源代码，并且画图详解了一下模型的架构设计细节，真正吃透设计细节。相关的学习心得体会与自己画的模型架构图都发在了小红书上，欢迎Follow：munger～</p><h2 id="送别"><a href="#送别" class="headerlink" title="送别"></a>送别</h2><p>🕯️🕯️🕯️</p><p>10月18号，伟大的物理学家，俺们老杨家的大名人，无比尊敬的杨振宁先生逝世了。杨先生的学习方法无疑对我产生了巨大影响，<strong>学习就是修正错误的直觉</strong>，这句话会永记心间。先生一路走好，吾辈自强！</p><p>但愿人长久，千里共同途。</p><p><img src="https://i.ytimg.com/vi/94zEK4bTWto/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBlupVioEqL0LlWpFmhnqx0y7qL7Q" alt="缅怀"></p><h2 id="转折点"><a href="#转折点" class="headerlink" title="转折点"></a>转折点</h2><p>这个月在最后的时候出现了转机，终于不再是一只无头苍蝇了。</p><p>斌导在月底的时候让我联系了Qin老师，我在10月20号加上了Qin老师微信，后续科研上慢慢进入了正轨。</p><p>现在每周二都在参加线上讨论班，Qin的科研能力还是很强的，对我自己而言，这是一次无比宝贵的机会和机遇，无比好好珍惜，多和Qin交流讨论，和Qin老师学习如何去做科研。</p><p>Qin也很热情，上来就甩给我了20多篇的Ppaer List，任务量还是蛮大的，不过我很激动和欣喜，因为总算有任务干了，不会在想月初那样不知道看啥、不知道做啥了。</p><p>现在的研究方向有在一点点明确，每天也感觉有在充满目标和方向感。有时候不得不感慨，人真是很贱的物种，因为有了明确的指导和方向，一个月，发生了两种截然不同的状态，尝到甜头的感觉是真好啊。😅</p><p>希望能一直有好状态，就像Saul一样。</p><p><img src="https://pbs.twimg.com/media/FaNnpIpXgAEUZL_.jpg" alt="better call saul"></p><h2 id="Better-call-Saul"><a href="#Better-call-Saul" class="headerlink" title="Better call Saul"></a>Better call Saul</h2><p>上个月看完Breaking Bad，这个月有续上了Better Call Saul。</p><p>我宣布，风骚律师这部剧，无论是角色塑造、剧本、还有摄影镜头画面，无疑是都是无可逾越的大山，比毒师系列各方面都更成熟。艾美奖真是眼瞎，呸，大SB！🥵</p><p>学习Saul，不屈不饶，无所畏惧。🫵</p><h2 id="11月"><a href="#11月" class="headerlink" title="11月"></a>11月</h2><ul><li>继续梳理源码架构：旋转位置编码、QwenVL系列、Flash Attention</li><li>按部就班推进科研任务，招收准备第二篇小论文，锚定高质量提升</li><li>充满动力，复苏！</li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="摸索、状态差"><a href="#摸索、状态差" class="headerlink" title="摸索、状态差"></a>摸索、状态差</h2><p>国庆节放假回来，终于把第一篇小论文的全部流程走完了；提交camera-ready版本、注册缴费。。。过程一波三折，完全是自己一步步摸索出来的路子。好在老师们都很配合、很给力，Qi老师主动转发了好几次通讯的邮件，非常上心；斌导最后贡献了一张自己的Visa卡，最后经费也是直接卡里直接扣了。</p><p>但是从国庆放假回来，感觉自己就像是一个无头苍蝇一般，每天生活非常无聊。早上来到工位就往那一坐，然后就是漫无目的的瞎看论文，东看一篇、西看一篇，完全没有任何想法和动力，又一次陷入了迷茫的状态。而且我发现，人的生活一旦失去了目标和方向感，自然而然就会变得漫无目的和无比懈怠。</p><p>因为10月几乎每天睡的都很晚，也可能是晚上健身的缘故，反正睡不好。当然也和自己的压力情况有关，因为迷茫、没有方向感，所以才没有动力去做事情。今天看了一篇公众号推文挺有感触的，持续的轻度压力转台会使人造成拖延和成就感幻想，导致无法正常开展工作。我觉着说的没毛病，还是要学会压力的转换。</p><p>不过虽然生活上像个无头苍蝇一样，思绪也跟着飞来飞去的，但是还是做了一些事情的。</p><p>这个月继续剖析阅读了transformers库的源代码，在上个月完成了GPT-2、Llama以及Qwen架构设计的基础之上，10月份又继续梳理了Vision Transformer和CLIP的源代码，并且画图详解了一下模型的架构设计细节，真正吃透设计细节。相关的学习心得体会与自己画的模型架构图都发在了小红书上，欢迎Follow～</p><h2 id="送别"><a href="#送别" class="headerlink" title="送别"></a>送别</h2><p>🕯️🕯️🕯️</p><p>10月18号，伟大的物理学家，俺们老杨家的大名人，无比尊敬的杨振宁先生逝世了。杨先生的学习方法无疑对我产生了巨大影响，<strong>学习就是修正错误的直觉</strong>，这句话会永记心间。先生一路走好，吾辈自强！</p><p>但愿人长久，千里共同途。</p><p><img src="https://i.ytimg.com/vi/94zEK4bTWto/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBlupVioEqL0LlWpFmhnqx0y7qL7Q" alt="缅怀"></p><h2 id="转折点"><a href="#转折点" class="headerlink" title="转折点"></a>转折点</h2><p>这个月在最后的时候出现了转机，终于不再是一只无头苍蝇了。</p><p>斌导在月底的时候让我联系了Qin老师，我在10月20号加上了Qin老师微信，后续科研上慢慢进入了正轨。</p><p>现在每周二都在参加线上讨论班，Qin的科研能力还是很强的，对我自己而言，这是一次无比宝贵的机会和机遇，无比好好珍惜，多和Qin交流讨论，和Qin老师学习如何去做科研。</p><p>Qin也很热情，上来就甩给我了20多篇的Ppaer List，任务量还是蛮大的，不过我很激动和欣喜，因为总算有任务干了，不会在想月初那样不知道看啥、不知道做啥了。</p><p>现在的研究方向有在一点点明确，每天也感觉有在充满目标和方向感。有时候不得不感慨，人真是很贱的物种，因为有了明确的指导和方向，一个月，发生了两种截然不同的状态，尝到甜头的感觉是真好啊。😅</p><p>希望能一直有好状态，就像Saul一样。</p><p><img src="https://pbs.twimg.com/media/FaNnpIpXgAEUZL_.jpg" alt="better call saul"></p><h2 id="Better-call-Saul"><a href="#Better-call-Saul" class="headerlink" title="Better call Saul"></a>Better call Saul</h2><p>上个月看完Breaking Bad，这个月有续上了Better Call Saul。</p><p>我宣布，风骚律师这部剧，无论是角色塑造、剧本、还有摄影镜头画面，无疑是都是无可逾越的大山，比毒师系列各方面都更成熟。艾美奖真是眼瞎，呸，大SB！🥵</p><p>学习Saul，不屈不饶，无所畏惧。🫵</p><h2 id="11月"><a href="#11月" class="headerlink" title="11月"></a>11月</h2><ul><li>继续梳理源码架构：旋转位置编码、QwenVL系列、Flash Attention</li><li>按部就班推进科研任务，招收准备第二篇小论文，锚定高质量提升</li><li>充满动力，复苏！</li></ul>]]></content>
     
     
     <categories>
