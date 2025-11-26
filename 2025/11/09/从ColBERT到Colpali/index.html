@@ -19,14 +19,16 @@
   <meta name="author" content="Munger Yang">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
+    <meta name="description" content="从ColBERT到Colpali，唯一不变的核心本质是Late interaction——晚交互机制。             理解Late interaction梳理一下Late interaction之前所有的“Query-Document”交互方式：      双塔结构：将query和文档各自编码为一个向量，然后通过简单的点积或余弦相似度计算分数。    缺点：强行">
+<meta property="og:type" content="article">
 <meta property="og:title" content="从ColBERT到Colpali">
 <meta property="og:url" content="http://example.com/2025/11/09/%E4%BB%8EColBERT%E5%88%B0Colpali/index.html">
 <meta property="og:site_name" content="munger写字的地方">
+<meta property="og:description" content="从ColBERT到Colpali，唯一不变的核心本质是Late interaction——晚交互机制。             理解Late interaction梳理一下Late interaction之前所有的“Query-Document”交互方式：      双塔结构：将query和文档各自编码为一个向量，然后通过简单的点积或余弦相似度计算分数。    缺点：强行">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://fanpu.io/assets/img/summaries/colbert_architecture.webp">
 <meta property="article:published_time" content="2025-11-09T12:18:10.000Z">
-<meta property="article:modified_time" content="2025-11-19T12:21:39.747Z">
+<meta property="article:modified_time" content="2025-11-26T14:31:25.038Z">
 <meta property="article:author" content="Munger Yang">
 <meta property="article:tag" content="LLM">
 <meta property="article:tag" content="深度学习">
@@ -278,7 +280,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          634 字
         
       </span>
     
@@ -289,7 +291,7 @@
         
         
         
-          1 分钟
+          6 分钟
         
       </span>
     
@@ -340,7 +342,75 @@
             
               <div class="markdown-body">
                 
-                
+                <div class="note note-success">
+            <p>从ColBERT到Colpali，唯一不变的核心本质是<strong>Late interaction</strong>——晚交互机制。</p>
+          </div>
+
+<h2 id="理解Late-interaction"><a href="#理解Late-interaction" class="headerlink" title="理解Late interaction"></a>理解Late interaction</h2><p>梳理一下Late interaction之前所有的“Query-Document”交互方式：</p>
+<img src="/img/fig/lateinter.png" srcset="/img/loading.gif" lazyload/>
+
+
+
+<ul>
+<li><strong>双塔结构</strong>：将query和文档各自编码为一个向量，然后通过简单的点积或余弦相似度计算分数。</li>
+</ul>
+<blockquote>
+<p> 缺点：强行将长文档中丰富的信息压缩到一个定长的向量中，导致大量细节丢失</p>
+</blockquote>
+<ul>
+<li><strong>交叉编码</strong>：将 Query 和 Document 拼接在一起输入到 BERT 中，让 Query 的词和 Document 的词在每一层网络中都进行的交互。</li>
+</ul>
+<blockquote>
+<p>缺点：Document 的编码依赖于 Query ，无法预先计算文档向量。而且对于每一个查询，都要把全部的候选文档重新跑一遍 BERT，计算成本非常大</p>
+</blockquote>
+<ul>
+<li><strong>全对全交互&#x2F;all-to-all</strong>：Query 和 Document 分别编码，保留所有 Token 向量。然后构建一个交互矩阵去计算 Query 中每个词和 Document 中每个词的相似度。最后通过一个可学习的深层网络去学习这个矩阵，提取匹配特征，最后输出一个分数。</li>
+</ul>
+<blockquote>
+<p>缺点：交互矩阵占大量内存空间，相似度是通过构建的深层网络学出来的，很难利用现有的向量检索引擎进行索引加速</p>
+</blockquote>
+<img src="/img/fig/colbert.png" srcset="/img/loading.gif" lazyload/>
+
+<p><strong>Late interaction</strong>：Query 和 Document 分别通过 BERT，但<strong>不压缩</strong>成单独的一个向量，而是保留所有 Token 的 Embedding 列表。将BERT模型输出的 Embedding 通过MaxSim 操作进行细粒度匹配。</p>
+<p>模型输入：query 和 Document</p>
+<p>模型输出：一个MaxSim Score，query与每个文档都计算出一个文档分数，根据这个分数从大到小排序，分数最高的就是最相关的结果。 </p>
+<div class="note note-danger">
+            <p>[例子] query &#x3D; “苹果 价格”  Document A &#x3D; “红 苹果 好吃” Document B &#x3D; “香蕉 便宜”</p>
+          </div>
+
+<p>假设BERT已经跑完拿到了以下的Embedding结果(得到query和Document的Token级编码)：</p>
+<p>q1(苹果): [1.0, 2.0]</p>
+<p>q2(价格): [-1.0, 1.0]</p>
+<p>Document A</p>
+<p>d1a(红): [0.5, 0.5]</p>
+<p>d2a(苹果): [1.0, 2.1] </p>
+<p>d3a(好吃): [-0.5, 0.5]</p>
+<p>Document B</p>
+<p>d1b(香蕉): [2.0, -1.0]</p>
+<p>d2b(便宜): [0.0, 0.1]</p>
+<hr>
+<p>计算query与Document A分数：</p>
+<p>q1(苹果)·d1a(红) &#x3D; 1.5</p>
+<p>q1(苹果)·d2a(苹果) &#x3D; 5.2</p>
+<p>q1(苹果)·d3a(好吃) &#x3D; 0.5</p>
+<p>q2(价格)·d1a(红) &#x3D; 0</p>
+<p>q2(价格)·d2a(苹果) &#x3D; 1.1</p>
+<p>q2(价格)·d3a(好吃) &#x3D; 1.0</p>
+<p>Score(query,Document A) &#x3D; 5.2 + 1.1 &#x3D; 6.3</p>
+<hr>
+<p>计算query与Document B分数：</p>
+<p>q1(苹果)·d1b(香蕉) &#x3D; 0</p>
+<p>q1(苹果)·d2b(便宜) &#x3D; 0.2</p>
+<p>q2(价格)·d1b(香蕉) &#x3D; -3.0</p>
+<p>q2(价格)·d2b(便宜) &#x3D; 0.1</p>
+<p>Score(query,Document B) &#x3D; 0.2 + 0.1 &#x3D; 0.3 </p>
+<hr>
+<p>排序结果：</p>
+<ol>
+<li>Document A</li>
+<li>Document B</li>
+</ol>
+
                 
               </div>
             
@@ -443,9 +513,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/11/19/Colpali%E5%A4%8D%E7%8E%B0/" title="Colpali复现">
+                      <a href="/2025/11/19/Colpali%E5%A4%8D%E7%8E%B0/" title="Colpali 复现与源码剖析">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Colpali复现</span>
+                        <span class="hidden-mobile">Colpali 复现与源码剖析</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
