@@ -19,16 +19,16 @@
   <meta name="author" content="Munger Yang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="文章将现有方法总结归纳为三大范式：  ❶作为检索基础的embedding模型 ❷用于精炼初始检索结果的reranker模型 ❸日益突出的RAG管道和智能体系统。">
+    <meta name="description" content="要点提炼视觉文档的主要特征：  密集的文本内容  复杂布局  细粒度语义依赖   文章将现有方法(Method)总结归纳为三大范式：  ❶作为检索基础的embedding模型 ❷用于精炼初始检索结果的reranker模型 ❸日益突出的RAG管道和智能体系统。  VDR领域的评估指标：  nDCG：通过考虑相关文档的位置来衡量排序质量 MRR：评估第一个相关文档的倒数排名的平均值 Recall@k：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Visual Document Retrieval最新综述">
 <meta property="og:url" content="http://example.com/2026/02/26/Visual-Document-Retrieval%E6%9C%80%E6%96%B0%E7%BB%BC%E8%BF%B0/index.html">
 <meta property="og:site_name" content="munger写字的地方">
-<meta property="og:description" content="文章将现有方法总结归纳为三大范式：  ❶作为检索基础的embedding模型 ❷用于精炼初始检索结果的reranker模型 ❸日益突出的RAG管道和智能体系统。">
+<meta property="og:description" content="要点提炼视觉文档的主要特征：  密集的文本内容  复杂布局  细粒度语义依赖   文章将现有方法(Method)总结归纳为三大范式：  ❶作为检索基础的embedding模型 ❷用于精炼初始检索结果的reranker模型 ❸日益突出的RAG管道和智能体系统。  VDR领域的评估指标：  nDCG：通过考虑相关文档的位置来衡量排序质量 MRR：评估第一个相关文档的倒数排名的平均值 Recall@k：">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img.bim99.cn/ssd/ssd4/103/2026-02-25/103_17719952251826.webp">
 <meta property="article:published_time" content="2026-02-26T06:22:01.000Z">
-<meta property="article:modified_time" content="2026-02-26T07:07:40.447Z">
+<meta property="article:modified_time" content="2026-03-01T04:24:17.316Z">
 <meta property="article:author" content="Munger Yang">
 <meta property="article:tag" content="MLLM">
 <meta property="article:tag" content="VQA">
@@ -280,7 +280,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          54 字
+          508 字
         
       </span>
     
@@ -291,7 +291,7 @@
         
         
         
-          1 分钟
+          5 分钟
         
       </span>
     
@@ -342,12 +342,35 @@
             
               <div class="markdown-body">
                 
-                <p>文章将现有方法总结归纳为三大范式：</p>
+                <h2 id="要点提炼"><a href="#要点提炼" class="headerlink" title="要点提炼"></a>要点提炼</h2><p>视觉文档的主要特征：</p>
+<ol>
+<li><p>密集的文本内容</p>
+</li>
+<li><p>复杂布局</p>
+</li>
+<li><p>细粒度语义依赖</p>
+</li>
+</ol>
+<p>文章将现有方法(Method)总结归纳为三大范式：</p>
 <ul>
 <li>❶作为检索基础的embedding模型</li>
 <li>❷用于精炼初始检索结果的reranker模型</li>
 <li>❸日益突出的RAG管道和智能体系统。</li>
 </ul>
+<p>VDR领域的评估指标：</p>
+<ol>
+<li>nDCG：通过考虑相关文档的位置来衡量排序质量</li>
+<li>MRR：评估第一个相关文档的倒数排名的平均值</li>
+<li>Recall@k：查询结果中相关文档排在前 k 名的比例</li>
+</ol>
+<h2 id="未来方向"><a href="#未来方向" class="headerlink" title="未来方向"></a>未来方向</h2><h3 id="重构架构范式"><a href="#重构架构范式" class="headerlink" title="重构架构范式"></a>重构架构范式</h3><p>生成式检索 (Generative Retrieval)： 探索“自回归检索”范式，例如：Embed-via-answering： 通过让模型回答问题来提取嵌入向量。生成式软标记： 让模型生成不可读的“软标记（Soft Tokens）”来迭代优化表征。</p>
+<p>混合专家模型 (Mixture of Experts, MoE)： 为不同的文档模态（如纯文本、复杂图表、音频等）训练专门的专家，提升处理异构数据的灵活性和专业性。</p>
+<p>先思考再嵌入 (Think-then-Embed)： 在生成向量前，先让模型生成一段推理轨迹（Rationale），使得最终的嵌入向量包含深层逻辑信息。</p>
+<h3 id="性能-效率"><a href="#性能-效率" class="headerlink" title="性能-效率"></a>性能-效率</h3><p>自适应修剪与合并： 动态识别并丢弃文档中的冗余补丁，例如 DocPruner</p>
+<p>Matryoshka表征学习： 训练具有层次化结构的嵌入向量，允许在推理时根据性能需求动态截断维度</p>
+<h3 id="交互式与-Agentic-检索"><a href="#交互式与-Agentic-检索" class="headerlink" title="交互式与 Agentic 检索"></a>交互式与 Agentic 检索</h3><p>主动感知： 赋予 Agent 在检索页面后执行“缩放（Zoom-in）”、“裁剪（Crop）”等动作的能力，以获取细则知识。</p>
+<p>深度研究工作流： 研究 Agent 如何分解复杂查询，并根据中间检索结果动态修正后续的搜索路径。</p>
+<p>Agent 与 VDR 工具的协同设计： 不再是简单的调用，而是让检索器感知 Agent 的当前状态，提供更具上下文相关性的反馈。</p>
 
                 
               </div>
