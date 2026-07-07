@@ -19,14 +19,16 @@
   <meta name="author" content="Munger Yang">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
+    <meta name="description" content="Claude Code 安装12345npm install -g @anthropic-ai&#x2F;claude-code----- ~  claude -version                                                                     ok  14:15:302.1.129 (Claude Code)  .claude&#x2F;">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Claude Code与codex使用">
 <meta property="og:url" content="http://example.com/2026/03/15/CC%E4%B8%8Ecodex%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="munger写字的地方">
+<meta property="og:description" content="Claude Code 安装12345npm install -g @anthropic-ai&#x2F;claude-code----- ~  claude -version                                                                     ok  14:15:302.1.129 (Claude Code)  .claude&#x2F;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.malwarebytes.com/wp-content/uploads/sites/2/2026/02/OpenClaw_logo.png?w=600">
 <meta property="article:published_time" content="2026-03-15T06:13:58.000Z">
-<meta property="article:modified_time" content="2026-07-07T01:35:57.637Z">
+<meta property="article:modified_time" content="2026-07-07T01:39:37.663Z">
 <meta property="article:author" content="Munger Yang">
 <meta property="article:tag" content="RAG">
 <meta property="article:tag" content="LLM">
@@ -278,7 +280,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          161 字
         
       </span>
     
@@ -289,7 +291,7 @@
         
         
         
-          1 分钟
+          2 分钟
         
       </span>
     
@@ -340,7 +342,10 @@
             
               <div class="markdown-body">
                 
-                
+                <h2 id="Claude-Code-安装"><a href="#Claude-Code-安装" class="headerlink" title="Claude Code 安装"></a>Claude Code 安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install -g @anthropic-ai/claude-code<br>-----<br><br> ~  claude -version                                                                     ok  14:15:30<br>2.1.129 (Claude Code)<br></code></pre></td></tr></table></figure>
+
+<h2 id="claude-settings-json-DeepSeekV4-配置"><a href="#claude-settings-json-DeepSeekV4-配置" class="headerlink" title=".claude&#x2F;settings.json  -&gt; DeepSeekV4 配置"></a>.claude&#x2F;settings.json  -&gt; DeepSeekV4 配置</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs shell">&#123;<br>  &quot;$schema&quot;: &quot;https://json.schemastore.org/claude-code-settings.json&quot;,<br>  &quot;env&quot;: &#123;<br>    &quot;ANTHROPIC_BASE_URL&quot;: &quot;https://api.deepseek.com/anthropic&quot;,<br>    &quot;ANTHROPIC_AUTH_TOKEN&quot;: &quot;sk-92bf447420bb42fdae0f3cae60ee015a&quot;,<br>    &quot;ANTHROPIC_MODEL&quot;: &quot;deepseek-v4-flash&quot;,<br>    &quot;ANTHROPIC_DEFAULT_OPUS_MODEL&quot;: &quot;deepseek-v4-pro&quot;,<br>    &quot;ANTHROPIC_DEFAULT_SONNET_MODEL&quot;: &quot;deepseek-v4-flash&quot;,<br>    &quot;ANTHROPIC_DEFAULT_HAIKU_MODEL&quot;: &quot;deepseek-v4-flash&quot;,<br>    &quot;CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC&quot;: &quot;1&quot;,<br>    &quot;CLAUDE_CODE_EFFORT_LEVEL&quot;: &quot;max&quot;<br>  &#125;,<br>  &quot;model&quot;: &quot;opus&quot;,<br>  &quot;extraKnownMarketplaces&quot;: &#123;<br>    &quot;paperspine-marketplace&quot;: &#123;<br>      &quot;source&quot;: &#123;<br>        &quot;source&quot;: &quot;git&quot;,<br>        &quot;url&quot;: &quot;https://github.com/WUBING2023/PaperSpine.git&quot;<br>      &#125;<br>    &#125;<br>  &#125;,<br>  &quot;effortLevel&quot;: &quot;xhigh&quot;,<br>  &quot;enabledPlugins&quot;: &#123;<br>    &quot;paper-spine@paperspine-marketplace&quot;: true<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
                 
               </div>
             
