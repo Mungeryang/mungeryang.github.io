@@ -19,27 +19,26 @@
   <meta name="author" content="Munger Yang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="基于对两篇hugging face Blog的学习梳理与摘录  视觉语言模型(Vision Language Model)视觉语言模型是可以同时从图像和文本中学习的多模态模型，其属于生成模型，输入为图像和文本，输出为文本。其拥有广泛的应用，包括基于图像的聊天、根据指令的图像识别、视觉问答、文档理解、图像描述等。现有的大视觉语言模型在训练数据、图像编码方式等方面采用的方法很多样，因而其能力差异也">
+    <meta name="description" content="AAAI感受感觉像是自己一个人打了一次美赛哈哈哈哈哈哈，倒计时的三天也没睡几个小时的觉；不过傍晚提交完论文走回宿舍的路上，小风一吹，感觉那是最如释重负的时候～ 论文撰写问题汇总：  写作习惯不好，标点后边都不爱加空格；以及画图时(a)后边也没有紧跟空格 句子啰嗦，反复提及，表达不流畅 Intro的写作逻辑不好 搞不懂如何设置实验任务，以及设置这个实验任务是在什么setting下，为什么要这样设置，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VLM Higher,Faster,Stronger">
-<meta property="og:url" content="http://example.com/2026/07/09/VLM-Higher-Faster-Stronger/index.html">
+<meta property="og:title" content="2026年7月总结与展望">
+<meta property="og:url" content="http://example.com/2026/07/30/2026%E5%B9%B47%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/index.html">
 <meta property="og:site_name" content="munger写字的地方">
-<meta property="og:description" content="基于对两篇hugging face Blog的学习梳理与摘录  视觉语言模型(Vision Language Model)视觉语言模型是可以同时从图像和文本中学习的多模态模型，其属于生成模型，输入为图像和文本，输出为文本。其拥有广泛的应用，包括基于图像的聊天、根据指令的图像识别、视觉问答、文档理解、图像描述等。现有的大视觉语言模型在训练数据、图像编码方式等方面采用的方法很多样，因而其能力差异也">
+<meta property="og:description" content="AAAI感受感觉像是自己一个人打了一次美赛哈哈哈哈哈哈，倒计时的三天也没睡几个小时的觉；不过傍晚提交完论文走回宿舍的路上，小风一吹，感觉那是最如释重负的时候～ 论文撰写问题汇总：  写作习惯不好，标点后边都不爱加空格；以及画图时(a)后边也没有紧跟空格 句子啰嗦，反复提及，表达不流畅 Intro的写作逻辑不好 搞不懂如何设置实验任务，以及设置这个实验任务是在什么setting下，为什么要这样设置，">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://huggingface.co/blog/assets/vlms2/vlms2.png">
-<meta property="article:published_time" content="2026-07-09T14:12:18.000Z">
-<meta property="article:modified_time" content="2026-07-09T14:24:55.492Z">
+<meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbw77IYMF6widm86-JtM-35PXPheNvjPOQCPlPm816Iw&s=10">
+<meta property="article:published_time" content="2026-07-30T02:57:03.000Z">
+<meta property="article:modified_time" content="2026-07-30T03:24:05.371Z">
 <meta property="article:author" content="Munger Yang">
-<meta property="article:tag" content="LLM">
-<meta property="article:tag" content="深度学习">
+<meta property="article:tag" content="科研心路">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://huggingface.co/blog/assets/vlms2/vlms2.png">
+<meta name="twitter:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbw77IYMF6widm86-JtM-35PXPheNvjPOQCPlPm816Iw&s=10">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>VLM Higher,Faster,Stronger - munger写字的地方</title>
+  <title>2026年7月总结与展望 - munger写字的地方</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -257,7 +256,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="VLM Higher,Faster,Stronger"></span>
+            <span id="subtitle" data-typed-text="2026年7月总结与展望"></span>
           
         </div>
 
@@ -268,8 +267,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-07-09 22:12" pubdate>
-          2026年7月9日 晚上
+        <time datetime="2026-07-30 10:57" pubdate>
+          2026年7月30日 上午
         </time>
       </span>
     
@@ -280,7 +279,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          619 字
+          588 字
         
       </span>
     
@@ -291,7 +290,7 @@
         
         
         
-          6 分钟
+          5 分钟
         
       </span>
     
@@ -337,109 +336,27 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">VLM Higher,Faster,Stronger</h1>
+            <h1 id="seo-header">2026年7月总结与展望</h1>
             
             
               <div class="markdown-body">
                 
-                <blockquote>
-<p> 基于对两篇hugging face Blog的学习梳理与摘录</p>
-</blockquote>
-<h2 id="视觉语言模型-Vision-Language-Model"><a href="#视觉语言模型-Vision-Language-Model" class="headerlink" title="视觉语言模型(Vision Language Model)"></a>视觉语言模型(Vision Language Model)</h2><p>视觉语言模型是可以同时从图像和文本中学习的多模态模型，其属于生成模型，输入为图像和文本，输出为文本。其拥有广泛的应用，包括基于图像的聊天、根据指令的图像识别、视觉问答、文档理解、图像描述等。现有的大视觉语言模型在训练数据、图像编码方式等方面采用的方法很多样，因而其能力差异也很大。</p>
-<p><img src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/blog/vlm/visual.jpg" srcset="/img/loading.gif" lazyload alt="VLM"></p>
-<p>开源视觉语言模型List(截止2024)：</p>
-<table>
-<thead>
-<tr>
-<th align="center">模型</th>
-<th align="center">可否商用</th>
-<th align="center">模型尺寸</th>
-<th align="center">图像分辨率</th>
-<th align="center">其它能力</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://huggingface.co/llava-hf/llava-v1.6-34b-hf">LLaVA 1.6 (Hermes 34B)</a></td>
-<td align="center">✅</td>
-<td align="center">34B</td>
-<td align="center">672x672</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://huggingface.co/deepseek-ai/deepseek-vl-7b-base">deepseek-vl-7b-base</a></td>
-<td align="center">✅</td>
-<td align="center">7B</td>
-<td align="center">384x384</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://huggingface.co/deepseek-ai/deepseek-vl-7b-chat">DeepSeek-VL-Chat</a></td>
-<td align="center">✅</td>
-<td align="center">7B</td>
-<td align="center">384x384</td>
-<td align="center">聊天</td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://huggingface.co/vikhyatk/moondream2">moondream2</a></td>
-<td align="center">✅</td>
-<td align="center">~2B</td>
-<td align="center">378x378</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://huggingface.co/THUDM/cogvlm-base-490-hf">CogVLM-base</a></td>
-<td align="center">✅</td>
-<td align="center">17B</td>
-<td align="center">490x490</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://huggingface.co/THUDM/cogvlm-chat-hf">CogVLM-Chat</a></td>
-<td align="center">✅</td>
-<td align="center">17B</td>
-<td align="center">490x490</td>
-<td align="center">接地、聊天</td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://huggingface.co/adept/fuyu-8b">Fuyu-8B</a></td>
-<td align="center">❌</td>
-<td align="center">8B</td>
-<td align="center">300x300</td>
-<td align="center">图像中的文本检测</td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://huggingface.co/microsoft/kosmos-2-patch14-224">KOSMOS-2</a></td>
-<td align="center">✅</td>
-<td align="center">~2B</td>
-<td align="center">224x224</td>
-<td align="center">接地、零样本目标检测</td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://huggingface.co/Qwen/Qwen-VL">Qwen-VL</a></td>
-<td align="center">✅</td>
-<td align="center">4B</td>
-<td align="center">448x448</td>
-<td align="center">零样本目标检测</td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://huggingface.co/Qwen/Qwen-VL-Chat">Qwen-VL-Chat</a></td>
-<td align="center">✅</td>
-<td align="center">4B</td>
-<td align="center">448x448</td>
-<td align="center">聊天</td>
-</tr>
-<tr>
-<td align="center"><a target="_blank" rel="noopener" href="https://huggingface.co/01-ai/Yi-VL-34B">Yi-VL-34B</a></td>
-<td align="center">✅</td>
-<td align="center">34B</td>
-<td align="center">448x448</td>
-<td align="center">双语 (英文、中文)</td>
-</tr>
-</tbody></table>
-<h2 id="VLM技术细节"><a href="#VLM技术细节" class="headerlink" title="VLM技术细节"></a>VLM技术细节</h2><p>视觉语言模型预训练的主要技巧是是统一图像和文本表征以将其输入给文本解码器用于文本生成。最常见且表现最好的模型通常由图像编码器、用于对齐图像和文本表征的嵌入投影子模型 (通常是一个稠密神经网络) 以及文本解码器按序堆叠而成。</p>
-<p><img src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/blog/vlm/vlm-structure.png" srcset="/img/loading.gif" lazyload alt="视觉语言模型典型结构"></p>
-<p>例如，LLaVA 由 CLIP 图像编码器、多模态投影子模型和 Vicuna 文本解码器组合而成。作者将包含图像和描述文本的数据集输入 GPT-4，让其描述文本和图像生成相关的问题。作者冻结了图像编码器和文本解码器，仅通过给模型馈送图像与问题并将模型输出与描述文本进行比较来训练多模态投影子模型，从而达到对齐图像和文本特征的目的。在对投影子模型预训练之后，作者把图像编码器继续保持在冻结状态，解冻文本解码器，然后继续对解码器和投影子模型进行训练。这种预训练加微调的方法是训练视觉语言模型最常见的做法。</p>
-<p><strong>大多数时候，我们不需要预训练视觉语言模型，仅需使用现有的模型进行推理，抑或是根据自己的场景对其进行微调。</strong></p>
+                <h2 id="AAAI感受"><a href="#AAAI感受" class="headerlink" title="AAAI感受"></a>AAAI感受</h2><p>感觉像是自己一个人打了一次美赛哈哈哈哈哈哈，倒计时的三天也没睡几个小时的觉；不过傍晚提交完论文走回宿舍的路上，小风一吹，感觉那是最如释重负的时候～</p>
+<p>论文撰写问题汇总：</p>
+<ol>
+<li>写作习惯不好，<strong>标点后边都不爱加空格</strong>；以及画图时(a)后边也没有紧跟空格</li>
+<li><strong>句子啰嗦</strong>，反复提及，表达不流畅</li>
+<li>Intro的<strong>写作逻辑不好</strong></li>
+<li>搞不懂如何设置实验任务，以及设置这个实验任务是在什么setting下，为什么要这样设置，想不明白</li>
+</ol>
+<p>AAAI投稿收获：</p>
+<ol>
+<li>最后发现，实验的急迫性其实没有那么大；正确的顺序应该是在实验中发现关键问题就可以着手去组织撰写了，边写的过程中边去思考方法上的创新：怎么去尝试增加模块？如何构建训练数据？发现小问题就赶紧写下来的目的是<strong>故事优先原则</strong>，先要想怎么把我们发现的问题包装成一个容易让读者接受的、可读性强的、有趣的故事；这之后才是思考如何去进行的实验；<strong>这是思维上的转变</strong>。</li>
+<li>话又说回来，怎么去发现一个有趣的问题呢？<strong>前提仍然还要多去动手实践</strong>，复现别人优秀的成果或者在实践中发现共性的问题。</li>
+<li><strong>写作很关键</strong>也很重要，大到整篇文章的撰写小的起一个题目或者章节的标题，都是需要自己动手去写的，我认为没有什么捷径可以走，虽然LLM能力很强，但是带头来还是自己一句一句写的感觉有味道，容易读懂。始终把写作很关键印在脑子里！</li>
+</ol>
+<h2 id="七月生活"><a href="#七月生活" class="headerlink" title="七月生活"></a>七月生活</h2><p>七月的生活规律些，因为论文DDL冲刺所以很忙，每天都是画图、撰写论文，占据了大部分时间。感觉这个月几乎没有时间去学一些自己想学的东西了。。。</p>
+<p>这个月接触到了短间歇高心率的力量训练，感觉体验感非常好。尝试了每周2-3次这样的体验</p>
 
                 
               </div>
@@ -458,7 +375,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="category-chain-item">人工智能与深度学习</a>
+  <a href="/categories/%E5%8A%A8%E6%9C%BA/" class="category-chain-item">动机</a>
   
   
 
@@ -468,7 +385,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9B%B8%E5%85%B3/" class="category-chain-item">大模型相关</a>
+  <a href="/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="category-chain-item">年度总结</a>
   
   
 
@@ -483,9 +400,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/LLM/" class="print-no-link">#LLM</a>
-      
-        <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="print-no-link">#深度学习</a>
+        <a href="/tags/%E7%A7%91%E7%A0%94%E5%BF%83%E8%B7%AF/" class="print-no-link">#科研心路</a>
       
     </div>
   
@@ -497,8 +412,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>VLM Higher,Faster,Stronger</div>
-      <div>http://example.com/2026/07/09/VLM-Higher-Faster-Stronger/</div>
+      <div>2026年7月总结与展望</div>
+      <div>http://example.com/2026/07/30/2026年7月总结与展望/</div>
     </div>
     <div class="license-meta">
       
@@ -510,7 +425,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年7月9日</div>
+          <div>2026年7月30日</div>
         </div>
       
       
@@ -543,18 +458,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/07/30/2026%E5%B9%B47%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/" title="2026年7月总结与展望">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2026年7月总结与展望</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/07/07/2026%E5%B9%B46%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/" title="2026年6月总结与展望">
-                        <span class="hidden-mobile">2026年6月总结与展望</span>
+                      <a href="/2026/07/09/VLM-Higher-Faster-Stronger/" title="VLM Higher,Faster,Stronger">
+                        <span class="hidden-mobile">VLM Higher,Faster,Stronger</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -643,12 +552,6 @@
 
 
   
-
-
-  
-  
-
-
 
 
 
@@ -882,49 +785,6 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

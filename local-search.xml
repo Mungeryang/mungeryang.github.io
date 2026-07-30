@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>2026年7月总结与展望</title>
+    <link href="/2026/07/30/2026%E5%B9%B47%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/"/>
+    <url>/2026/07/30/2026%E5%B9%B47%E6%9C%88%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B/</url>
+    
+    <content type="html"><![CDATA[<h2 id="AAAI感受"><a href="#AAAI感受" class="headerlink" title="AAAI感受"></a>AAAI感受</h2><p>感觉像是自己一个人打了一次美赛哈哈哈哈哈哈，倒计时的三天也没睡几个小时的觉；不过傍晚提交完论文走回宿舍的路上，小风一吹，感觉那是最如释重负的时候～</p><p>论文撰写问题汇总：</p><ol><li>写作习惯不好，<strong>标点后边都不爱加空格</strong>；以及画图时(a)后边也没有紧跟空格</li><li><strong>句子啰嗦</strong>，反复提及，表达不流畅</li><li>Intro的<strong>写作逻辑不好</strong></li><li>搞不懂如何设置实验任务，以及设置这个实验任务是在什么setting下，为什么要这样设置，想不明白</li></ol><p>AAAI投稿收获：</p><ol><li>最后发现，实验的急迫性其实没有那么大；正确的顺序应该是在实验中发现关键问题就可以着手去组织撰写了，边写的过程中边去思考方法上的创新：怎么去尝试增加模块？如何构建训练数据？发现小问题就赶紧写下来的目的是<strong>故事优先原则</strong>，先要想怎么把我们发现的问题包装成一个容易让读者接受的、可读性强的、有趣的故事；这之后才是思考如何去进行的实验；<strong>这是思维上的转变</strong>。</li><li>话又说回来，怎么去发现一个有趣的问题呢？<strong>前提仍然还要多去动手实践</strong>，复现别人优秀的成果或者在实践中发现共性的问题。</li><li><strong>写作很关键</strong>也很重要，大到整篇文章的撰写小的起一个题目或者章节的标题，都是需要自己动手去写的，我认为没有什么捷径可以走，虽然LLM能力很强，但是带头来还是自己一句一句写的感觉有味道，容易读懂。始终把写作很关键印在脑子里！</li></ol><h2 id="七月生活"><a href="#七月生活" class="headerlink" title="七月生活"></a>七月生活</h2><p>七月的生活规律些，因为论文DDL冲刺所以很忙，每天都是画图、撰写论文，占据了大部分时间。感觉这个月几乎没有时间去学一些自己想学的东西了。。。</p><p>这个月接触到了短间歇高心率的力量训练，感觉体验感非常好。尝试了每周2-3次这样的体验</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>动机</category>
+      
+      <category>年度总结</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>科研心路</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>VLM Higher,Faster,Stronger</title>
     <link href="/2026/07/09/VLM-Higher-Faster-Stronger/"/>
     <url>/2026/07/09/VLM-Higher-Faster-Stronger/</url>
