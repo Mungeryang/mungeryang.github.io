@@ -4,11 +4,40 @@
   
   
   <entry>
+    <title>Multi-Vector Document Retrieval Survey</title>
+    <link href="/2026/08/31/Multi-Vector-Document-Retrieval-Survey/"/>
+    <url>/2026/08/31/Multi-Vector-Document-Retrieval-Survey/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>论文研读</category>
+      
+      <category>大模型相关</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MLLM</tag>
+      
+      <tag>VQA</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>如何学习基模源码</title>
     <link href="/2026/08/25/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E5%9F%BA%E6%A8%A1%E6%BA%90%E7%A0%81/"/>
     <url>/2026/08/25/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E5%9F%BA%E6%A8%A1%E6%BA%90%E7%A0%81/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<p>self.model: 一般都是继承 Transformer 主干(LlavaLlamaModel(config)、Qwen3Model(config))</p><p>self.lm_head: nn.Linear(config.hidden_size, config.vocab_size, bias&#x3D;False)，线性层将每个位置的 hidden_states 映射为词表上的 logits</p><p>现在遇到的问题，不是“源码看不懂”，而是<strong>缺少从源码阅读进入模型研发的桥梁</strong>。</p><p>培养科研直觉：</p><blockquote><p>看到论文里的 Method，能够迅速判断：它到底改了模型哪一层？forward 是否变化？参数是否新增？loss 是否变化？数据格式是否变化？训练器是否变化？推理路径是否变化？</p></blockquote><p>读 Paper，要先问：<strong>Innovation 到底发生在哪</strong>？</p><p>固定把所有 LLM &#x2F; MLLM 论文分成下面 6 层：</p><table><thead><tr><th>Level</th><th>典型创新</th></tr></thead><tbody><tr><td>L0</td><td>Prompt &#x2F; inference policy</td></tr><tr><td>L1</td><td>Data &#x2F; SFT</td></tr><tr><td>L2</td><td>RL &#x2F; reward</td></tr><tr><td>L3</td><td>Module</td></tr><tr><td>L4</td><td>Transformer architecture</td></tr><tr><td>L5</td><td>Kernel &#x2F; runtime</td></tr></tbody></table>]]></content>
     
     
     <categories>
