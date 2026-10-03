@@ -295,7 +295,7 @@
       
       <a class="index-excerpt " href="/2026/09/30/MiniMind-V-%E5%A4%8D%E7%8E%B0/" target="_self">
         <div>
-          MiniMind-V源码学习视觉编码器连接层语言解码器
+          MiniMind-V源码学习视觉编码器VLM的输入依然是一段文本，其中包含特殊的&lt;image&gt;占位符。 在计算文本嵌入后，可以将图像编码器生成的向量投影到该占位符对应的嵌入部分，替换掉原先的占位符embedding。 1&lt;image&gt;\n这个图像中有什么内容？  在minimind-v中，使用64个&lt;|image_pad|&gt;组成的占位符代替图像（SigLIP2
         </div>
       </a>
 
