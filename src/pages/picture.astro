@@ -1,0 +1,7 @@
+---
+import Base from '../layouts/Base.astro';
+import PhotoGallery from '../components/PhotoGallery.astro';
+import { loadPhotoWall } from '../lib/photo-wall';
+const gallery = await loadPhotoWall();
+---
+<Base title="照片" description="一卷生活里的照片。读万卷书，行万里路，记录有意义的时刻。"><PhotoGallery {...gallery} /></Base>

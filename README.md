@@ -52,7 +52,7 @@ npm run publish -- "docs: 更新博客"
 ## 页面与设置
 
 - `source/about/index.md`：关于我。
-- `source/picture/index.md`：原照片墙，照片点击可放大。
+- `src/data/photos.json`：新版照片墙清单，默认空相册，只展示手动添加的照片；具体操作见 [PHOTO-GUIDE.md](PHOTO-GUIDE.md)。原 `source/picture/index.md` 保留作本地整理参考。
 - `source/self/index.md`：简历，PDF 为 `public/img/jianli/miao.pdf`。
 - `src/pages/links.astro`：友链。
 - `src/components/Home.astro`、`src/styles/global.css`：首页及主题样式。

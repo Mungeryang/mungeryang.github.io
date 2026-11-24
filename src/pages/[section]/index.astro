@@ -1,7 +1,7 @@
 ---
 import { getEntry, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-export function getStaticPaths() { return ['about', 'picture', 'self'].map(section => ({ params: { section } })); }
+export function getStaticPaths() { return ['about', 'self'].map(section => ({ params: { section } })); }
 const section = Astro.params.section!;
 const entry = await getEntry('pages', section);
 if (!entry) throw new Error(`Missing page: ${section}`);
