@@ -41,13 +41,13 @@ draft: false
 
 正文图片：`![照片描述](/img/life/新照片.jpg)`。日期沿用中国时间，旧文章链接由迁移清单固定。支持 Markdown、HTML、Fluid 的 `{% note success %}` 提示框和数学公式。
 
-一条命令检查、提交文章与图片，并推送 GitHub：
+一条命令检查、提交文章、照片清单及所引用的本地图片，并推送 GitHub：
 
 ```sh
 npm run publish -- "docs: 更新博客"
 ```
 
-也可以自行运行 `git add`、`git commit`、`git push origin main`。推送后 GitHub Actions 会自动检查、构建、发布。修改页面样式等源码时，需要手动将相关文件加入 Git 提交。
+快捷命令会显示五个阶段的进度，包含 `src/data/photos.json`；只自动添加照片清单和本次修改文章引用的本地图片，不会扫描整个图片文件夹。也可以自行运行 `git add`、`git commit`、`git push origin main`。推送后 GitHub Actions 会自动检查、构建、发布。修改页面样式等源码时，需要手动将相关文件加入 Git 提交。
 
 ## 页面与设置
 
