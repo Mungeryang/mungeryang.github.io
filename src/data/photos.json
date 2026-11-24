@@ -1,13 +1,19 @@
 [
   {
     "src": "/img/life/yanji1.jpg",
-    "title": "开往延吉的列车",
+    "title": "延吉的列车",
     "date": "2026-04-05",
     "story": "我们的第一次旅行"
   },
   {
     "src": "/img/life/zhuhai.jpg",
-    "title": "大湾区",
+    "title": "在珠海",
+    "date": "2024-02-10",
+    "story": "自驾大湾区"
+  },
+  {
+    "src": "/img/life/aomen.jpeg",
+    "title": "在澳门",
     "date": "2024-02-10",
     "story": "自驾大湾区"
   },
@@ -40,6 +46,36 @@
     "title": "酒仙",
     "date": "2025-08-31",
     "story": "回所了"
+  },
+  {
+    "src": "/img/life/zhiwuyuan1.jpeg",
+    "title": "在太原",
+    "date": "2024-04-30",
+    "story": "说走就走的旅行"
+  },
+  {
+    "src": "/img/life/xiongan1.jpeg",
+    "title": "在雄安",
+    "date": "2024-10-01",
+    "story": "中秋聚"
+  },
+  {
+    "src": "/img/life/tianjin.jpeg",
+    "title": "海河边",
+    "date": "2024-10-01",
+    "story": "天津卫"
+  },
+  {
+    "src": "/img/life/suzhou3.jpeg",
+    "title": "沪",
+    "date": "2020-08-01",
+    "story": "大上海"
+  },
+  {
+    "src": "/img/life/yungang.jpeg",
+    "title": "在大同",
+    "date": "2024-05-01",
+    "story": "说走就走的旅行"
   }
   
   
