@@ -1,20 +1,27 @@
 [
   {
-    "src": "https://img.example.com/travel/sunset.jpg",
-    "title": "海边日落",
+    "src": "/img/life/suzhou3.jpeg",
+    "title": "旅途中的风景",
     "date": "2026-11-24",
-    "alt": "夕阳下的海岸线",
-    "story": "那天散步到海边，刚好遇见日落。支持 **Markdown**。",
-    "width": 1600,
-    "height": 1067,
-    "color": "#b57956",
+    "alt": "旅行途中拍下的风景",
+    "story": "填写你的照片故事，支持 **Markdown**。",
     "draft": true
   },
   {
     "src": "/img/gallery/my-photo.jpg",
-    "title": "旅途片刻",
+    "title": "新增的本地照片",
     "date": "2026-11-25",
-    "story": "给这张照片写一点故事。",
+    "story": "先将照片放入 public/img/gallery/，再修改这里的文件名。",
+    "draft": true
+  },
+  {
+    "src": "https://img.example.com/travel/sunset.jpg",
+    "title": "图床照片示例",
+    "date": "2026-11-24",
+    "width": 1600,
+    "height": 1067,
+    "color": "#b57956",
+    "story": "不上传照片文件到 GitHub 时，可使用自己的 HTTPS 图床链接。",
     "draft": true
   }
 ]

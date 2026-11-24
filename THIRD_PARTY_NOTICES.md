@@ -14,5 +14,9 @@ Licensed under the Apache License, Version 2.0. A copy is included at
 Modifications for this blog include integration with its existing Astro layout,
 an explicit photo list template, year filtering, pagination for
 the draggable table, keyboard and touch interaction fixes, and generated WebP
-previews. Original photos and text belong to their respective owners; no photos
+previews. The color ribbon has been replaced with an original memory-coordinate
+index, and on-page promotional credit has been removed while this attribution
+and the license remain in the source distribution.
+
+Original photos and text belong to their respective owners; no photos
 from Jerry's Blog are included.

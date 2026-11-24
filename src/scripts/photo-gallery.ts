@@ -137,8 +137,9 @@ function renderTable(animate = false) {
 function filter(year: string) {
   selected = photos.filter(photo => year === 'all' || photo.year === year); page = 0;
   all<HTMLButtonElement>('[data-filter]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === year)));
-  all<HTMLElement>('.frame, .sw, .sthumb').forEach(element => { element.hidden = year !== 'all' && element.dataset.year !== year; });
+  all<HTMLElement>('.frame, .memory-stop[data-year], .sthumb').forEach(element => { element.hidden = year !== 'all' && element.dataset.year !== year; });
   query('#gallery-status').textContent = `${year === 'all' ? '全部' : year} · ${selected.length} 张照片`;
+  query('#index-count').textContent = `${pad(selected.length)} 枚光影`;
   if (view === 'table') renderTable();
 }
 
@@ -159,9 +160,10 @@ query('.views').addEventListener('click', event => {
 query('#shuffle').addEventListener('click', () => scatter(true));
 query('#table-previous').addEventListener('click', () => { page--; renderTable(); });
 query('#table-next').addEventListener('click', () => { page++; renderTable(); });
-all('.sw').forEach(swatch => {
-  const highlight = (active: boolean) => roll.querySelector(`[data-n="${swatch.dataset.open}"]`)?.classList.toggle('lit', active);
-  swatch.addEventListener('mouseenter', () => highlight(true)); swatch.addEventListener('mouseleave', () => highlight(false));
+all('.memory-stop[data-open]').forEach(stop => {
+  const highlight = (active: boolean) => roll.querySelector(`[data-n="${stop.dataset.open}"]`)?.classList.toggle('lit', active);
+  stop.addEventListener('mouseenter', () => highlight(true)); stop.addEventListener('mouseleave', () => highlight(false));
+  stop.addEventListener('focus', () => highlight(true)); stop.addEventListener('blur', () => highlight(false));
 });
 
 all<HTMLElement>('.print').forEach(print => {

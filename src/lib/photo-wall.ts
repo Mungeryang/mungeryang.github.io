@@ -23,6 +23,7 @@ export interface GalleryPhoto {
   title: string;
   album: string;
   year: string;
+  date?: string;
   alt: string;
   story: string;
   src: string;
@@ -68,7 +69,8 @@ async function buildPhotoWall(source: string) {
   });
   const processor = await createMarkdownProcessor({ syntaxHighlight: false });
   const photos: GalleryPhoto[] = [];
-  // Only explicitly listed photos are published. No scanning of the old Markdown or image folder.
+  // 只读取 photos.json 中列出的照片；不会自动导入旧照片墙或扫描 img 目录。
+  // /img/life/a.jpg 对应 public/img/life/a.jpg；HTTPS 链接直接使用外部图片。
   for (let start = 0; start < entries.length; start += 4) {
     photos.push(...await Promise.all(entries.slice(start, start + 4).map(async (photo, offset) => {
       const n = start + offset + 1;
@@ -76,7 +78,7 @@ async function buildPhotoWall(source: string) {
       const info = await imageInfo(photo.src);
       return {
         ...info, n, id, title: photo.title, album: [photo.date, photo.title].filter(Boolean).join(' · '),
-        year: photo.date?.slice(0, 4) || '未注明年份', alt: photo.alt || photo.title,
+        year: photo.date?.slice(0, 4) || '未注明年份', date: photo.date, alt: photo.alt || photo.title,
         src: photo.src, thumb: info.file ? `/photo-preview/${id}.webp` : photo.src,
         width: photo.width || info.width, height: photo.height || info.height, color: photo.color || info.color,
         story: photo.story ? (await processor.render(photo.story)).code : '',

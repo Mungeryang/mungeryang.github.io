@@ -1,92 +1,112 @@
-# 照片墙操作模板
+# 照片墙操作指南
 
-照片墙入口为 `/picture/`，参考 Jerry's Blog 的黑色相框胶卷、主色条、可拖动桌面和大图查看器。
+照片墙入口为 `/picture/`。支持“光影坐标”照片索引、黑色相框胶卷、可拖动桌面、年份筛选和大图查看。
 
-照片列表只读取 `src/data/photos.json`。目前是空数组 `[]`，没有导入旧照片墙的 152 张照片。原来的 `source/picture/index.md` 和本地照片仍然保留，修改旧 Markdown 不会影响这个新版照片模板。
+只需编辑 `src/data/photos.json`。目前清单为空 `[]`，不会自动导入原来的 152 张照片。旧照片墙 Markdown 和本地照片仍然保留。
 
-## 添加一张照片
+## 使用已有的本地 img 照片
 
-打开 `src/data/photos.json`，把 `[]` 替换成下面的内容，将 `src` 改为自己的真实图片链接：
+`public` 是网站静态文件目录，网页地址中省略 `public`：
+
+| 电脑上的文件位置（相对于博客根目录） | 照片清单里的 src |
+| --- | --- |
+| `public/img/life/suzhou3.jpeg` | `/img/life/suzhou3.jpeg` |
+| `public/img/life/my-photo.jpg` | `/img/life/my-photo.jpg` |
+| `public/img/gallery/my-photo.jpg` | `/img/gallery/my-photo.jpg` |
+
+不要填写电脑的 `/Users/...` 路径，也不要在 `src` 里写 `public/img/...`。开头的 `/` 需要保留，文件名及后缀的大小写应与实际文件一致。
+
+例如，使用项目里已有的 `suzhou3.jpeg`，把 `photos.json` 的 `[]` 替换为：
 
 ```json
 [
   {
-    "src": "https://你的图片域名/旅行/日落.jpg",
-    "title": "海边日落",
+    "src": "/img/life/suzhou3.jpeg",
+    "title": "旅途中的风景",
     "date": "2026-11-24",
-    "story": "散步到海边，刚好遇见日落。"
+    "alt": "旅行途中拍下的风景",
+    "story": "这里填写这张照片的故事。",
+    "draft": false
   }
 ]
 ```
 
-为了保持图片不进入 GitHub 的使用方式，推荐先将照片上传到自己的图床或 OSS，再填写可公开访问的 HTTPS 图片链接。只保存图片链接不会把图片文件上传到 GitHub；本次没有新建或配置图床服务。
+标题、日期和故事按实际情况填写。本地照片会自动读取尺寸、提取主色，并生成 WebP 预览图；点开大图时加载原图，不会修改原文件。
 
-也支持已存在的本地图片路径，例如 `/img/life/suzhou3.jpeg`。新增本地图片放在 `public/img/gallery/`，对应地址 `/img/gallery/照片名.jpg`。但如果只把新文件留在电脑上，GitHub/Vercel 的远程构建无法取得它，线上会缺图；需要独立上传到图片存储，或明确选择提交该张照片。不要把“不提交本地图片”等同于“网站自动获得图片”。
+## 添加一张新的本地照片
 
-## 添加多张照片
-
-数组中的每个 `{ ... }` 就是一张照片，条目之间用英文逗号分隔，最后一个条目后不加逗号：
+1. 把需要展示的照片放入 `public/img/gallery/`，例如 `public/img/gallery/my-photo.jpg`。也可以继续放入现有的 `public/img/life/`。
+2. 在 `photos.json` 数组中添加一个条目，把 `src` 填为 `/img/gallery/my-photo.jpg`。
+3. 多张照片的条目之间加英文逗号，最后一个条目后不加逗号。
 
 ```json
 [
   {
-    "src": "https://你的图片域名/日落.jpg",
-    "title": "海边日落",
+    "src": "/img/life/suzhou3.jpeg",
+    "title": "第一张照片",
     "date": "2026-11-24",
     "story": "第一张照片的故事。"
   },
   {
-    "src": "https://你的图片域名/山路.jpg",
-    "title": "山间徒步",
+    "src": "/img/gallery/my-photo.jpg",
+    "title": "第二张照片",
     "date": "2026-11-25",
     "story": "第二张照片的故事。"
   }
 ]
 ```
 
-页面按列表顺序展示。调整条目的先后即可排序；年份筛选会根据 `date` 自动生成。完整字段示例在 `src/data/photos.example.json`，这个示例文件不会被展示。
+清单的先后顺序就是展示顺序，年份筛选根据 `date` 自动生成。只展示清单里明确列出且不是草稿的照片。
 
-## 可用字段
-
-| 字段 | 必填 | 说明 |
-| --- | --- | --- |
-| `src` | 是 | HTTPS 图片地址，或 `/img/` 开头的已有本地图片路径 |
-| `title` | 是 | 相框标题 |
-| `date` | 否 | `YYYY-MM-DD`，用于年份筛选和大图标题 |
-| `story` | 否 | 点开大图后展示的文字，支持 Markdown |
-| `alt` | 否 | 图片描述，默认使用标题 |
-| `draft` | 否 | `true` 暂不展示，`false` 展示；不填写时默认展示 |
-| `width`、`height` | 否 | 外链图片的原始像素尺寸，帮助预留正确比例 |
-| `color` | 否 | 外链照片主色，例如 `#b57956`；本地图片会自动提取 |
-
-示例文件里的 `draft` 为 `true`，复制使用后记得改成 `false`。本地照片自动生成 WebP 预览图，缓存和构建结果不会加入 Git；外链照片直接使用你填的地址，建议图床提供适合网页尺寸的版本。
-
-## 预览与发布
+## 本地预览
 
 ```sh
 cd /Users/mungeryang/Documents/myblog
 npm run dev
 ```
 
-打开终端显示地址的 `/picture/` 页面。修改照片列表后刷新页面查看。
+打开终端显示网址的 `/picture/` 页面。修改清单后刷新页面查看。`draft: true` 表示暂不展示；改为 `false` 或省略该字段即可展示。
 
-确认后按 `Ctrl+C` 结束预览，运行：
+## 发布到线上
+
+网站不能直接读取你电脑上的新文件。已有仓库里的照片可以直接引用；新照片若使用 `/img/...` 路径，需要把选中的这一张照片与清单一起提交，远程构建才能取得它。
+
+确认预览后按 `Ctrl+C`，运行：
 
 ```sh
 npm run check
 npm run build
 git add src/data/photos.json
+# 只有新增了本地照片，才添加这一张具体文件；已有仓库照片可跳过下面一行。
+git add public/img/gallery/my-photo.jpg
 git diff --cached --stat
 git commit -m "docs: 更新照片墙"
 git push origin main
 ```
 
-这组命令只暂存照片列表。现有 `npm run publish` 还会自动暂存 `public/img/`，因此在图片存储分离完成前，不要用它来发布照片列表。
+第二条 `git add` 会把指定的那张照片上传到 GitHub，不会自动添加整个图片文件夹。如果你不希望这张照片进入 GitHub，就先上传到自己的图床或 OSS，再在 `src` 中填可公开访问的 HTTPS 链接，例如 `https://img.example.com/my-photo.jpg`。这时只提交清单即可。本项目尚未配置照片独立上传服务。
+
+照片发布请使用上面的选择性提交方式；现有 `npm run publish` 还会自动暂存整个 `public/img/` 目录。
+
+## 可用字段
+
+| 字段 | 必填 | 说明 |
+| --- | --- | --- |
+| `src` | 是 | `/img/` 开头的本地图片路径，或 HTTPS 图片地址 |
+| `title` | 是 | 相框和光影坐标中的标题 |
+| `date` | 否 | `YYYY-MM-DD`，用于年份筛选、坐标日期和大图标题 |
+| `story` | 否 | 点开大图展示的文字，支持 Markdown |
+| `alt` | 否 | 图片描述，默认使用标题 |
+| `draft` | 否 | `true` 暂不展示，`false` 展示；省略时默认展示 |
+| `width`、`height` | 否 | 外链图片原始像素尺寸；本地图片自动读取 |
+| `color` | 否 | 外链照片主色，如 `#b57956`；本地图片自动提取 |
+
+完整示例在 `src/data/photos.example.json`，该文件不会自动展示。示例中的 `draft` 为 `true`，复制使用后记得改成 `false`。
 
 ## 调整外观
 
-- `src/components/PhotoGallery.astro`：标题、页面布局和相框样式。
-- `src/scripts/photo-gallery.ts`：年份筛选、桌面拖动、大图切换。
+- `src/components/PhotoGallery.astro`：页面文案、光影坐标、相框和样式。
+- `src/scripts/photo-gallery.ts`：筛选、桌面拖动、大图切换。
 - `src/pages/picture.astro`：照片页面入口。
 
-照片墙支持 Roll / Table 切换、年份筛选、大图左右切换、Esc 关闭、手机左右滑动以及照片深链接 `#photo-01`。
+大图支持左右方向键、Esc 关闭、手机左右滑动以及 `#photo-01` 形式的照片链接。

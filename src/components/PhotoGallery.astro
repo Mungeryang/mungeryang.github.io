@@ -15,10 +15,17 @@ const data = JSON.stringify(photos.map(({ file, ...photo }) => photo)).replace(/
     <p class="lede">一卷生活里的照片。读万卷书，行万里路，把有意义的时刻留在这里。</p>
   </header>
 
-  <figure class="palette" aria-label="照片主色条">
-    <div class="swatches">{photos.length ? photos.map(photo => <button type="button" class="sw" style={`--c:${photo.color}`} data-open={photo.n} data-year={photo.year} title={`${pad(photo.n)} · ${photo.album}`} aria-label={`打开第 ${photo.n} 张：${photo.title}`} />) : ['#b7b4aa', '#8e9b97', '#d6c7ae', '#8a99aa', '#b69277', '#747e85', '#a9b6b5', '#d0bfaa'].map(color => <span class="sw" style={`--c:${color}`} aria-hidden="true" />)}</div>
-    <figcaption class="mono"><span>PALETTE OF THE ROLL</span><span>每一格，都是一张照片的颜色</span></figcaption>
-  </figure>
+  <section class="memory-index" aria-label="光影坐标">
+    <div class="memory-intro"><span class="memory-kicker mono">LITTLE MOMENTS, LONG STORIES</span><h2>光影坐标<span aria-hidden="true">↗</span></h2><p>{photos.length ? '点亮一个坐标，重访一段回忆。' : '把走过的路，留在光里。'}</p><span class="memory-count mono" id="index-count">{pad(photos.length)} 枚光影</span></div>
+    <div class="memory-track" tabindex="0" aria-label="横向浏览照片坐标">
+      <div class="memory-stops">
+        <svg class="memory-route" viewBox="0 0 720 120" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M-10 64 C80 26 128 92 210 60 S330 26 420 60 S560 88 730 42" /></svg>
+        {photos.length ? photos.map((photo, index) => <button type="button" class="memory-stop" style={`--c:${photo.color};--offset:${[12, 0, 16, 5][index % 4]}px`} data-open={photo.n} data-year={photo.year} aria-label={`打开光影坐标 ${pad(photo.n)}：${photo.title}`} title={photo.album}><span class="stop-number mono">{pad(photo.n)}</span><span class="stop-color" aria-hidden="true" /><span class="stop-title">{photo.title}</span><span class="stop-date mono">{photo.date?.slice(5).replace('-', '.') || '某个瞬间'}</span></button>) : [
+          ['#96a59e', '走小路'], ['#c1a180', '看日落'], ['#91a4b4', '去远方'], ['#b7b2a4', '遇见人'], ['#a8aca1', '记平常'],
+        ].map(([color, title], index) => <div class="memory-stop is-placeholder" style={`--c:${color};--offset:${[12, 0, 16, 5, 10][index]}px`} aria-hidden="true"><span class="stop-number mono">{pad(index + 1)}</span><span class="stop-color" /><span class="stop-title">{title}</span><span class="stop-date mono">TO BE CONTINUED</span></div>)}
+      </div>
+    </div>
+  </section>
 
   <div class="year-filter" role="group" aria-label="按年份筛选" hidden={!photos.length}>
     <button type="button" class="year-button" data-filter="all" aria-pressed="true">全部 <span>{photos.length}</span></button>
@@ -48,7 +55,7 @@ const data = JSON.stringify(photos.map(({ file, ...photo }) => photo)).replace(/
   </section>
   <nav class="table-pagination mono" aria-label="桌面照片分页" id="table-pagination" hidden><button type="button" class="vbtn" id="table-previous">← 上一组</button><span id="table-page"></span><button type="button" class="vbtn" id="table-next">下一组 →</button></nav>
 
-  <p class="gallery-credit mono">GALLERY INSPIRED BY <a href="https://jerry609.github.io/photos/" target="_blank" rel="noopener">JERRY ↗</a><span> · </span>每一张照片，都有自己的故事。</p>
+  <p class="gallery-note">每一张照片，都有自己的故事。</p>
 
   <dialog class="viewer" id="photo-viewer" aria-label="照片查看器">
     <div class="vtop mono"><span id="v-count"></span><span id="v-title"></span><button type="button" class="vclose" id="v-close" aria-label="关闭照片查看器" autofocus>Esc ✕</button></div>
@@ -66,45 +73,6 @@ const data = JSON.stringify(photos.map(({ file, ...photo }) => photo)).replace(/
 
   [hidden] {
     display: none !important;
-  }
-  .palette {
-    margin: 0 0 1.5rem;
-  }
-  .swatches {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(1.5rem, 1fr));
-    height: 2.35rem;
-    border-radius: 0;
-    overflow: hidden;
-    border: 1.5px solid var(--ink-hard, #171716);
-  }
-  .sw {
-    border: 0;
-    padding: 0;
-    background: var(--c);
-    cursor: pointer;
-    transition: transform 0.2s ease, filter 0.2s ease;
-  }
-  .sw:hover,
-  .sw:focus-visible {
-    transform: scaleY(1.25);
-    filter: saturate(1.2);
-    position: relative;
-    z-index: 1;
-  }
-  .palette figcaption {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 0.25rem 1rem;
-    margin-top: 0.5rem;
-    font-size: 0.7rem;
-    color: var(--muted);
-  }
-  .palette figcaption span:first-child {
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--ink);
   }
   .toolbar {
     display: flex;
@@ -427,7 +395,7 @@ const data = JSON.stringify(photos.map(({ file, ...photo }) => photo)).replace(/
   @media (prefers-reduced-motion: reduce) {
     .frame,
     #v-img,
-    .sw {
+    .memory-stop {
       transition: none;
     }
   }
@@ -439,8 +407,6 @@ const data = JSON.stringify(photos.map(({ file, ...photo }) => photo)).replace(/
   .page-intro h1 { font-size: 48px; font-weight: 500; letter-spacing: -1.8px; line-height: 1.3; margin: 22px 0 18px; }
   .page-intro h1 small { margin-left: 15px; font-size: 20px; font-weight: 400; letter-spacing: 1px; color: var(--muted); vertical-align: middle; }
   .lede { line-height: 2; font-size: 14px; color: var(--muted); margin: 0; }
-  .swatches { display: flex; height: 38px; border: 1px solid var(--line); overflow-x: auto; scrollbar-width: none; }
-  .sw { flex: 1 0 7px; min-width: 7px; }
   .year-filter { display: flex; flex-wrap: wrap; gap: 7px; margin: 24px 0; }
   .year-button { background: transparent; border: 1px solid transparent; padding: 7px 11px; font-size: 11px; color: var(--muted); border-radius: 3px; }
   .year-button span { font-size: 9px; margin-left: 7px; opacity: .65; }
@@ -471,15 +437,6 @@ const data = JSON.stringify(photos.map(({ file, ...photo }) => photo)).replace(/
   .vstory :global(a) { color: #b4c8ff; text-decoration: underline; }
   .vstory :global(.note) { background: #252a32; color: #e6e9ec; border-color: #434b57; font-size: 12px; padding: 5px 12px; margin: 8px 0; }
   .nav { z-index: 1; }
-  .photo-journal { border-block: 1px solid var(--line); margin-top: 45px; }
-  .photo-journal summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 23px 0; font-size: 14px; }
-  .photo-journal summary::-webkit-details-marker { display: none; }
-  .photo-journal summary > .mono { font-size: 10px; color: var(--muted); }
-  .photo-journal summary > .mono span { display: inline-block; margin-left: 15px; }
-  .photo-journal[open] summary > .mono span { transform: rotate(90deg); }
-  .journal-content { max-width: 780px; margin-inline: auto; padding-block: 25px 40px; }
-  .gallery-credit { margin-top: 23px; color: var(--muted); font-size: 8px; letter-spacing: .6px; line-height: 2; }
-  .gallery-credit a { color: var(--ink); }
   :global(html.photo-viewer-open) { overflow: hidden; }
   @media (max-width: 760px) {
     .gallery-page { padding-block: 37px 45px; }
@@ -488,7 +445,6 @@ const data = JSON.stringify(photos.map(({ file, ...photo }) => photo)).replace(/
     .page-intro .eyebrow { gap: 10px; font-size: 8px; }
     .lede { font-size: 12px; }
     .empty-state h2 { font-size: 18px; letter-spacing: .2px; }
-    .palette figcaption { font-size: 8px; }
     .year-filter { gap: 3px; }
     .year-button { padding: 7px 9px; }
     .hint { font-size: 9px; }
@@ -496,7 +452,6 @@ const data = JSON.stringify(photos.map(({ file, ...photo }) => photo)).replace(/
     .frame { padding: 5px 5px 0; margin-bottom: 12px; }
     .cap { gap: 5px; padding: 8px 1px; font-size: 8px; }
     .st { font-size: 6px; padding: 0 2px; }
-    .sw { flex-basis: 14px; }
     .table { min-height: 530px; height: 65svh; }
     .print { width: 130px; }
     .print img { height: 120px; }
@@ -504,8 +459,40 @@ const data = JSON.stringify(photos.map(({ file, ...photo }) => photo)).replace(/
     .vstory { max-height: 23dvh; padding-inline: 16px; font-size: 12px; }
     .table-pagination { font-size: 9px; }
     .table-pagination .vbtn { font-size: 9px; padding-inline: 9px; }
-    .gallery-credit span { display: block; font-size: 0; }
   }
   @media (max-width: 370px) { .roll { columns: 1; } }
+
+
+  /* 光影坐标：沿曲线展开的照片索引，点击节点查看照片。 */
+  .memory-index { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 30px; padding: 24px 27px; margin-bottom: 27px; border: 1px solid var(--line); border-radius: 7px; background: linear-gradient(120deg, var(--paper), var(--bg)); }
+  .memory-intro { position: relative; min-width: 0; padding-top: 4px; }
+  .memory-kicker { font-size: 7px; letter-spacing: 1px; color: var(--muted); }
+  .memory-intro h2 { display: flex; align-items: center; gap: 17px; font: 500 23px var(--serif); letter-spacing: 2px; margin: 14px 0 11px; }
+  .memory-intro h2 > span { font: 18px sans-serif; color: var(--accent); }
+  .memory-intro p { font-size: 11px; color: var(--muted); line-height: 1.9; margin: 0; }
+  .memory-count { display: inline-block; margin-top: 16px; font-size: 9px; color: var(--accent); letter-spacing: .5px; }
+  .memory-track { min-width: 0; overflow-x: auto; scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+  .memory-stops { position: relative; display: flex; justify-content: space-between; width: max-content; min-width: 100%; gap: 22px; padding: 9px 10px 18px; }
+  .memory-route { position: absolute; inset: 0; width: 100%; height: 100px; pointer-events: none; }
+  .memory-route path { stroke: var(--line); stroke-width: 1.5; stroke-dasharray: 3 5; }
+  .memory-stop { flex: 0 0 77px; position: relative; display: flex; align-items: center; flex-direction: column; gap: 0; padding: var(--offset, 0px) 0 0; border: 0; background: transparent; color: var(--ink); text-align: center; }
+  .stop-number { font-size: 8px; letter-spacing: 1px; color: var(--muted); line-height: 1; margin-bottom: 14px; }
+  .stop-color { display: block; width: 29px; height: 29px; border: 1px solid rgb(255 255 255 / .35); border-radius: 50%; background: var(--c); box-shadow: 0 0 0 5px var(--paper), 0 0 0 6px var(--line); transition: transform .2s, box-shadow .2s; }
+  button.memory-stop:hover .stop-color, button.memory-stop:focus-visible .stop-color { transform: scale(1.14); box-shadow: 0 0 0 5px var(--paper), 0 0 0 6px var(--accent); }
+  .stop-title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; overflow: hidden; max-width: 88px; font-size: 11px; margin-top: 16px; line-height: 1.8; }
+  .stop-date { font-size: 7px; color: var(--muted); line-height: 1.5; margin-top: 3px; white-space: nowrap; }
+  .is-placeholder { cursor: default; }
+  .is-placeholder .stop-color { opacity: .8; }
+  .gallery-note { display: flex; align-items: center; gap: 12px; margin-top: 25px; color: var(--muted); font-family: var(--serif); font-size: 12px; letter-spacing: 1px; }
+  .gallery-note::before { content: ''; width: 24px; height: 1px; background: var(--line); }
+  @media (max-width: 760px) {
+    .memory-index { grid-template-columns: minmax(0, 1fr); gap: 19px; padding: 20px 17px 13px; }
+    .memory-intro { padding-right: 75px; }
+    .memory-intro h2 { font-size: 21px; margin-block: 12px 8px; }
+    .memory-count { position: absolute; right: 0; top: 18px; }
+    .memory-stops { gap: 15px; }
+    .memory-stop { flex-basis: 68px; }
+    .memory-kicker { font-size: 6px; }
+  }
 
 </style>
