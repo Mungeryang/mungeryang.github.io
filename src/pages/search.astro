@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="搜索"><section class="page-shell shell"><header class="page-heading"><div class="eyebrow">FIND A THOUGHT</div><h1>寻找一些文字<span class="accent-text">.</span></h1></header><label class="search-label" for="search-input">搜索标题、正文、分类或标签</label><input id="search-input" class="search-input" type="search" placeholder="试试 Transformer、科研心路、生活…" autocomplete="off" /><p id="search-status" aria-live="polite">输入关键词，寻找感兴趣的文章。</p><div id="search-results" class="search-results"></div></section></Base>
+<script>
+  type Entry = { title: string; url: string; text: string; date: string; tags: string[] };
+  const input = document.querySelector<HTMLInputElement>('#search-input')!; const results = document.querySelector('#search-results')!; const status = document.querySelector('#search-status')!;
+  let index: Promise<Entry[]> | undefined; let revision = 0;
+  input.addEventListener('input', async () => {
+    const request = ++revision; const query = input.value.trim().toLocaleLowerCase(); results.replaceChildren();
+    if (!query) { status.textContent = '输入关键词，寻找感兴趣的文章。'; return; } status.textContent = '正在查找…';
+    try { index ??= fetch('/search-index.json').then(response => { if (!response.ok) throw new Error('index'); return response.json(); }); const entries = await index; if (request !== revision) return; const words = query.split(/\s+/); const hits = entries.filter(entry => words.every(word => `${entry.title} ${entry.text} ${entry.tags.join(' ')}`.toLocaleLowerCase().includes(word))); status.textContent = `找到 ${hits.length} 篇文章`; hits.forEach(entry => { const article = document.createElement('article'); const heading = document.createElement('h2'); const link = document.createElement('a'); link.href = entry.url; link.textContent = entry.title; heading.append(link); const meta = document.createElement('p'); meta.className = 'post-meta'; meta.textContent = entry.date; article.append(meta, heading); results.append(article); }); }
+    catch { index = undefined; status.textContent = '搜索加载失败，请稍后重试。'; }
+  });
+</script>

@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import PostList from './PostList.astro';
+import { taxonomyUrl, type Post } from '../lib/posts';
+interface Props { posts: Post[]; all: Post[]; page: number; total: number; }
+const { posts, all, page, total } = Astro.props;
+const tags = [...new Set(all.flatMap(post => post.data.tags))].slice(0, 9);
+---
+<Base title={page > 1 ? `文章 · 第 ${page} 页` : undefined}>
+  <section class="hero shell"><div class="hero-copy"><div class="eyebrow"><span class="status-dot"></span> MUNGER'S DIGITAL GARDEN</div><h1>写下思考，<br />也收藏<span class="accent-text">生活。</span></h1><p>在技术与日常之间，留下一些文字。<br />保持好奇，认真生活，做时间的朋友。</p><a class="hero-link" href="/about/">你好，我是杨桂淼 <span>↗</span></a></div><div class="hero-image"><img src="/img/bg/background4.png" alt="博客里的一隅风景" width="800" height="600" fetchpriority="high" /><div class="image-caption"><span>长命功夫长命做</span><span>SLOW IS FAST.</span></div></div></section>
+  <section class="content-grid shell" id="writing"><div class="writing"><div class="section-title"><h2>文字与思考 <span>WRITING</span></h2><span class="count">{all.length} 篇记录</span></div><PostList posts={posts} /><nav class="pagination" aria-label="文章分页">{page > 1 ? <a href={page === 2 ? '/#writing' : `/page/${page - 1}/#writing`}>← 上一页</a> : <span>从这里开始</span>}<span>{String(page).padStart(2, '0')} / {String(total).padStart(2, '0')}</span>{page < total && <a href={`/page/${page + 1}/#writing`}>下一页 →</a>}</nav></div><aside class="sidebar"><section class="profile-card"><img class="avatar" src="/img/bg/person1.png" alt="杨桂淼" width="72" height="72" /><span class="eyebrow">THE PERSON BEHIND THE WORDS</span><h2>杨桂淼 <span>Munger</span></h2><p>技术探索者，生活记录者。<br />拥抱开源，也拥抱生活的无限可能。</p><a href="/about/">更多关于我 <span>↗</span></a><div class="profile-links"><a href="https://github.com/Mungeryang">GitHub ↗</a><a href="/rss.xml">RSS ↗</a></div></section><section class="topic-section"><h3>探索一些话题 <span>TOPICS</span></h3><div class="topic-cloud">{tags.map(tag => <a href={taxonomyUrl('tags', tag)}>{tag}</a>)}</div><a class="subtle-link" href="/tags/">全部标签 →</a></section><a class="photo-card" href="/picture/"><img src="/img/life/suzhou3.jpeg" alt="旅途中的风景" loading="lazy" width="400" height="300" /><div><span>生活的切片</span><strong>在路上，也在当下 ↗</strong></div></a><p class="sidebar-note">“读万卷书，行万里路。”<br />把每一个普通的日子，过成自己的风景。</p></aside></section>
+</Base>

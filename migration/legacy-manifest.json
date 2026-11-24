@@ -1,0 +1,3070 @@
+{
+  "previousCommit": "5c207900853d77e5e2dc3902fcec37e07d09af4e",
+  "posts": [
+    {
+      "file": "_posts/2024年度总结.md",
+      "path": "2024/12/31/2024年度总结",
+      "title": "2024年度总结"
+    },
+    {
+      "file": "_posts/2025年1月总结与展望.md",
+      "path": "2025/01/30/2025年1月总结与展望",
+      "title": "2025年1月总结与展望"
+    },
+    {
+      "file": "_posts/2025年2月总结与展望.md",
+      "path": "2025/03/01/2025年2月总结与展望",
+      "title": "2025年2月总结与展望"
+    },
+    {
+      "file": "_posts/12月总结与展望.md",
+      "path": "2024/12/31/12月总结与展望",
+      "title": "2024年12月总结与展望"
+    },
+    {
+      "file": "_posts/2025年3月阅读书目与摘录反思.md",
+      "path": "2025/03/24/2025年3月阅读书目与摘录反思",
+      "title": "2025年3月阅读书目与摘录反思"
+    },
+    {
+      "file": "_posts/2025年3月总结与展望.md",
+      "path": "2025/03/31/2025年3月总结与展望",
+      "title": "2025年3月总结与展望"
+    },
+    {
+      "file": "_posts/2025年6月总结与展望.md",
+      "path": "2025/07/01/2025年6月总结与展望",
+      "title": "2025年6月总结与展望"
+    },
+    {
+      "file": "_posts/10月总结与展望.md",
+      "path": "2024/11/03/10月总结与展望",
+      "title": "2024年10月总结与展望"
+    },
+    {
+      "file": "_posts/2025年7月总结与展望.md",
+      "path": "2025/08/04/2025年7月总结与展望",
+      "title": "2025年7月总结与展望"
+    },
+    {
+      "file": "_posts/2025年4月总结与展望.md",
+      "path": "2025/05/01/2025年4月总结与展望",
+      "title": "五一五更之一：2025年4月总结与展望"
+    },
+    {
+      "file": "_posts/2025年8月总结与展望.md",
+      "path": "2025/09/03/2025年8月总结与展望",
+      "title": "2025年8月总结与展望"
+    },
+    {
+      "file": "_posts/8-9月总结与展望.md",
+      "path": "2024/09/30/8-9月总结与展望",
+      "title": "2024年8-9月总结与展望"
+    },
+    {
+      "file": "_posts/Agentic-RAG-A-Survey.md",
+      "path": "2025/01/20/Agentic-RAG-A-Survey",
+      "title": "Agentic RAG:A Survey"
+    },
+    {
+      "file": "_posts/Agentic-RAG-with-LlamaIndex.md",
+      "path": "2024/12/10/Agentic-RAG-with-LlamaIndex",
+      "title": "Agentic RAG with LlamaIndex"
+    },
+    {
+      "file": "_posts/2025年5月总结与展望.md",
+      "path": "2025/06/01/2025年5月总结与展望",
+      "title": "2025年5月总结与展望"
+    },
+    {
+      "file": "_posts/Attention-is-all-you-need.md",
+      "path": "2025/01/15/Attention-is-all-you-need",
+      "title": "Attention is all you need"
+    },
+    {
+      "file": "_posts/C-五子棋.md",
+      "path": "2024/11/11/C-五子棋",
+      "title": "C++五子棋"
+    },
+    {
+      "file": "_posts/11月总结与展望.md",
+      "path": "2024/12/05/11月总结与展望",
+      "title": "2024年11月总结与展望"
+    },
+    {
+      "file": "_posts/DeepSeek-YYDS.md",
+      "path": "2025/01/27/DeepSeek-YYDS",
+      "title": "DeepSeek YYDS"
+    },
+    {
+      "file": "_posts/AI大模型时代人才需求与技能培养.md",
+      "path": "2024/09/29/AI大模型时代人才需求与技能培养",
+      "title": "AI大模型时代人才需求与技能培养"
+    },
+    {
+      "file": "_posts/Graph-RAG-A-Survey.md",
+      "path": "2025/01/24/Graph-RAG-A-Survey",
+      "title": "Graph RAG"
+    },
+    {
+      "file": "_posts/LLM-basic-knowledge.md",
+      "path": "2024/10/28/LLM-basic-knowledge",
+      "title": "LLM basic knowledge"
+    },
+    {
+      "file": "_posts/Ask-in-Any-Modality.md",
+      "path": "2025/04/05/Ask-in-Any-Modality",
+      "title": "Ask in Any Modality"
+    },
+    {
+      "file": "_posts/LLM开发必备.md",
+      "path": "2025/02/26/LLM开发必备",
+      "title": "LLM开发必备"
+    },
+    {
+      "file": "_posts/LLM训练常用操作汇总.md",
+      "path": "2024/11/22/LLM训练常用操作汇总",
+      "title": "LLM训练常用操作-从训练到崩溃"
+    },
+    {
+      "file": "_posts/EchoSight论文研读复现.md",
+      "path": "2024/11/16/EchoSight论文研读复现",
+      "title": "EchoSight论文研读复现"
+    },
+    {
+      "file": "_posts/Multimodal-RAG-System-Survey.md",
+      "path": "2024/10/20/Multimodal-RAG-System-Survey",
+      "title": "Multimodal RAG System Survey"
+    },
+    {
+      "file": "_posts/Hadoop集群配置汇总.md",
+      "path": "2024/10/12/Hadoop集群配置汇总",
+      "title": "Hadoop集群配置汇总"
+    },
+    {
+      "file": "_posts/Prompt-Compression.md",
+      "path": "2025/07/29/Prompt-Compression",
+      "title": "Prompt Compression"
+    },
+    {
+      "file": "_posts/Multimodal-RAG-and-Prompt-Compression.md",
+      "path": "2024/12/08/Multimodal-RAG-and-Prompt-Compression",
+      "title": "Multimodal RAG and Prompt Compression"
+    },
+    {
+      "file": "_posts/Pytorch-and-Deep-learning-NoteBook.md",
+      "path": "2024/09/28/Pytorch-and-Deep-learning-NoteBook",
+      "title": "Pytorch and Deep-learning NoteBook"
+    },
+    {
+      "file": "_posts/Multi-agent-RAG-Systems调研报告.md",
+      "path": "2024/12/18/Multi-agent-RAG-Systems调研报告",
+      "title": "Multi-agent RAG Systems调研报告"
+    },
+    {
+      "file": "_posts/RAG综述一览.md",
+      "path": "2024/12/18/RAG综述一览",
+      "title": "RAG综述一览"
+    },
+    {
+      "file": "_posts/SmallCap-Source-Code.md",
+      "path": "2025/03/15/SmallCap-Source-Code",
+      "title": "SmallCap Source Code"
+    },
+    {
+      "file": "_posts/cs336-study-note.md",
+      "path": "2025/07/14/cs336-study-note",
+      "title": "cs336:Language Modeling from Scratch"
+    },
+    {
+      "file": "_posts/LLM实训.md",
+      "path": "2024/08/12/LLM实训",
+      "title": "DataWhale AI夏令营-LLM实训"
+    },
+    {
+      "file": "_posts/RAG-for-LLM-A-survey.md",
+      "path": "2024/09/19/RAG-for-LLM-A-survey",
+      "title": "RAG for LLM - A survey"
+    },
+    {
+      "file": "_posts/hello-world.md",
+      "path": "2024/08/05/hello-world",
+      "title": "Hello World"
+    },
+    {
+      "file": "_posts/云计算学习笔记.md",
+      "path": "2024/08/05/云计算学习笔记",
+      "title": "shell学习笔记"
+    },
+    {
+      "file": "_posts/五一五更之四：动手学GPT.md",
+      "path": "2025/05/04/五一五更之四：动手学GPT",
+      "title": "五一五更之四：动手学GPT"
+    },
+    {
+      "file": "_posts/五一五更之三：动手学BERT.md",
+      "path": "2025/05/03/五一五更之三：动手学BERT",
+      "title": "五一五更之三：动手学BERT"
+    },
+    {
+      "file": "_posts/从SmallCap出发切入Image-Caption.md",
+      "path": "2025/03/08/从SmallCap出发切入Image-Caption",
+      "title": "从SmallCap出发切入Image Caption"
+    },
+    {
+      "file": "_posts/从零构建大模型.md",
+      "path": "2025/08/24/从零构建大模型",
+      "title": "从零构建大模型"
+    },
+    {
+      "file": "_posts/《在线》-读书笔记.md",
+      "path": "2024/09/18/《在线》-读书笔记",
+      "title": "《在线》-读书笔记"
+    },
+    {
+      "file": "_posts/五一五更之五：手撸DeepSeek-V3-R1.md",
+      "path": "2025/05/05/五一五更之五：手撸DeepSeek-V3-R1",
+      "title": "五一五更之五：手撸DeepSeek V3"
+    },
+    {
+      "file": "_posts/五一五更之二：注意力机制的起源与发展.md",
+      "path": "2025/05/02/五一五更之二：注意力机制的起源与发展",
+      "title": "五一五更之二：注意力机制的起源与发展"
+    },
+    {
+      "file": "_posts/大模型面试200问.md",
+      "path": "2025/08/11/大模型面试200问",
+      "title": "大模型面试200问"
+    },
+    {
+      "file": "_posts/寒假阅读书单.md",
+      "path": "2025/01/19/寒假阅读书单",
+      "title": "寒假阅读书单"
+    },
+    {
+      "file": "_posts/开工大吉.md",
+      "path": "2025/02/05/开工大吉",
+      "title": "开工大吉"
+    },
+    {
+      "file": "_posts/张宇智慧箴言.md",
+      "path": "2023/10/14/张宇智慧箴言",
+      "title": "张宇智慧箴言"
+    },
+    {
+      "file": "_posts/强化学习-从开始到放弃.md",
+      "path": "2025/06/25/强化学习-从开始到放弃",
+      "title": "强化学习:从入门到放弃"
+    },
+    {
+      "file": "_posts/归家小记.md",
+      "path": "2024/04/24/归家小记",
+      "title": "归家小记"
+    },
+    {
+      "file": "_posts/恐惧还是贪婪.md",
+      "path": "2024/10/14/恐惧还是贪婪",
+      "title": "恐惧还是贪婪"
+    },
+    {
+      "file": "_posts/前路漫漫亦灿灿.md",
+      "path": "2023/09/29/前路漫漫亦灿灿",
+      "title": "前路漫漫亦灿灿"
+    },
+    {
+      "file": "_posts/抉择.md",
+      "path": "2024/10/24/抉择",
+      "title": "抉择本身就是向前吧"
+    },
+    {
+      "file": "_posts/大数据技术学习笔记.md",
+      "path": "2024/08/11/大数据技术学习笔记",
+      "title": "大数据技术学习笔记"
+    },
+    {
+      "file": "_posts/机器学习与大数据管理总结复习.md",
+      "path": "2024/12/25/机器学习与大数据管理总结复习",
+      "title": "机器学习与大数据管理总结复习"
+    },
+    {
+      "file": "_posts/本科毕业论文致谢.md",
+      "path": "2024/08/06/本科毕业论文致谢",
+      "title": "本科毕业论文致谢"
+    },
+    {
+      "file": "_posts/李沐讲座.md",
+      "path": "2024/09/23/李沐讲座",
+      "title": "李沐交大讲座-大语言模型的实践经验和未来预测"
+    },
+    {
+      "file": "_posts/杨力祥老师的编程哲学.md",
+      "path": "2024/09/10/杨力祥老师的编程哲学",
+      "title": "力祥哲学-把程序写成东西"
+    },
+    {
+      "file": "_posts/动手学循环神经网络.md",
+      "path": "2024/12/06/动手学循环神经网络",
+      "title": "动手学循环神经网络"
+    },
+    {
+      "file": "_posts/沐神论文阅读速览.md",
+      "path": "2025/04/15/沐神论文阅读速览",
+      "title": "沐神论文阅读速览"
+    },
+    {
+      "file": "_posts/梁文锋专访.md",
+      "path": "2025/01/29/梁文锋专访",
+      "title": "梁文锋专访"
+    },
+    {
+      "file": "_posts/没有饺子全是醋.md",
+      "path": "2025/04/28/没有饺子全是醋",
+      "title": "没有饺子全是醋"
+    },
+    {
+      "file": "_posts/毛选及相关.md",
+      "path": "2023/12/26/毛选及相关",
+      "title": "毛选及相关"
+    },
+    {
+      "file": "_posts/湖仓一体技术调研.md",
+      "path": "2025/04/25/湖仓一体技术调研",
+      "title": "湖仓一体技术调研"
+    },
+    {
+      "file": "_posts/想整明白我们是怎么学习的？机器是如何学习我们的学习的？.md",
+      "path": "2024/10/18/想整明白我们是怎么学习的？机器是如何学习我们的学习的？",
+      "title": "我们是怎么学习的？机器是如何学习我们的学习的？"
+    },
+    {
+      "file": "_posts/社畜牛马生活初体验.md",
+      "path": "2025/06/17/社畜牛马生活初体验",
+      "title": "社畜牛马生活初体验"
+    },
+    {
+      "file": "_posts/王坚院士最新访谈录.md",
+      "path": "2025/04/01/王坚院士最新访谈录",
+      "title": "王坚院士最新访谈录"
+    },
+    {
+      "file": "_posts/经典卷积神经网络复现.md",
+      "path": "2024/11/15/经典卷积神经网络复现",
+      "title": "经典卷积神经网络复现"
+    },
+    {
+      "file": "_posts/机器学习基础.md",
+      "path": "2024/08/09/机器学习基础",
+      "title": "机器学习基础"
+    },
+    {
+      "file": "_posts/雁栖一年，科研三年.md",
+      "path": "2024/08/30/雁栖一年，科研三年",
+      "title": "雁栖一年，科研三年"
+    },
+    {
+      "file": "_posts/线性代数的本质.md",
+      "path": "2025/06/11/线性代数的本质",
+      "title": "线性代数的本质"
+    },
+    {
+      "file": "_posts/自然语言处理基础总结复习.md",
+      "path": "2024/12/25/自然语言处理基础总结复习",
+      "title": "自然语言处理基础总结复习"
+    },
+    {
+      "file": "_posts/湾区游记.md",
+      "path": "2024/02/23/湾区游记",
+      "title": "湾区游记"
+    },
+    {
+      "file": "_posts/2025年9月总结与展望.md",
+      "path": "2025/10/04/2025年9月总结与展望",
+      "title": "2025年9月总结与展望"
+    },
+    {
+      "file": "_posts/口述历史之姥姥姥爷史.md",
+      "path": "2025/10/05/口述历史之姥姥姥爷史",
+      "title": "口述历史之姥姥姥爷史"
+    },
+    {
+      "file": "_posts/浅谈GPT-2、LlaMA与Qwen架构设计的对比分析.md",
+      "path": "2025/09/21/浅谈GPT-2、LlaMA与Qwen架构设计的对比分析",
+      "title": "浅谈GPT-2、LlaMA与Qwen架构的对比分析"
+    },
+    {
+      "file": "_posts/天空不设限.md",
+      "path": "2025/10/11/天空不设限",
+      "title": "天空不设限"
+    },
+    {
+      "file": "_posts/DeepSeek-OCR-innovates-Long-Context-Compression.md",
+      "path": "2025/10/21/DeepSeek-OCR-innovates-Long-Context-Compression",
+      "title": "DeepSeek-OCR innovates Long-Context Compression"
+    },
+    {
+      "file": "_posts/2025年10月总结与展望.md",
+      "path": "2025/10/31/2025年10月总结与展望",
+      "title": "2025年10月总结与展望"
+    },
+    {
+      "file": "_posts/Colpali复现.md",
+      "path": "2025/11/19/Colpali复现",
+      "title": "Colpali 复现与源码剖析"
+    },
+    {
+      "file": "_posts/从ColBERT到Colpali.md",
+      "path": "2025/11/09/从ColBERT到Colpali",
+      "title": "从ColBERT到Colpali"
+    },
+    {
+      "file": "_posts/Qwen-VL复现与源码剖析.md",
+      "path": "2025/11/26/Qwen-VL复现与源码剖析",
+      "title": "Qwen_VL复现与源码剖析"
+    },
+    {
+      "file": "_posts/2025年12月总结与展望.md",
+      "path": "2025/12/29/2025年12月总结与展望",
+      "title": "2025年12月总结与展望"
+    },
+    {
+      "file": "_posts/2025年11月总结与展望.md",
+      "path": "2025/11/30/2025年11月总结与展望",
+      "title": "2025年11月总结与展望"
+    },
+    {
+      "file": "_posts/2025年度总结.md",
+      "path": "2026/01/01/2025年度总结",
+      "title": "2025年度总结"
+    },
+    {
+      "file": "_posts/精心排版了一本书.md",
+      "path": "2026/01/18/精心排版了一本书",
+      "title": "精心排版了一本书"
+    },
+    {
+      "file": "_posts/2026年1月总结与展望.md",
+      "path": "2026/01/30/2026年1月总结与展望",
+      "title": "2026年1月总结与展望"
+    },
+    {
+      "file": "_posts/Visual-Document-Retrieval最新综述.md",
+      "path": "2026/02/26/Visual-Document-Retrieval最新综述",
+      "title": "Visual Document Retrieval最新综述"
+    },
+    {
+      "file": "_posts/我的女孩出现了.md",
+      "path": "2026/03/05/我的女孩出现了",
+      "title": "我的女孩出现了"
+    },
+    {
+      "file": "_posts/Qwen3-5架构拆解.md",
+      "path": "2026/03/25/Qwen3-5架构拆解",
+      "title": "Qwen3.5架构拆解"
+    },
+    {
+      "file": "_posts/2026年3月总结与展望.md",
+      "path": "2026/04/03/2026年3月总结与展望",
+      "title": "2026年3月总结与展望"
+    },
+    {
+      "file": "_posts/2026年4月总结与展望.md",
+      "path": "2026/04/30/2026年4月总结与展望",
+      "title": "2026年4月总结与展望"
+    },
+    {
+      "file": "_posts/cs336-Assignment1.md",
+      "path": "2026/04/20/cs336-Assignment1",
+      "title": "cs336-Assignment1"
+    },
+    {
+      "file": "_posts/2026年2月总结与展望.md",
+      "path": "2026/02/28/2026年2月总结与展望",
+      "title": "2026年2月总结与展望-返乡见闻"
+    },
+    {
+      "file": "_posts/博士科研指南.md",
+      "path": "2026/06/10/博士科研指南",
+      "title": "博士科研指南"
+    },
+    {
+      "file": "_posts/2026年5月总结与展望.md",
+      "path": "2026/05/31/2026年5月总结与展望",
+      "title": "2026年5月总结与展望"
+    },
+    {
+      "file": "_posts/2026年6月总结与展望.md",
+      "path": "2026/07/07/2026年6月总结与展望",
+      "title": "2026年6月总结与展望"
+    },
+    {
+      "file": "_posts/CC与codex使用.md",
+      "path": "2026/03/15/CC与codex使用",
+      "title": "Claude Code与codex使用"
+    },
+    {
+      "file": "_posts/VLM-Higher-Faster-Stronger.md",
+      "path": "2026/07/09/VLM-Higher-Faster-Stronger",
+      "title": "VLM Higher,Faster,Stronger"
+    },
+    {
+      "file": "_posts/2026年7月总结与展望.md",
+      "path": "2026/07/30/2026年7月总结与展望",
+      "title": "2026年7月总结与展望"
+    },
+    {
+      "file": "_posts/如何学习基模源码.md",
+      "path": "2026/08/25/如何学习基模源码",
+      "title": "如何学习基模源码"
+    },
+    {
+      "file": "_posts/Multi-Vector-Document-Retrieval-Survey.md",
+      "path": "2026/08/31/Multi-Vector-Document-Retrieval-Survey",
+      "title": "Multi-Vector Document Retrieval Survey"
+    },
+    {
+      "file": "_posts/2026年8月总结与展望.md",
+      "path": "2026/08/31/2026年8月总结与展望",
+      "title": "2026年8月总结与展望"
+    },
+    {
+      "file": "_posts/MiniMind源码学习.md",
+      "path": "2026/09/14/MiniMind源码学习",
+      "title": "MiniMind源码学习"
+    },
+    {
+      "file": "_posts/2026年9月总结与展望.md",
+      "path": "2026/09/28/2026年9月总结与展望",
+      "title": "2026年9月总结与展望"
+    },
+    {
+      "file": "_posts/MiniMind-V-复现.md",
+      "path": "2026/09/30/MiniMind-V-复现",
+      "title": "MiniMind-V 复现"
+    },
+    {
+      "file": "_posts/2026年10月总结与展望.md",
+      "path": "2026/11/09/2026年10月总结与展望",
+      "title": "2026年10月总结与展望"
+    },
+    {
+      "file": "_posts/VDB基础概念.md",
+      "path": "2026/11/09/VDB基础概念",
+      "title": "VDB基础概念"
+    }
+  ],
+  "files": [
+    {
+      "original": "source/_posts/LLM开发必备.md",
+      "target": "source/_posts/LLM开发必备.md",
+      "sha256": "2672d8d2cd603afa92ca51847209c3efac7c39e4d9d2415587a1053c563a6c23"
+    },
+    {
+      "original": "source/_posts/2025年6月总结与展望.md",
+      "target": "source/_posts/2025年6月总结与展望.md",
+      "sha256": "bc6c3978549c8d51cbe8437a9df015ea0b41f755f4c987d25192dc6eddd22d6c"
+    },
+    {
+      "original": "source/_posts/2025年7月总结与展望.md",
+      "target": "source/_posts/2025年7月总结与展望.md",
+      "sha256": "8976b325220fcacc2032f15cfbca6bbd376d959da4f6da6045b0bb92f2d5add2"
+    },
+    {
+      "original": "source/_posts/VDB基础概念.md",
+      "target": "source/_posts/VDB基础概念.md",
+      "sha256": "4ac2203c7ae8282323b3090539cf2a1d26d4b4e3d32362fc0b50d7399afb9ff6"
+    },
+    {
+      "original": "source/_posts/抉择.md",
+      "target": "source/_posts/抉择.md",
+      "sha256": "77e07305f91ec5356abcbda31feb7de49c94ec08a0d4b6600ed135a9ff5ec8c6"
+    },
+    {
+      "original": "source/_posts/AI大模型时代人才需求与技能培养.md",
+      "target": "source/_posts/AI大模型时代人才需求与技能培养.md",
+      "sha256": "66344486e6b3ab6f3e66fa8e606d8f154d8c059023c02d6e480a59b21743a82f"
+    },
+    {
+      "original": "source/_posts/王坚院士最新访谈录.md",
+      "target": "source/_posts/王坚院士最新访谈录.md",
+      "sha256": "4b686c1ada0d381905e8da98114dd9be6129d04ded86299dcf922ed9f1d80575"
+    },
+    {
+      "original": "source/_posts/机器学习基础.md",
+      "target": "source/_posts/机器学习基础.md",
+      "sha256": "42e8d596d9d0cc36680fba5dd42d09bb97ce56aeadb9a9eaacec1d479915a142"
+    },
+    {
+      "original": "source/_posts/开工大吉.md",
+      "target": "source/_posts/开工大吉.md",
+      "sha256": "5478162ed98b0b262f83506ffd5f61eefd5aa8b3a0b7943b6dbe66b1e2df6857"
+    },
+    {
+      "original": "source/_posts/RAG-for-LLM-A-survey.md",
+      "target": "source/_posts/RAG-for-LLM-A-survey.md",
+      "sha256": "2f83ac2754519a0fb38b52631f633fd5b1839f0e067dfeb59cfb4ec83ae9d2e1"
+    },
+    {
+      "original": "source/_posts/hello-world.md",
+      "target": "source/_posts/hello-world.md",
+      "sha256": "ecc9c8b32718828c2a333b9531d990c600cfe5dd0ac69ff01a3ec2db8e793f35"
+    },
+    {
+      "original": "source/_posts/Colpali复现.md",
+      "target": "source/_posts/Colpali复现.md",
+      "sha256": "5655db677b83e2a699aca58fc3be025f6522f60ef64fa8165c5403fb1be53be6"
+    },
+    {
+      "original": "source/_posts/经典卷积神经网络复现.md",
+      "target": "source/_posts/经典卷积神经网络复现.md",
+      "sha256": "2f943ca2700261746b59100eec14c527c967455256e4c972a5b668bfccda51cb"
+    },
+    {
+      "original": "source/_posts/本科毕业论文致谢.md",
+      "target": "source/_posts/本科毕业论文致谢.md",
+      "sha256": "da32dce39217f7c2eefc34dad3ba0257c0df834fed8b2185e0852533b1d86227"
+    },
+    {
+      "original": "source/_posts/VLM-Higher-Faster-Stronger.md",
+      "target": "source/_posts/VLM-Higher-Faster-Stronger.md",
+      "sha256": "44c3d08819a367ad3b51ed0a7298e7e59d0f3b1f080f21a06e5cdac5a1c8eeab"
+    },
+    {
+      "original": "source/_posts/2026年8月总结与展望.md",
+      "target": "source/_posts/2026年8月总结与展望.md",
+      "sha256": "2bdb6cfa274a43d82ffea0058324a1d0f42a79ec1ded0e36798cc436c711bd99"
+    },
+    {
+      "original": "source/_posts/2026年9月总结与展望.md",
+      "target": "source/_posts/2026年9月总结与展望.md",
+      "sha256": "2115ea6ec553fe2b8e20526af9519270e2407f73c322f51c17e6e940c5177470"
+    },
+    {
+      "original": "source/_posts/寒假阅读书单.md",
+      "target": "source/_posts/寒假阅读书单.md",
+      "sha256": "559ecf303061c04ff6e7f1e413714b9ecd7a1a47561c3197636a85a0dfc32c2e"
+    },
+    {
+      "original": "source/_posts/口述历史之姥姥姥爷史.md",
+      "target": "source/_posts/口述历史之姥姥姥爷史.md",
+      "sha256": "2154a4bc0ce576b700a0e8416c07c86daef4a08191e95024e2a050426b625814"
+    },
+    {
+      "original": "source/_posts/LLM-basic-knowledge.md",
+      "target": "source/_posts/LLM-basic-knowledge.md",
+      "sha256": "ac547bb59eb3c79c753d2808c9b6b7caad85ca735e36cdee293dd8d1997b81d0"
+    },
+    {
+      "original": "source/_posts/MiniMind源码学习.md",
+      "target": "source/_posts/MiniMind源码学习.md",
+      "sha256": "6b2cc1c4060a1ea83c5e4693a587c0bbd530fb877249e7e61f42ad53dc517703"
+    },
+    {
+      "original": "source/_posts/2026年2月总结与展望.md",
+      "target": "source/_posts/2026年2月总结与展望.md",
+      "sha256": "9bcbc7acf05bb24ad844d3506a5f649c100ce2ba629b5b6ad866b47ca08de3b5"
+    },
+    {
+      "original": "source/_posts/2026年3月总结与展望.md",
+      "target": "source/_posts/2026年3月总结与展望.md",
+      "sha256": "19db6e2e5dd4df376722d2738a27c41a2b3174b3b55d63e062e7d38243e4e355"
+    },
+    {
+      "original": "source/_posts/DeepSeek-YYDS.md",
+      "target": "source/_posts/DeepSeek-YYDS.md",
+      "sha256": "b647367214555828beb4c5ed237e07e62b60902111a9a506e330a06a07ab1edb"
+    },
+    {
+      "original": "source/_posts/机器学习与大数据管理总结复习.md",
+      "target": "source/_posts/机器学习与大数据管理总结复习.md",
+      "sha256": "becbc42f46c5b430ca35f3a16c7830cee09cc2b8f3dff884cb7e2df4d62ada26"
+    },
+    {
+      "original": "source/_posts/天空不设限.md",
+      "target": "source/_posts/天空不设限.md",
+      "sha256": "1b206c63b1f7ca6553795bcb50dabcd04eddcab426c6d7c2da71def8b65e0c34"
+    },
+    {
+      "original": "source/_posts/2024年度总结.md",
+      "target": "source/_posts/2024年度总结.md",
+      "sha256": "06559751cbc0be4750dd90c2b2d02dbf743e50876b7c36b6d0c4496e18089c81"
+    },
+    {
+      "original": "source/_posts/李沐讲座.md",
+      "target": "source/_posts/李沐讲座.md",
+      "sha256": "f20d7b3311d9b087342ed9e25840e0fc0cd6f2b1d8388572d30ae6efe6e28404"
+    },
+    {
+      "original": "source/_posts/如何学习基模源码.md",
+      "target": "source/_posts/如何学习基模源码.md",
+      "sha256": "a2d5e86414937f285393be5aad8013dee6861a89120578297612c5328f42a16d"
+    },
+    {
+      "original": "source/_posts/博士科研指南.md",
+      "target": "source/_posts/博士科研指南.md",
+      "sha256": "77a4fb86625a5e402303d9f7944c57e66fb7682d34f84aa53cf86fe26071cce9"
+    },
+    {
+      "original": "source/_posts/Graph-RAG-A-Survey.md",
+      "target": "source/_posts/Graph-RAG-A-Survey.md",
+      "sha256": "e7ddd3275c04b0be54dd600f1b9333a5a0205e49b807ab285f013f0d516432da"
+    },
+    {
+      "original": "source/_posts/雁栖一年，科研三年.md",
+      "target": "source/_posts/雁栖一年，科研三年.md",
+      "sha256": "bf15b9428ca5fe4866f26cf9e23e547f50deec28acee7cbdfca648053d9b3ac5"
+    },
+    {
+      "original": "source/_posts/毛选及相关.md",
+      "target": "source/_posts/毛选及相关.md",
+      "sha256": "fc374455aee33270c2869e87592b11b1e9d7b0e1f7e2fb01a269e234d714085f"
+    },
+    {
+      "original": "source/_posts/2025年12月总结与展望.md",
+      "target": "source/_posts/2025年12月总结与展望.md",
+      "sha256": "49b7b9467057c0b321c5dfa4e96b973f2cc6cc8d76de0bcdde03be6b86f80d6e"
+    },
+    {
+      "original": "source/_posts/C-五子棋.md",
+      "target": "source/_posts/C-五子棋.md",
+      "sha256": "be46128fee31214e50c41b01938d5239bd3948ea8ab020b51ccd0e77c8a31e1e"
+    },
+    {
+      "original": "source/_posts/Ask-in-Any-Modality.md",
+      "target": "source/_posts/Ask-in-Any-Modality.md",
+      "sha256": "b49bbf42af3a4d16810bf044d80681b17537b5bc2fc2b5834d81a5dd3d38a534"
+    },
+    {
+      "original": "source/_posts/前路漫漫亦灿灿.md",
+      "target": "source/_posts/前路漫漫亦灿灿.md",
+      "sha256": "ce319541897b47c024e55cb9a140c0531882fd90f2db7fb5336bca54c8ae9dcf"
+    },
+    {
+      "original": "source/_posts/Hadoop集群配置汇总.md",
+      "target": "source/_posts/Hadoop集群配置汇总.md",
+      "sha256": "386a72babb769464f168fb477499605db2c5f5124f8d5f6ea35fea0aebdd96e6"
+    },
+    {
+      "original": "source/_posts/湖仓一体技术调研.md",
+      "target": "source/_posts/湖仓一体技术调研.md",
+      "sha256": "f84bb66e8858e8b5c6333abcf17197d44c0179a1f5f28d08195f2f07f0eee7d7"
+    },
+    {
+      "original": "source/_posts/MiniMind-V-复现.md",
+      "target": "source/_posts/MiniMind-V-复现.md",
+      "sha256": "529513613170b5564f9f1c3687bd2c8b437e346dfe3b10d723e024bf3bf89704"
+    },
+    {
+      "original": "source/_posts/2026年5月总结与展望.md",
+      "target": "source/_posts/2026年5月总结与展望.md",
+      "sha256": "11ea4d7e4968ccb5bcaf6e7505cd245711e476b35d663433866c0930d3f6ce03"
+    },
+    {
+      "original": "source/_posts/2026年4月总结与展望.md",
+      "target": "source/_posts/2026年4月总结与展望.md",
+      "sha256": "a9503675bc26efc21ab6ec61ea4b648d183901c61d51cc5c44ac09639ec07404"
+    },
+    {
+      "original": "source/_posts/湾区游记.md",
+      "target": "source/_posts/湾区游记.md",
+      "sha256": "5e19cf6f1906b64299316bff5b306f74d18705b4b5caeb7108e5cefc97642583"
+    },
+    {
+      "original": "source/_posts/线性代数的本质.md",
+      "target": "source/_posts/线性代数的本质.md",
+      "sha256": "8c7faa508ee2c5512897c5656a09b48f875f0390af4588f6cfaa7b146fb649dc"
+    },
+    {
+      "original": "source/_posts/Multi-Vector-Document-Retrieval-Survey.md",
+      "target": "source/_posts/Multi-Vector-Document-Retrieval-Survey.md",
+      "sha256": "0d32fabd385480a0133934978d1a4a9fea19950adc460ca4bc3382fa95dcb72d"
+    },
+    {
+      "original": "source/_posts/Pytorch-and-Deep-learning-NoteBook.md",
+      "target": "source/_posts/Pytorch-and-Deep-learning-NoteBook.md",
+      "sha256": "31b611051d40885dc45459c411425509c183d442ad914394fcbfc6f57f0110f7"
+    },
+    {
+      "original": "source/_posts/Prompt-Compression.md",
+      "target": "source/_posts/Prompt-Compression.md",
+      "sha256": "507f6a8125c6a1a0661bd644a3823717a3b987dd1cbf485d31c4d7a60cf1d5a8"
+    },
+    {
+      "original": "source/_posts/12月总结与展望.md",
+      "target": "source/_posts/12月总结与展望.md",
+      "sha256": "2784e5ce98b3a8908fab4ef241724c027c6322ef036c260fc2e568a5fd488c44"
+    },
+    {
+      "original": "source/_posts/2025年1月总结与展望.md",
+      "target": "source/_posts/2025年1月总结与展望.md",
+      "sha256": "42a586a6efe3574c352a5cbd33ca25001f3a2337e282998847c27603085940f3"
+    },
+    {
+      "original": "source/_posts/Qwen-VL复现与源码剖析.md",
+      "target": "source/_posts/Qwen-VL复现与源码剖析.md",
+      "sha256": "332b6af6d2e90c1e4e0ab60afce39878d91b638e56bc996dae363b8075d714c7"
+    },
+    {
+      "original": "source/_posts/张宇智慧箴言.md",
+      "target": "source/_posts/张宇智慧箴言.md",
+      "sha256": "9b0a6143d5f6a0d7867405e7dcbd6a5779f2d4ae26e1a9773a09647a8d7d68a8"
+    },
+    {
+      "original": "source/_posts/没有饺子全是醋.md",
+      "target": "source/_posts/没有饺子全是醋.md",
+      "sha256": "3da3047253d519bbec3511282950e2da637e33d07a4c618a7d6457137f71d2b8"
+    },
+    {
+      "original": "source/_posts/Attention-is-all-you-need.md",
+      "target": "source/_posts/Attention-is-all-you-need.md",
+      "sha256": "8d791ded884a78b0bf1ac1d1dc9a4c10e4fb016d12677b6b874cbd9e2673dabe"
+    },
+    {
+      "original": "source/_posts/我的女孩出现了.md",
+      "target": "source/_posts/我的女孩出现了.md",
+      "sha256": "0abf776be0c82648f165ab8269b6a3984cfb1109efaec7a3015cb67238d681cc"
+    },
+    {
+      "original": "source/_posts/杨力祥老师的编程哲学.md",
+      "target": "source/_posts/杨力祥老师的编程哲学.md",
+      "sha256": "f21ee033c0b0c13b11040e68545a98797afa67cf6996b56044f5aa17ef8a4e57"
+    },
+    {
+      "original": "source/_posts/大数据技术学习笔记.md",
+      "target": "source/_posts/大数据技术学习笔记.md",
+      "sha256": "d66e1ed78372b4e8080c8fafda3eca64d7c221cc1b92362c70581145e45770cd"
+    },
+    {
+      "original": "source/_posts/2026年10月总结与展望.md",
+      "target": "source/_posts/2026年10月总结与展望.md",
+      "sha256": "a09f3ee74e5ee75a419d0811560badd79330d583a639dbad3ef4ef19ed826b9d"
+    },
+    {
+      "original": "source/_posts/精心排版了一本书.md",
+      "target": "source/_posts/精心排版了一本书.md",
+      "sha256": "844a5480a20427dd6f017ff50d491f4243395f9ae9b31dcdb4c1e753b583fd7a"
+    },
+    {
+      "original": "source/_posts/五一五更之四：动手学GPT.md",
+      "target": "source/_posts/五一五更之四：动手学GPT.md",
+      "sha256": "1c19ca574490d88b40cb9e062ea8910536bea3a1c7a2c080943b770d05eed5ff"
+    },
+    {
+      "original": "source/_posts/CC与codex使用.md",
+      "target": "source/_posts/CC与codex使用.md",
+      "sha256": "f6e386f87b7d4409205a6a5f6ddd2c8e9523376efbfee3ed2efec7c1802bf8bc"
+    },
+    {
+      "original": "source/_posts/Multimodal-RAG-and-Prompt-Compression.md",
+      "target": "source/_posts/Multimodal-RAG-and-Prompt-Compression.md",
+      "sha256": "7ea592fa48e81f0dd0db8cd4e85c2022e104f96bfa798654c6c22620870eaec3"
+    },
+    {
+      "original": "source/_posts/2026年1月总结与展望.md",
+      "target": "source/_posts/2026年1月总结与展望.md",
+      "sha256": "b0755363a0f88b9a90ffc11e30b0628cccbf540d4d1ea4267778e3e67417876e"
+    },
+    {
+      "original": "source/_posts/归家小记.md",
+      "target": "source/_posts/归家小记.md",
+      "sha256": "e0c506e27af09f714be1436b254e6118e451b5f948b3001a985f5a4919e7447b"
+    },
+    {
+      "original": "source/_posts/Multi-agent-RAG-Systems调研报告.md",
+      "target": "source/_posts/Multi-agent-RAG-Systems调研报告.md",
+      "sha256": "b3163bed7a26630096e2b22907fb53a293ca925c01f085aba42800222921af4a"
+    },
+    {
+      "original": "source/_posts/梁文锋专访.md",
+      "target": "source/_posts/梁文锋专访.md",
+      "sha256": "5fb65370c539a7d4efa3c554e285d0b1d8efecb8fe193cf757020a7b3482439d"
+    },
+    {
+      "original": "source/_posts/云计算学习笔记.md",
+      "target": "source/_posts/云计算学习笔记.md",
+      "sha256": "c1ba2c3e63ac6dfd0be8b6b7aface61fae18b121214ff734575af4dd4aedc5b6"
+    },
+    {
+      "original": "source/_posts/Agentic-RAG-A-Survey.md",
+      "target": "source/_posts/Agentic-RAG-A-Survey.md",
+      "sha256": "f58535fa92d582c5d0cfdf9d4fdc35a381d573ac3b9783d96a4bec01af247fcb"
+    },
+    {
+      "original": "source/_posts/Qwen3-5架构拆解.md",
+      "target": "source/_posts/Qwen3-5架构拆解.md",
+      "sha256": "1f03b85d40d8efff1a54fcf20ffe172e7cc6f5b94c78a779cbda60cc10458e8a"
+    },
+    {
+      "original": "source/_posts/五一五更之二：注意力机制的起源与发展.md",
+      "target": "source/_posts/五一五更之二：注意力机制的起源与发展.md",
+      "sha256": "b81135615ebfe82702cdf4bb2af75de9a0bb5a2cc19e86bb31b8d3dd1f20b436"
+    },
+    {
+      "original": "source/_posts/Visual-Document-Retrieval最新综述.md",
+      "target": "source/_posts/Visual-Document-Retrieval最新综述.md",
+      "sha256": "320c1e6a89d60b4ca193a4ccd1dbe5658de87c3b00685faeacb082e0f950bc76"
+    },
+    {
+      "original": "source/_posts/RAG综述一览.md",
+      "target": "source/_posts/RAG综述一览.md",
+      "sha256": "88449476b96001549e76532ef915d2d2d58d07d801ae82c7ffa8abd9964a2dd6"
+    },
+    {
+      "original": "source/_posts/2025年度总结.md",
+      "target": "source/_posts/2025年度总结.md",
+      "sha256": "db65eb2ade0451c5eb76b8c510bb282dd68dbd66cd003906d57c6ac572177f3c"
+    },
+    {
+      "original": "source/_posts/强化学习-从开始到放弃.md",
+      "target": "source/_posts/强化学习-从开始到放弃.md",
+      "sha256": "c8304e5d85fe7eab3b49859586d7998998daa80e1dde94f52a679024d065b4e7"
+    },
+    {
+      "original": "source/_posts/大模型面试200问.md",
+      "target": "source/_posts/大模型面试200问.md",
+      "sha256": "d11f6c1501a4af8216a24029e3c7e7e0ea85e6b405e4f715cd36d944d6a7faab"
+    },
+    {
+      "original": "source/_posts/Agentic-RAG-with-LlamaIndex.md",
+      "target": "source/_posts/Agentic-RAG-with-LlamaIndex.md",
+      "sha256": "2764bb4f95eb913906c6e2b6da46e623aeac314c28990ee906035e77f44a50f4"
+    },
+    {
+      "original": "source/_posts/2025年5月总结与展望.md",
+      "target": "source/_posts/2025年5月总结与展望.md",
+      "sha256": "1a037697b335cecf8953491ddccb3b0ebf348db5bb98442de06af28543862abd"
+    },
+    {
+      "original": "source/_posts/社畜牛马生活初体验.md",
+      "target": "source/_posts/社畜牛马生活初体验.md",
+      "sha256": "64fb34a28aa82f5ce18d40629b45867c85dc05726d422a14021e56b45beff7bf"
+    },
+    {
+      "original": "source/_posts/2025年4月总结与展望.md",
+      "target": "source/_posts/2025年4月总结与展望.md",
+      "sha256": "af080597a3ba1b85749c326836287049d83b3e2ddd8d8acc8f5a9cca54c44d24"
+    },
+    {
+      "original": "source/_posts/EchoSight论文研读复现.md",
+      "target": "source/_posts/EchoSight论文研读复现.md",
+      "sha256": "4da50aade0dbeaaaab5f148b39792da7ad4e6ad89ebf4a857d424962f74dbd04"
+    },
+    {
+      "original": "source/_posts/五一五更之五：手撸DeepSeek-V3-R1.md",
+      "target": "source/_posts/五一五更之五：手撸DeepSeek-V3-R1.md",
+      "sha256": "10c045de610ef3cb1cbe5a0f40ea8eda83c062b84ef520113e4b94879a69b31b"
+    },
+    {
+      "original": "source/_posts/DeepSeek-OCR-innovates-Long-Context-Compression.md",
+      "target": "source/_posts/DeepSeek-OCR-innovates-Long-Context-Compression.md",
+      "sha256": "f4f20bc67c8735633e2b054c4b3b7f0b2954f6d57379f7bbf010a46ffd150b91"
+    },
+    {
+      "original": "source/_posts/cs336-study-note.md",
+      "target": "source/_posts/cs336-study-note.md",
+      "sha256": "f0d50ee06d5998870c69b21a45fe103ebe093bcbff3ab20012a59c1b8461582f"
+    },
+    {
+      "original": "source/_posts/2025年8月总结与展望.md",
+      "target": "source/_posts/2025年8月总结与展望.md",
+      "sha256": "b385168593823d42578ef907bf411f08083e6015a541d1833fcfee02d6af26b4"
+    },
+    {
+      "original": "source/_posts/2025年9月总结与展望.md",
+      "target": "source/_posts/2025年9月总结与展望.md",
+      "sha256": "d49eadf578794727fc1a91f3027bf1f3f9d340c205ce5a3711b072dbccf057ea"
+    },
+    {
+      "original": "source/_posts/LLM训练常用操作汇总.md",
+      "target": "source/_posts/LLM训练常用操作汇总.md",
+      "sha256": "d22b6b5c90afad611188b0b9f625bb49349ea470f20577a8092803636c512de2"
+    },
+    {
+      "original": "source/_posts/沐神论文阅读速览.md",
+      "target": "source/_posts/沐神论文阅读速览.md",
+      "sha256": "531f6ce5e47720d5fb45c345bc9298fec32179742699d5abb57937b46af1842b"
+    },
+    {
+      "original": "source/_posts/浅谈GPT-2、LlaMA与Qwen架构设计的对比分析.md",
+      "target": "source/_posts/浅谈GPT-2、LlaMA与Qwen架构设计的对比分析.md",
+      "sha256": "1d5b778be11c92ebc90840dd6dcb4303b3b401db2460714803a382fc495b36c5"
+    },
+    {
+      "original": "source/_posts/五一五更之三：动手学BERT.md",
+      "target": "source/_posts/五一五更之三：动手学BERT.md",
+      "sha256": "94962d726dc7f6f2ffa51b01e2032e856aee752e943c0e3918cf18079677123b"
+    },
+    {
+      "original": "source/_posts/《在线》-读书笔记.md",
+      "target": "source/_posts/《在线》-读书笔记.md",
+      "sha256": "1ea8952efc9e7e8c140f11502dab311dc71b2c0dad0992e9eca6da5d98382ba8"
+    },
+    {
+      "original": "source/_posts/LLM实训.md",
+      "target": "source/_posts/LLM实训.md",
+      "sha256": "8639800d5f5fbe2ebcd952a12a306a5906a4ebf1a451cc0acc553863d06fff90"
+    },
+    {
+      "original": "source/_posts/2025年2月总结与展望.md",
+      "target": "source/_posts/2025年2月总结与展望.md",
+      "sha256": "12437b68c6c244c0a96417ae5dc261017651e578ec0610052425e7a33334fbae"
+    },
+    {
+      "original": "source/_posts/2025年3月总结与展望.md",
+      "target": "source/_posts/2025年3月总结与展望.md",
+      "sha256": "28501cd410b11c1b86725e820659ab5e77a6237b6a0ed34184c515a5a9024503"
+    },
+    {
+      "original": "source/_posts/10月总结与展望.md",
+      "target": "source/_posts/10月总结与展望.md",
+      "sha256": "a2fa0e13c5575735d28cc3f2e03a112c58f17d3a4a0ed6ae1fa2d41fd1b5abf9"
+    },
+    {
+      "original": "source/_posts/11月总结与展望.md",
+      "target": "source/_posts/11月总结与展望.md",
+      "sha256": "749461d3202cbb02fae97baa8b21aa602d4ee3897d371bb53fb291acef307d75"
+    },
+    {
+      "original": "source/_posts/想整明白我们是怎么学习的？机器是如何学习我们的学习的？.md",
+      "target": "source/_posts/想整明白我们是怎么学习的？机器是如何学习我们的学习的？.md",
+      "sha256": "b23e7b900ee7231691a42e308194d6c1874642596892d54a6da0610210d083fc"
+    },
+    {
+      "original": "source/_posts/8-9月总结与展望.md",
+      "target": "source/_posts/8-9月总结与展望.md",
+      "sha256": "8958f0e22ad80578d4098b3426556b73322ec5f8a8917ca6263c6971db1dfa09"
+    },
+    {
+      "original": "source/_posts/从SmallCap出发切入Image-Caption.md",
+      "target": "source/_posts/从SmallCap出发切入Image-Caption.md",
+      "sha256": "fdc7b3e1fd37b35b9e637a1e5f93a58119cc8251464b31885f27ff01d95799ef"
+    },
+    {
+      "original": "source/_posts/恐惧还是贪婪.md",
+      "target": "source/_posts/恐惧还是贪婪.md",
+      "sha256": "e01896dc7e0bfec4c779201ced291afa5f49c6a9cca5ffd16ba9002ef937ad6b"
+    },
+    {
+      "original": "source/_posts/SmallCap-Source-Code.md",
+      "target": "source/_posts/SmallCap-Source-Code.md",
+      "sha256": "c62488d8bbc43647c5a6855d559eb6ac73452e40616b440d75122f04baa876fc"
+    },
+    {
+      "original": "source/_posts/cs336-Assignment1.md",
+      "target": "source/_posts/cs336-Assignment1.md",
+      "sha256": "b4e4d2500e7e8e5217a350e6c8e87fd144738b24007264989e7c845d74d66c57"
+    },
+    {
+      "original": "source/_posts/动手学循环神经网络.md",
+      "target": "source/_posts/动手学循环神经网络.md",
+      "sha256": "c71b7225cb9b1ba88f3af0165c31f0a79819cb99980e7e98a2f7b57d20621ae8"
+    },
+    {
+      "original": "source/_posts/2026年6月总结与展望.md",
+      "target": "source/_posts/2026年6月总结与展望.md",
+      "sha256": "936bb66a4034f0cf358b29791ab65f85ee0d8416f9def35ccffeade10f74b9eb"
+    },
+    {
+      "original": "source/_posts/2026年7月总结与展望.md",
+      "target": "source/_posts/2026年7月总结与展望.md",
+      "sha256": "9d759f8645ac6734aaa7f0edc89cd3edfb356372d5e6cc8912f1b7fb45c1d89e"
+    },
+    {
+      "original": "source/_posts/2025年3月阅读书目与摘录反思.md",
+      "target": "source/_posts/2025年3月阅读书目与摘录反思.md",
+      "sha256": "87148c60465ffd1cfca1eba6eebbe8af2f07eeffa0d06dcb835752091d56d8b0"
+    },
+    {
+      "original": "source/_posts/从ColBERT到Colpali.md",
+      "target": "source/_posts/从ColBERT到Colpali.md",
+      "sha256": "7b05129487083c34cf7b1a06a1c27b80b78deb4e0886f4074717d5cb1ed5b527"
+    },
+    {
+      "original": "source/_posts/2025年10月总结与展望.md",
+      "target": "source/_posts/2025年10月总结与展望.md",
+      "sha256": "1f3ac42cf700bc3938fdb224feba121b6c9683aa7973816d05a5ccebb0cbd630"
+    },
+    {
+      "original": "source/_posts/2025年11月总结与展望.md",
+      "target": "source/_posts/2025年11月总结与展望.md",
+      "sha256": "41afff28a69f71c70e17eb3e66fec3480f2927e62d35b9b73baa75d9c4cddaf8"
+    },
+    {
+      "original": "source/_posts/自然语言处理基础总结复习.md",
+      "target": "source/_posts/自然语言处理基础总结复习.md",
+      "sha256": "0234640d8a8f1ed2a39fcf7261fb434f9fdd760991e3b1240f053695f4f3e03c"
+    },
+    {
+      "original": "source/_posts/Multimodal-RAG-System-Survey.md",
+      "target": "source/_posts/Multimodal-RAG-System-Survey.md",
+      "sha256": "cc893ea7c17fa35b5dfa86d471f966d47c1176aacec79d5b93a031c41fd6f725"
+    },
+    {
+      "original": "source/_posts/从零构建大模型.md",
+      "target": "source/_posts/从零构建大模型.md",
+      "sha256": "1469432bc48f01f75b13280be7153d6b00866d736469818a61b7a4321109ef70"
+    },
+    {
+      "original": "source/picture/index.md",
+      "target": "source/picture/index.md",
+      "sha256": "9bb7f6b8c3ae1249fd48d9e32f2b0abec15fbae37271655ffe30e31721d0db8d"
+    },
+    {
+      "original": "source/about/index.md",
+      "target": "source/about/index.md",
+      "sha256": "8c992c55312b04153a77c9a3289f8811f960cf330deb31337f3520b7ecdf02fa"
+    },
+    {
+      "original": "source/self/index.md",
+      "target": "source/self/index.md",
+      "sha256": "b8f614fed256cf67ffbad9b3cd0ef1d90dbbb249fb9ff36d8408e01df4f7985d"
+    },
+    {
+      "original": "source/img/post/rag-buzhou.png",
+      "target": "public/img/post/rag-buzhou.png",
+      "sha256": "8b9eb9965b91d57c524b767e98e5f2066a7f31e58a5c3863f5daf711993ff81c"
+    },
+    {
+      "original": "source/img/post/yu1.jpg",
+      "target": "public/img/post/yu1.jpg",
+      "sha256": "3f63dcf23c1f55a8fba30a6bc4d60d089b99cdfaed247e749d842ebd0d960c7d"
+    },
+    {
+      "original": "source/img/post/lianlu.png",
+      "target": "public/img/post/lianlu.png",
+      "sha256": "a8ecb7bf9f2b41ee5c28d109592a48212d40d122b71531be63cae7282ec6dc4a"
+    },
+    {
+      "original": "source/img/fig/1.4.png",
+      "target": "public/img/fig/1.4.png",
+      "sha256": "f88be7ecb9af7a14dcc6aa372d3d6ce6de33eed463e0e8b39410cd1df56ffabd"
+    },
+    {
+      "original": "source/img/fig/shenjing.jpg",
+      "target": "public/img/fig/shenjing.jpg",
+      "sha256": "0d4d9a0f17f9bdb4b889e6ced68cfdb525bb7a576442536f40a4b939489d5b68"
+    },
+    {
+      "original": "source/img/fig/Arag-reflection.png",
+      "target": "public/img/fig/Arag-reflection.png",
+      "sha256": "e8271d8569844d362f0443d44a34a7442e71898bea1f8316754106a2077bf149"
+    },
+    {
+      "original": "source/img/fig/clip4.jpg",
+      "target": "public/img/fig/clip4.jpg",
+      "sha256": "87b10c8ec8747f05a277ca81b3e06996ceea3bd48f30548146f498615d6c51ca"
+    },
+    {
+      "original": "source/img/fig/5.1.jpg",
+      "target": "public/img/fig/5.1.jpg",
+      "sha256": "4ea2ad9ceca6b77542e5a7b5674e7284e2e00426619d40ab660d3f42d465649e"
+    },
+    {
+      "original": "source/img/fig/clip5.jpg",
+      "target": "public/img/fig/clip5.jpg",
+      "sha256": "24d7af2a745e74d107dd0056dbfe8f4e041426321bd340720b2364514d4f5812"
+    },
+    {
+      "original": "source/img/fig/deepseek.jpg",
+      "target": "public/img/fig/deepseek.jpg",
+      "sha256": "dac1b4a11807f2bdf30b5e2bae37f9fb565b82cacb39ce68a2ee348975586ccb"
+    },
+    {
+      "original": "source/img/fig/vit3.jpg",
+      "target": "public/img/fig/vit3.jpg",
+      "sha256": "acf61b8a80d3e9b02983714af78e6b80a5aab6d1029e5060f0ae0f2f4b156083"
+    },
+    {
+      "original": "source/img/fig/docvqa.png",
+      "target": "public/img/fig/docvqa.png",
+      "sha256": "ed37b4d7a5d3d1d9b244d0c6f12a2d26e04b8e8ee7d46460f3c21680be7c83bd"
+    },
+    {
+      "original": "source/img/fig/sigmod.png",
+      "target": "public/img/fig/sigmod.png",
+      "sha256": "37a11d8cf493a58adc7513b12d0d5bc08de479fef4019fd58f683ffd2100f21a"
+    },
+    {
+      "original": "source/img/fig/framework-of-GraphRAG.png",
+      "target": "public/img/fig/framework-of-GraphRAG.png",
+      "sha256": "fe932511999401f6a732f319e76e1e97b8311c8cdd0beb6ceaf467a004257f04"
+    },
+    {
+      "original": "source/img/fig/3.5.png",
+      "target": "public/img/fig/3.5.png",
+      "sha256": "3c117dddfb2191b17297ba0c3abd361ab4aa0c3df247c4df415167a5dd5589eb"
+    },
+    {
+      "original": "source/img/fig/paliclass.png",
+      "target": "public/img/fig/paliclass.png",
+      "sha256": "b8cdc823cb96704ca88d12843e434a504b9c30a83b00492dc7250c6d30feb18b"
+    },
+    {
+      "original": "source/img/fig/vit1.jpg",
+      "target": "public/img/fig/vit1.jpg",
+      "sha256": "195a773d5d4e7a1a7f084878fcad73ce2624d1cf1ccb7f04aee8569b2acfaf05"
+    },
+    {
+      "original": "source/img/fig/5.3.jpg",
+      "target": "public/img/fig/5.3.jpg",
+      "sha256": "f001b9fb6bc9c6ddf5e2d3cef8928f590249ceaeb88e45b31f6e9a181d46d86e"
+    },
+    {
+      "original": "source/img/fig/5.2.jpg",
+      "target": "public/img/fig/5.2.jpg",
+      "sha256": "150e7257ddb9286155838a63c5d8f203ff7eb3b357518eb3c3c40a91b0c4f7bf"
+    },
+    {
+      "original": "source/img/fig/qwenvl4.jpg",
+      "target": "public/img/fig/qwenvl4.jpg",
+      "sha256": "fa18af8af53c16bc661b8f228eeaa60c83810b06a648608cf2888149b4a5e3ec"
+    },
+    {
+      "original": "source/img/fig/3.4.jpg",
+      "target": "public/img/fig/3.4.jpg",
+      "sha256": "0ddf592abdb32fd1ef069f8580bb521677121331568d3ec58ddde374ef823e04"
+    },
+    {
+      "original": "source/img/fig/image-20250612001633271.png",
+      "target": "public/img/fig/image-20250612001633271.png",
+      "sha256": "c0621a0b7967659284e1ef439d9533f54f1a817a17a420622c9c0bca72f7e092"
+    },
+    {
+      "original": "source/img/fig/1.2.jpg",
+      "target": "public/img/fig/1.2.jpg",
+      "sha256": "a9a517beb9777df44960d16129fc6e78dd93408b01d38289d84e9b7bc6da4e91"
+    },
+    {
+      "original": "source/img/fig/seq2seq.jpg",
+      "target": "public/img/fig/seq2seq.jpg",
+      "sha256": "8ca4528dda5decd373919b9f4021dca163b28a0f6b4cfc56d87b9e29701a7b58"
+    },
+    {
+      "original": "source/img/fig/vit4.jpg",
+      "target": "public/img/fig/vit4.jpg",
+      "sha256": "336f9bf35d5bb20e55957ae278c1d906d19240f9edbc55ae8a38c1db480d159a"
+    },
+    {
+      "original": "source/img/fig/clip2.jpg",
+      "target": "public/img/fig/clip2.jpg",
+      "sha256": "894dcc205bb5aca2df86620e768b2c33fe4881b405351eb4d617487ac4b9f770"
+    },
+    {
+      "original": "source/img/fig/clip3.jpg",
+      "target": "public/img/fig/clip3.jpg",
+      "sha256": "ff8df9a545690403300ba7ad02eb5e9205e8586dc943533d762dbb7dcf481a46"
+    },
+    {
+      "original": "source/img/fig/gptmodel.jpg",
+      "target": "public/img/fig/gptmodel.jpg",
+      "sha256": "0449cd4fcbf08ec0a3e036b8fc4dca1c6f76fabeee517c12897243cb0f97582c"
+    },
+    {
+      "original": "source/img/fig/qwenvl1.jpg",
+      "target": "public/img/fig/qwenvl1.jpg",
+      "sha256": "017c27f670998d3dce4131e8191c6098b82c59b3d6c1624c0e7742da5bdabc96"
+    },
+    {
+      "original": "source/img/fig/vit5.jpg",
+      "target": "public/img/fig/vit5.jpg",
+      "sha256": "7acf860b94cf855f71b77ecc78efb0784445d60a69fab877ac56ffe917a7a92b"
+    },
+    {
+      "original": "source/img/fig/3.1.jpg",
+      "target": "public/img/fig/3.1.jpg",
+      "sha256": "05fc4ae8d39513e3ebd00bbe3f6607dade23ba544180b105e7b640789fadcd08"
+    },
+    {
+      "original": "source/img/fig/1.3.png",
+      "target": "public/img/fig/1.3.png",
+      "sha256": "41c3e62595346aa734a15811b1abc1a9717f0292636758d25247eac7cdcce6d4"
+    },
+    {
+      "original": "source/img/fig/1.1.png",
+      "target": "public/img/fig/1.1.png",
+      "sha256": "b19f140c99595c2c8c7991ce97453f28c5b1b66f7e2c7e933b3e63ffc402eb8b"
+    },
+    {
+      "original": "source/img/fig/3.3.jpg",
+      "target": "public/img/fig/3.3.jpg",
+      "sha256": "22ce74456f07a373fcb5034a3894b3a88511c653753805dd903ecab9208fcd21"
+    },
+    {
+      "original": "source/img/fig/image-20250625235727682.png",
+      "target": "public/img/fig/image-20250625235727682.png",
+      "sha256": "4cdec5eaee849627b959be2084ca14657e5b4165cc6712363062280b200a8233"
+    },
+    {
+      "original": "source/img/fig/image-20250625222817754.png",
+      "target": "public/img/fig/image-20250625222817754.png",
+      "sha256": "94262feaa2bc0f1a25b939e324294893878f715859c5a5c4ef49e34cb8c2ae12"
+    },
+    {
+      "original": "source/img/fig/qwenvl3.jpg",
+      "target": "public/img/fig/qwenvl3.jpg",
+      "sha256": "5752c3d12eb15ec506b70dab85074c79c845708f13f8ed10c78837a1cef42685"
+    },
+    {
+      "original": "source/img/fig/5.5.jpg",
+      "target": "public/img/fig/5.5.jpg",
+      "sha256": "99dc5ddba12a3fc2796c84af799fd8f1d862e21a96351c8494ce37e688aceb7e"
+    },
+    {
+      "original": "source/img/fig/clip1.jpg",
+      "target": "public/img/fig/clip1.jpg",
+      "sha256": "876d96ffc1b439bd23c141257be186957846e2a4240564c2dddc914d6fe45b75"
+    },
+    {
+      "original": "source/img/fig/qkv-t.jpg",
+      "target": "public/img/fig/qkv-t.jpg",
+      "sha256": "ea42e7c20862416f17e858f1d9977d59172808a8efa359f25747952b2468fd04"
+    },
+    {
+      "original": "source/img/fig/qwenvl2.jpg",
+      "target": "public/img/fig/qwenvl2.jpg",
+      "sha256": "2f28c320db4cb9de870d018dc8f29b196a6ac93efd7afc02ee7ef2276add6659"
+    },
+    {
+      "original": "source/img/fig/5.4.png",
+      "target": "public/img/fig/5.4.png",
+      "sha256": "67f61da404dfc847c3d92be2cedc23f609577747cbff75f9ca9732b0ef4900ec"
+    },
+    {
+      "original": "source/img/fig/tmlp.jpg",
+      "target": "public/img/fig/tmlp.jpg",
+      "sha256": "fd8877c9b981744fc2589e697b1b9c63942ebe1ad204325c5cfedede58d9bc91"
+    },
+    {
+      "original": "source/img/fig/vit6.jpg",
+      "target": "public/img/fig/vit6.jpg",
+      "sha256": "85c001c5b0524acf67ed59320d618de08ac527adff1aa043a0554387dd9b5273"
+    },
+    {
+      "original": "source/img/fig/3.2.jpg",
+      "target": "public/img/fig/3.2.jpg",
+      "sha256": "7b9881f8158ce9ba104bba2436532bc157b3de82355b65c52383493aa8cde567"
+    },
+    {
+      "original": "source/img/fig/4.3.jpg",
+      "target": "public/img/fig/4.3.jpg",
+      "sha256": "dcf24592ad38b7025e044d6812eca7d78b36a03cd1fe295fe2f2c6d62d50ec6c"
+    },
+    {
+      "original": "source/img/fig/mla.jpg",
+      "target": "public/img/fig/mla.jpg",
+      "sha256": "e3bd63c7952233283986a3fa055cca74c2f47fb96d99a2738422b50a64fd9656"
+    },
+    {
+      "original": "source/img/fig/RAG-fanshi.png",
+      "target": "public/img/fig/RAG-fanshi.png",
+      "sha256": "b1adb94da2aa673e1a2148a70e70a3f553bbb2b2acf25227134e35a891e3e05f"
+    },
+    {
+      "original": "source/img/fig/4.12.jpg",
+      "target": "public/img/fig/4.12.jpg",
+      "sha256": "a241b4b0c237115b067860a17f0bd8276d36e05c064a563b6647c2858ce6f725"
+    },
+    {
+      "original": "source/img/fig/rope1.jpg",
+      "target": "public/img/fig/rope1.jpg",
+      "sha256": "c626cb4b4bae47d65a528b06946816d27da33aed971547eb06929f12b279e917"
+    },
+    {
+      "original": "source/img/fig/duoceng.jpg",
+      "target": "public/img/fig/duoceng.jpg",
+      "sha256": "ccdb280ce38d6a69cee45484a03cc9f3ced5f0a35c4af1320b297855f08bba41"
+    },
+    {
+      "original": "source/img/fig/colpali.png",
+      "target": "public/img/fig/colpali.png",
+      "sha256": "bec03b85b710bf49431e9808e6e30bb734249315feadf8f9b307b8c8aca29c7d"
+    },
+    {
+      "original": "source/img/fig/2.4.jpg",
+      "target": "public/img/fig/2.4.jpg",
+      "sha256": "a3a38f6bba4dc7a87eff98479078f862e68c6cf50b18b6b5da94f0cfc3842350"
+    },
+    {
+      "original": "source/img/fig/image-20250612001545075.png",
+      "target": "public/img/fig/image-20250612001545075.png",
+      "sha256": "e936b61a19c6fa227c7c49a91241e3f8f9adddf9f699d944a5afecbc8c78758f"
+    },
+    {
+      "original": "source/img/fig/jisuantu.png",
+      "target": "public/img/fig/jisuantu.png",
+      "sha256": "5b55adb74c1ee96415abc1d6638db51279bb2b8a31e0b481c8412fda8306182a"
+    },
+    {
+      "original": "source/img/fig/4.13.jpg",
+      "target": "public/img/fig/4.13.jpg",
+      "sha256": "e834cfb46ed1bbf2f5b42888990a8b9b720ece5ad3213d1dce39bc690bdec39c"
+    },
+    {
+      "original": "source/img/fig/tllama.jpg",
+      "target": "public/img/fig/tllama.jpg",
+      "sha256": "56689de3201fc88248496b42f81529be6f669ddfba0abfb187aee4d4d8356ecd"
+    },
+    {
+      "original": "source/img/fig/4.2.jpg",
+      "target": "public/img/fig/4.2.jpg",
+      "sha256": "b8cedeeeadeade1c51f7bf0ab5310acd3e2d233a9331843830265d024be7beeb"
+    },
+    {
+      "original": "source/img/fig/history-dl.jpg",
+      "target": "public/img/fig/history-dl.jpg",
+      "sha256": "d9143a39a0181dba207bd2580665df0591220d6809913c634249770849803700"
+    },
+    {
+      "original": "source/img/fig/attn-compute.jpg",
+      "target": "public/img/fig/attn-compute.jpg",
+      "sha256": "d74e617c1178b6164dee1a85a4c978491cde7bf2e75703813eb2afb1b30e279d"
+    },
+    {
+      "original": "source/img/fig/softnet.jpg",
+      "target": "public/img/fig/softnet.jpg",
+      "sha256": "de6fff1001acee59029dc0ae2607c4c4c347e18583f2c51c8d9c04336f999e7f"
+    },
+    {
+      "original": "source/img/fig/cost1.png",
+      "target": "public/img/fig/cost1.png",
+      "sha256": "ed06c541b17dd3502c0c63cedc167d3412ccbf4ad17fb7e545f5e9e2d51c197d"
+    },
+    {
+      "original": "source/img/fig/4.11.jpg",
+      "target": "public/img/fig/4.11.jpg",
+      "sha256": "29f3868574fcede03330f0c7baf3af5c0b44929680213975588e56285ca1cae7"
+    },
+    {
+      "original": "source/img/fig/colqwen3-1.jpg",
+      "target": "public/img/fig/colqwen3-1.jpg",
+      "sha256": "6db67a763fa94a9691a25d4d73bf7a3dcae7aca50af5767607506089eafddee7"
+    },
+    {
+      "original": "source/img/fig/rnn.jpg",
+      "target": "public/img/fig/rnn.jpg",
+      "sha256": "88fceb1b59a66024b197ff46891f5f1cd767aeb29d2f5d2de97ff174ea342d41"
+    },
+    {
+      "original": "source/img/fig/rope2.jpg",
+      "target": "public/img/fig/rope2.jpg",
+      "sha256": "f551c00ec804293c0aa49c883bf47a243e32952a96bfa4cf2cf1dff7bdbb16e8"
+    },
+    {
+      "original": "source/img/fig/2.6.jpg",
+      "target": "public/img/fig/2.6.jpg",
+      "sha256": "635cee6ffce663aa5957fd6d1b18a7e31ba3e8e275c3dbfbeb1daf3391abe47f"
+    },
+    {
+      "original": "source/img/fig/Arag-planning.png",
+      "target": "public/img/fig/Arag-planning.png",
+      "sha256": "540ba5c92f7a5184cf3814659b25039747fbfee385d83d30c57b26e93de3bad1"
+    },
+    {
+      "original": "source/img/fig/2.7.jpg",
+      "target": "public/img/fig/2.7.jpg",
+      "sha256": "0eba42fddf5e05be92ac7b428c9906531a1b6e3e828dc81c14862da87845a568"
+    },
+    {
+      "original": "source/img/fig/rope3.jpg",
+      "target": "public/img/fig/rope3.jpg",
+      "sha256": "5bdabe628c89bb10a15fbffb54524652a346458181bd9b663936b0f0b4e1728a"
+    },
+    {
+      "original": "source/img/fig/rope3.png",
+      "target": "public/img/fig/rope3.png",
+      "sha256": "2bfc4d87531e85132863c7819824ebbcb1f9f1d4ce1081cc6ac386aff2f5ce65"
+    },
+    {
+      "original": "source/img/fig/4.10.jpg",
+      "target": "public/img/fig/4.10.jpg",
+      "sha256": "7ee78e1d03a7813209a4fd0bc392ead8ee2841dda96740cb8a8d125b7713aeb7"
+    },
+    {
+      "original": "source/img/fig/lmcap.png",
+      "target": "public/img/fig/lmcap.png",
+      "sha256": "a625c402cc66231c101ed501bc9b1037fcb62496821edca41fa51eb4a5fc2b71"
+    },
+    {
+      "original": "source/img/fig/4.1.jpg",
+      "target": "public/img/fig/4.1.jpg",
+      "sha256": "ef32747403ca4e0407a92a1b3ccb8edd0d274a7e5f56ffbb2b13661b8799093c"
+    },
+    {
+      "original": "source/img/fig/qkv.jpg",
+      "target": "public/img/fig/qkv.jpg",
+      "sha256": "ce08b8102261c84983044bec13942ad367d6fb6d6ff34e103aabf80f30822a7b"
+    },
+    {
+      "original": "source/img/fig/4.5.jpg",
+      "target": "public/img/fig/4.5.jpg",
+      "sha256": "3bf7605acc7416e5144a1c137cf068e7689d1562f3b2c5325f798bfa62755416"
+    },
+    {
+      "original": "source/img/fig/tgpt.jpg",
+      "target": "public/img/fig/tgpt.jpg",
+      "sha256": "725540d4c24e6371a3cd11559678c109a098e93b25e8108f39a316e91f3d59cf"
+    },
+    {
+      "original": "source/img/fig/transformer.jpg",
+      "target": "public/img/fig/transformer.jpg",
+      "sha256": "02c5cd8c5d2dea485ba46d248ae80a11bf66725978876ba2d5153523ac0d521a"
+    },
+    {
+      "original": "source/img/fig/2.3.jpg",
+      "target": "public/img/fig/2.3.jpg",
+      "sha256": "b924c0747aca8a22888fa2e8a72bfb652f481c3392a8ac768aee82965634f5c3"
+    },
+    {
+      "original": "source/img/fig/2.2.jpg",
+      "target": "public/img/fig/2.2.jpg",
+      "sha256": "25d14a22941a4988493d2aea13c899f8e7322d83a7a1aa5e5e960fd364820207"
+    },
+    {
+      "original": "source/img/fig/rope6.jpg",
+      "target": "public/img/fig/rope6.jpg",
+      "sha256": "6972e6b4dca72949078fdc8c93d087f932a08f4d8ac85a111e918631b8b1b99f"
+    },
+    {
+      "original": "source/img/fig/lateinter.png",
+      "target": "public/img/fig/lateinter.png",
+      "sha256": "f6fa6ead73d2692fc4f89accd55e6c977dbfa07df3338766e301596d618c1918"
+    },
+    {
+      "original": "source/img/fig/4.4.png",
+      "target": "public/img/fig/4.4.png",
+      "sha256": "30411777bea09d927b4cb08738ebb52161b3de85ccf8a16f2ef29e671691e46e"
+    },
+    {
+      "original": "source/img/fig/kv.jpg",
+      "target": "public/img/fig/kv.jpg",
+      "sha256": "d65bfcbd539a41021e60fee551781d55d7e2eb7808a97f7c4a977da92809df54"
+    },
+    {
+      "original": "source/img/fig/4.6.jpg",
+      "target": "public/img/fig/4.6.jpg",
+      "sha256": "27f07e0b8cf1808069238bbb5a66931302f6217056edef6ef272f2cb1e949fd4"
+    },
+    {
+      "original": "source/img/fig/tokenized-example.png",
+      "target": "public/img/fig/tokenized-example.png",
+      "sha256": "eab56f353bb19780f0fad44077bbb9ebe2460327e783e4b37786a8ad564392f8"
+    },
+    {
+      "original": "source/img/fig/rope4.png",
+      "target": "public/img/fig/rope4.png",
+      "sha256": "3a6afbb638f3c05e4b9ffdab19ef31c0ecec19ef6a7835c7041dc54216006c00"
+    },
+    {
+      "original": "source/img/fig/poscode.jpg",
+      "target": "public/img/fig/poscode.jpg",
+      "sha256": "e48025f39a64937cc22a56ddfd0f580abfde771c97c5fc99f1254ec991e003c2"
+    },
+    {
+      "original": "source/img/fig/softmax.png",
+      "target": "public/img/fig/softmax.png",
+      "sha256": "d0a52a80bc8ef95deb643396736e511d3df761b04e68c7b97213491a9bb51d23"
+    },
+    {
+      "original": "source/img/fig/Agentic-Corrective-RAG.png",
+      "target": "public/img/fig/Agentic-Corrective-RAG.png",
+      "sha256": "e0c3c7088b99b481c473f5d49bcab310df0bfa9f234aab806adcaa22e0d0cafa"
+    },
+    {
+      "original": "source/img/fig/bpe.jpg",
+      "target": "public/img/fig/bpe.jpg",
+      "sha256": "45c75d3acc4cdfe5f455839bf4909d11c2887d468683fa38db0888f817a8fbf7"
+    },
+    {
+      "original": "source/img/fig/2.1.jpg",
+      "target": "public/img/fig/2.1.jpg",
+      "sha256": "eb985eddb96590475468404e946c08a33c8d7a44fd03f9da757b5a4e90d07fac"
+    },
+    {
+      "original": "source/img/fig/llamamodel.jpg",
+      "target": "public/img/fig/llamamodel.jpg",
+      "sha256": "c57f7beecb3d3ac1d8b2ff62503e86eb6bfd84de1e2afd1dc3c9b983a4b63d2e"
+    },
+    {
+      "original": "source/img/fig/image-20250625231903257.png",
+      "target": "public/img/fig/image-20250625231903257.png",
+      "sha256": "be4065241a53ed80ad62d185fc46940ffdd741584c7e1b762c326072ff332243"
+    },
+    {
+      "original": "source/img/fig/smallcap-model.png",
+      "target": "public/img/fig/smallcap-model.png",
+      "sha256": "3c6de6f422543c0dd66a2f5a3d0ccb221ed5926274825554a255ed320682a4df"
+    },
+    {
+      "original": "source/img/fig/rope5.jpg",
+      "target": "public/img/fig/rope5.jpg",
+      "sha256": "2392562f58d1fd8ac53574a4ac643bc813ab255d343d74c817577cef696492b9"
+    },
+    {
+      "original": "source/img/fig/4.7.jpg",
+      "target": "public/img/fig/4.7.jpg",
+      "sha256": "6092a0bb83e3356080c5664ee0dfdc899b884b4d6d535ae53eb426ee362684bd"
+    },
+    {
+      "original": "source/img/fig/decoder-t.jpg",
+      "target": "public/img/fig/decoder-t.jpg",
+      "sha256": "be5c4ae67227bf73f90dde7ac3a58c83e7dad93d3ce4f16657736ee9d20a7974"
+    },
+    {
+      "original": "source/img/fig/image-20250625235024801.png",
+      "target": "public/img/fig/image-20250625235024801.png",
+      "sha256": "ff289158a02ae65106f40a505d4a48f416d56e0ce555b2364d9e8e77c34c6a00"
+    },
+    {
+      "original": "source/img/fig/pe.jpg",
+      "target": "public/img/fig/pe.jpg",
+      "sha256": "879e75d8df503c910bc01d5552da9a07b876411e762506a8a15eb58784ebcb12"
+    },
+    {
+      "original": "source/img/fig/qwen354.jpg",
+      "target": "public/img/fig/qwen354.jpg",
+      "sha256": "0d7f1a9cff63cef1a4da7c0f49b69ec8f87b208e6453c724dbe451534de8e38d"
+    },
+    {
+      "original": "source/img/fig/attention2.jpg",
+      "target": "public/img/fig/attention2.jpg",
+      "sha256": "e4d86291736cb07354b68c8ae09c3be4de035878a7df14d450140ab7d1e9cb15"
+    },
+    {
+      "original": "source/img/fig/deepseekocr1.jpg",
+      "target": "public/img/fig/deepseekocr1.jpg",
+      "sha256": "cee598467c95403b47bad2f8f7421add500488531498afef464fa15bedfb2016"
+    },
+    {
+      "original": "source/img/fig/rag-with-graph.png",
+      "target": "public/img/fig/rag-with-graph.png",
+      "sha256": "2dd015c48af62c0d3f061ee3d41104f21b8e576416318459150218a456ebfe0d"
+    },
+    {
+      "original": "source/img/fig/colbert.png",
+      "target": "public/img/fig/colbert.png",
+      "sha256": "428b9d7294aa2cf15c99ccdf4327326a20bcc0edc528a6e077cc5634a8d9d452"
+    },
+    {
+      "original": "source/img/fig/history-LLM.png",
+      "target": "public/img/fig/history-LLM.png",
+      "sha256": "4f5850af0db61a71ed0b745ca3541aa766f6054268c0778db66aebfad48b87f7"
+    },
+    {
+      "original": "source/img/fig/4.9.jpg",
+      "target": "public/img/fig/4.9.jpg",
+      "sha256": "e1e61a0016fb298d0781f0f0145f14e6bce511850490a10d5a3de125fd46ac9a"
+    },
+    {
+      "original": "source/img/fig/agentrag.jpg",
+      "target": "public/img/fig/agentrag.jpg",
+      "sha256": "799f5d0210f153fa840a0540b05c82d1bee5b43bfdfdaf2ca5d681958019e152"
+    },
+    {
+      "original": "source/img/fig/image-20250612001606510.png",
+      "target": "public/img/fig/image-20250612001606510.png",
+      "sha256": "68d42ca14b14a819081601bd315b6be651de40780128ae7f7d5cac310deab786"
+    },
+    {
+      "original": "source/img/fig/attention1.jpg",
+      "target": "public/img/fig/attention1.jpg",
+      "sha256": "853a3cb840116b383e0f96133536382bc0f27612c79c035f4dc2b2e5675e2068"
+    },
+    {
+      "original": "source/img/fig/image-20250625235414672.png",
+      "target": "public/img/fig/image-20250625235414672.png",
+      "sha256": "ee99d37c87f474e5a9dab98a1f10e80c4d214b1b01953bd92b6574831f783870"
+    },
+    {
+      "original": "source/img/fig/gridant1.png",
+      "target": "public/img/fig/gridant1.png",
+      "sha256": "510bf10e30f038def11a0a8494508d93c108b40ac84be34765a26dcccf2a2ff6"
+    },
+    {
+      "original": "source/img/fig/image-20250625222119585.png",
+      "target": "public/img/fig/image-20250625222119585.png",
+      "sha256": "e312e0a53f66aa0a35a6c1d4fca4b6330b033fcc6f551472e98042917638f8ba"
+    },
+    {
+      "original": "source/img/fig/Adaptive-Agentic-RAG.png",
+      "target": "public/img/fig/Adaptive-Agentic-RAG.png",
+      "sha256": "3bf1c29578c9fdff6e5b7740a90524a9edc2ca6618ecf3d16f32af96301d232f"
+    },
+    {
+      "original": "source/img/fig/agentic-document.png",
+      "target": "public/img/fig/agentic-document.png",
+      "sha256": "98d5f0246ac718df0c21da03c438cb0f972d8be962d68b51f93eb6876f40c71c"
+    },
+    {
+      "original": "source/img/fig/4.8.jpg",
+      "target": "public/img/fig/4.8.jpg",
+      "sha256": "8945fd8418f9fb77d612083b91774cc05f2fee2795a74cc1f7c3cf58e128a67c"
+    },
+    {
+      "original": "source/img/fig/train2.png",
+      "target": "public/img/fig/train2.png",
+      "sha256": "24a22b07407a77ced8c6a6afbd78c5752638e857eaaaf2fd0fc139ba698e23f7"
+    },
+    {
+      "original": "source/img/fig/tfinal.jpg",
+      "target": "public/img/fig/tfinal.jpg",
+      "sha256": "66dd263e3bcdc44cba6d80ab93dfd51ee5ee686c5c59e618bb173c8a810303cf"
+    },
+    {
+      "original": "source/img/fig/qwen352.jpg",
+      "target": "public/img/fig/qwen352.jpg",
+      "sha256": "591e9bd0e93043372c05429985dcf7c73ed9cb77e1f7f4b16e1b700ca14c2931"
+    },
+    {
+      "original": "source/img/fig/g-generation.jpg",
+      "target": "public/img/fig/g-generation.jpg",
+      "sha256": "3ff96f39e86c6c61846d55044a268d85141f9b9928f578b23d5a8478d70e8adb"
+    },
+    {
+      "original": "source/img/fig/qwen353.jpg",
+      "target": "public/img/fig/qwen353.jpg",
+      "sha256": "99264e475e5aff2bf54b081f433b8d1bba773364ca13c9ba0354ba39f7da7fc0"
+    },
+    {
+      "original": "source/img/fig/lstm.jpg",
+      "target": "public/img/fig/lstm.jpg",
+      "sha256": "94aa474135578b98d6edd9f81b8f5b6b26afce06b19849e44542c4c5886272d8"
+    },
+    {
+      "original": "source/img/fig/data-t.jpg",
+      "target": "public/img/fig/data-t.jpg",
+      "sha256": "2d359058674a189b3938a286a463e2e3548cedcc146a8db25d32630750567e86"
+    },
+    {
+      "original": "source/img/fig/train3.png",
+      "target": "public/img/fig/train3.png",
+      "sha256": "6e43620ac442a0f337dfb7938161e2b9ad0f8be6cb0d9ca0ac00e2cdfb953b0f"
+    },
+    {
+      "original": "source/img/fig/tattn.jpg",
+      "target": "public/img/fig/tattn.jpg",
+      "sha256": "48fa367beb63e599806166482f674d1eee9970efc4516f83e4f33be7d425d264"
+    },
+    {
+      "original": "source/img/fig/train1.png",
+      "target": "public/img/fig/train1.png",
+      "sha256": "61f4a9ec6e03f8c8a363423ae0b3a58a60b22b182bcedb34d99f72c93165e96e"
+    },
+    {
+      "original": "source/img/fig/qwen351.jpg",
+      "target": "public/img/fig/qwen351.jpg",
+      "sha256": "db4be24d2ca8e7a21b9d1c583df2a8832818286f8da731c2fbc59b65ff775562"
+    },
+    {
+      "original": "source/img/fig/image-20250625224311571.png",
+      "target": "public/img/fig/image-20250625224311571.png",
+      "sha256": "1db405454607be352c2722aeb8830ef60c43936b03e82eed08021fc84949fd6a"
+    },
+    {
+      "original": "source/img/fig/g-data.jpg",
+      "target": "public/img/fig/g-data.jpg",
+      "sha256": "b818b93b841879d8c9dcec52971d21c3f2a7bec545c652faf045e7fd3b5b2b45"
+    },
+    {
+      "original": "source/img/fig/2.8.jpg",
+      "target": "public/img/fig/2.8.jpg",
+      "sha256": "04f1aa3d6b7697b0ab94fb3e3181573f0d54bd69aa769ff976ef4c7856accd77"
+    },
+    {
+      "original": "source/img/fig/g-retrieval.jpg",
+      "target": "public/img/fig/g-retrieval.jpg",
+      "sha256": "8ae7e0f2778d61779683d55457b5dfe5921159accbff5dbc6505174a418fc88f"
+    },
+    {
+      "original": "source/img/fig/multi-agent-rag.png",
+      "target": "public/img/fig/multi-agent-rag.png",
+      "sha256": "5c77148e955c03851f14f049013f1800a120c9c9614d4b2d4fffccea5b5acfee"
+    },
+    {
+      "original": "source/img/fig/gpt4.jpg",
+      "target": "public/img/fig/gpt4.jpg",
+      "sha256": "59f1572ffbff81a372389a720188aa3c2030bd97d993d9472d6b896c15a96f7c"
+    },
+    {
+      "original": "source/img/fig/Hierarchical-rag.png",
+      "target": "public/img/fig/Hierarchical-rag.png",
+      "sha256": "7ebd8ef10845a22a92ecd11559acc3e19ca5984792d8e76de56ed89d36421025"
+    },
+    {
+      "original": "source/img/fig/nao.jpg",
+      "target": "public/img/fig/nao.jpg",
+      "sha256": "0da65adef65ba71c83f9b80dbd5e0b314fe05ea0d804adec4aa87d7eb5c81d1d"
+    },
+    {
+      "original": "source/img/fig/Agent-G.png",
+      "target": "public/img/fig/Agent-G.png",
+      "sha256": "f1570657911de6c4008726a58dd12cbcd2ae9d14941dd4bc88d81214c3e658db"
+    },
+    {
+      "original": "source/img/fig/float16.jpg",
+      "target": "public/img/fig/float16.jpg",
+      "sha256": "be4e0491de94d2debc922d7d41944f2390d0b6c305757693687ca5a7f8a08cbc"
+    },
+    {
+      "original": "source/img/fig/single-agent.png",
+      "target": "public/img/fig/single-agent.png",
+      "sha256": "5eab300bb30902a3832e63ea3f5af31e8120fdb555a1f830fadbc435ba440ddd"
+    },
+    {
+      "original": "source/img/fig/gpt5.jpg",
+      "target": "public/img/fig/gpt5.jpg",
+      "sha256": "e05b05a29c387745e772aee9eb348fb38a23d4aa2750fa5e20f0ca47552e4b9e"
+    },
+    {
+      "original": "source/img/fig/Arag-multiagent.png",
+      "target": "public/img/fig/Arag-multiagent.png",
+      "sha256": "60c611854238c6adfcf6ddd3bc59c11873f1edd0538c23e91e8304cb4f0907ff"
+    },
+    {
+      "original": "source/img/fig/colqwenclass.png",
+      "target": "public/img/fig/colqwenclass.png",
+      "sha256": "cfe207a7d326d9443e9adc68036ea1b26fc3706a72bef748aa67728f6ac4ddf1"
+    },
+    {
+      "original": "source/img/fig/Clipcap.png",
+      "target": "public/img/fig/Clipcap.png",
+      "sha256": "11f9294d655a8b43e7547e3bbd35ad2b7def2ee81630a7e9a26cd6b542b16708"
+    },
+    {
+      "original": "source/img/fig/Arag-tool.png",
+      "target": "public/img/fig/Arag-tool.png",
+      "sha256": "20fce2b077688077e934a7fa4544b95079e6b44eb4768da162101ccf233e8925"
+    },
+    {
+      "original": "source/img/fig/encoder-d.jpg",
+      "target": "public/img/fig/encoder-d.jpg",
+      "sha256": "0653f204e5a4675bd264191316e0266a8d099708244870d1a772257c1d5c0619"
+    },
+    {
+      "original": "source/img/fig/Arag01.png",
+      "target": "public/img/fig/Arag01.png",
+      "sha256": "122d6bdd71ada07edfbf091f9b40aac3f5dc25b4c0a0e819c04bfec14c58e301"
+    },
+    {
+      "original": "source/img/fig/gpt6.jpg",
+      "target": "public/img/fig/gpt6.jpg",
+      "sha256": "e08a2f81f8d5ffed3af38252d27224a5b112015152892b405342a7fc4fbfab12"
+    },
+    {
+      "original": "source/img/fig/gpt2.png",
+      "target": "public/img/fig/gpt2.png",
+      "sha256": "2678151d049ef8659cce5f225ff22dfbb7cc4e69ce2c1aba79ab458e6545cc92"
+    },
+    {
+      "original": "source/img/fig/rag1.png",
+      "target": "public/img/fig/rag1.png",
+      "sha256": "af6005c846e056199f87e853f28c07c52d1b85d4dc7b11fe72e3e5d9efae8d49"
+    },
+    {
+      "original": "source/img/fig/retrievers-GraphRAG.png",
+      "target": "public/img/fig/retrievers-GraphRAG.png",
+      "sha256": "7948d0af31864d1629f6640d9a9f8d68fde584356da24222109a85e0f6e032d4"
+    },
+    {
+      "original": "source/img/fig/deocderblock.jpg",
+      "target": "public/img/fig/deocderblock.jpg",
+      "sha256": "2d68184eb7ded38cb669e347a530da2e1101fe2f9237047c52610496fc72baa2"
+    },
+    {
+      "original": "source/img/fig/qwen-attn.jpg",
+      "target": "public/img/fig/qwen-attn.jpg",
+      "sha256": "48fa367beb63e599806166482f674d1eee9970efc4516f83e4f33be7d425d264"
+    },
+    {
+      "original": "source/img/fig/gpt3.jpg",
+      "target": "public/img/fig/gpt3.jpg",
+      "sha256": "09968c346c21b6348741b97b31b9e25d0868efb6fbc33a4da7248db1854e1e50"
+    },
+    {
+      "original": "source/img/fig/gpt1.png",
+      "target": "public/img/fig/gpt1.png",
+      "sha256": "e84c9d3ffd6e3185ffea16c0c6b66d3db90a4faf9eeb09cf2e62cebe2b263985"
+    },
+    {
+      "original": "source/img/fig/rag2.jpg",
+      "target": "public/img/fig/rag2.jpg",
+      "sha256": "49f98c8db922661d020f3694fe10a804d232eb4cbe745ea540bf2b398df1b840"
+    },
+    {
+      "original": "source/img/fig/encoder-t.jpg",
+      "target": "public/img/fig/encoder-t.jpg",
+      "sha256": "e5ff6465f85e5f1245a8ff6a4d207ba440be34052f8f93045289bc2bd4a621f2"
+    },
+    {
+      "original": "source/img/fig/rag3.jpg",
+      "target": "public/img/fig/rag3.jpg",
+      "sha256": "352551604dd222a411fb423c731900f39793c7f0de611551bf933027925da77d"
+    },
+    {
+      "original": "source/img/fig/image-20250612001532133.png",
+      "target": "public/img/fig/image-20250612001532133.png",
+      "sha256": "e936b61a19c6fa227c7c49a91241e3f8f9adddf9f699d944a5afecbc8c78758f"
+    },
+    {
+      "original": "source/img/fig/vit.jpg",
+      "target": "public/img/fig/vit.jpg",
+      "sha256": "a85ab3320a188d034608f3ceb2eeb623ed6316eeba478cd97da9519d7539f701"
+    },
+    {
+      "original": "source/img/fig/traincolqwen2.png",
+      "target": "public/img/fig/traincolqwen2.png",
+      "sha256": "e7317125318174b21a18aac2e68b92b693601937d864184023f1335c0ab7f25b"
+    },
+    {
+      "original": "source/img/life/2510.jpg",
+      "target": "public/img/life/2510.jpg",
+      "sha256": "d84e3121841181ea6e0eebaf384dc7200bffa8833c91763d07712be817bbecc3"
+    },
+    {
+      "original": "source/img/life/26chun1.jpg",
+      "target": "public/img/life/26chun1.jpg",
+      "sha256": "6e853639eab9917770d04b6a265502a9cb74d89a084e57c2dbec06ce321d7eb6"
+    },
+    {
+      "original": "source/img/life/daqiao.jpeg",
+      "target": "public/img/life/daqiao.jpeg",
+      "sha256": "624c394f797b8672cab704b446fc50ecfcf4dbc3abdd96ab9d5350c0dcb90497"
+    },
+    {
+      "original": "source/img/life/aomen.jpeg",
+      "target": "public/img/life/aomen.jpeg",
+      "sha256": "91f4836a57476f7ddce35ac149d1f8da03f2556bc463974978cafda85c89ee41"
+    },
+    {
+      "original": "source/img/life/che1.jpeg",
+      "target": "public/img/life/che1.jpeg",
+      "sha256": "1c8a4d92d609fd1713504f2401ed82bd7442ea592259c0a2cd6ce7f4cc15ec30"
+    },
+    {
+      "original": "source/img/life/shuisai.jpg",
+      "target": "public/img/life/shuisai.jpg",
+      "sha256": "0b4d0bcfc5e2e21280864f3c3269b388607ea2874c857d845a9f8b8fe1bb33a9"
+    },
+    {
+      "original": "source/img/life/jj1.jpeg",
+      "target": "public/img/life/jj1.jpeg",
+      "sha256": "5daa6839ff80ca44172b0961c045070ecda8f1b9343a2c2523b4e87431515cba"
+    },
+    {
+      "original": "source/img/life/26xiong1.jpg",
+      "target": "public/img/life/26xiong1.jpg",
+      "sha256": "f5523b4a796fce067a7df5fb29c1b39c4033487cf8055220b420a1dc9f5b05b1"
+    },
+    {
+      "original": "source/img/life/shaomai.jpg",
+      "target": "public/img/life/shaomai.jpg",
+      "sha256": "df4ceb9baad85d26bb8dae71cbff3c69ae5c26790f059d39f4b116433f4cb7b5"
+    },
+    {
+      "original": "source/img/life/jj-xinpian.jpeg",
+      "target": "public/img/life/jj-xinpian.jpeg",
+      "sha256": "ab3ec63e2febfd3ef11efcc77df4dcebdb781046d9c65ca39720e97e77f0a146"
+    },
+    {
+      "original": "source/img/life/wutai2.jpeg",
+      "target": "public/img/life/wutai2.jpeg",
+      "sha256": "ff317085c851ffbb6404c3af6ea7162967ead1c0fe77014c74670e3164ba31f5"
+    },
+    {
+      "original": "source/img/life/gk3.jpeg",
+      "target": "public/img/life/gk3.jpeg",
+      "sha256": "4875ca8c2dc3e04cb2001d166a58465e79520ade8f0c28dea3e94769f0b21148"
+    },
+    {
+      "original": "source/img/life/hutong.jpg",
+      "target": "public/img/life/hutong.jpg",
+      "sha256": "ffb752db43ca05ee1908d9b9aee11b3379f7837a69c70e875a4156d521d4b909"
+    },
+    {
+      "original": "source/img/life/tju.jpeg",
+      "target": "public/img/life/tju.jpeg",
+      "sha256": "8fbfece3e3e6fe7574cdcbc2b46eb9476e270d92f838e7be810c58bcb130b4c5"
+    },
+    {
+      "original": "source/img/life/26chun2.jpg",
+      "target": "public/img/life/26chun2.jpg",
+      "sha256": "f2fd9547380fd6f801b9e6a2f7d92e523313ff26d6f55621809654eff41126e5"
+    },
+    {
+      "original": "source/img/life/26xiong3.jpg",
+      "target": "public/img/life/26xiong3.jpg",
+      "sha256": "04e1528d8ff4019a239617cb233fcac1398e1f477f52b35f1a2d7a1cb4d09f6b"
+    },
+    {
+      "original": "source/img/life/26xiong2.jpg",
+      "target": "public/img/life/26xiong2.jpg",
+      "sha256": "5c3b75e90eb4fbc9822e134fd5ee1a8ffd38c5de08e22117b33977a96255cdea"
+    },
+    {
+      "original": "source/img/life/26chun3.jpg",
+      "target": "public/img/life/26chun3.jpg",
+      "sha256": "6c32280536e8856aaac80d0be242ca8852e9499619698babb96f6d6dfa2cf8d4"
+    },
+    {
+      "original": "source/img/life/zhizi.jpg",
+      "target": "public/img/life/zhizi.jpg",
+      "sha256": "4d5a4acdf8f123950e42893e37029657a2ec9618d157e04dee0f7be8ab2ffd3a"
+    },
+    {
+      "original": "source/img/life/oo.jpg",
+      "target": "public/img/life/oo.jpg",
+      "sha256": "5ebc64daae5883ca97cb6ff60bab5b232cdc0c6edf08c3dfc2591a5b48c2636c"
+    },
+    {
+      "original": "source/img/life/huitang.jpg",
+      "target": "public/img/life/huitang.jpg",
+      "sha256": "6b22487edf318fe28391e0b3563fc18be322c84ea6fa49b6f7dd933aeb67844c"
+    },
+    {
+      "original": "source/img/life/sh4.jpeg",
+      "target": "public/img/life/sh4.jpeg",
+      "sha256": "760a5ff954df93f5c97bd38884774a66d70ff3d75077f03b16a746b09775d9c1"
+    },
+    {
+      "original": "source/img/life/iieball01.jpg",
+      "target": "public/img/life/iieball01.jpg",
+      "sha256": "a3f9b60f7ac5867fe8f13d0df5bc4ab9e9511b68fd6abf65a67335481d8cf097"
+    },
+    {
+      "original": "source/img/life/qhd1.jpg",
+      "target": "public/img/life/qhd1.jpg",
+      "sha256": "134bafcddd7cce755cc9af92c184fb2e4ba2337e461d50a96742a55763ca14c0"
+    },
+    {
+      "original": "source/img/life/siqi.jpeg",
+      "target": "public/img/life/siqi.jpeg",
+      "sha256": "b361a03a64b58a522557db156e9a11f4fa0dc33ecae7a6abe11e14c743305128"
+    },
+    {
+      "original": "source/img/life/hongluo.jpg",
+      "target": "public/img/life/hongluo.jpg",
+      "sha256": "700f908e2a83d76e5def8e240c482b59ef5c6f85b0a52f6e6b6e109dca1c33a9"
+    },
+    {
+      "original": "source/img/life/ditan.jpg",
+      "target": "public/img/life/ditan.jpg",
+      "sha256": "4b9054481ee81e143caf4fd52c90fd7d82d3e9303017b87e0a1ce07b4814cf51"
+    },
+    {
+      "original": "source/img/life/taiyaun.jpeg",
+      "target": "public/img/life/taiyaun.jpeg",
+      "sha256": "d445725d3409774d596a55c7f15c0a8f2b514f0afa7e1f9bf50d59c550257998"
+    },
+    {
+      "original": "source/img/life/laolaolaoye.jpg",
+      "target": "public/img/life/laolaolaoye.jpg",
+      "sha256": "d0004a5b7807c0dbc0f11e6b6e7df9bf8f0a2ab74f5918114d4cdd4361bd2eea"
+    },
+    {
+      "original": "source/img/life/jj-chuangye.jpeg",
+      "target": "public/img/life/jj-chuangye.jpeg",
+      "sha256": "620263b5001c202e4d815dd8bc177742161ebeb97cc7985367a0797e8966271e"
+    },
+    {
+      "original": "source/img/life/suzhou1.jpeg",
+      "target": "public/img/life/suzhou1.jpeg",
+      "sha256": "93f727263381f3eb36559d9dfe8804add6fe709ed49a9f41a3d18f9fae680844"
+    },
+    {
+      "original": "source/img/life/gk2.jpeg",
+      "target": "public/img/life/gk2.jpeg",
+      "sha256": "399e4985e5f8e6b7e2fdcab22074e34bda3291c68cc3286b396ff8b624b793fc"
+    },
+    {
+      "original": "source/img/life/ye.jpg",
+      "target": "public/img/life/ye.jpg",
+      "sha256": "6d73c3049107563960590e2c91c1552c93e3e89c051dd0edee0f815d5f67a005"
+    },
+    {
+      "original": "source/img/life/wutai3.jpeg",
+      "target": "public/img/life/wutai3.jpeg",
+      "sha256": "aaf3c18f6908bd4c66c94758e77f421773ecc172e3b84c5c0c619562b6a95e45"
+    },
+    {
+      "original": "source/img/life/huaq.jpg",
+      "target": "public/img/life/huaq.jpg",
+      "sha256": "246887753b76c5f7a1e72a3734ec2d47c1b555278c5f5188fbb40ac71a0b14e5"
+    },
+    {
+      "original": "source/img/life/iieball02.jpg",
+      "target": "public/img/life/iieball02.jpg",
+      "sha256": "b49b5be850d9511d58bbdf1201755b5e94dee61098af04bca36152e1fce593a8"
+    },
+    {
+      "original": "source/img/life/xiongan4.jpeg",
+      "target": "public/img/life/xiongan4.jpeg",
+      "sha256": "26d26d3ce32ea8c50ea9fa9683123b6cc3855c05728d5a5a1f53524c2eaf7921"
+    },
+    {
+      "original": "source/img/life/erlian2.jpg",
+      "target": "public/img/life/erlian2.jpg",
+      "sha256": "d0d8333e33d46f977ef59cdaf3d08451efbe57db45c32c1fd9564ac031a106f2"
+    },
+    {
+      "original": "source/img/life/yiyuan1.jpeg",
+      "target": "public/img/life/yiyuan1.jpeg",
+      "sha256": "532f2fad9aa3ce2a633f1c9a29422f8f280c5a3c5b7f3080095e934f67124edf"
+    },
+    {
+      "original": "source/img/life/biye3.jpeg",
+      "target": "public/img/life/biye3.jpeg",
+      "sha256": "b1d8ed48225cdebc47dd1fe2d55bf4a10d2c482fa444c0641657571c10501c79"
+    },
+    {
+      "original": "source/img/life/mao.webp",
+      "target": "public/img/life/mao.webp",
+      "sha256": "1431c339c9325298e4d76da0f26f1b7b8b676d2518f2254170f473d3a5ab02c7"
+    },
+    {
+      "original": "source/img/life/shuaichen.jpg",
+      "target": "public/img/life/shuaichen.jpg",
+      "sha256": "a789d619ce3a5e602530d12e59f603fc2cbfc75103486d9faea4af3210f4f611"
+    },
+    {
+      "original": "source/img/life/jianshen1.jpg",
+      "target": "public/img/life/jianshen1.jpg",
+      "sha256": "3608ffb814c92d38568a522bff22433d3977ddcd344f650e42a7d5b98894ac54"
+    },
+    {
+      "original": "source/img/life/26035.jpg",
+      "target": "public/img/life/26035.jpg",
+      "sha256": "52e2f19e737a153d1069043bbb5d56826b89e26d48ba2751e2d050fa6bd2cf45"
+    },
+    {
+      "original": "source/img/life/qiusai1.jpg",
+      "target": "public/img/life/qiusai1.jpg",
+      "sha256": "ef12cb639055076d2c3f50f5466f46e4e00029f2b937bf8372e9a832f1944e2e"
+    },
+    {
+      "original": "source/img/life/26034.jpg",
+      "target": "public/img/life/26034.jpg",
+      "sha256": "876b5211fd21ac964fe6dc24fdd030f8ae0ba8d7560941cb24ee2eae4e541c2c"
+    },
+    {
+      "original": "source/img/life/file.jpg",
+      "target": "public/img/life/file.jpg",
+      "sha256": "cebbfc26ef7ac67049c40164b59f7ce23ed7db3a4fba4180717d8c80c67b4d4c"
+    },
+    {
+      "original": "source/img/life/25111.jpg",
+      "target": "public/img/life/25111.jpg",
+      "sha256": "e95449d764ecf5cebb42bc16564e696f6d4dd7b5999aa67ca8957123c8396ba9"
+    },
+    {
+      "original": "source/img/life/langyashan.jpeg",
+      "target": "public/img/life/langyashan.jpeg",
+      "sha256": "9c5e41a516e01f23fd16eca2a50dbd601d8a530eca6942ebe6f2d1c46ce144d0"
+    },
+    {
+      "original": "source/img/life/sh3.jpeg",
+      "target": "public/img/life/sh3.jpeg",
+      "sha256": "0cda327f71269ff94e77e557e6b4bb1931c37c3d15c264b06466734de89dc6da"
+    },
+    {
+      "original": "source/img/life/erlian3.jpg",
+      "target": "public/img/life/erlian3.jpg",
+      "sha256": "21e923b3f62f71bef915973f3f415cbb12b91f82371050d26909fe75a6ad8234"
+    },
+    {
+      "original": "source/img/life/hangzhou2.jpeg",
+      "target": "public/img/life/hangzhou2.jpeg",
+      "sha256": "bdd2e3921784424dbbbec2783124a5ea40a5e668cdc835b21d86791b02ee9157"
+    },
+    {
+      "original": "source/img/life/erlian1.jpg",
+      "target": "public/img/life/erlian1.jpg",
+      "sha256": "5a0f632740bff2843069477434e7940f3dcc33de59724f0db497494bb4bc93fe"
+    },
+    {
+      "original": "source/img/life/25113.jpg",
+      "target": "public/img/life/25113.jpg",
+      "sha256": "b39ee21a7e6c0f6688ca2ca6bfed6eb74b681d0f7aba8bb244551b3c81e97e75"
+    },
+    {
+      "original": "source/img/life/xiongan3.jpeg",
+      "target": "public/img/life/xiongan3.jpeg",
+      "sha256": "42043421e7c3a53fbb3949454410210f76acd92d840fe0300c7ec1f6ad4eae9b"
+    },
+    {
+      "original": "source/img/life/zhankudu.jpeg",
+      "target": "public/img/life/zhankudu.jpeg",
+      "sha256": "f0b99c1f3d8ff658c44813920b0fe0eb302182c12b7c73425050fb9e0ff47fd2"
+    },
+    {
+      "original": "source/img/life/26036.jpg",
+      "target": "public/img/life/26036.jpg",
+      "sha256": "42147dd706f5eba152311bd4a12a12331930741bf393eabbdabda83879f6bc56"
+    },
+    {
+      "original": "source/img/life/liuxiao.jpeg",
+      "target": "public/img/life/liuxiao.jpeg",
+      "sha256": "743f91ea50c2edf58ab4e951a5b06ada1b30d2cf95636cb9bbe816c2384b5719"
+    },
+    {
+      "original": "source/img/life/qiusai3.jpg",
+      "target": "public/img/life/qiusai3.jpg",
+      "sha256": "3b6da0a9e15c4a25a95ac3166f118a14aa46c7069d79d07daf288406f95ff923"
+    },
+    {
+      "original": "source/img/life/qiusai2.jpg",
+      "target": "public/img/life/qiusai2.jpg",
+      "sha256": "de8136b9c92123527884378eccd4b0d84058f2487d9f97df1925416b460de16e"
+    },
+    {
+      "original": "source/img/life/huisuo4.jpg",
+      "target": "public/img/life/huisuo4.jpg",
+      "sha256": "81fa621cc4fc9e4f098ace762da6a9893f6c1a28a7e378be04652513dbb86e19"
+    },
+    {
+      "original": "source/img/life/jinci.jpeg",
+      "target": "public/img/life/jinci.jpeg",
+      "sha256": "891043efbd91a8d18d76351c0475e318ccc98ce98975e05488dc6f22f22c6ff6"
+    },
+    {
+      "original": "source/img/life/book1.jpg",
+      "target": "public/img/life/book1.jpg",
+      "sha256": "7ea9e9b8fcb50c380e862c710f1f1c1196f1dae5b84bb9dc8452164d3d98f69e"
+    },
+    {
+      "original": "source/img/life/25112.jpg",
+      "target": "public/img/life/25112.jpg",
+      "sha256": "a4e871a3602905ca6648dda8e808d882c15764292bed9748e8060294b3f1b694"
+    },
+    {
+      "original": "source/img/life/zhiwuyuan2.jpeg",
+      "target": "public/img/life/zhiwuyuan2.jpeg",
+      "sha256": "aafa234e9bcd313780291b5373a6f7de78cb9e73cbad09d289ba683f95d75592"
+    },
+    {
+      "original": "source/img/life/bss.jpeg",
+      "target": "public/img/life/bss.jpeg",
+      "sha256": "7e47c8a3430b0424fa91bc86ae654bcd04293988dbd9414f3f8da79fd7a13476"
+    },
+    {
+      "original": "source/img/life/f1.jpg",
+      "target": "public/img/life/f1.jpg",
+      "sha256": "d7e4db2f8f910754c634a610424af84bdef17abb674e3761b766d9ff92b2fd2d"
+    },
+    {
+      "original": "source/img/life/erlian4.jpg",
+      "target": "public/img/life/erlian4.jpg",
+      "sha256": "2d86bb9596c47c1165d337a128d366dd5a99ac258969b8cdeb6f0dd160467089"
+    },
+    {
+      "original": "source/img/life/nainai2.jpg",
+      "target": "public/img/life/nainai2.jpg",
+      "sha256": "47053fde0bb9f272f4eb3f91e16e01845ecf2612ff31c8795d053221b3ccaa66"
+    },
+    {
+      "original": "source/img/life/yiqing.jpeg",
+      "target": "public/img/life/yiqing.jpeg",
+      "sha256": "3e8af6300d622589d1e2a354511c9a486262e0c65a62f3222d8f12c637f23372"
+    },
+    {
+      "original": "source/img/life/26033.jpg",
+      "target": "public/img/life/26033.jpg",
+      "sha256": "b445c6835706c772f3e9b856c4822fb56a535290a991e42c8919e183302ba192"
+    },
+    {
+      "original": "source/img/life/26032.jpg",
+      "target": "public/img/life/26032.jpg",
+      "sha256": "8c8ce6ceff3b917c312ca6f712dfda0487f90574fbf1784e988957d49111f11f"
+    },
+    {
+      "original": "source/img/life/huisuo1.jpg",
+      "target": "public/img/life/huisuo1.jpg",
+      "sha256": "1ea64983f06f2043c9a2b9f1ddd8833137d1e18115280f52f47e6896e5b8ccea"
+    },
+    {
+      "original": "source/img/life/xiongan2.jpeg",
+      "target": "public/img/life/xiongan2.jpeg",
+      "sha256": "aa824bf852aff4f08fa48792201d37b3bcb0dd411d20b1428b559bfa5d8c7ba7"
+    },
+    {
+      "original": "source/img/life/chunxue.jpg",
+      "target": "public/img/life/chunxue.jpg",
+      "sha256": "5ad6dbafbee42d0e68c72869c24d03cea59dea46c8c841ed46e7edbee53b8d09"
+    },
+    {
+      "original": "source/img/life/hangzhou3.jpeg",
+      "target": "public/img/life/hangzhou3.jpeg",
+      "sha256": "6af197dcf41a16dfba4f4d958ca9a28a2e58b053e38efc33c1183a59d8bfad46"
+    },
+    {
+      "original": "source/img/life/nainai1.jpg",
+      "target": "public/img/life/nainai1.jpg",
+      "sha256": "6940db03f460d1005eecfd4c3c57534be647c6e9af0ef7366973ab26cb743533"
+    },
+    {
+      "original": "source/img/life/sh2.jpeg",
+      "target": "public/img/life/sh2.jpeg",
+      "sha256": "721741450516a8b7238ce3130a83fa44fc543bc81dd9f4610ae682040355a54e"
+    },
+    {
+      "original": "source/img/life/25115.jpg",
+      "target": "public/img/life/25115.jpg",
+      "sha256": "6c3d737b96abd8566b86a66ec72a423e49b0207bef09eba3e2d142e2de2679d0"
+    },
+    {
+      "original": "source/img/life/25129.jpg",
+      "target": "public/img/life/25129.jpg",
+      "sha256": "916ddd07e97542a481d261d6a39c111065c16e6aa9ff1ae2fbad706d7b4e247a"
+    },
+    {
+      "original": "source/img/life/laoguang.jpeg",
+      "target": "public/img/life/laoguang.jpeg",
+      "sha256": "213329d3137cbd8043bdb69c2f2b442237c2c036d353b549f16e3ac9ad88c82b"
+    },
+    {
+      "original": "source/img/life/huisuo3.jpg",
+      "target": "public/img/life/huisuo3.jpg",
+      "sha256": "6612e8b4b2ff527d076442e83f1e51fc6c332beee3616ad544587afff9d13b2a"
+    },
+    {
+      "original": "source/img/life/26031.jpg",
+      "target": "public/img/life/26031.jpg",
+      "sha256": "03bcd6812d319b7ebbe72595808f15acf9380578a0ffca5bde1320a296f21370"
+    },
+    {
+      "original": "source/img/life/kyb.jpg",
+      "target": "public/img/life/kyb.jpg",
+      "sha256": "137e95e15622f63e3a87579011836e22cba5d09d6a6bfb23454036ef01d16c72"
+    },
+    {
+      "original": "source/img/life/daminghu2.jpeg",
+      "target": "public/img/life/daminghu2.jpeg",
+      "sha256": "7c9a1566e0f20c5304f0e29ad2052595a78446bd260c9979e35681d4a0b66838"
+    },
+    {
+      "original": "source/img/life/kaoyan1.jpeg",
+      "target": "public/img/life/kaoyan1.jpeg",
+      "sha256": "50526665bc68bc93a55c29620c164eb04a3e6bb0b993fd52b5a1f7c7f9224b1d"
+    },
+    {
+      "original": "source/img/life/changcheng.jpg",
+      "target": "public/img/life/changcheng.jpg",
+      "sha256": "926d6b2c52df7c91f6ef55476522928e14fb206f953f334a29aba3ea9c0b7f92"
+    },
+    {
+      "original": "source/img/life/huisuo2.jpg",
+      "target": "public/img/life/huisuo2.jpg",
+      "sha256": "05aee9b65954a693e6438068dfe916018f437601e1cf5f3ca117f5335a657a09"
+    },
+    {
+      "original": "source/img/life/25128.jpg",
+      "target": "public/img/life/25128.jpg",
+      "sha256": "61a0c668687508fa84459ca496be63d7344a1ddf6fd5803cbd7f9dd67132f8d8"
+    },
+    {
+      "original": "source/img/life/25114.jpg",
+      "target": "public/img/life/25114.jpg",
+      "sha256": "520306850bb30ac43f000d0ff8396fa78731f1637c04059d7a3f68083eacf9f5"
+    },
+    {
+      "original": "source/img/life/biye2.jpeg",
+      "target": "public/img/life/biye2.jpeg",
+      "sha256": "c93dcfc30b62ed2599e8d3a5d2e08cae888474d0349223e73701a54c9ad64c42"
+    },
+    {
+      "original": "source/img/life/haoge.jpeg",
+      "target": "public/img/life/haoge.jpeg",
+      "sha256": "68e903f5cc7f5c7b3bd179cb8cf1be68615cea16e954a51d98fe7ab8c3ecdd9b"
+    },
+    {
+      "original": "source/img/life/sh1.jpeg",
+      "target": "public/img/life/sh1.jpeg",
+      "sha256": "cc6d593fab4898ccbb0ff5ab5ba411260847578fa76b99a07c08cb3115b1291f"
+    },
+    {
+      "original": "source/img/life/25125.jpg",
+      "target": "public/img/life/25125.jpg",
+      "sha256": "74c2b722b16523aad822d503e66e15fa881de9a8534e8a075ce34e06ecef2553"
+    },
+    {
+      "original": "source/img/life/tuimian.jpeg",
+      "target": "public/img/life/tuimian.jpeg",
+      "sha256": "27ac0828389dd1284ddd63cf970df4f07c028f984eb6eb5c3a7262ad38156801"
+    },
+    {
+      "original": "source/img/life/yuandan25-1.jpg",
+      "target": "public/img/life/yuandan25-1.jpg",
+      "sha256": "28d55ca725d92a31b6d89e6a7352640573b520f7e856c48349117c6d6bd90d3e"
+    },
+    {
+      "original": "source/img/life/kaoyan2.jpeg",
+      "target": "public/img/life/kaoyan2.jpeg",
+      "sha256": "d936ebe95ad3efbbbf2d0f2e9496beb3bb3d6b10a6e65127c53dc370a2c58171"
+    },
+    {
+      "original": "source/img/life/huaxue.jpeg",
+      "target": "public/img/life/huaxue.jpeg",
+      "sha256": "d440c69be1b92366c989c7570900036fd5021406829429c8a27e04152b5899ac"
+    },
+    {
+      "original": "source/img/life/daminghu1.jpeg",
+      "target": "public/img/life/daminghu1.jpeg",
+      "sha256": "1c7eaa0a25640d98eca0e64f52085791f32e90390078bacab283347be0e07349"
+    },
+    {
+      "original": "source/img/life/shanling.jpg",
+      "target": "public/img/life/shanling.jpg",
+      "sha256": "88f775c64581dd055f0e7f5954f082856e59533572c241353ca6b1b9f8c93e7a"
+    },
+    {
+      "original": "source/img/life/25124.jpg",
+      "target": "public/img/life/25124.jpg",
+      "sha256": "0f014ac2659841a6a0d9d676d495b010b9ea62d4e172e43d4f038cda5b5125f1"
+    },
+    {
+      "original": "source/img/life/biye1.jpeg",
+      "target": "public/img/life/biye1.jpeg",
+      "sha256": "33a09ce3ac1ce49b72e1e88c46feda72149e8b9aa9bdfb62599067c334ac6f46"
+    },
+    {
+      "original": "source/img/life/beitao2.jpg",
+      "target": "public/img/life/beitao2.jpg",
+      "sha256": "8ef7220aa5f6034db2e45fb840be1f84ce528e2caca7cb956b5299763af15654"
+    },
+    {
+      "original": "source/img/life/duche.jpeg",
+      "target": "public/img/life/duche.jpeg",
+      "sha256": "5beb6d3ed686a16244fa46dd2aaf0e1bab82bdea402936f5bdfa42fb09532ccd"
+    },
+    {
+      "original": "source/img/life/rui1.jpg",
+      "target": "public/img/life/rui1.jpg",
+      "sha256": "fdc200c4d91215da1efb6dfc007bf88ab867b409d11f001863e2c274566d5153"
+    },
+    {
+      "original": "source/img/life/shushi.jpg",
+      "target": "public/img/life/shushi.jpg",
+      "sha256": "464be32266b2c10091a9c3929b2cc7455ea7da0394ff4bb8c624fb3166cd0cba"
+    },
+    {
+      "original": "source/img/life/kwblog.png",
+      "target": "public/img/life/kwblog.png",
+      "sha256": "a3b915255db4bcb5262327a597f2a7babaa6214fa32d5039fae7090f6962691e"
+    },
+    {
+      "original": "source/img/life/suzhou4.jpeg",
+      "target": "public/img/life/suzhou4.jpeg",
+      "sha256": "310fa60c4c589f4148a63653c3e6478d7d58039d878242c29d0f2b595878fa19"
+    },
+    {
+      "original": "source/img/life/25126.jpg",
+      "target": "public/img/life/25126.jpg",
+      "sha256": "6119eaa65df9b6c74d946d98252402ff9bb347cfaa1b6469faea6ac43d10a102"
+    },
+    {
+      "original": "source/img/life/ruxue.jpeg",
+      "target": "public/img/life/ruxue.jpeg",
+      "sha256": "5b77ecf56e8e5b25a363ed93d15f5a8e83e9af30c1e977ac866fbb6b5ddd1a9b"
+    },
+    {
+      "original": "source/img/life/2024fan.jpg",
+      "target": "public/img/life/2024fan.jpg",
+      "sha256": "470b05de857ec80b5a1705548265e258356152c210a2520151702947f23ed0c6"
+    },
+    {
+      "original": "source/img/life/yuandan25-2.jpg",
+      "target": "public/img/life/yuandan25-2.jpg",
+      "sha256": "851d11395e23de8e2fedc47e973fc8631c0914a2d07935b6ed9ce1b6fd6fc597"
+    },
+    {
+      "original": "source/img/life/zhuhai.jpg",
+      "target": "public/img/life/zhuhai.jpg",
+      "sha256": "270883782ba0636971324bd6f07be36c6da1fc2b821c8730d2ed0a4e57e0f71f"
+    },
+    {
+      "original": "source/img/life/xiongan1.jpeg",
+      "target": "public/img/life/xiongan1.jpeg",
+      "sha256": "86607177a2d599264007e2eaa772d0e38f54dbef379488339555ef5e9dc9f01c"
+    },
+    {
+      "original": "source/img/life/25127.jpg",
+      "target": "public/img/life/25127.jpg",
+      "sha256": "56bfe7ea1d034e530b930d0da2b8da9a62b6887d7a459dda1218db0e9d437e40"
+    },
+    {
+      "original": "source/img/life/beitao1.jpg",
+      "target": "public/img/life/beitao1.jpg",
+      "sha256": "82b5cd73867d50752193c0ed91750688b290c33fec69c016698ecc1da61250f1"
+    },
+    {
+      "original": "source/img/life/jizu.jpg",
+      "target": "public/img/life/jizu.jpg",
+      "sha256": "10c81a057b94b4c528b88c89fef5ca75830f4c82a622762eb11bd1c654d516cd"
+    },
+    {
+      "original": "source/img/life/rui2.jpg",
+      "target": "public/img/life/rui2.jpg",
+      "sha256": "c67aed70211fa578821885aded1dca87c6544de557b4a74a785baedf1275f25e"
+    },
+    {
+      "original": "source/img/life/25123.jpg",
+      "target": "public/img/life/25123.jpg",
+      "sha256": "ae52aee5d8260c5e8c9d53cb2a7aad91de6437d4d48c6e1cfbd06b5c1b751f76"
+    },
+    {
+      "original": "source/img/life/xican3.jpg",
+      "target": "public/img/life/xican3.jpg",
+      "sha256": "5ffa2187eb2b0d052209f5b4b79751633c506adafdd27a01c3fd59c360b6589b"
+    },
+    {
+      "original": "source/img/life/lihu.jpg",
+      "target": "public/img/life/lihu.jpg",
+      "sha256": "380c5ec1b5aee45fc09a7cc57d2ace336ab41b7e454400c9641ae9841668b20b"
+    },
+    {
+      "original": "source/img/life/heima.jpeg",
+      "target": "public/img/life/heima.jpeg",
+      "sha256": "b04e273c8e778d60894c1927134ae7554918b0e428836f6524f1c074925b3387"
+    },
+    {
+      "original": "source/img/life/xican2.jpg",
+      "target": "public/img/life/xican2.jpg",
+      "sha256": "6e8aa5e0b94f50c91d2bca5daa26c2274b1189d2d50a485c444848ba1c8228d6"
+    },
+    {
+      "original": "source/img/life/tianjin.jpeg",
+      "target": "public/img/life/tianjin.jpeg",
+      "sha256": "f5b3dd8928543e359adb3d3b8f6d7ce41cb157d52f3943db1f07976a2b446cad"
+    },
+    {
+      "original": "source/img/life/zhengding.jpeg",
+      "target": "public/img/life/zhengding.jpeg",
+      "sha256": "19116b122cbd11583315fc26a1e5a7fb366c8e82f400626ee018e3201f3297d3"
+    },
+    {
+      "original": "source/img/life/25122.jpg",
+      "target": "public/img/life/25122.jpg",
+      "sha256": "4f14dfea0c0ac0b99a631eac82f050ea3b0c65fb9a58946b3f99cc077b9a2e37"
+    },
+    {
+      "original": "source/img/life/richu.jpeg",
+      "target": "public/img/life/richu.jpeg",
+      "sha256": "12137ec269e8d8fc5eb730675325766a06200cda4614fa1fb476fd68c7c52b1f"
+    },
+    {
+      "original": "source/img/life/zhiwuyuan1.jpeg",
+      "target": "public/img/life/zhiwuyuan1.jpeg",
+      "sha256": "93455ecaa7ad84f419e5a9682a998c6ff09cd97b88c4898668bcf31a721a80b7"
+    },
+    {
+      "original": "source/img/life/24.jpg",
+      "target": "public/img/life/24.jpg",
+      "sha256": "ee7cfce88cc1d85da50e54eca0ee790fb04a27020039bcc06bf4204dcbc27fed"
+    },
+    {
+      "original": "source/img/life/yiyuan2.jpeg",
+      "target": "public/img/life/yiyuan2.jpeg",
+      "sha256": "cd8e3225b96c535a39f63299a26f8ac6ef594ab9b30767d75f4bc28c5660ccfc"
+    },
+    {
+      "original": "source/img/life/banma.jpeg",
+      "target": "public/img/life/banma.jpeg",
+      "sha256": "badbb8383305c9be91c8410b351c860abb0e16d18236e5884439f2d8a5ee26da"
+    },
+    {
+      "original": "source/img/life/rudang.jpeg",
+      "target": "public/img/life/rudang.jpeg",
+      "sha256": "4920c150032697f41030875a2961b678a127a7960c1a012b8306618a6ee19dd0"
+    },
+    {
+      "original": "source/img/life/xican1.jpg",
+      "target": "public/img/life/xican1.jpg",
+      "sha256": "827aee469ad95b7dcc4bffdcc045830a6439e331730a46d39dff1cf66168252f"
+    },
+    {
+      "original": "source/img/life/jj-zhaiquan.jpeg",
+      "target": "public/img/life/jj-zhaiquan.jpeg",
+      "sha256": "d31bd0200ee99beb3284ea2b261b09132809a645ed22d9091b533a5be820f557"
+    },
+    {
+      "original": "source/img/life/25121.jpg",
+      "target": "public/img/life/25121.jpg",
+      "sha256": "cb2fb504f61aee9f2001699d1dbd6065fe9edc19a7100dd8b811a71817d3f3b3"
+    },
+    {
+      "original": "source/img/life/hangzhou1.jpeg",
+      "target": "public/img/life/hangzhou1.jpeg",
+      "sha256": "0032e8d90fbc2d34d0f4136b04f26d3c590862abc3259b6e7d1d78a34f82ebfe"
+    },
+    {
+      "original": "source/img/life/suzhou2.jpeg",
+      "target": "public/img/life/suzhou2.jpeg",
+      "sha256": "a2d8724bf2ed8f0b944e835dd4e7c17df3daf31ae4d75daf10c5959c0caf2528"
+    },
+    {
+      "original": "source/img/life/gk1.jpeg",
+      "target": "public/img/life/gk1.jpeg",
+      "sha256": "94499135412a32cf50f0d4b11e016b7ae68d85e9d750b6bd2d962a8bd23c8537"
+    },
+    {
+      "original": "source/img/life/xue1.jpg",
+      "target": "public/img/life/xue1.jpg",
+      "sha256": "e169c07ddaf857283fc58e4eeabb7fcb0373a55d7d9ecabedd4fd4cd8b552495"
+    },
+    {
+      "original": "source/img/life/wulan1.jpg",
+      "target": "public/img/life/wulan1.jpg",
+      "sha256": "1e01871daf0818a7677ed21e390a7b3d230b1754586fbfd259d5d334a3ad9cce"
+    },
+    {
+      "original": "source/img/life/zhankudu2.jpeg",
+      "target": "public/img/life/zhankudu2.jpeg",
+      "sha256": "6bcd6de31d3193e431e387da8f5566f6561a5bcaf153a0e4dcbf08ba027223b5"
+    },
+    {
+      "original": "source/img/life/huijia.jpg",
+      "target": "public/img/life/huijia.jpg",
+      "sha256": "9628a6afe35a1f1021fe46d34c7f47a25e3a54a19d099c9d3724765478d13679"
+    },
+    {
+      "original": "source/img/life/xiangshan.jpg",
+      "target": "public/img/life/xiangshan.jpg",
+      "sha256": "fff4ada9df0a1a52e3c8c633b187a1fe00bb5d38524cbe0e301963e721edf2cb"
+    },
+    {
+      "original": "source/img/life/yanji4.jpg",
+      "target": "public/img/life/yanji4.jpg",
+      "sha256": "eaeac495fa83a98b49910311fc21d8e8271a74327fb5f7739656a2d5f6b09b5d"
+    },
+    {
+      "original": "source/img/life/yungang.jpeg",
+      "target": "public/img/life/yungang.jpeg",
+      "sha256": "6f390f962b657264dee4aa480430b9e3a7db4e84f14ad3b63eb4b511d85c06c9"
+    },
+    {
+      "original": "source/img/life/xue2.jpg",
+      "target": "public/img/life/xue2.jpg",
+      "sha256": "702c8a773b4ab5ce77ca2b367b9bd272f8fb15e83dc4fdd39fb9347d0c556679"
+    },
+    {
+      "original": "source/img/life/wulan2.jpg",
+      "target": "public/img/life/wulan2.jpg",
+      "sha256": "165b63857006e66f7e6f561564b20667dca28b165d8972945eda646d871e4429"
+    },
+    {
+      "original": "source/img/life/chehuo.jpeg",
+      "target": "public/img/life/chehuo.jpeg",
+      "sha256": "a1b63c49d2c3a281dffe743473070623916c1a2b561de153e2178a98b65bbfa1"
+    },
+    {
+      "original": "source/img/life/ditu1.jpg",
+      "target": "public/img/life/ditu1.jpg",
+      "sha256": "587f91ea7a26afb80f805a260613ac45f1d2cc285e9684d271665d70045b60b9"
+    },
+    {
+      "original": "source/img/life/wulan3.jpg",
+      "target": "public/img/life/wulan3.jpg",
+      "sha256": "efa895b86b22f45818a857d310351b7c9593c077a19278642693d29263d00ddd"
+    },
+    {
+      "original": "source/img/life/xue3.jpg",
+      "target": "public/img/life/xue3.jpg",
+      "sha256": "2c6e53f2fe49498834ebb407049cb7a3bfab7c02718fc8a52990d5d7c4c2b48b"
+    },
+    {
+      "original": "source/img/life/yanji1.jpg",
+      "target": "public/img/life/yanji1.jpg",
+      "sha256": "3279da6d28c099ad9e9b91a1a64098a9e54e363a78b09c1a6e645230bdcc6b9a"
+    },
+    {
+      "original": "source/img/life/184.jpeg",
+      "target": "public/img/life/184.jpeg",
+      "sha256": "3a9258768898e72642f86338e58e4d7cf2efbe4efa8c7b50a674653850688d9a"
+    },
+    {
+      "original": "source/img/life/baoding25-1.jpg",
+      "target": "public/img/life/baoding25-1.jpg",
+      "sha256": "e559d296f6fffdb5763a8cd59227d759bdf0b491a872992e8624b9b69d289fa8"
+    },
+    {
+      "original": "source/img/life/hunli.jpg",
+      "target": "public/img/life/hunli.jpg",
+      "sha256": "9f813108554dfb9e389e79dcfebc3aa300987dff9c6b77a53105e4470ef291bd"
+    },
+    {
+      "original": "source/img/life/yanji2.jpg",
+      "target": "public/img/life/yanji2.jpg",
+      "sha256": "01450d4e884fe482922087679748fef6bc24dd4ee6666894f1fa18eac7db965c"
+    },
+    {
+      "original": "source/img/life/wulan4.jpg",
+      "target": "public/img/life/wulan4.jpg",
+      "sha256": "889ad43222d25c31fefbb19f5e7e3ec946a0e5072eacf0d4b8931360da3047c1"
+    },
+    {
+      "original": "source/img/life/firstma.jpeg",
+      "target": "public/img/life/firstma.jpeg",
+      "sha256": "1c070318967ee10200e047469121e4f196211a0e23c52d35e147611e4b0608e8"
+    },
+    {
+      "original": "source/img/life/xuankongsi.jpeg",
+      "target": "public/img/life/xuankongsi.jpeg",
+      "sha256": "b3f7f2f3dce7ec0ce1a52988134569d054d3267c1ed6dfdf05f481f556ef3738"
+    },
+    {
+      "original": "source/img/life/che2.jpeg",
+      "target": "public/img/life/che2.jpeg",
+      "sha256": "7d24f39178b19f3b8717f2be00c2fc30067d39ae76c9eb5dd7ecb67e078ecab6"
+    },
+    {
+      "original": "source/img/life/jj2.jpeg",
+      "target": "public/img/life/jj2.jpeg",
+      "sha256": "a8577bbddd026439302fba862d616e448d10a25eef32bbf75f174118aca7671a"
+    },
+    {
+      "original": "source/img/life/longzhou.jpg",
+      "target": "public/img/life/longzhou.jpg",
+      "sha256": "b0e308447f8d8457fc6a99aef565d5e7e21dcd99a632d70f685dc4b5b89b40cb"
+    },
+    {
+      "original": "source/img/life/houlai.jpeg",
+      "target": "public/img/life/houlai.jpeg",
+      "sha256": "06990fe09f18bc1a50b348d485d2154e0d3f54e14a5968c0a25cbc80b2b93705"
+    },
+    {
+      "original": "source/img/life/kaiti.jpg",
+      "target": "public/img/life/kaiti.jpg",
+      "sha256": "c96666bd30b34a270662b80b62d340be8a28742bedef1ffeef0172e62da9bf0c"
+    },
+    {
+      "original": "source/img/life/wutai1.jpeg",
+      "target": "public/img/life/wutai1.jpeg",
+      "sha256": "721912bd988d9c57e73e3452a569e373ad7b7a493310f87230d833f7e1e3fcde"
+    },
+    {
+      "original": "source/img/life/yanji3.jpg",
+      "target": "public/img/life/yanji3.jpg",
+      "sha256": "4c7547144cce4db8bbe228594ca68ffd9a725b22a2eac6253f675655f11a34bd"
+    },
+    {
+      "original": "source/img/life/bazirou.jpeg",
+      "target": "public/img/life/bazirou.jpeg",
+      "sha256": "56a18c387ae05800780ba268259e82c42760a9f59d8b1fd4b066927bb96a3b99"
+    },
+    {
+      "original": "source/img/life/suzhou3.jpeg",
+      "target": "public/img/life/suzhou3.jpeg",
+      "sha256": "759c5765b32fb4325fe510c3edaee39eaa7a3eae12466b7a63f6ff1fdc5b6ae6"
+    },
+    {
+      "original": "source/img/bg/background4.png",
+      "target": "public/img/bg/background4.png",
+      "sha256": "d28c469104e0266fa1f41dc72679a00075acf5c1caf75e489e9cddb836d3dd57"
+    },
+    {
+      "original": "source/img/bg/wangjian.jpg",
+      "target": "public/img/bg/wangjian.jpg",
+      "sha256": "bab10f693f3a0b98c0d8e3e17481c5b237979927c58279b81050e3abfc24aede"
+    },
+    {
+      "original": "source/img/bg/paper.png",
+      "target": "public/img/bg/paper.png",
+      "sha256": "5990f49c3e7c39852388b8d3818fc1399168a4c18f0615daeb55822e436e0b4f"
+    },
+    {
+      "original": "source/img/bg/person1.jpeg",
+      "target": "public/img/bg/person1.jpeg",
+      "sha256": "fbbca44047c377ed7490de1720477d3cb0a4c3e0940a9096d9ecdcb43086e7c6"
+    },
+    {
+      "original": "source/img/bg/qrcode.jpg",
+      "target": "public/img/bg/qrcode.jpg",
+      "sha256": "5fa29685142127e7a37f5a65041811093671acc4b4f390d0a3482d43df99126a"
+    },
+    {
+      "original": "source/img/bg/person1.png",
+      "target": "public/img/bg/person1.png",
+      "sha256": "af97de1e9fb97be247e4204a46c5a1b19c9592c3b3f49e8e255406c378ed1053"
+    },
+    {
+      "original": "source/img/jianli/zzlife.pdf",
+      "target": "public/img/jianli/zzlife.pdf",
+      "sha256": "f23c4c0d41fc50d218960cc405e3bb04f83243af33bebcadabc2ff05be093753"
+    },
+    {
+      "original": "source/img/jianli/miao.pdf",
+      "target": "public/img/jianli/miao.pdf",
+      "sha256": "a4df06f4bdd675f0789d1258a3accf78cbb346881245dc8ecd1f21da15196fd4"
+    },
+    {
+      "original": "source/img/jianli/ML.pdf",
+      "target": "public/img/jianli/ML.pdf",
+      "sha256": "1ec0529b572b804a8ae08f425a6841eb4f0ffdba538efcf4c3644871b37d3936"
+    }
+  ],
+  "routes": [
+    ".",
+    "picture",
+    "archives",
+    "about",
+    "tags",
+    "links",
+    "self",
+    "categories",
+    "2025/03/31/2025年3月总结与展望",
+    "2025/03/08/从SmallCap出发切入Image-Caption",
+    "2025/03/01/2025年2月总结与展望",
+    "2025/03/24/2025年3月阅读书目与摘录反思",
+    "2025/03/15/SmallCap-Source-Code",
+    "2025/04/05/Ask-in-Any-Modality",
+    "2025/04/28/没有饺子全是醋",
+    "2025/04/01/王坚院士最新访谈录",
+    "2025/04/15/沐神论文阅读速览",
+    "2025/04/25/湖仓一体技术调研",
+    "2025/05/03/五一五更之三：动手学BERT",
+    "2025/05/04/五一五更之四：动手学GPT",
+    "2025/05/05/五一五更之五：手撸DeepSeek-V3-R1",
+    "2025/05/02/五一五更之二：注意力机制的起源与发展",
+    "2025/05/01/2025年4月总结与展望",
+    "2025/02/05/开工大吉",
+    "2025/02/26/LLM开发必备",
+    "2025/11/19/Colpali复现",
+    "2025/11/26/Qwen-VL复现与源码剖析",
+    "2025/11/09/从ColBERT到Colpali",
+    "2025/11/30/2025年11月总结与展望",
+    "2025/10/04/2025年9月总结与展望",
+    "2025/10/05/口述历史之姥姥姥爷史",
+    "2025/10/11/天空不设限",
+    "2025/10/21/DeepSeek-OCR-innovates-Long-Context-Compression",
+    "2025/10/31/2025年10月总结与展望",
+    "2025/07/29/Prompt-Compression",
+    "2025/07/01/2025年6月总结与展望",
+    "2025/07/14/cs336-study-note",
+    "2025/09/03/2025年8月总结与展望",
+    "2025/09/21/浅谈GPT-2、LlaMA与Qwen架构设计的对比分析",
+    "2025/08/04/2025年7月总结与展望",
+    "2025/08/11/大模型面试200问",
+    "2025/08/24/从零构建大模型",
+    "2025/01/20/Agentic-RAG-A-Survey",
+    "2025/01/27/DeepSeek-YYDS",
+    "2025/01/29/梁文锋专访",
+    "2025/01/19/寒假阅读书单",
+    "2025/01/30/2025年1月总结与展望",
+    "2025/01/24/Graph-RAG-A-Survey",
+    "2025/01/15/Attention-is-all-you-need",
+    "2025/06/11/线性代数的本质",
+    "2025/06/17/社畜牛马生活初体验",
+    "2025/06/01/2025年5月总结与展望",
+    "2025/06/25/强化学习-从开始到放弃",
+    "2025/12/29/2025年12月总结与展望",
+    "page/9",
+    "page/11",
+    "page/7",
+    "page/6",
+    "page/10",
+    "page/8",
+    "page/4",
+    "page/3",
+    "page/2",
+    "page/5",
+    "2024/04/24/归家小记",
+    "2024/02/23/湾区游记",
+    "2024/11/03/10月总结与展望",
+    "2024/11/11/C-五子棋",
+    "2024/11/16/EchoSight论文研读复现",
+    "2024/11/15/经典卷积神经网络复现",
+    "2024/11/22/LLM训练常用操作汇总",
+    "2024/10/20/Multimodal-RAG-System-Survey",
+    "2024/10/18/想整明白我们是怎么学习的？机器是如何学习我们的学习的？",
+    "2024/10/28/LLM-basic-knowledge",
+    "2024/10/24/抉择",
+    "2024/10/12/Hadoop集群配置汇总",
+    "2024/10/14/恐惧还是贪婪",
+    "2024/09/18/《在线》-读书笔记",
+    "2024/09/29/AI大模型时代人才需求与技能培养",
+    "2024/09/28/Pytorch-and-Deep-learning-NoteBook",
+    "2024/09/10/杨力祥老师的编程哲学",
+    "2024/09/19/RAG-for-LLM-A-survey",
+    "2024/09/30/8-9月总结与展望",
+    "2024/09/23/李沐讲座",
+    "2024/08/05/云计算学习笔记",
+    "2024/08/05/hello-world",
+    "2024/08/11/大数据技术学习笔记",
+    "2024/08/09/机器学习基础",
+    "2024/08/30/雁栖一年，科研三年",
+    "2024/08/06/本科毕业论文致谢",
+    "2024/08/12/LLM实训",
+    "2024/12/05/11月总结与展望",
+    "2024/12/18/RAG综述一览",
+    "2024/12/18/Multi-agent-RAG-Systems调研报告",
+    "2024/12/10/Agentic-RAG-with-LlamaIndex",
+    "2024/12/31/2024年度总结",
+    "2024/12/31/12月总结与展望",
+    "2024/12/08/Multimodal-RAG-and-Prompt-Compression",
+    "2024/12/06/动手学循环神经网络",
+    "2024/12/25/机器学习与大数据管理总结复习",
+    "2024/12/25/自然语言处理基础总结复习",
+    "2023/10/14/张宇智慧箴言",
+    "2023/09/29/前路漫漫亦灿灿",
+    "2023/12/26/毛选及相关",
+    "archives/2025",
+    "archives/2024",
+    "archives/2023",
+    "archives/2026",
+    "archives/2025/03",
+    "archives/2025/04",
+    "archives/2025/05",
+    "archives/2025/02",
+    "archives/2025/11",
+    "archives/2025/10",
+    "archives/2025/07",
+    "archives/2025/09",
+    "archives/2025/08",
+    "archives/2025/01",
+    "archives/2025/06",
+    "archives/2025/12",
+    "archives/2025/page/4",
+    "archives/2025/page/3",
+    "archives/2025/page/2",
+    "archives/2025/page/5",
+    "archives/page/9",
+    "archives/page/11",
+    "archives/page/7",
+    "archives/page/6",
+    "archives/page/10",
+    "archives/page/8",
+    "archives/page/4",
+    "archives/page/3",
+    "archives/page/2",
+    "archives/page/5",
+    "archives/2024/04",
+    "archives/2024/02",
+    "archives/2024/11",
+    "archives/2024/10",
+    "archives/2024/09",
+    "archives/2024/08",
+    "archives/2024/12",
+    "archives/2024/page/4",
+    "archives/2024/page/3",
+    "archives/2024/page/2",
+    "archives/2023/10",
+    "archives/2023/09",
+    "archives/2023/12",
+    "archives/2026/03",
+    "archives/2026/04",
+    "archives/2026/05",
+    "archives/2026/02",
+    "archives/2026/11",
+    "archives/2026/07",
+    "archives/2026/09",
+    "archives/2026/08",
+    "archives/2026/01",
+    "archives/2026/06",
+    "archives/2026/page/3",
+    "archives/2026/page/2",
+    "tags/Database",
+    "tags/期末总结",
+    "tags/学术",
+    "tags/力祥哲学",
+    "tags/打工人",
+    "tags/big-data",
+    "tags/LLM",
+    "tags/分布式计算",
+    "tags/生活随笔",
+    "tags/创新思维",
+    "tags/GPT",
+    "tags/前沿讲座",
+    "tags/线性代数",
+    "tags/数据湖",
+    "tags/职业发展",
+    "tags/高等数学",
+    "tags/数据仓库",
+    "tags/家族史",
+    "tags/机器学习",
+    "tags/Agentic-RAG",
+    "tags/存储",
+    "tags/多模态",
+    "tags/笔记",
+    "tags/Agent",
+    "tags/科研心路",
+    "tags/DeepSeek",
+    "tags/RAG",
+    "tags/MLLM",
+    "tags/微调技术",
+    "tags/人工智能",
+    "tags/cloud-computing",
+    "tags/强化学习",
+    "tags/VQA",
+    "tags/成长认知",
+    "tags/Vector-Database",
+    "tags/数仓",
+    "tags/NLP",
+    "tags/深度学习",
+    "tags/系统论",
+    "tags/我们",
+    "tags/编程思想",
+    "tags/部署",
+    "tags/致谢",
+    "tags/LLM/page/4",
+    "tags/LLM/page/3",
+    "tags/LLM/page/2",
+    "tags/科研心路/page/4",
+    "tags/科研心路/page/3",
+    "tags/科研心路/page/2",
+    "tags/RAG/page/2",
+    "tags/MLLM/page/2",
+    "tags/深度学习/page/2",
+    "2026/03/05/我的女孩出现了",
+    "2026/03/15/CC与codex使用",
+    "2026/03/25/Qwen3-5架构拆解",
+    "2026/04/03/2026年3月总结与展望",
+    "2026/04/20/cs336-Assignment1",
+    "2026/04/30/2026年4月总结与展望",
+    "2026/05/31/2026年5月总结与展望",
+    "2026/02/28/2026年2月总结与展望",
+    "2026/02/26/Visual-Document-Retrieval最新综述",
+    "2026/11/09/2026年10月总结与展望",
+    "2026/11/09/VDB基础概念",
+    "2026/07/07/2026年6月总结与展望",
+    "2026/07/09/VLM-Higher-Faster-Stronger",
+    "2026/07/30/2026年7月总结与展望",
+    "2026/09/28/2026年9月总结与展望",
+    "2026/09/30/MiniMind-V-复现",
+    "2026/09/14/MiniMind源码学习",
+    "2026/08/31/2026年8月总结与展望",
+    "2026/08/31/Multi-Vector-Document-Retrieval-Survey",
+    "2026/08/25/如何学习基模源码",
+    "2026/01/18/精心排版了一本书",
+    "2026/01/30/2026年1月总结与展望",
+    "2026/01/01/2025年度总结",
+    "2026/06/10/博士科研指南",
+    "categories/向量数据库",
+    "categories/人工智能与深度学习",
+    "categories/力祥哲学",
+    "categories/基础知识",
+    "categories/人工智能基础",
+    "categories/云计算",
+    "categories/数据科学与数据开发",
+    "categories/读书笔记",
+    "categories/论文研读",
+    "categories/cs基础",
+    "categories/强化学习",
+    "categories/Linux",
+    "categories/年度总结",
+    "categories/生活体验",
+    "categories/技术学习",
+    "categories/动机",
+    "categories/大模型相关",
+    "categories/湖仓一体",
+    "categories/月度总结",
+    "categories/人工智能与深度学习/page/3",
+    "categories/人工智能与深度学习/page/2",
+    "categories/论文研读/page/2",
+    "categories/年度总结/page/2",
+    "categories/动机/page/4",
+    "categories/动机/page/3",
+    "categories/动机/page/2",
+    "categories/动机/page/5",
+    "categories/大模型相关/page/4",
+    "categories/大模型相关/page/3",
+    "categories/大模型相关/page/2",
+    "categories/月度总结/page/2"
+  ]
+}

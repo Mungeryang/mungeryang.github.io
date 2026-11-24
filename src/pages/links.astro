@@ -1,0 +1,9 @@
+---
+import Base from '../layouts/Base.astro';
+const friends = [
+  { title: "Wcowin's Web", intro: 'Wcowin的个人博客', link: 'https://wcowin.work/', avatar: '/img/life/kwblog.png' },
+  { title: "Axi's Blog", intro: '一只可爱小猫', link: 'https://axi404.top', avatar: 'https://axi404.top/avatar/avatar.png' },
+  { title: "Jerry's Blog", intro: "Jerry's Blog", link: 'https://jerry609.github.io/', avatar: 'https://jerry609.github.io/_astro/jerry.fxiBs8pI_iBx74.webp' },
+];
+---
+<Base title="友链"><section class="page-shell shell"><header class="page-heading"><div class="eyebrow">FRIENDS ON THE INTERNET</div><h1>网络里的邻居<span class="accent-text">.</span></h1><p>分享彼此的热爱，也看看不同的世界。</p></header><div class="friends-grid">{friends.map(friend => <a href={friend.link} class="friend-card" target="_blank" rel="noopener"><img src={friend.avatar} alt="" width="56" height="56" loading="lazy" /><div><h2>{friend.title} ↗</h2><p>{friend.intro}</p></div></a>)}</div></section></Base>

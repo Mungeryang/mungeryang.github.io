@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.astro/
+.vercel/
+legacy-hexo/
+.deploy*/
+output/
+.playwright-cli/
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+!.env.example

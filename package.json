@@ -1,0 +1,32 @@
+{
+  "name": "munger-blog",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "server": "npm run dev",
+    "check": "astro check",
+    "build": "astro build && node scripts/verify-migration.mjs",
+    "preview": "astro preview --host 127.0.0.1",
+    "new": "node scripts/new-post.mjs",
+    "publish": "node scripts/publish.mjs"
+  },
+  "dependencies": {
+    "@astrojs/markdown-remark": "^7.3.10",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.6",
+    "@waline/client": "^3.16.2",
+    "astro": "^7.4.13",
+    "katex": "^0.16.25",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "typescript": "^5.9.3"
+  }
+}

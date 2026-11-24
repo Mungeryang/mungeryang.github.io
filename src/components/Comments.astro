@@ -1,0 +1,9 @@
+<section class="comments-section"><h2>交流与留言</h2><p class="muted">见字如面，欢迎留下你的想法。</p><button class="button" id="load-comments">加载评论</button><div id="waline"></div></section>
+<script>
+  import '@waline/client/style';
+  document.getElementById('load-comments')?.addEventListener('click', async event => {
+    const button = event.currentTarget as HTMLButtonElement; button.disabled = true; button.textContent = '正在加载…';
+    try { const { init } = await import('@waline/client'); init({ el: '#waline', serverURL: 'https://comment.mungeryang.top/', path: window.location.pathname, lang: 'zh-CN', requiredMeta: ['nick'], emoji: ['https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo'], dark: 'html[data-theme="dark"]' }); button.remove(); }
+    catch { button.disabled = false; button.textContent = '加载失败，点击重试'; }
+  });
+</script>

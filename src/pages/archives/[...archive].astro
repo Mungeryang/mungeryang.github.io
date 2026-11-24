@@ -1,0 +1,15 @@
+---
+import Base from '../../layouts/Base.astro';
+import { allPosts, postUrl, dateLabel, type Post } from '../../lib/posts';
+export async function getStaticPaths() {
+  const posts = await allPosts(); const paths = new Set<string | undefined>([undefined]);
+  posts.forEach(p => { paths.add(p.data.date.slice(0, 4)); paths.add(p.data.date.slice(0, 7).replace('-', '/')); });
+  const result = [];
+  for (const path of paths) { const filtered = path ? posts.filter(p => p.data.date.replaceAll('-', '/').startsWith(path)) : posts; result.push({ params: { archive: path }, props: { posts: filtered, label: path } }); for (let page = 2; page <= Math.ceil(filtered.length / 10); page++) result.push({ params: { archive: `${path ? path + '/' : ''}page/${page}` }, props: { posts: filtered.slice((page - 1) * 10, page * 10), label: path } }); }
+  return result;
+}
+const { posts, label } = Astro.props;
+const groups = new Map<string, Post[]>();
+posts.forEach(post => { const year = post.data.date.slice(0, 4); groups.set(year, [...(groups.get(year) || []), post]); });
+---
+<Base title="文章归档"><section class="page-shell shell"><header class="page-heading"><div class="eyebrow">THE ARCHIVE</div><h1>文字的足迹<span class="accent-text">.</span></h1><p>{label ? `${label} · ` : ''}每一篇文字，都是当时的自己。共 {posts.length} 篇记录。</p></header><div class="archive-shortcuts"><a href="/categories/">按分类浏览 ↗</a><a href="/tags/">按标签浏览 ↗</a></div>{[...groups].map(([year, entries]) => <section class="archive-year"><h2>{year}<span>{entries.length} 篇</span></h2><ul>{entries.map(post => <li><time datetime={dateLabel(post)}>{dateLabel(post).slice(5).replace('-', '.')}</time><a href={postUrl(post)}>{post.data.title}<span>↗</span></a></li>)}</ul></section>)}</section></Base>

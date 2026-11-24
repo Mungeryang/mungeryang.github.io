@@ -1,0 +1,12 @@
+---
+import { getEntry, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+export function getStaticPaths() { return ['about', 'picture', 'self'].map(section => ({ params: { section } })); }
+const section = Astro.params.section!;
+const entry = await getEntry('pages', section);
+if (!entry) throw new Error(`Missing page: ${section}`);
+const { Content } = await render(entry);
+const labels: Record<string, [string, string]> = { about: ['关于我', 'A LITTLE ABOUT ME'], picture: ['生活的切片', 'MOMENTS & MEMORIES'], self: ['个人简历', 'CURRICULUM VITAE'] };
+const [title, subtitle] = labels[section];
+---
+<Base title={title}><section class="page-shell shell"><header class="page-heading"><div class="eyebrow">{subtitle}</div><h1>{title}<span class="accent-text">.</span></h1><p>{section === 'picture' ? '读万卷书，行万里路。记录有意义的时刻。' : '长命功夫长命做。'}</p></header>{section === 'about' && <div class="about-profile"><img src="/img/bg/person1.png" alt="杨桂淼" width="96" height="96" /><div><h2>Guimiao Yang · 杨桂淼</h2><p>slow is fast · 健健康康，内心阳光</p></div></div>}{section === 'self' && <p><a class="button" href="/img/jianli/miao.pdf" target="_blank" rel="noopener">在新窗口查看 / 下载简历 ↗</a></p>}<article class:list={['prose', 'page-prose', { 'photo-wall': section === 'picture' }]}><Content /></article></section></Base>

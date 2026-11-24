@@ -1,0 +1,14 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+import { allPosts, taxonomyUrl } from '../../lib/posts';
+export async function getStaticPaths() {
+  const posts = await allPosts();
+  return (['tags', 'categories'] as const).flatMap(kind => {
+    const counts = [...new Set(posts.flatMap(p => p.data[kind]))].map(name => ({ name, count: posts.filter(p => p.data[kind].includes(name)).length })).sort((a, b) => b.count - a.count);
+    return [{ params: { kind, term: undefined }, props: { kind, name: '', posts: [], counts } }, ...counts.flatMap(({ name }) => { const filtered = posts.filter(p => p.data[kind].includes(name)); return Array.from({ length: Math.ceil(filtered.length / 10) }, (_, index) => ({ params: { kind, term: `${name.replaceAll(' ', '-')}${index ? `/page/${index + 1}` : ''}` }, props: { kind, name, posts: index ? filtered.slice(index * 10, (index + 1) * 10) : filtered, counts } })); })];
+  });
+}
+const { kind, name, posts, counts } = Astro.props; const label = kind === 'tags' ? '标签' : '分类';
+---
+<Base title={name || label}><section class="page-shell shell"><header class="page-heading"><div class="eyebrow">EXPLORE BY {kind === 'tags' ? 'TOPIC' : 'CATEGORY'}</div><h1>{name || `所有${label}`}<span class="accent-text">.</span></h1><p>循着兴趣，找到下一篇想读的文字。</p></header>{name ? <><a class="back-link" href={`/${kind}/`}>← 全部{label}</a><PostList posts={posts} /></> : <div class="taxonomy-grid">{counts.map(item => <a href={taxonomyUrl(kind, item.name)}><span>{item.name}</span><span>{item.count} 篇 ↗</span></a>)}</div>}</section></Base>

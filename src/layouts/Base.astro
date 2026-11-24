@@ -1,0 +1,28 @@
+---
+import '../styles/global.css';
+interface Props { title?: string; description?: string; image?: string; article?: boolean; }
+const { title, description = '杨桂淼的个人博客。记录技术探索、科研心路和生活中的细微美好。slow is fast，长命功夫长命做。', image = '/img/bg/background4.png', article = false } = Astro.props;
+const fullTitle = title ? `${title} · munger写字的地方` : 'munger写字的地方 · slow is fast';
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const nav = [['/', '文章'], ['/archives/', '归档'], ['/picture/', '照片墙'], ['/about/', '关于'], ['/links/', '友链']];
+---
+<!doctype html>
+<html lang="zh-CN"><head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="generator" content={Astro.generator} />
+  <title>{fullTitle}</title><meta name="description" content={description} /><link rel="canonical" href={canonical} /><link rel="icon" href="/img/ucas.webp" />
+  <link rel="alternate" type="application/rss+xml" title="munger写字的地方" href="/rss.xml" />
+  <meta property="og:title" content={fullTitle} /><meta property="og:description" content={description} /><meta property="og:url" content={canonical} /><meta property="og:type" content={article ? 'article' : 'website'} /><meta property="og:image" content={new URL(image, Astro.site)} /><meta name="theme-color" content="#f7f8fa" />
+  <script is:inline>try { document.documentElement.dataset.theme = localStorage.getItem('theme') || 'light'; } catch {}</script>
+</head><body>
+  <a class="skip-link" href="#main">跳到内容</a>
+  <header class="site-header shell"><a class="brand" href="/" aria-label="Munger 的博客首页"><span class="brand-mark">m.</span><span>MUNGER<span class="brand-dot"> / </span>YANG</span></a><nav aria-label="主导航">{nav.map(([href, label]) => <a class:list={{ active: href === '/' ? Astro.url.pathname === '/' || Astro.url.pathname.startsWith('/page/') : Astro.url.pathname.startsWith(href) }} href={href}>{label}</a>)}</nav><div class="header-actions"><a href="/search/" aria-label="搜索文章" title="搜索文章"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></a><button id="theme-toggle" aria-label="切换深浅色主题" title="切换深浅色主题">◐</button></div></header>
+  <main id="main"><slot /></main>
+  <footer class="site-footer shell"><div><a class="footer-title" href="/">munger写字的地方<span>↗</span></a><p>slow is fast · 健健康康，内心阳光</p></div><div class="footer-right"><p>© 2023–{new Date().getFullYear()} Munger Yang · Built with <a href="https://astro.build/">Astro</a></p><p><a href="/rss.xml">RSS</a><span> / </span><a href="https://github.com/Mungeryang">GitHub</a><span> / </span><a href="/self/">简历</a></p><a class="icp" href="https://beian.miit.gov.cn/">京ICP备2024090304号</a></div></footer>
+  <dialog id="image-viewer" aria-label="查看大图"><button aria-label="关闭大图" autofocus>×</button><img alt="" /></dialog>
+  <script>
+    document.getElementById('theme-toggle')?.addEventListener('click', () => { const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'; document.documentElement.dataset.theme = theme; try { localStorage.setItem('theme', theme); } catch {} });
+    const viewer = document.querySelector<HTMLDialogElement>('#image-viewer');
+    document.querySelectorAll<HTMLImageElement>('.prose img').forEach(image => { image.loading = 'lazy'; image.decoding = 'async'; image.style.cursor = 'zoom-in'; image.addEventListener('click', () => { const large = viewer?.querySelector('img'); if (large && viewer) { large.src = image.src; large.alt = image.alt; viewer.showModal(); } }); });
+    viewer?.addEventListener('click', () => viewer.close());
+  </script>
+</body></html>

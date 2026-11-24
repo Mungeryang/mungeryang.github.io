@@ -1,0 +1,12 @@
+---
+import { render } from 'astro:content';
+import 'katex/dist/katex.min.css';
+import Base from '../layouts/Base.astro';
+import Comments from '../components/Comments.astro';
+import { allPosts, postPath, postUrl, dateLabel, excerpt, taxonomyUrl } from '../lib/posts';
+export async function getStaticPaths() { const posts = await allPosts(); return posts.map((post, i) => ({ params: { path: postPath(post) }, props: { post, previous: posts[i + 1], next: posts[i - 1] } })); }
+const { post, previous, next } = Astro.props;
+const { Content, headings } = await render(post);
+const minutes = Math.max(1, Math.ceil((post.body?.length || 0) / 450));
+---
+<Base title={post.data.title} description={excerpt(post, 160)} article><div class="article-shell shell"><header class="article-header"><a class="back-link" href="/archives/">← 所有文章</a><div class="eyebrow">{post.data.categories.join(' / ') || '文字与思考'}</div><h1>{post.data.title}</h1><div class="post-meta"><span>Munger Yang</span><span> / </span><time datetime={dateLabel(post)}>{dateLabel(post)}</time><span> / </span><span>约 {minutes} 分钟</span></div><div class="topic-cloud">{post.data.tags.map(tag => <a href={taxonomyUrl('tags', tag)}>#{tag}</a>)}</div></header><div class="article-grid"><article class="prose"><Content /><div class="license"><p>本文作者：Munger Yang</p><p>除特别声明外，文章采用 <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> 许可协议，转载请注明出处。</p></div><nav class="post-navigation" aria-label="相邻文章">{previous && <a href={postUrl(previous)}><span>← 更早的文字</span>{previous.data.title}</a>}{next && <a href={postUrl(next)}><span>更新的文字 →</span>{next.data.title}</a>}</nav>{post.data.comments && <Comments />}</article>{headings.length > 0 && <aside class="toc"><h2>本文目录</h2><nav aria-label="本文目录">{headings.filter(h => h.depth <= 3).map(h => <a class:list={{ indent: h.depth >= 3 }} href={`#${h.slug}`}>{h.text}</a>)}</nav></aside>}</div></div></Base>

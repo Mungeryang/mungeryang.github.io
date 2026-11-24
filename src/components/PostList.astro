@@ -1,0 +1,6 @@
+---
+import { dateLabel, excerpt, postUrl, type Post } from '../lib/posts';
+interface Props { posts: Post[]; }
+const { posts } = Astro.props;
+---
+<div class="post-list">{posts.map(post => <article class="post-card"><div class="post-meta"><time datetime={dateLabel(post)}>{dateLabel(post).replaceAll('-', '.')}</time><span> / </span><span>{post.data.categories[0] || '随笔'}</span></div><h2><a href={postUrl(post)}>{post.data.title}<span class="post-arrow" aria-hidden="true">↗</span></a></h2><p class="post-excerpt">{excerpt(post)}…</p><div class="post-bottom"><div class="post-tags">{post.data.tags.slice(0, 3).map(tag => <span>#{tag}</span>)}</div><a class="read-link" href={postUrl(post)} aria-label={`阅读 ${post.data.title}`}>阅读全文 <span aria-hidden="true">→</span></a></div></article>)}</div>

@@ -1,0 +1,7 @@
+---
+import Home from '../components/Home.astro';
+import { allPosts } from '../lib/posts';
+const all = await allPosts();
+const sorted = [...all].sort((a, b) => b.data.sticky - a.data.sticky);
+---
+<Home posts={sorted.slice(0, 10)} all={all} page={1} total={Math.ceil(all.length / 10)} />
